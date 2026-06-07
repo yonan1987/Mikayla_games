@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIKAYLA GAMES — Jasa Isi Game PS3, PS4, PS5 Bandung</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --black: #0a0a0a;
+            --dark: #111111;
+            --dark2: #1a1a1a;
+            --dark3: #222222;
+            --gray: #888888;
+            --silver: #c0c0c0;
+            --light: #e0e0e0;
+            --white: #f5f5f5;
+            --orange: #ff6a00;
+            --orange-light: #ff8c33;
+            --orange-dark: #cc5500;
+            --orange-glow: rgba(255, 106, 0, 0.3);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--black);
+            color: var(--light);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            pointer-events: none;
+            opacity: 0.04;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--black); }
+        ::-webkit-scrollbar-thumb { background: var(--orange); border-radius: 3px; }
+        ::selection { background: var(--orange); color: var(--black); }
+
+        h1, h2, h3, h4, h5 { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.05em; }
+
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 20px var(--orange-glow); } 50% { box-shadow: 0 0 40px var(--orange-glow); } }
+        @keyframes scanline { 0% { transform: translateY(-100%); } 100% { transform: translateY(100vh); } }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+
+        /* NAV */
+        .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 0 2rem; height: 72px; display: flex; align-items: center; justify-content: space-between; transition: all 0.4s; border-bottom: 1px solid transparent; }
+        .nav.scrolled { background: rgba(10,10,10,0.95); backdrop-filter: blur(12px); border-bottom-color: rgba(255,106,0,0.15); }
+        .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+        .nav-logo-icon { width: 40px; height: 40px; background: var(--orange); display: flex; align-items: center; justify-content: center; clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%); }
+        .nav-logo-icon span { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 18px; color: var(--black); }
+        .nav-logo-text { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 20px; color: var(--white); letter-spacing: 0.1em; }
+        .nav-logo-text .accent { color: var(--orange); }
+        .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--silver); font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.12em; transition: color 0.3s; position: relative; }
+        .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--orange); transition: width 0.3s; }
+        .nav-links a:hover { color: var(--orange); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-cta { background: var(--orange) !important; color: var(--black) !important; padding: 8px 20px; font-weight: 700 !important; clip-path: polygon(8% 0%, 100% 0%, 92% 100%, 0% 100%); }
+        .nav-cta::after { display: none !important; }
+        .nav-cta:hover { background: var(--orange-light) !important; }
+
+        .mobile-toggle { display: none; background: none; border: 1px solid rgba(255,106,0,0.3); color: var(--orange); width: 44px; height: 44px; cursor: pointer; font-size: 22px; align-items: center; justify-content: center; transition: all 0.3s; }
+        .mobile-toggle:hover { background: var(--orange); color: var(--black); }
+        .mobile-menu { display: none; position: fixed; inset: 0; z-index: 999; background: rgba(10,10,10,0.98); backdrop-filter: blur(20px); flex-direction: column; align-items: center; justify-content: center; gap: 2rem; }
+        .mobile-menu.active { display: flex; }
+        .mobile-menu a { font-family: 'Oswald', sans-serif; font-size: 28px; color: var(--light); text-decoration: none; text-transform: uppercase; letter-spacing: 0.1em; transition: color 0.3s; }
+        .mobile-menu a:hover { color: var(--orange); }
+        .mobile-close { position: absolute; top: 20px; right: 20px; background: none; border: none; color: var(--orange); font-size: 32px; cursor: pointer; }
+
+        /* HERO */
+        .hero { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .hero-bg { position: absolute; inset: 0; z-index: 0; }
+        .hero-bg img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) contrast(1.4) brightness(0.3); }
+        .hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,10,10,0.6) 0%, rgba(10,10,10,0.85) 50%, var(--black) 100%); }
+        .hero-scanline { position: absolute; inset: 0; z-index: 1; pointer-events: none; overflow: hidden; }
+        .hero-scanline::before { content: ''; position: absolute; left: 0; right: 0; height: 2px; background: rgba(255,106,0,0.08); animation: scanline 4s linear infinite; }
+        .hero-grid { position: absolute; inset: 0; z-index: 1; background-image: linear-gradient(rgba(255,106,0,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,106,0,0.03) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; }
+        .hero-content { position: relative; z-index: 2; text-align: center; padding: 2rem; max-width: 900px; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,106,0,0.1); border: 1px solid rgba(255,106,0,0.3); padding: 6px 18px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--orange); font-weight: 600; margin-bottom: 2rem; animation: fadeIn 1s ease-out 0.3s both; }
+        .hero-badge .dot { width: 6px; height: 6px; background: var(--orange); border-radius: 50%; animation: pulse-glow 2s infinite; }
+        .hero-title { font-size: clamp(42px, 8vw, 96px); font-weight: 700; line-height: 0.95; color: var(--white); margin-bottom: 1.5rem; animation: fadeInUp 1s ease-out 0.5s both; }
+        .hero-title .line { display: block; }
+        .hero-title .accent { color: var(--orange); position: relative; }
+        .hero-title .accent::after { content: ''; position: absolute; bottom: 5px; left: 0; width: 100%; height: 4px; background: var(--orange); opacity: 0.4; }
+        .hero-sub { font-size: clamp(14px, 2vw, 18px); color: var(--gray); max-width: 600px; margin: 0 auto 2.5rem; font-weight: 300; line-height: 1.7; animation: fadeInUp 1s ease-out 0.7s both; }
+        .hero-actions { display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap; animation: fadeInUp 1s ease-out 0.9s both; }
+        .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--orange); color: var(--black); font-family: 'Oswald', sans-serif; font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; padding: 14px 36px; text-decoration: none; clip-path: polygon(6% 0%, 100% 0%, 94% 100%, 0% 100%); transition: all 0.3s; border: none; cursor: pointer; }
+        .btn-primary:hover { background: var(--orange-light); transform: translateY(-2px); box-shadow: 0 8px 30px var(--orange-glow); }
+        .btn-secondary { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: var(--light); font-family: 'Oswald', sans-serif; font-size: 15px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; padding: 14px 36px; text-decoration: none; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s; cursor: pointer; }
+        .btn-secondary:hover { border-color: var(--orange); color: var(--orange); }
+        .hero-stats { display: flex; align-items: center; justify-content: center; gap: 3rem; margin-top: 3.5rem; animation: fadeInUp 1s ease-out 1.1s both; }
+        .hero-stat { text-align: center; }
+        .hero-stat-num { font-family: 'Oswald', sans-serif; font-size: 36px; font-weight: 700; color: var(--orange); line-height: 1; }
+        .hero-stat-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--gray); margin-top: 4px; }
+        .hero-scroll { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 6px; color: var(--gray); font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; animation: float 2s ease-in-out infinite; }
+
+        /* SECTION COMMONS */
+        .section { padding: 6rem 2rem; position: relative; }
+        .section-dark { background: var(--dark); }
+        .section-darker { background: var(--black); }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .section-header { margin-bottom: 4rem; }
+        .section-label { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--orange); font-weight: 600; margin-bottom: 1rem; }
+        .section-label::before { content: ''; width: 30px; height: 1px; background: var(--orange); }
+        .section-title { font-size: clamp(32px, 5vw, 56px); font-weight: 700; color: var(--white); line-height: 1.05; }
+        .section-title .accent { color: var(--orange); }
+        .section-desc { font-size: 16px; color: var(--gray); max-width: 560px; margin-top: 1rem; line-height: 1.7; }
+        .divider-line { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,106,0,0.3), transparent); }
+
+        /* ABOUT */
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .about-image { position: relative; overflow: hidden; }
+        .about-image img { width: 100%; aspect-ratio: 4/5; object-fit: cover; filter: grayscale(100%) contrast(1.3) brightness(0.7); transition: all 0.7s ease; }
+        .about-image:hover img { filter: grayscale(30%) contrast(1.1) brightness(0.8); transform: scale(1.05); }
+        .about-image-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem; background: linear-gradient(to top, rgba(10,10,10,0.95), transparent); }
+        .about-image-overlay span { font-family: 'Oswald', sans-serif; font-size: 48px; font-weight: 700; color: var(--orange); opacity: 0.2; }
+        .about-text h2 { font-size: clamp(28px, 4vw, 44px); color: var(--white); margin-bottom: 1.5rem; line-height: 1.1; }
+        .about-text h2 .accent { color: var(--orange); }
+        .about-text p { color: var(--gray); font-size: 15px; line-height: 1.8; margin-bottom: 1.5rem; }
+        .about-features { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
+        .about-feature { display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: var(--dark2); border: 1px solid rgba(255,106,0,0.1); transition: all 0.3s; }
+        .about-feature:hover { border-color: rgba(255,106,0,0.4); background: rgba(255,106,0,0.05); }
+        .about-feature iconify-icon { color: var(--orange); font-size: 18px; }
+        .about-feature span { font-size: 13px; font-weight: 500; color: var(--light); }
+
+        /* SERVICES */
+        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .service-card { position: relative; background: var(--dark2); border: 1px solid rgba(255,255,255,0.05); overflow: hidden; transition: all 0.5s; cursor: default; }
+        .service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--orange); transform: scaleX(0); transform-origin: left; transition: transform 0.5s; }
+        .service-card:hover::before { transform: scaleX(1); }
+        .service-card:hover { border-color: rgba(255,106,0,0.3); transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 30px var(--orange-glow); }
+        .service-card-img { position: relative; overflow: hidden; height: 200px; }
+        .service-card-img img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) contrast(1.3) brightness(0.5); transition: all 0.7s; }
+        .service-card:hover .service-card-img img { filter: grayscale(40%) contrast(1.1) brightness(0.6); transform: scale(1.1); }
+        .service-card-img .console-badge { position: absolute; top: 12px; right: 12px; background: var(--orange); color: var(--black); font-family: 'Oswald', sans-serif; font-size: 12px; font-weight: 700; padding: 4px 12px; letter-spacing: 0.1em; }
+        .service-card-body { padding: 2rem; }
+        .service-card-body h3 { font-size: 22px; font-weight: 700; color: var(--white); margin-bottom: 0.75rem; }
+        .service-card-body p { font-size: 14px; color: var(--gray); line-height: 1.7; margin-bottom: 1.5rem; }
+        .service-features { list-style: none; margin-bottom: 1.5rem; }
+        .service-features li { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--silver); padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
+        .service-features li iconify-icon { color: var(--orange); font-size: 14px; flex-shrink: 0; }
+        .service-price { display: flex; align-items: baseline; gap: 4px; }
+        .service-price .from { font-size: 11px; color: var(--gray); text-transform: uppercase; letter-spacing: 0.1em; }
+        .service-price .amount { font-family: 'Oswald', sans-serif; font-size: 28px; font-weight: 700; color: var(--orange); }
+        .service-price .unit { font-size: 13px; color: var(--gray); }
+
+        /* PDF CATALOG SECTION */
+        .catalog-section { position: relative; }
+        .pdf-tabs { display: flex; gap: 0; margin-bottom: 0; border-bottom: 2px solid rgba(255,106,0,0.2); }
+        .pdf-tab { font-family: 'Oswald', sans-serif; font-size: 15px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; padding: 16px 32px; background: var(--dark2); color: var(--gray); border: 1px solid rgba(255,255,255,0.05); border-bottom: none; cursor: pointer; transition: all 0.3s; display: flex; align-items: center; gap: 10px; position: relative; }
+        .pdf-tab:hover { color: var(--light); background: var(--dark3); }
+        .pdf-tab.active { background: var(--orange); color: var(--black); border-color: var(--orange); }
+        .pdf-tab iconify-icon { font-size: 18px; }
+
+        .pdf-viewer-container { background: var(--dark2); border: 1px solid rgba(255,255,255,0.06); border-top: 3px solid var(--orange); position: relative; }
+        .pdf-viewer-header { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 2rem; background: rgba(255,106,0,0.05); border-bottom: 1px solid rgba(255,255,255,0.04); flex-wrap: wrap; gap: 1rem; }
+        .pdf-viewer-info { display: flex; align-items: center; gap: 12px; }
+        .pdf-viewer-info iconify-icon { color: var(--orange); font-size: 24px; }
+        .pdf-viewer-info h4 { font-size: 16px; color: var(--white); font-weight: 600; }
+        .pdf-viewer-info span { font-size: 12px; color: var(--gray); display: block; }
+        .pdf-viewer-actions { display: flex; gap: 0.75rem; }
+        .pdf-btn { display: inline-flex; align-items: center; gap: 6px; font-family: 'Oswald', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; padding: 8px 18px; border: 1px solid rgba(255,255,255,0.1); background: var(--dark3); color: var(--silver); cursor: pointer; transition: all 0.3s; text-decoration: none; }
+        .pdf-btn:hover { border-color: var(--orange); color: var(--orange); }
+        .pdf-btn.primary-sm { background: var(--orange); color: var(--black); border-color: var(--orange); }
+        .pdf-btn.primary-sm:hover { background: var(--orange-light); }
+
+        .pdf-frame-wrap { width: 100%; height: 75vh; min-height: 500px; position: relative; background: #1a1a1a; }
+        .pdf-frame-wrap iframe { width: 100%; height: 100%; border: none; }
+        .pdf-fallback { display: none; flex-direction: column; align-items: center; justify-content: center; padding: 4rem 2rem; text-align: center; min-height: 400px; }
+        .pdf-fallback iconify-icon { font-size: 64px; color: var(--orange); opacity: 0.4; margin-bottom: 1.5rem; }
+        .pdf-fallback h4 { font-size: 20px; color: var(--white); margin-bottom: 0.75rem; }
+        .pdf-fallback p { color: var(--gray); font-size: 14px; max-width: 400px; margin-bottom: 1.5rem; line-height: 1.7; }
+        .pdf-panel { display: none; }
+        .pdf-panel.active { display: block; }
+
+        .pdf-page-controls { display: flex; align-items: center; justify-content: center; gap: 1rem; padding: 1rem; background: var(--dark); border-top: 1px solid rgba(255,255,255,0.04); }
+        .pdf-page-btn { background: var(--dark3); border: 1px solid rgba(255,255,255,0.08); color: var(--silver); padding: 8px 16px; cursor: pointer; font-size: 14px; transition: all 0.3s; display: flex; align-items: center; gap: 6px; }
+        .pdf-page-btn:hover { border-color: var(--orange); color: var(--orange); }
+        .pdf-page-info { font-size: 13px; color: var(--gray); }
+
+        /* GAME SEARCH CATALOG */
+        .catalog-controls { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2.5rem; align-items: center; }
+        .catalog-tabs { display: flex; gap: 0.5rem; }
+        .catalog-tab { font-family: 'Oswald', sans-serif; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; padding: 10px 24px; background: var(--dark2); color: var(--gray); border: 1px solid rgba(255,255,255,0.05); cursor: pointer; transition: all 0.3s; }
+        .catalog-tab:hover { color: var(--light); border-color: rgba(255,106,0,0.3); }
+        .catalog-tab.active { background: var(--orange); color: var(--black); border-color: var(--orange); }
+        .catalog-search { flex: 1; min-width: 200px; position: relative; }
+        .catalog-search input { width: 100%; padding: 12px 16px 12px 44px; background: var(--dark2); border: 1px solid rgba(255,255,255,0.08); color: var(--white); font-family: 'Inter', sans-serif; font-size: 14px; outline: none; transition: border-color 0.3s; }
+        .catalog-search input:focus { border-color: var(--orange); }
+        .catalog-search iconify-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--gray); font-size: 18px; pointer-events: none; }
+
+        .game-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.25rem; }
+        .game-card { background: var(--dark2); border: 1px solid rgba(255,255,255,0.04); padding: 1.25rem; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.3s; position: relative; overflow: hidden; }
+        .game-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 0; background: var(--orange); transition: height 0.3s; }
+        .game-card:hover { border-color: rgba(255,106,0,0.2); transform: translateY(-4px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+        .game-card:hover::before { height: 100%; }
+        .game-console-tag { font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--orange); font-weight: 700; margin-bottom: 0.5rem; display: inline-block; background: rgba(255,106,0,0.1); padding: 2px 8px; align-self: flex-start; }
+        .game-title { font-family: 'Oswald', sans-serif; font-size: 16px; font-weight: 500; color: var(--white); line-height: 1.3; margin-bottom: 1rem; flex-grow: 1; }
+        .game-order-btn { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--silver); text-decoration: none; font-weight: 600; transition: color 0.3s; }
+        .game-order-btn:hover { color: var(--orange); }
+        .no-games { grid-column: 1 / -1; text-align: center; padding: 3rem; color: var(--gray); font-style: italic; }
+
+        /* VIEW TOGGLE */
+        .view-toggle { display: flex; gap: 0; margin-bottom: 2rem; border: 1px solid rgba(255,106,0,0.2); width: fit-content; }
+        .view-toggle-btn { font-family: 'Oswald', sans-serif; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; padding: 10px 20px; background: transparent; color: var(--gray); border: none; cursor: pointer; transition: all 0.3s; display: flex; align-items: center; gap: 8px; }
+        .view-toggle-btn.active { background: var(--orange); color: var(--black); }
+        .view-toggle-btn:hover:not(.active) { color: var(--light); }
+        .catalog-view-panel { display: none; }
+        .catalog-view-panel.active { display: block; }
+
+        /* ADVANTAGES */
+        .advantages-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .advantage-card { text-align: center; padding: 2.5rem 2rem; background: var(--dark2); border: 1px solid rgba(255,255,255,0.04); transition: all 0.4s; position: relative; overflow: hidden; }
+        .advantage-card::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 40px; height: 2px; background: var(--orange); transition: width 0.4s; }
+        .advantage-card:hover { border-color: rgba(255,106,0,0.2); transform: translateY(-4px); }
+        .advantage-card:hover::after { width: 80px; }
+        .advantage-icon { width: 64px; height: 64px; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; background: rgba(255,106,0,0.08); border: 1px solid rgba(255,106,0,0.15); transition: all 0.3s; }
+        .advantage-card:hover .advantage-icon { background: rgba(255,106,0,0.15); border-color: rgba(255,106,0,0.4); }
+        .advantage-icon iconify-icon { font-size: 28px; color: var(--orange); }
+        .advantage-card h4 { font-size: 18px; font-weight: 600; color: var(--white); margin-bottom: 0.75rem; }
+        .advantage-card p { font-size: 14px; color: var(--gray); line-height: 1.7; }
+
+        /* PROCESS */
+        .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; position: relative; }
+        .process-steps::before { content: ''; position: absolute; top: 40px; left: 12%; right: 12%; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,106,0,0.3), transparent); }
+        .process-step { text-align: center; position: relative; }
+        .process-num { width: 56px; height: 56px; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; background: var(--dark2); border: 2px solid var(--orange); font-family: 'Oswald', sans-serif; font-size: 22px; font-weight: 700; color: var(--orange); position: relative; z-index: 1; }
+        .process-step h4 { font-size: 16px; color: var(--white); margin-bottom: 0.5rem; }
+        .process-step p { font-size: 13px; color: var(--gray); line-height: 1.6; }
+
+        /* TESTIMONIALS */
+        .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .testi-card { background: var(--dark2); border: 1px solid rgba(255,255,255,0.04); padding: 2rem; transition: all 0.3s; }
+        .testi-card:hover { border-color: rgba(255,106,0,0.2); }
+        .testi-quote { font-size: 48px; font-family: 'Oswald', sans-serif; color: var(--orange); opacity: 0.2; line-height: 1; margin-bottom: -10px; }
+        .testi-text { font-size: 14px; color: var(--silver); line-height: 1.8; font-style: italic; margin-bottom: 1.5rem; }
+        .testi-author { display: flex; align-items: center; gap: 12px; }
+        .testi-avatar { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; filter: grayscale(100%); border: 2px solid rgba(255,106,0,0.3); }
+        .testi-name { font-family: 'Oswald', sans-serif; font-size: 15px; font-weight: 600; color: var(--white); }
+        .testi-info { font-size: 12px; color: var(--gray); }
+        .testi-stars { display: flex; gap: 2px; margin-bottom: 1rem; }
+        .testi-stars iconify-icon { color: var(--orange); font-size: 14px; }
+
+        /* CONTACT */
+        .contact-section { position: relative; overflow: hidden; }
+        .contact-bg { position: absolute; inset: 0; }
+        .contact-bg img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) contrast(1.4) brightness(0.15); }
+        .contact-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(10,10,10,0.95), rgba(255,106,0,0.08)); }
+        .contact-content { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .contact-info h2 { font-size: clamp(28px, 4vw, 48px); color: var(--white); margin-bottom: 1rem; line-height: 1.1; }
+        .contact-info h2 .accent { color: var(--orange); }
+        .contact-info > p { color: var(--gray); font-size: 15px; line-height: 1.8; margin-bottom: 2rem; }
+        .contact-methods { display: flex; flex-direction: column; gap: 1.25rem; }
+        .contact-method { display: flex; align-items: center; gap: 16px; padding: 16px 20px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); transition: all 0.3s; text-decoration: none; color: inherit; }
+        .contact-method:hover { border-color: rgba(255,106,0,0.4); background: rgba(255,106,0,0.05); }
+        .contact-method-icon { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; background: rgba(255,106,0,0.1); border: 1px solid rgba(255,106,0,0.2); flex-shrink: 0; }
+        .contact-method-icon iconify-icon { font-size: 20px; color: var(--orange); }
+        .contact-method-text .label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--gray); }
+        .contact-method-text .value { font-size: 15px; color: var(--white); font-weight: 500; margin-top: 2px; }
+        .contact-form-wrap { background: var(--dark2); border: 1px solid rgba(255,255,255,0.06); padding: 2.5rem; }
+        .contact-form-wrap h3 { font-size: 20px; color: var(--white); margin-bottom: 1.5rem; }
+        .form-group { margin-bottom: 1.25rem; }
+        .form-group label { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--gray); margin-bottom: 6px; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px 16px; background: var(--dark); border: 1px solid rgba(255,255,255,0.08); color: var(--white); font-family: 'Inter', sans-serif; font-size: 14px; outline: none; transition: border-color 0.3s; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--orange); }
+        .form-group textarea { resize: vertical; min-height: 100px; }
+        .form-group select option { background: var(--dark); }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+        /* FOOTER */
+        .footer { background: var(--dark); border-top: 1px solid rgba(255,255,255,0.04); padding: 3rem 2rem; }
+        .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+        .footer-copy { font-size: 13px; color: var(--gray); }
+        .footer-copy .accent { color: var(--orange); }
+        .footer-socials { display: flex; gap: 12px; }
+        .footer-social { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.1); color: var(--gray); transition: all 0.3s; text-decoration: none; }
+        .footer-social:hover { border-color: var(--orange); color: var(--orange); background: rgba(255,106,0,0.05); }
+
+        .wa-float { position: fixed; bottom: 24px; right: 24px; z-index: 900; width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; background: #25D366; border-radius: 50%; color: #fff; font-size: 28px; text-decoration: none; box-shadow: 0 4px 20px rgba(37,211,102,0.4); transition: all 0.3s; }
+        .wa-float:hover { transform: scale(1.1); box-shadow: 0 6px 30px rgba(37,211,102,0.6); }
+        .toast { position: fixed; top: 90px; right: 24px; z-index: 10000; background: var(--dark2); border: 1px solid rgba(255,106,0,0.4); padding: 16px 24px; font-size: 14px; color: var(--light); display: flex; align-items: center; gap: 10px; transform: translateX(120%); transition: transform 0.4s cubic-bezier(0.16,1,0.3,1); }
+        .toast.show { transform: translateX(0); }
+        .toast iconify-icon { color: var(--orange); font-size: 20px; }
+
+        @media (max-width: 1024px) { .services-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; } .advantages-grid { grid-template-columns: repeat(2, 1fr); } .testi-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; } .contact-content { grid-template-columns: 1fr; } .process-steps { grid-template-columns: repeat(2, 1fr); } .process-steps::before { display: none; } }
+        @media (max-width: 768px) { .nav-links { display: none; } .mobile-toggle { display: flex; } .about-grid { grid-template-columns: 1fr; gap: 2rem; } .about-features { grid-template-columns: 1fr; } .hero-stats { gap: 1.5rem; } .hero-stat-num { font-size: 28px; } .advantages-grid { grid-template-columns: 1fr; } .process-steps { grid-template-columns: 1fr 1fr; } .contact-form-wrap { padding: 1.5rem; } .form-row { grid-template-columns: 1fr; } .section { padding: 4rem 1.25rem; } .catalog-controls { flex-direction: column; align-items: stretch; } .game-grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); } .pdf-tabs { flex-wrap: wrap; } .pdf-tab { padding: 12px 20px; font-size: 13px; flex: 1; justify-content: center; } .pdf-frame-wrap { height: 60vh; min-height: 350px; } .pdf-viewer-header { flex-direction: column; align-items: flex-start; } }
+        @media (max-width: 480px) { .hero-stats { flex-direction: column; gap: 1rem; } .process-steps { grid-template-columns: 1fr; } .footer-inner { flex-direction: column; text-align: center; } }
+    </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="nav" id="navbar">
+    <a href="#" class="nav-logo">
+        <div class="nav-logo-icon"><span>M</span></div>
+        <div class="nav-logo-text">MIKAYLA<span class="accent">GAMES</span></div>
+    </a>
+    <ul class="nav-links">
+        <li><a href="#about">Tentang</a></li>
+        <li><a href="#services">Layanan</a></li>
+        <li><a href="#game-list">Daftar Game</a></li>
+        <li><a href="#testimonials">Testimoni</a></li>
+        <li><a href="#contact" class="nav-cta">Hubungi Kami</a></li>
+    </ul>
+    <button class="mobile-toggle" id="menuBtn" aria-label="Menu"><iconify-icon icon="lucide:menu"></iconify-icon></button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="menuClose"><iconify-icon icon="lucide:x"></iconify-icon></button>
+    <a href="#about" onclick="closeMobile()">Tentang</a>
+    <a href="#services" onclick="closeMobile()">Layanan</a>
+    <a href="#game-list" onclick="closeMobile()">Daftar Game</a>
+    <a href="#testimonials" onclick="closeMobile()">Testimoni</a>
+    <a href="#contact" onclick="closeMobile()">Kontak</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+    <div class="hero-bg"><img src="https://picsum.photos/seed/ps-console-dark/1920/1080.jpg" alt="Gaming Setup"></div>
+    <div class="hero-scanline"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-content">
+        <div class="hero-badge"><span class="dot"></span> Bandung's Trusted Game Installer</div>
+        <h1 class="hero-title"><span class="line">JASA ISI GAME</span><span class="line"><span class="accent">KONSOL</span> ANDA</span></h1>
+        <p class="hero-sub">Jasa isi game PS3 HEN, PS4 Jailbreak, dan PS5 Jailbreak terpercaya di Bandung. Ribuan game tersedia, proses cepat, dan komunitas yang solid.</p>
+        <div class="hero-actions">
+            <a href="https://wa.me/6285163061987?text=Halo%20Mikayla%20Games%2C%20saya%20mau%20tanya%20tentang%20jasa%20isi%20game" class="btn-primary" target="_blank"><iconify-icon icon="lucide:message-circle"></iconify-icon> WhatsApp Sekarang</a>
+            <a href="#game-list" class="btn-secondary"><iconify-icon icon="lucide:file-text"></iconify-icon> Lihat Daftar Game</a>
+        </div>
+        <div class="hero-stats">
+            <div class="hero-stat"><div class="hero-stat-num" id="counterClients">0</div><div class="hero-stat-label">Pelanggan Puas</div></div>
+            <div class="hero-stat"><div class="hero-stat-num" id="counterGames">0</div><div class="hero-stat-label">Game Tersedia</div></div>
+            <div class="hero-stat"><div class="hero-stat-num" id="counterYears">0</div><div class="hero-stat-label">Tahun Pengalaman</div></div>
+        </div>
+    </div>
+    <div class="hero-scroll"><iconify-icon icon="lucide:chevron-down"></iconify-icon> Scroll</div>
+</section>
+
+<!-- ABOUT -->
+<section class="section section-darker" id="about">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-image reveal">
+                <img src="https://picsum.photos/seed/gamer-setup-bw/600/750.jpg" alt="Mikayla Games Studio">
+                <div class="about-image-overlay"><span>EST. 2019</span></div>
+            </div>
+            <div class="about-text">
+                <div class="section-label reveal">Tentang Kami</div>
+                <h2 class="reveal reveal-delay-1">BUKAN SEKEDAR ISI GAME,<br>INI TENTANG <span class="accent">KOMUNITAS</span></h2>
+                <p class="reveal reveal-delay-2">Mikayla Games lahir dari passion para gamer di Bandung. Kami memahami bahwa setiap konsol adalah investasi, dan setiap game adalah pengalaman yang berharga.</p>
+                <p class="reveal reveal-delay-2">Dari PS3 HEN hingga PS5 Jailbreak, kami memastikan setiap proses dilakukan dengan standar keamanan tertinggi. Garansi penuh setiap pemasangan.</p>
+                <div class="about-features reveal reveal-delay-3">
+                    <div class="about-feature"><iconify-icon icon="lucide:shield-check"></iconify-icon><span>Garansi Penuh</span></div>
+                    <div class="about-feature"><iconify-icon icon="lucide:zap"></iconify-icon><span>Proses Cepat</span></div>
+                    <div class="about-feature"><iconify-icon icon="lucide:hard-drive"></iconify-icon><span>Game Terlengkap</span></div>
+                    <div class="about-feature"><iconify-icon icon="lucide:users"></iconify-icon><span>Komunitas Solid</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="divider-line"></div>
+
+<!-- SERVICES -->
+<section class="section section-dark" id="services">
+    <div class="container">
+        <div class="section-header" style="text-align:center;">
+            <div class="section-label reveal" style="justify-content:center;">Layanan Kami</div>
+            <h2 class="reveal reveal-delay-1">PILIH <span class="accent">KONSOL</span> ANDA</h2>
+        </div>
+        <div class="services-grid">
+            <div class="service-card reveal">
+                <div class="service-card-img"><img src="https://picsum.photos/seed/ps3-console-retro/600/400.jpg" alt="PS3 HEN"><div class="console-badge">PS3</div></div>
+                <div class="service-card-body">
+                    <h3>PS3 HEN</h3>
+                    <p>Pasang HEN dan akses ribuan game PS3 langsung dari HDD.</p>
+                    <ul class="service-features"><li><iconify-icon icon="lucide:check"></iconify-icon> HEN 3.0+ Terbaru</li><li><iconify-icon icon="lucide:check"></iconify-icon> 500+ Game PS3</li><li><iconify-icon icon="lucide:check"></iconify-icon> Multiman & Webman</li></ul>
+                    <div class="service-price"><span class="from">Mulai</span><span class="amount">75K</span><span class="unit">/ pasang</span></div>
+                </div>
+            </div>
+            <div class="service-card reveal reveal-delay-1">
+                <div class="service-card-img"><img src="https://picsum.photos/seed/ps4-jailbreak-gaming/600/400.jpg" alt="PS4 Jailbreak"><div class="console-badge">PS4</div></div>
+                <div class="service-card-body">
+                    <h3>PS4 JAILBREAK</h3>
+                    <p>Jailbreak PS4 firmware kompatibel, akses library game PS4 lengkap.</p>
+                    <ul class="service-features"><li><iconify-icon icon="lucide:check"></iconify-icon> FW 9.00 / 10.01 / 11.00</li><li><iconify-icon icon="lucide:check"></iconify-icon> 1000+ Game PS4</li><li><iconify-icon icon="lucide:check"></iconify-icon> GoldHEN & PKG</li></ul>
+                    <div class="service-price"><span class="from">Mulai</span><span class="amount">100K</span><span class="unit">/ pasang</span></div>
+                </div>
+            </div>
+            <div class="service-card reveal reveal-delay-2">
+                <div class="service-card-img"><img src="https://picsum.photos/seed/ps5-nextgen-dark/600/400.jpg" alt="PS5 Jailbreak"><div class="console-badge">PS5</div></div>
+                <div class="service-card-body">
+                    <h3>PS5 JAILBREAK</h3>
+                    <p>Akses jailbreak PS5, mainkan game next-gen tanpa batas.</p>
+                    <ul class="service-features"><li><iconify-icon icon="lucide:check"></iconify-icon> FW 4.03 / 4.50 / 4.51</li><li><iconify-icon icon="lucide:check"></iconify-icon> 300+ Game PS5</li><li><iconify-icon icon="lucide:check"></iconify-icon> BDJB / ELF Loader</li></ul>
+                    <div class="service-price"><span class="from">Mulai</span><span class="amount">150K</span><span class="unit">/ pasang</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="divider-line"></div>
+
+<!-- GAME LIST WITH PDF VIEWER -->
+<section class="section section-darker catalog-section" id="game-list">
+    <div class="container">
+        <div class="section-header" style="text-align:center;">
+            <div class="section-label reveal" style="justify-content:center;">Katalog Game</div>
+            <h2 class="reveal reveal-delay-1">DAFTAR GAME <span class="accent">TERSEDIA</span></h2>
+            <p class="section-desc reveal reveal-delay-2" style="margin-left:auto;margin-right:auto;text-align:center;">Lihat katalog lengkap langsung dari file PDF kami, atau cari game favorit Anda di database di bawah.</p>
+        </div>
+
+        <!-- View Toggle: PDF vs Database -->
+        <div class="view-toggle reveal">
+            <button class="view-toggle-btn active" data-view="pdf"><iconify-icon icon="lucide:file-text"></iconify-icon> Lihat PDF</button>
+            <button class="view-toggle-btn" data-view="search"><iconify-icon icon="lucide:search"></iconify-icon> Cari Game</button>
+        </div>
+
+        <!-- PDF VIEWER PANEL -->
+        <div class="catalog-view-panel active reveal" id="pdfPanel">
+            <div class="pdf-tabs">
+                <button class="pdf-tab active" data-pdf="LIST GAME PS3 2025.pdf"><iconify-icon icon="lucide:disc"></iconify-icon> PS3 List 2025</button>
+                <button class="pdf-tab" data-pdf="PS4 LISTGAME 2026.pdf"><iconify-icon icon="lucide:disc"></iconify-icon> PS4 List 2026</button>
+                <button class="pdf-tab" data-pdf="PLAYSTATION 5 LIST 2027.pdf"><iconify-icon icon="lucide:disc"></iconify-icon> PS5 List 2027</button>
+            </div>
+
+            <div class="pdf-viewer-container">
+                <div class="pdf-viewer-header">
+                    <div class="pdf-viewer-info">
+                        <iconify-icon icon="lucide:file-text"></iconify-icon>
+                        <div>
+                            <h4 id="pdfTitle">LIST GAME PS3 2025.pdf</h4>
+                            <span>Scroll atau zoom untuk membaca daftar lengkap</span>
+                        </div>
+                    </div>
+                    <div class="pdf-viewer-actions">
+                        <a href="#" class="pdf-btn" id="pdfDownloadBtn" download><iconify-icon icon="lucide:download"></iconify-icon> Download PDF</a>
+                        <a href="#" class="pdf-btn primary-sm" id="pdfFullscreenBtn"><iconify-icon icon="lucide:maximize"></iconify-icon> Layar Penuh</a>
+                    </div>
+                </div>
+
+                <div class="pdf-frame-wrap" id="pdfFrameWrap">
+                    <!-- iframe will be injected here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- SEARCH DATABASE PANEL -->
+        <div class="catalog-view-panel" id="searchPanel">
+            <div class="catalog-controls">
+                <div class="catalog-tabs">
+                    <button class="catalog-tab active" data-filter="all">Semua</button>
+                    <button class="catalog-tab" data-filter="ps3">PS3</button>
+                    <button class="catalog-tab" data-filter="ps4">PS4</button>
+                    <button class="catalog-tab" data-filter="ps5">PS5</button>
+                </div>
+                <div class="catalog-search">
+                    <iconify-icon icon="lucide:search"></iconify-icon>
+                    <input type="text" id="gameSearch" placeholder="Cari judul game...">
+                </div>
+            </div>
+            <div class="game-grid" id="gameGrid"></div>
+        </div>
+    </div>
+</section>
+<div class="divider-line"></div>
+
+<!-- ADVANTAGES -->
+<section class="section section-dark" id="advantages">
+    <div class="container">
+        <div class="section-header" style="text-align:center;">
+            <div class="section-label reveal" style="justify-content:center;">Kenapa Kami</div>
+            <h2 class="reveal reveal-delay-1">KEUNGGULAN <span class="accent">MIKAYLA</span> GAMES</h2>
+        </div>
+        <div class="advantages-grid">
+            <div class="advantage-card reveal"><div class="advantage-icon"><iconify-icon icon="lucide:shield-check"></iconify-icon></div><h4>Aman & Terpercaya</h4><p>Proses jailbreak dengan metode teruji. Garansi 100% jika ada kendala.</p></div>
+            <div class="advantage-card reveal reveal-delay-1"><div class="advantage-icon"><iconify-icon icon="lucide:database"></iconify-icon></div><h4>Game Terlengkap</h4><p>Koleksi game terbesar di Bandung. Update rutin setiap minggu.</p></div>
+            <div class="advantage-card reveal reveal-delay-2"><div class="advantage-icon"><iconify-icon icon="lucide:clock"></iconify-icon></div><h4>Proses Cepat</h4><p>Pemasangan hanya 1-2 hari kerja. Konsol siap main secepatnya.</p></div>
+            <div class="advantage-card reveal"><div class="advantage-icon"><iconify-icon icon="lucide:headphones"></iconify-icon></div><h4>Support 24/7</h4><p>Tim support siap membantu kapan saja menyelesaikan kendala Anda.</p></div>
+            <div class="advantage-card reveal reveal-delay-1"><div class="advantage-icon"><iconify-icon icon="lucide:wrench"></iconify-icon></div><h4>Servis Lengkap</h4><p>Servis konsol, ganti HDD/SSD, dan cleaning internal tersedia.</p></div>
+            <div class="advantage-card reveal reveal-delay-2"><div class="advantage-icon"><iconify-icon icon="lucide:users"></iconify-icon></div><h4>Komunitas Kuat</h4><p>Bergabung dengan ratusan member. Sharing dan event bersama.</p></div>
+        </div>
+    </div>
+</section>
+<div class="divider-line"></div>
+
+<!-- TESTIMONIALS -->
+<section class="section section-darker" id="testimonials">
+    <div class="container">
+        <div class="section-header" style="text-align:center;">
+            <div class="section-label reveal" style="justify-content:center;">Testimoni</div>
+            <h2 class="reveal reveal-delay-1">KATA MEREKA TENTANG <span class="accent">MIKAYLA</span></h2>
+        </div>
+        <div class="testi-grid">
+            <div class="testi-card reveal"><div class="testi-stars"><iconify-icon icon="lucide:star"></iconify-icon><iconify-icon icon="lucide:star"></iconify-icon><iconify-icon icon="lucide:star"></iconify-icon><iconify-icon icon="lucide:star"></iconify-icon><iconify-icon icon="lucide:star"></iconify-icon></div><div class="testi-quote">"</div><p class="testi-text">PS4 saya dijailbreak di Mikayla Games, hasilnya memuaskan! Game lengkap banget, prosesnya cepat. Recommended!</p><div class="testi-author"><img src="https://picsum.photos/seed/avatar1-male/100/100.jpg" class="testi-avatar" alt="Avatar"><div><div class="testi-name">Rizky Pratama</div><div class="testi-info">PS4 Slim · Bandung</div></div></div></div>
+            <div class="testi-card reveal reveal-delay-1"><div class="testi-stars"><iconify-icon icon="lucide:star"></iconify-icon><iconify-icon icon="lucide:star"></iconify-icon><iconify-icon icon="lucide:star"></iconify-icon><iconify-icon icon="lucide:star"></iconify-icon><iconify-icon icon="lucide:star"></iconify-icon></div><div class="testi-quote">"</div><p class="testi-text">Awalnya ragu pasang HEN di PS3, tapi setelah dikasih penjelasan sama tim Mikayla, langsung yakin. Hasilnya luar biasa!</p><div class="testi-author"><img src="https://picsum.photos/seed/avatar2-female/100/100.jpg" class="testi-avatar" alt="Avatar"><div><div class="testi-name">Sari Dewi</div><div class="testi-info">PS3 Super Slim · Cimahi</div></div></div></div>
+            <div class="testi-card reveal reveal-delay-2"><div class="testi-stars"><iconify-icon icon="lucide:star"></iconify-icon><iconify-icon icon="lucide:star"></iconify-icon><iconify-icon icon="lucide:star"></iconify-icon><iconify-icon icon="lucide:star"></iconify-icon><iconify-icon icon="lucide:star"></iconify-icon></div><div class="testi-quote">"</div><p class="testi-text">PS5 dijailbreak di sini, game next-gen semua bisa dimainkan. Support-nya top, kalau ada error selalu dibantu.</p><div class="testi-author"><img src="https://picsum.photos/seed/avatar3-guy/100/100.jpg" class="testi-avatar" alt="Avatar"><div><div class="testi-name">Andi Setiawan</div><div class="testi-info">PS5 Disc · Bandung</div></div></div></div>
+        </div>
+    </div>
+</section>
+<div class="divider-line"></div>
+
+<!-- CONTACT -->
+<section class="section contact-section" id="contact">
+    <div class="contact-bg"><img src="https://picsum.photos/seed/dark-workshop-tools/1920/1080.jpg" alt="Workshop"></div>
+    <div class="container">
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="section-label reveal">Hubungi Kami</div>
+                <h2 class="reveal reveal-delay-1">SIAP <span class="accent">GAS</span> GAME?<br>MARI KITA MULAI</h2>
+                <p class="reveal reveal-delay-2">Jangan ragu untuk menghubungi kami. Tim Mikayla Games selalu siap membantu. Gratis konsultasi!</p>
+                <div class="contact-methods">
+                    <a href="https://wa.me/6285163061987?text=Halo%20Mikayla%20Games%2C%20saya%20mau%20tanya%20tentang%20jasa%20isi%20game" target="_blank" class="contact-method reveal reveal-delay-2">
+                        <div class="contact-method-icon"><iconify-icon icon="lucide:message-circle"></iconify-icon></div>
+                        <div class="contact-method-text"><div class="label">WhatsApp</div><div class="value">0851-6306-1987</div></div>
+                    </a>
+                    <a href="#" class="contact-method reveal reveal-delay-3">
+                        <div class="contact-method-icon"><iconify-icon icon="lucide:map-pin"></iconify-icon></div>
+                        <div class="contact-method-text"><div class="label">Lokasi</div><div class="value">Bandung, Jawa Barat</div></div>
+                    </a>
+                    <a href="#" class="contact-method reveal reveal-delay-4">
+                        <div class="contact-method-icon"><iconify-icon icon="lucide:clock"></iconify-icon></div>
+                        <div class="contact-method-text"><div class="label">Jam Operasional</div><div class="value">Senin - Sabtu, 10:00 - 21:00</div></div>
+                    </a>
+                </div>
+            </div>
+            <div class="contact-form-wrap reveal reveal-delay-2">
+                <h3>KIRIM PESAN</h3>
+                <form id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group"><label for="name">Nama</label><input type="text" id="name" placeholder="Nama Anda" required></div>
+                        <div class="form-group"><label for="phone">No. HP</label><input type="tel" id="phone" placeholder="08xxxxxxxxxx" required></div>
+                    </div>
+                    <div class="form-group"><label for="console">Konsol</label><select id="console" required><option value="">Pilih Konsol Anda</option><option value="ps3">PS3 (HEN)</option><option value="ps4">PS4 (Jailbreak)</option><option value="ps5">PS5 (Jailbreak)</option><option value="other">Lainnya</option></select></div>
+                    <div class="form-group"><label for="message">Pesan</label><textarea id="message" placeholder="Ceritakan kebutuhan Anda..." rows="4"></textarea></div>
+                    <button type="submit" class="btn-primary" style="width:100%;justify-content:center;"><iconify-icon icon="lucide:send"></iconify-icon> Kirim via WhatsApp</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-copy">© 2024 <span class="accent">MIKAYLA GAMES</span>. All rights reserved.</div>
+        <div class="footer-socials">
+            <a href="#" class="footer-social" aria-label="Instagram"><iconify-icon icon="lucide:instagram"></iconify-icon></a>
+            <a href="https://wa.me/6285163061987" target="_blank" class="footer-social" aria-label="WhatsApp"><iconify-icon icon="lucide:message-circle"></iconify-icon></a>
+            <a href="#" class="footer-social" aria-label="YouTube"><iconify-icon icon="lucide:youtube"></iconify-icon></a>
+        </div>
+    </div>
+</footer>
+
+<a href="https://wa.me/6285163061987?text=Halo%20Mikayla%20Games%2C%20saya%20mau%20tanya%20tentang%20jasa%20isi%20game" target="_blank" class="wa-float" aria-label="Chat WhatsApp"><iconify-icon icon="lucide:message-circle"></iconify-icon></a>
+
+<div class="toast" id="toast"><iconify-icon icon="lucide:check-circle"></iconify-icon><span id="toastMsg">Pesan terkirim!</span></div>
+
+<script>
+// ==========================================
+// 1. PDF VIEWER LOGIC
+// ==========================================
+const pdfFiles = [
+    { name: "LIST GAME PS3 2025.pdf", label: "PS3 List 2025" },
+    { name: "PS4 LISTGAME 2026.pdf", label: "PS4 List 2026" },
+    { name: "PLAYSTATION 5 LIST 2027.pdf", label: "PS5 List 2027" }
+];
+
+let currentPdf = pdfFiles[0].name;
+const pdfFrameWrap = document.getElementById('pdfFrameWrap');
+const pdfTitle = document.getElementById('pdfTitle');
+const pdfDownloadBtn = document.getElementById('pdfDownloadBtn');
+const pdfFullscreenBtn = document.getElementById('pdfFullscreenBtn');
+
+function loadPdf(filename) {
+    currentPdf = filename;
+    pdfTitle.textContent = filename;
+    pdfDownloadBtn.href = filename;
+    
+    pdfFrameWrap.innerHTML = `
+        <iframe 
+            src="${filename}#toolbar=0&navpanes=0" 
+            title="${filename}"
+            loading="lazy"
+        ></iframe>
+    `;
+}
+
+// Load first PDF on page load
+loadPdf(pdfFiles[0].name);
+
+// PDF Tab Clicks
+document.querySelectorAll('.pdf-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+        document.querySelectorAll('.pdf-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        loadPdf(tab.getAttribute('data-pdf'));
+    });
+});
+
+// Fullscreen
+pdfFullscreenBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const iframe = pdfFrameWrap.querySelector('iframe');
+    if (iframe) {
+        if (iframe.requestFullscreen) iframe.requestFullscreen();
+        else if (iframe.webkitRequestFullscreen) iframe.webkitRequestFullscreen();
+        else if (iframe.msRequestFullscreen) iframe.msRequestFullscreen();
+    }
+});
+
+// View Toggle (PDF vs Search)
+document.querySelectorAll('.view-toggle-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('.view-toggle-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const view = btn.getAttribute('data-view');
+        document.getElementById('pdfPanel').classList.toggle('active', view === 'pdf');
+        document.getElementById('searchPanel').classList.toggle('active', view === 'search');
+    });
+});
+
+
+// ==========================================
+// 2. GAME DATABASE & SEARCH
+// ==========================================
+const gameData = [
+    // PS3
+    { title: "The Last of Us", console: "ps3" },{ title: "God of War III", console: "ps3" },{ title: "Grand Theft Auto V", console: "ps3" },
+    { title: "Uncharted 3: Drake's Deception", console: "ps3" },{ title: "Metal Gear Solid 4", console: "ps3" },{ title: "Red Dead Redemption", console: "ps3" },
+    { title: "Persona 5", console: "ps3" },{ title: "Gran Turismo 6", console: "ps3" },{ title: "FIFA 19 Legacy Edition", console: "ps3" },
+    { title: "Call of Duty: Black Ops II", console: "ps3" },{ title: "Uncharted 2: Among Thieves", console: "ps3" },{ title: "Batman: Arkham City", console: "ps3" },
+    { title: "The Elder Scrolls V: Skyrim", console: "ps3" },{ title: "Dark Souls", console: "ps3" },{ title: "Demon's Souls", console: "ps3" },
+    { title: "LittleBigPlanet 2", console: "ps3" },{ title: "Metal Gear Rising: Revengeance", console: "ps3" },{ title: "Ni no Kuni", console: "ps3" },
+    // PS4
+    { title: "God of War (2018)", console: "ps4" },{ title: "Marvel's Spider-Man", console: "ps4" },{ title: "The Witcher 3: Wild Hunt", console: "ps4" },
+    { title: "Bloodborne", console: "ps4" },{ title: "Horizon Zero Dawn", console: "ps4" },{ title: "Ghost of Tsushima", console: "ps4" },
+    { title: "The Last of Us Part II", console: "ps4" },{ title: "Uncharted 4: A Thief's End", console: "ps4" },{ title: "Red Dead Redemption 2", console: "ps4" },
+    { title: "Persona 5 Royal", console: "ps4" },{ title: "Final Fantasy VII Remake", console: "ps4" },{ title: "Resident Evil 2 Remake", console: "ps4" },
+    { title: "Grand Theft Auto V", console: "ps4" },{ title: "Elden Ring", console: "ps4" },{ title: "Cyberpunk 2077", console: "ps4" },
+    { title: "Sekiro: Shadows Die Twice", console: "ps4" },{ title: "Death Stranding", console: "ps4" },{ title: "Days Gone", console: "ps4" },
+    { title: "Detroit: Become Human", console: "ps4" },{ title: "God of War Ragnarök", console: "ps4" },
+    // PS5
+    { title: "Demon's Souls Remake", console: "ps5" },{ title: "Ratchet & Clank: Rift Apart", console: "ps5" },{ title: "Returnal", console: "ps5" },
+    { title: "Astro's Playroom", console: "ps5" },{ title: "Marvel's Spider-Man 2", console: "ps5" },{ title: "God of War Ragnarök", console: "ps5" },
+    { title: "Horizon Forbidden West", console: "ps5" },{ title: "Final Fantasy XVI", console: "ps5" },{ title: "Resident Evil 4 Remake", console: "ps5" },
+    { title: "Baldur's Gate 3", console: "ps5" },{ title: "Stellar Blade", console: "ps5" },{ title: "Rise of the Ronin", console: "ps5" },
+];
+
+const gameGrid = document.getElementById('gameGrid');
+const gameSearch = document.getElementById('gameSearch');
+const catalogTabs = document.querySelectorAll('.catalog-tab');
+let currentFilter = 'all';
+let searchQuery = '';
+
+function renderGames() {
+    let filteredGames = gameData.filter(game => {
+        const matchFilter = currentFilter === 'all' || game.console === currentFilter;
+        const matchSearch = game.title.toLowerCase().includes(searchQuery.toLowerCase());
+        return matchFilter && matchSearch;
+    });
+    if (filteredGames.length === 0) {
+        gameGrid.innerHTML = '<div class="no-games">Game tidak ditemukan. Coba kata kunci lain atau cek PDF di atas.</div>';
+        return;
+    }
+    gameGrid.innerHTML = filteredGames.map(game => {
+        const consoleName = game.console.toUpperCase();
+        const waMsg = encodeURIComponent(`Halo Mikayla Games, saya mau order isi game ${consoleName}: ${game.title}`);
+        return `<div class="game-card"><div class="game-console-tag">${consoleName}</div><div class="game-title">${game.title}</div><a href="https://wa.me/6285163061987?text=${waMsg}" target="_blank" class="game-order-btn"><iconify-icon icon="lucide:shopping-cart"></iconify-icon> Pesan Langsung</a></div>`;
+    }).join('');
+}
+
+catalogTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        catalogTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        currentFilter = tab.getAttribute('data-filter');
+        renderGames();
+    });
+});
+
+gameSearch.addEventListener('input', (e) => { searchQuery = e.target.value; renderGames(); });
+renderGames();
+
+
+// ==========================================
+// 3. GENERAL SCRIPTS
+// ==========================================
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 50); });
+
+const menuBtn = document.getElementById('menuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+const menuClose = document.getElementById('menuClose');
+menuBtn.addEventListener('click', () => { mobileMenu.classList.add('active'); });
+menuClose.addEventListener('click', () => { mobileMenu.classList.remove('active'); });
+function closeMobile() { mobileMenu.classList.remove('active'); }
+
+const revealElements = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+revealElements.forEach(el => revealObserver.observe(el));
+
+function animateCounter(el, target, suffix = '') {
+    let current = 0; const step = Math.ceil(target / 60);
+    const interval = setInterval(() => {
+        current += step; if (current >= target) { current = target; clearInterval(interval); }
+        el.textContent = current.toLocaleString('id-ID') + suffix;
+    }, 25);
+}
+const counterSection = document.getElementById('hero');
+let counterStarted = false;
+const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting && !counterStarted) {
+            counterStarted = true;
+            animateCounter(document.getElementById('counterClients'), 2500, '+');
+            animateCounter(document.getElementById('counterGames'), gameData.length, '+');
+            animateCounter(document.getElementById('counterYears'), 5, '+');
+        }
+    });
+}, { threshold: 0.3 });
+counterObserver.observe(counterSection);
+
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const name = document.getElementById('name').value; const phone = document.getElementById('phone').value;
+    const consoleType = document.getElementById('console').value; const message = document.getElementById('message').value;
+    const consoleMap = { ps3: 'PS3 (HEN)', ps4: 'PS4 (Jailbreak)', ps5: 'PS5 (Jailbreak)', other: 'Lainnya' };
+    const consoleLabel = consoleMap[consoleType] || '-';
+    const waText = `Halo Mikayla Games!%0A%0ANama: ${encodeURIComponent(name)}%0ANo. HP: ${encodeURIComponent(phone)}%0AKonsol: ${encodeURIComponent(consoleLabel)}%0APesan: ${encodeURIComponent(message)}`;
+    const waURL = `https://wa.me/6285163061987?text=${waText}`;
+    showToast('Mengarahkan ke WhatsApp...');
+    setTimeout(() => { window.open(waURL, '_blank'); }, 800);
+    this.reset();
+});
+
+function showToast(msg) {
+    const toast = document.getElementById('toast'); const toastMsg = document.getElementById('toastMsg');
+    toastMsg.textContent = msg; toast.classList.add('show');
+    setTimeout(() => { toast.classList.remove('show'); }, 3000);
+}
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+});
+</script>
+</body>
+</html>
