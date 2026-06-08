@@ -1,638 +1,823 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MIKAYLA GAMES — Jasa Isi Game PS3, PS4, PS5 Bandung</title>
+    <title>MIKAYLA GAMES — Jasa Isi Game PS3, PS4, PS5 | Bandung</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        neon: { 300:'#FFA94D', 400:'#FF8A00', 500:'#FF6B00', 600:'#E05500' },
+                        silver: { 300:'#D1D5DB', 400:'#9CA3AF', 500:'#6B7280', 600:'#4B5563' }
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        ::selection { background: #FF6B00; color: #000; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #09090b; }
+        ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #FF6B00; }
 
-        :root {
-            --black: #0a0a0a;
-            --dark: #111111;
-            --dark2: #1a1a1a;
-            --dark3: #222222;
-            --gray: #888888;
-            --silver: #c0c0c0;
-            --light: #e0e0e0;
-            --white: #f5f5f5;
-            --orange: #ff6a00;
-            --orange-light: #ff8c33;
-            --orange-dark: #cc5500;
-            --orange-glow: rgba(255, 106, 0, 0.3);
-            --green: #25D366;
+        .bg-noise {
+            position: relative;
         }
-
-        html { scroll-behavior: smooth; }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--black);
-            color: var(--light);
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
-
-        body::before {
+        .bg-noise::before {
             content: '';
-            position: fixed;
+            position: absolute;
             inset: 0;
-            z-index: 9999;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
             pointer-events: none;
-            opacity: 0.04;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            z-index: 0;
         }
 
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: var(--black); }
-        ::-webkit-scrollbar-thumb { background: var(--orange); border-radius: 3px; }
-        ::selection { background: var(--orange); color: var(--black); }
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image:
+                linear-gradient(to right, rgba(255,107,0,0.04) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255,107,0,0.04) 1px, transparent 1px);
+        }
 
-        h1, h2, h3, h4, h5 { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.05em; }
+        .glow-line {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #FF6B00, transparent);
+        }
 
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 20px var(--orange-glow); } 50% { box-shadow: 0 0 40px var(--orange-glow); } }
-        @keyframes scanline { 0% { transform: translateY(-100%); } 100% { transform: translateY(100vh); } }
-        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
-        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .card-glow {
+            transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+        }
+        .card-glow:hover {
+            box-shadow: 0 0 30px rgba(255,107,0,0.15), 0 0 60px rgba(255,107,0,0.05);
+            border-color: rgba(255,107,0,0.4) !important;
+        }
 
-        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
-        .reveal-delay-1 { transition-delay: 0.1s; }
-        .reveal-delay-2 { transition-delay: 0.2s; }
-        .reveal-delay-3 { transition-delay: 0.3s; }
+        .text-gradient {
+            background: linear-gradient(135deg, #FFA94D, #FF6B00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-        /* NAV */
-        .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 0 2rem; height: 72px; display: flex; align-items: center; justify-content: space-between; transition: all 0.4s; border-bottom: 1px solid transparent; }
-        .nav.scrolled { background: rgba(10,10,10,0.95); backdrop-filter: blur(12px); border-bottom-color: rgba(255,106,0,0.15); }
-        .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-        .nav-logo-icon { width: 40px; height: 40px; background: var(--orange); display: flex; align-items: center; justify-content: center; clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%); }
-        .nav-logo-icon span { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 18px; color: var(--black); }
-        .nav-logo-text { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 20px; color: var(--white); letter-spacing: 0.1em; }
-        .nav-logo-text .accent { color: var(--orange); }
-        .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
-        .nav-links a { text-decoration: none; color: var(--silver); font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.12em; transition: color 0.3s; position: relative; }
-        .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--orange); transition: width 0.3s; }
-        .nav-links a:hover { color: var(--orange); }
-        .nav-links a:hover::after { width: 100%; }
-        .nav-cta { background: var(--orange) !important; color: var(--black) !important; padding: 8px 20px; font-weight: 700 !important; clip-path: polygon(8% 0%, 100% 0%, 92% 100%, 0% 100%); }
-        .nav-cta::after { display: none !important; }
+        .hero-img {
+            filter: grayscale(100%) contrast(1.3) brightness(0.6);
+        }
 
-        .mobile-toggle { display: none; background: none; border: 1px solid rgba(255,106,0,0.3); color: var(--orange); width: 44px; height: 44px; cursor: pointer; font-size: 22px; align-items: center; justify-content: center; }
-        .mobile-menu { display: none; position: fixed; inset: 0; z-index: 999; background: rgba(10,10,10,0.98); backdrop-filter: blur(20px); flex-direction: column; align-items: center; justify-content: center; gap: 2rem; }
-        .mobile-menu.active { display: flex; }
-        .mobile-menu a { font-family: 'Oswald', sans-serif; font-size: 28px; color: var(--light); text-decoration: none; text-transform: uppercase; transition: color 0.3s; }
-        .mobile-menu a:hover { color: var(--orange); }
-        .mobile-close { position: absolute; top: 20px; right: 20px; background: none; border: none; color: var(--orange); font-size: 32px; cursor: pointer; }
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-        /* HERO */
-        .hero { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-        .hero-bg { position: absolute; inset: 0; z-index: 0; }
-        .hero-bg img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) contrast(1.4) brightness(0.3); }
-        .hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,10,10,0.6) 0%, rgba(10,10,10,0.85) 50%, var(--black) 100%); }
-        .hero-scanline { position: absolute; inset: 0; z-index: 1; pointer-events: none; overflow: hidden; }
-        .hero-scanline::before { content: ''; position: absolute; left: 0; right: 0; height: 2px; background: rgba(255,106,0,0.08); animation: scanline 4s linear infinite; }
-        .hero-grid { position: absolute; inset: 0; z-index: 1; background-image: linear-gradient(rgba(255,106,0,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,106,0,0.03) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; }
-        .hero-content { position: relative; z-index: 2; text-align: center; padding: 2rem; max-width: 900px; }
-        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,106,0,0.1); border: 1px solid rgba(255,106,0,0.3); padding: 6px 18px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--orange); font-weight: 600; margin-bottom: 2rem; animation: fadeIn 1s ease-out 0.3s both; }
-        .hero-badge .dot { width: 6px; height: 6px; background: var(--orange); border-radius: 50%; animation: pulse-glow 2s infinite; }
-        .hero-title { font-size: clamp(42px, 8vw, 96px); font-weight: 700; line-height: 0.95; color: var(--white); margin-bottom: 1.5rem; animation: fadeInUp 1s ease-out 0.5s both; }
-        .hero-title .line { display: block; }
-        .hero-title .accent { color: var(--orange); position: relative; }
-        .hero-title .accent::after { content: ''; position: absolute; bottom: 5px; left: 0; width: 100%; height: 4px; background: var(--orange); opacity: 0.4; }
-        .hero-sub { font-size: clamp(14px, 2vw, 18px); color: var(--gray); max-width: 650px; margin: 0 auto 2.5rem; font-weight: 300; line-height: 1.7; animation: fadeInUp 1s ease-out 0.7s both; }
-        .hero-sub strong { color: var(--orange); font-weight: 600; }
-        .hero-actions { display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap; animation: fadeInUp 1s ease-out 0.9s both; }
-        .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--orange); color: var(--black); font-family: 'Oswald', sans-serif; font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; padding: 14px 36px; text-decoration: none; clip-path: polygon(6% 0%, 100% 0%, 94% 100%, 0% 100%); transition: all 0.3s; border: none; cursor: pointer; }
-        .btn-primary:hover { background: var(--orange-light); transform: translateY(-2px); box-shadow: 0 8px 30px var(--orange-glow); }
-        .btn-secondary { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: var(--light); font-family: 'Oswald', sans-serif; font-size: 15px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; padding: 14px 36px; text-decoration: none; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s; cursor: pointer; }
-        .btn-secondary:hover { border-color: var(--orange); color: var(--orange); }
-        .hero-stats { display: flex; align-items: center; justify-content: center; gap: 3rem; margin-top: 3.5rem; animation: fadeInUp 1s ease-out 1.1s both; }
-        .hero-stat { text-align: center; }
-        .hero-stat-num { font-family: 'Oswald', sans-serif; font-size: 36px; font-weight: 700; color: var(--orange); line-height: 1; }
-        .hero-stat-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--gray); margin-top: 4px; }
-        .hero-scroll { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 6px; color: var(--gray); font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; animation: float 2s ease-in-out infinite; }
+        .pulse-dot {
+            animation: pulseDot 2s ease-in-out infinite;
+        }
+        @keyframes pulseDot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.5); }
+        }
 
-        /* SECTION COMMONS */
-        .section { padding: 6rem 2rem; position: relative; }
-        .section-dark { background: var(--dark); }
-        .section-darker { background: var(--black); }
-        .container { max-width: 1200px; margin: 0 auto; }
-        .section-header { margin-bottom: 4rem; }
-        .section-label { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--orange); font-weight: 600; margin-bottom: 1rem; }
-        .section-label::before { content: ''; width: 30px; height: 1px; background: var(--orange); }
-        .section-title { font-size: clamp(32px, 5vw, 56px); font-weight: 700; color: var(--white); line-height: 1.05; }
-        .section-title .accent { color: var(--orange); }
-        .section-desc { font-size: 16px; color: var(--gray); max-width: 560px; margin-top: 1rem; line-height: 1.7; }
-        .divider-line { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,106,0,0.3), transparent); }
+        .float-anim {
+            animation: floatY 6s ease-in-out infinite;
+        }
+        @keyframes floatY {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
 
-        /* ABOUT */
-        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-        .about-image { position: relative; overflow: hidden; }
-        .about-image img { width: 100%; aspect-ratio: 4/5; object-fit: cover; filter: grayscale(100%) contrast(1.3) brightness(0.7); transition: all 0.7s ease; }
-        .about-image:hover img { filter: grayscale(30%) contrast(1.1) brightness(0.8); transform: scale(1.05); }
-        .about-image-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem; background: linear-gradient(to top, rgba(10,10,10,0.95), transparent); }
-        .about-image-overlay span { font-family: 'Oswald', sans-serif; font-size: 48px; font-weight: 700; color: var(--orange); opacity: 0.2; }
-        .about-text h2 { font-size: clamp(28px, 4vw, 44px); color: var(--white); margin-bottom: 1.5rem; line-height: 1.1; }
-        .about-text h2 .accent { color: var(--orange); }
-        .about-text p { color: var(--gray); font-size: 15px; line-height: 1.8; margin-bottom: 1.5rem; }
-        .about-features { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
-        .about-feature { display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: var(--dark2); border: 1px solid rgba(255,106,0,0.1); transition: all 0.3s; }
-        .about-feature:hover { border-color: rgba(255,106,0,0.4); background: rgba(255,106,0,0.05); }
-        .about-feature iconify-icon { color: var(--orange); font-size: 18px; }
-        .about-feature span { font-size: 13px; font-weight: 500; color: var(--light); }
+        .marquee-track {
+            display: flex;
+            animation: marquee 30s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
 
-        /* SERVICES */
-        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-        .service-card { position: relative; background: var(--dark2); border: 1px solid rgba(255,255,255,0.05); overflow: hidden; transition: all 0.5s; cursor: default; }
-        .service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--orange); transform: scaleX(0); transform-origin: left; transition: transform 0.5s; }
-        .service-card:hover::before { transform: scaleX(1); }
-        .service-card:hover { border-color: rgba(255,106,0,0.3); transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 30px var(--orange-glow); }
-        .service-card-img { position: relative; overflow: hidden; height: 200px; }
-        .service-card-img img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) contrast(1.3) brightness(0.5); transition: all 0.7s; }
-        .service-card:hover .service-card-img img { filter: grayscale(40%) contrast(1.1) brightness(0.6); transform: scale(1.1); }
-        .service-card-img .console-badge { position: absolute; top: 12px; right: 12px; background: var(--orange); color: var(--black); font-family: 'Oswald', sans-serif; font-size: 12px; font-weight: 700; padding: 4px 12px; letter-spacing: 0.1em; }
-        .service-card-body { padding: 2rem; }
-        .service-card-body h3 { font-size: 22px; font-weight: 700; color: var(--white); margin-bottom: 0.75rem; }
-        .service-card-body p { font-size: 14px; color: var(--gray); line-height: 1.7; margin-bottom: 1.5rem; }
-        .service-features { list-style: none; margin-bottom: 1.5rem; }
-        .service-features li { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--silver); padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
-        .service-features li iconify-icon { color: var(--orange); font-size: 14px; flex-shrink: 0; }
-        .service-price { display: flex; align-items: baseline; gap: 4px; }
-        .service-price .from { font-size: 11px; color: var(--gray); text-transform: uppercase; letter-spacing: 0.1em; }
-        .service-price .amount { font-family: 'Oswald', sans-serif; font-size: 28px; font-weight: 700; color: var(--orange); }
-        .service-price .unit { font-size: 13px; color: var(--gray); }
-        .service-call-badge { display: inline-flex; align-items: center; gap: 6px; margin-top: 1rem; padding: 6px 12px; background: rgba(37,211,102,0.1); border: 1px solid rgba(37,211,102,0.2); font-size: 11px; font-weight: 600; color: var(--green); text-transform: uppercase; letter-spacing: 0.1em; }
-        .service-call-badge iconify-icon { font-size: 14px; }
+        .counter { font-variant-numeric: tabular-nums; }
 
-        /* CALL SERVICE BANNER */
-        .call-banner { background: linear-gradient(135deg, var(--dark2) 0%, rgba(255,106,0,0.05) 100%); border: 1px solid rgba(255,106,0,0.2); padding: 3rem; display: flex; align-items: center; gap: 2.5rem; position: relative; overflow: hidden; }
-        .call-banner::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--orange); }
-        .call-banner-icon { width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; background: rgba(255,106,0,0.1); border: 1px solid rgba(255,106,0,0.2); flex-shrink: 0; }
-        .call-banner-icon iconify-icon { font-size: 36px; color: var(--orange); }
-        .call-banner-text { flex: 1; }
-        .call-banner-text h3 { font-size: 24px; font-weight: 700; color: var(--white); margin-bottom: 0.5rem; }
-        .call-banner-text p { font-size: 15px; color: var(--silver); line-height: 1.7; margin-bottom: 0; }
-        .call-banner-text p strong { color: var(--orange); font-weight: 600; }
-        .call-banner-cta { flex-shrink: 0; }
-
-        /* PDF & GAME CATALOG */
-        .view-toggle { display: flex; gap: 0; margin-bottom: 2rem; border: 1px solid rgba(255,106,0,0.2); width: fit-content; }
-        .view-toggle-btn { font-family: 'Oswald', sans-serif; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; padding: 10px 20px; background: transparent; color: var(--gray); border: none; cursor: pointer; transition: all 0.3s; display: flex; align-items: center; gap: 8px; }
-        .view-toggle-btn.active { background: var(--orange); color: var(--black); }
-        .catalog-view-panel { display: none; }
-        .catalog-view-panel.active { display: block; }
-
-        .pdf-tabs { display: flex; gap: 0; margin-bottom: 0; border-bottom: 2px solid rgba(255,106,0,0.2); }
-        .pdf-tab { font-family: 'Oswald', sans-serif; font-size: 15px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; padding: 16px 32px; background: var(--dark2); color: var(--gray); border: 1px solid rgba(255,255,255,0.05); border-bottom: none; cursor: pointer; transition: all 0.3s; display: flex; align-items: center; gap: 10px; }
-        .pdf-tab:hover { color: var(--light); }
-        .pdf-tab.active { background: var(--orange); color: var(--black); border-color: var(--orange); }
-        .pdf-viewer-container { background: var(--dark2); border: 1px solid rgba(255,255,255,0.06); border-top: 3px solid var(--orange); }
-        .pdf-viewer-header { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 2rem; background: rgba(255,106,0,0.05); border-bottom: 1px solid rgba(255,255,255,0.04); flex-wrap: wrap; gap: 1rem; }
-        .pdf-viewer-info { display: flex; align-items: center; gap: 12px; }
-        .pdf-viewer-info iconify-icon { color: var(--orange); font-size: 24px; }
-        .pdf-viewer-info h4 { font-size: 16px; color: var(--white); font-weight: 600; }
-        .pdf-viewer-info span { font-size: 12px; color: var(--gray); display: block; }
-        .pdf-viewer-actions { display: flex; gap: 0.75rem; }
-        .pdf-btn { display: inline-flex; align-items: center; gap: 6px; font-family: 'Oswald', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; padding: 8px 18px; border: 1px solid rgba(255,255,255,0.1); background: var(--dark3); color: var(--silver); cursor: pointer; transition: all 0.3s; text-decoration: none; }
-        .pdf-btn:hover { border-color: var(--orange); color: var(--orange); }
-        .pdf-btn.primary-sm { background: var(--orange); color: var(--black); border-color: var(--orange); }
-        .pdf-frame-wrap { width: 100%; height: 75vh; min-height: 500px; background: #1a1a1a; }
-        .pdf-frame-wrap iframe { width: 100%; height: 100%; border: none; }
-
-        .catalog-controls { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2.5rem; align-items: center; }
-        .catalog-tabs { display: flex; gap: 0.5rem; }
-        .catalog-tab { font-family: 'Oswald', sans-serif; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; padding: 10px 24px; background: var(--dark2); color: var(--gray); border: 1px solid rgba(255,255,255,0.05); cursor: pointer; transition: all 0.3s; }
-        .catalog-tab:hover { color: var(--light); border-color: rgba(255,106,0,0.3); }
-        .catalog-tab.active { background: var(--orange); color: var(--black); border-color: var(--orange); }
-        .catalog-search { flex: 1; min-width: 200px; position: relative; }
-        .catalog-search input { width: 100%; padding: 12px 16px 12px 44px; background: var(--dark2); border: 1px solid rgba(255,255,255,0.08); color: var(--white); font-family: 'Inter', sans-serif; font-size: 14px; outline: none; transition: border-color 0.3s; }
-        .catalog-search input:focus { border-color: var(--orange); }
-        .catalog-search iconify-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--gray); font-size: 18px; pointer-events: none; }
-        .game-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.25rem; }
-        .game-card { background: var(--dark2); border: 1px solid rgba(255,255,255,0.04); padding: 1.25rem; display: flex; flex-direction: column; transition: all 0.3s; position: relative; overflow: hidden; }
-        .game-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 0; background: var(--orange); transition: height 0.3s; }
-        .game-card:hover { border-color: rgba(255,106,0,0.2); transform: translateY(-4px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
-        .game-card:hover::before { height: 100%; }
-        .game-console-tag { font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--orange); font-weight: 700; margin-bottom: 0.5rem; display: inline-block; background: rgba(255,106,0,0.1); padding: 2px 8px; align-self: flex-start; }
-        .game-title { font-family: 'Oswald', sans-serif; font-size: 16px; font-weight: 500; color: var(--white); line-height: 1.3; margin-bottom: 1rem; flex-grow: 1; }
-        .game-order-btn { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--silver); text-decoration: none; font-weight: 600; transition: color 0.3s; }
-        .game-order-btn:hover { color: var(--orange); }
-        .no-games { grid-column: 1 / -1; text-align: center; padding: 3rem; color: var(--gray); font-style: italic; }
-
-        /* ADVANTAGES */
-        .advantages-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-        .advantage-card { text-align: center; padding: 2.5rem 2rem; background: var(--dark2); border: 1px solid rgba(255,255,255,0.04); transition: all 0.4s; position: relative; overflow: hidden; }
-        .advantage-card::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 40px; height: 2px; background: var(--orange); transition: width 0.4s; }
-        .advantage-card:hover { border-color: rgba(255,106,0,0.2); transform: translateY(-4px); }
-        .advantage-card:hover::after { width: 80px; }
-        .advantage-icon { width: 64px; height: 64px; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; background: rgba(255,106,0,0.08); border: 1px solid rgba(255,106,0,0.15); transition: all 0.3s; }
-        .advantage-card:hover .advantage-icon { background: rgba(255,106,0,0.15); border-color: rgba(255,106,0,0.4); }
-        .advantage-icon iconify-icon { font-size: 28px; color: var(--orange); }
-        .advantage-card h4 { font-size: 18px; font-weight: 600; color: var(--white); margin-bottom: 0.75rem; }
-        .advantage-card p { font-size: 14px; color: var(--gray); line-height: 1.7; }
-
-        /* TESTIMONIALS */
-        .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-        .testi-card { background: var(--dark2); border: 1px solid rgba(255,255,255,0.04); padding: 2rem; transition: all 0.3s; }
-        .testi-card:hover { border-color: rgba(255,106,0,0.2); }
-        .testi-quote { font-size: 48px; font-family: 'Oswald', sans-serif; color: var(--orange); opacity: 0.2; line-height: 1; margin-bottom: -10px; }
-        .testi-text { font-size: 14px; color: var(--silver); line-height: 1.8; font-style: italic; margin-bottom: 1.5rem; }
-        .testi-author { display: flex; align-items: center; gap: 12px; }
-        .testi-avatar { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; filter: grayscale(100%); border: 2px solid rgba(255,106,0,0.3); }
-        .testi-name { font-family: 'Oswald', sans-serif; font-size: 15px; font-weight: 600; color: var(--white); }
-        .testi-info { font-size: 12px; color: var(--gray); }
-        .testi-stars { display: flex; gap: 2px; margin-bottom: 1rem; }
-        .testi-stars iconify-icon { color: var(--orange); font-size: 14px; }
-
-        /* CONTACT */
-        .contact-section { position: relative; overflow: hidden; }
-        .contact-bg { position: absolute; inset: 0; }
-        .contact-bg img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) contrast(1.4) brightness(0.15); }
-        .contact-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(10,10,10,0.95), rgba(255,106,0,0.08)); }
-        .contact-content { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-        .contact-info h2 { font-size: clamp(28px, 4vw, 48px); color: var(--white); margin-bottom: 1rem; line-height: 1.1; }
-        .contact-info h2 .accent { color: var(--orange); }
-        .contact-info > p { color: var(--gray); font-size: 15px; line-height: 1.8; margin-bottom: 2rem; }
-        .contact-methods { display: flex; flex-direction: column; gap: 1.25rem; }
-        .contact-method { display: flex; align-items: center; gap: 16px; padding: 16px 20px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); transition: all 0.3s; text-decoration: none; color: inherit; }
-        .contact-method:hover { border-color: rgba(255,106,0,0.4); background: rgba(255,106,0,0.05); }
-        .contact-method-icon { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; background: rgba(255,106,0,0.1); border: 1px solid rgba(255,106,0,0.2); flex-shrink: 0; }
-        .contact-method-icon iconify-icon { font-size: 20px; color: var(--orange); }
-        .contact-method-text .label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--gray); }
-        .contact-method-text .value { font-size: 15px; color: var(--white); font-weight: 500; margin-top: 2px; }
-        .contact-form-wrap { background: var(--dark2); border: 1px solid rgba(255,255,255,0.06); padding: 2.5rem; }
-        .contact-form-wrap h3 { font-size: 20px; color: var(--white); margin-bottom: 1.5rem; }
-        .form-group { margin-bottom: 1.25rem; }
-        .form-group label { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--gray); margin-bottom: 6px; }
-        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px 16px; background: var(--dark); border: 1px solid rgba(255,255,255,0.08); color: var(--white); font-family: 'Inter', sans-serif; font-size: 14px; outline: none; transition: border-color 0.3s; }
-        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--orange); }
-        .form-group textarea { resize: vertical; min-height: 80px; }
-        .form-group select option { background: var(--dark); }
-        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-        .form-hidden { display: none; }
-        .form-hidden.visible { display: block; }
-        .form-note { font-size: 12px; color: var(--orange); margin-top: 4px; font-style: italic; }
-
-        /* FOOTER */
-        .footer { background: var(--dark); border-top: 1px solid rgba(255,255,255,0.04); padding: 3rem 2rem; }
-        .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
-        .footer-copy { font-size: 13px; color: var(--gray); }
-        .footer-copy .accent { color: var(--orange); }
-        .footer-socials { display: flex; gap: 12px; }
-        .footer-social { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.1); color: var(--gray); transition: all 0.3s; text-decoration: none; }
-        .footer-social:hover { border-color: var(--orange); color: var(--orange); }
-
-        /* FLOATING BUTTONS */
-        .wa-float { position: fixed; bottom: 24px; right: 24px; z-index: 900; width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; background: #25D366; border-radius: 50%; color: #fff; font-size: 28px; text-decoration: none; box-shadow: 0 4px 20px rgba(37,211,102,0.4); transition: all 0.3s; }
-        .wa-float:hover { transform: scale(1.1); }
-        
-        /* AUDIO PLAYER FLOAT */
-        .audio-float { position: fixed; bottom: 24px; left: 24px; z-index: 900; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; background: var(--dark2); border: 1px solid rgba(255,106,0,0.3); border-radius: 50%; color: var(--orange); font-size: 22px; cursor: pointer; transition: all 0.3s; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
-        .audio-float:hover { background: var(--orange); color: var(--black); border-color: var(--orange); }
-        .audio-float.playing { background: var(--orange); color: var(--black); animation: pulse-glow 2s infinite; }
-        .audio-float.playing:hover { background: var(--orange-light); }
-
-        .toast { position: fixed; top: 90px; right: 24px; z-index: 10000; background: var(--dark2); border: 1px solid rgba(255,106,0,0.4); padding: 16px 24px; font-size: 14px; color: var(--light); display: flex; align-items: center; gap: 10px; transform: translateX(120%); transition: transform 0.4s cubic-bezier(0.16,1,0.3,1); }
-        .toast.show { transform: translateX(0); }
-        .toast iconify-icon { color: var(--orange); font-size: 20px; }
-
-        @media (max-width: 1024px) { .services-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; } .advantages-grid { grid-template-columns: repeat(2, 1fr); } .testi-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; } .contact-content { grid-template-columns: 1fr; } }
-        @media (max-width: 768px) { .nav-links { display: none; } .mobile-toggle { display: flex; } .about-grid { grid-template-columns: 1fr; gap: 2rem; } .about-features { grid-template-columns: 1fr; } .hero-stats { gap: 1.5rem; } .hero-stat-num { font-size: 28px; } .advantages-grid { grid-template-columns: 1fr; } .contact-form-wrap { padding: 1.5rem; } .form-row { grid-template-columns: 1fr; } .section { padding: 4rem 1.25rem; } .game-grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); } .pdf-tabs { flex-wrap: wrap; } .pdf-tab { padding: 12px 20px; font-size: 13px; flex: 1; justify-content: center; } .pdf-frame-wrap { height: 60vh; min-height: 350px; } .call-banner { flex-direction: column; text-align: center; } .call-banner-cta { width: 100%; } .call-banner-cta .btn-primary { width: 100%; justify-content: center; } }
-        @media (max-width: 480px) { .hero-stats { flex-direction: column; gap: 1rem; } .footer-inner { flex-direction: column; text-align: center; } }
+        .badge-home {
+            background: rgba(255, 107, 0, 0.15);
+            border: 1px solid rgba(255, 107, 0, 0.3);
+            color: #FFA94D;
+        }
     </style>
 </head>
-<body>
 
-<!-- BACKGROUND AUDIO -->
-<audio id="bgMusic" loop preload="auto">
-    <!-- GANTI SRC DI BAWAH DENGAN FILE AUDIO ANDA (misal: music.mp3) -->
-    <source src="background-music.mp3" type="audio/mpeg">
-</audio>
+<body class="bg-[#09090b] text-white font-sans antialiased overflow-x-hidden">
 
-<nav class="nav" id="navbar">
-    <a href="#" class="nav-logo"><div class="nav-logo-icon"><span>M</span></div><div class="nav-logo-text">MIKAYLA<span class="accent">GAMES</span></div></a>
-    <ul class="nav-links">
-        <li><a href="#about">Tentang</a></li><li><a href="#services">Layanan</a></li><li><a href="#game-list">Daftar Game</a></li><li><a href="#contact" class="nav-cta">Hubungi Kami</a></li>
-    </ul>
-    <button class="mobile-toggle" id="menuBtn" aria-label="Menu"><iconify-icon icon="lucide:menu"></iconify-icon></button>
-</nav>
-<div class="mobile-menu" id="mobileMenu">
-    <button class="mobile-close" id="menuClose"><iconify-icon icon="lucide:x"></iconify-icon></button>
-    <a href="#about" onclick="closeMobile()">Tentang</a><a href="#services" onclick="closeMobile()">Layanan</a><a href="#game-list" onclick="closeMobile()">Daftar Game</a><a href="#contact" onclick="closeMobile()">Kontak</a>
-</div>
-
-<!-- HERO -->
-<section class="hero" id="hero">
-    <div class="hero-bg"><img src="https://picsum.photos/seed/ps-console-dark/1920/1080.jpg" alt="Gaming Setup"></div>
-    <div class="hero-scanline"></div>
-    <div class="hero-grid"></div>
-    <div class="hero-content">
-        <div class="hero-badge"><span class="dot"></span> Bandung's Trusted Game Installer</div>
-        <h1 class="hero-title"><span class="line">JASA ISI GAME</span><span class="line"><span class="accent">KONSOL</span> ANDA</span></h1>
-        <p class="hero-sub">Jasa isi game PS3 HEN, PS4 Jailbreak, dan PS5 Jailbreak terpercaya di Bandung. Bisa <strong>panggilan ke rumah</strong> atau antar konsol, ongkir disesuaikan—santai aja!</p>
-        <div class="hero-actions">
-            <a href="https://wa.me/6285163061987?text=Halo%20Mikayla%20Games%2C%20saya%20mau%20tanya%20tentang%20jasa%20isi%20game%20panggilan" class="btn-primary" target="_blank"><iconify-icon icon="lucide:message-circle"></iconify-icon> WhatsApp Sekarang</a>
-            <a href="#game-list" class="btn-secondary"><iconify-icon icon="lucide:file-text"></iconify-icon> Lihat Daftar Game</a>
-        </div>
-        <div class="hero-stats">
-            <div class="hero-stat"><div class="hero-stat-num" id="counterClients">0</div><div class="hero-stat-label">Pelanggan Puas</div></div>
-            <div class="hero-stat"><div class="hero-stat-num" id="counterGames">0</div><div class="hero-stat-label">Game Tersedia</div></div>
-            <div class="hero-stat"><div class="hero-stat-num" id="counterYears">0</div><div class="hero-stat-label">Tahun Pengalaman</div></div>
-        </div>
-    </div>
-    <div class="hero-scroll"><iconify-icon icon="lucide:chevron-down"></iconify-icon> Scroll</div>
-</section>
-
-<!-- ABOUT -->
-<section class="section section-darker" id="about">
-    <div class="container">
-        <div class="about-grid">
-            <div class="about-image reveal"><img src="https://picsum.photos/seed/gamer-setup-bw/600/750.jpg" alt="Mikayla Games Studio"><div class="about-image-overlay"><span>EST. 2019</span></div></div>
-            <div class="about-text">
-                <div class="section-label reveal">Tentang Kami</div>
-                <h2 class="reveal reveal-delay-1">BUKAN SEKEDAR ISI GAME,<br>INI TENTANG <span class="accent">KOMUNITAS</span></h2>
-                <p class="reveal reveal-delay-2">Mikayla Games lahir dari passion para gamer di Bandung. Kami memahami bahwa setiap konsol adalah investasi, dan setiap game adalah pengalaman yang berharga.</p>
-                <p class="reveal reveal-delay-2">Dari PS3 HEN hingga PS5 Jailbreak, kami memastikan setiap proses dilakukan dengan standar keamanan tertinggi. Garansi penuh setiap pemasangan.</p>
-                <div class="about-features reveal reveal-delay-3">
-                    <div class="about-feature"><iconify-icon icon="lucide:shield-check"></iconify-icon><span>Garansi Penuh</span></div>
-                    <div class="about-feature"><iconify-icon icon="lucide:zap"></iconify-icon><span>Proses Cepat</span></div>
-                    <div class="about-feature"><iconify-icon icon="lucide:truck"></iconify-icon><span>Bisa Panggilan</span></div>
-                    <div class="about-feature"><iconify-icon icon="lucide:handshake"></iconify-icon><span>Ongkir Santai</span></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<div class="divider-line"></div>
-
-<!-- SERVICES -->
-<section class="section section-dark" id="services">
-    <div class="container">
-        <div class="section-header" style="text-align:center;">
-            <div class="section-label reveal" style="justify-content:center;">Layanan Kami</div>
-            <h2 class="reveal reveal-delay-1">PILIH <span class="accent">KONSOL</span> ANDA</h2>
-        </div>
-        <div class="services-grid">
-            <div class="service-card reveal">
-                <div class="service-card-img"><img src="https://picsum.photos/seed/ps3-console-retro/600/400.jpg" alt="PS3 HEN"><div class="console-badge">PS3</div></div>
-                <div class="service-card-body">
-                    <h3>PS3 HEN</h3><p>Pasang HEN dan akses ribuan game PS3 langsung dari HDD.</p>
-                    <ul class="service-features"><li><iconify-icon icon="lucide:check"></iconify-icon> HEN 3.0+ Terbaru</li><li><iconify-icon icon="lucide:check"></iconify-icon> 500+ Game PS3</li><li><iconify-icon icon="lucide:check"></iconify-icon> Multiman & Webman</li></ul>
-                    <div class="service-price"><span class="from">Mulai</span><span class="amount">75K</span><span class="unit">/ pasang</span></div>
-                    <div class="service-call-badge"><iconify-icon icon="lucide:truck"></iconify-icon> Bisa Panggilan</div>
-                </div>
-            </div>
-            <div class="service-card reveal reveal-delay-1">
-                <div class="service-card-img"><img src="https://picsum.photos/seed/ps4-jailbreak-gaming/600/400.jpg" alt="PS4 Jailbreak"><div class="console-badge">PS4</div></div>
-                <div class="service-card-body">
-                    <h3>PS4 JAILBREAK</h3><p>Jailbreak PS4 firmware kompatibel, akses library game PS4 lengkap.</p>
-                    <ul class="service-features"><li><iconify-icon icon="lucide:check"></iconify-icon> FW 9.00 / 10.01 / 11.00</li><li><iconify-icon icon="lucide:check"></iconify-icon> 1000+ Game PS4</li><li><iconify-icon icon="lucide:check"></iconify-icon> GoldHEN & PKG</li></ul>
-                    <div class="service-price"><span class="from">Mulai</span><span class="amount">100K</span><span class="unit">/ pasang</span></div>
-                    <div class="service-call-badge"><iconify-icon icon="lucide:truck"></iconify-icon> Bisa Panggilan</div>
-                </div>
-            </div>
-            <div class="service-card reveal reveal-delay-2">
-                <div class="service-card-img"><img src="https://picsum.photos/seed/ps5-nextgen-dark/600/400.jpg" alt="PS5 Jailbreak"><div class="console-badge">PS5</div></div>
-                <div class="service-card-body">
-                    <h3>PS5 JAILBREAK</h3><p>Akses jailbreak PS5, mainkan game next-gen tanpa batas.</p>
-                    <ul class="service-features"><li><iconify-icon icon="lucide:check"></iconify-icon> FW 4.03 / 4.50 / 4.51</li><li><iconify-icon icon="lucide:check"></iconify-icon> 300+ Game PS5</li><li><iconify-icon icon="lucide:check"></iconify-icon> BDJB / ELF Loader</li></ul>
-                    <div class="service-price"><span class="from">Mulai</span><span class="amount">150K</span><span class="unit">/ pasang</span></div>
-                    <div class="service-call-badge"><iconify-icon icon="lucide:truck"></iconify-icon> Bisa Panggilan</div>
-                </div>
-            </div>
-        </div>
-        <div class="call-banner reveal reveal-delay-3" style="margin-top: 3rem;">
-            <div class="call-banner-icon"><iconify-icon icon="lucide:truck"></iconify-icon></div>
-            <div class="call-banner-text"><h3>LAYANAN PANGGILAN & JEMPUT KONSOL</h3><p>Tidak sempat datang? Kami bisa panggilan ke rumah atau jemput konsol Anda. <strong>Ongkir fleksibel dan disesuaikan jarak—santai aja!</strong></p></div>
-            <div class="call-banner-cta"><a href="#contact" class="btn-primary">Pesan Panggilan</a></div>
-        </div>
-    </div>
-</section>
-<div class="divider-line"></div>
-
-<!-- GAME LIST WITH PDF VIEWER -->
-<section class="section section-darker" id="game-list">
-    <div class="container">
-        <div class="section-header" style="text-align:center;">
-            <div class="section-label reveal" style="justify-content:center;">Katalog Game</div>
-            <h2 class="reveal reveal-delay-1">DAFTAR GAME <span class="accent">TERSEDIA</span></h2>
-        </div>
-        <div class="view-toggle reveal">
-            <button class="view-toggle-btn active" data-view="pdf"><iconify-icon icon="lucide:file-text"></iconify-icon> Lihat PDF</button>
-            <button class="view-toggle-btn" data-view="search"><iconify-icon icon="lucide:search"></iconify-icon> Cari Game</button>
-        </div>
-        <div class="catalog-view-panel active reveal" id="pdfPanel">
-            <div class="pdf-tabs">
-                <button class="pdf-tab active" data-pdf="LIST GAME PS3 2025.pdf"><iconify-icon icon="lucide:disc"></iconify-icon> PS3 List 2025</button>
-                <button class="pdf-tab" data-pdf="PS4 LISTGAME 2026.pdf"><iconify-icon icon="lucide:disc"></iconify-icon> PS4 List 2026</button>
-                <button class="pdf-tab" data-pdf="PLAYSTATION 5 LIST 2027.pdf"><iconify-icon icon="lucide:disc"></iconify-icon> PS5 List 2027</button>
-            </div>
-            <div class="pdf-viewer-container">
-                <div class="pdf-viewer-header">
-                    <div class="pdf-viewer-info"><iconify-icon icon="lucide:file-text"></iconify-icon><div><h4 id="pdfTitle">LIST GAME PS3 2025.pdf</h4><span>Scroll atau zoom untuk membaca daftar lengkap</span></div></div>
-                    <div class="pdf-viewer-actions"><a href="#" class="pdf-btn" id="pdfDownloadBtn" download><iconify-icon icon="lucide:download"></iconify-icon> Download</a><a href="#" class="pdf-btn primary-sm" id="pdfFullscreenBtn"><iconify-icon icon="lucide:maximize"></iconify-icon> Fullscreen</a></div>
-                </div>
-                <div class="pdf-frame-wrap" id="pdfFrameWrap"></div>
-            </div>
-        </div>
-        <div class="catalog-view-panel" id="searchPanel">
-            <div class="catalog-controls">
-                <div class="catalog-tabs"><button class="catalog-tab active" data-filter="all">Semua</button><button class="catalog-tab" data-filter="ps3">PS3</button><button class="catalog-tab" data-filter="ps4">PS4</button><button class="catalog-tab" data-filter="ps5">PS5</button></div>
-                <div class="catalog-search"><iconify-icon icon="lucide:search"></iconify-icon><input type="text" id="gameSearch" placeholder="Cari judul game..."></div>
-            </div>
-            <div class="game-grid" id="gameGrid"></div>
-        </div>
-    </div>
-</section>
-<div class="divider-line"></div>
-
-<!-- ADVANTAGES -->
-<section class="section section-dark" id="advantages">
-    <div class="container">
-        <div class="section-header" style="text-align:center;">
-            <div class="section-label reveal" style="justify-content:center;">Kenapa Kami</div>
-            <h2 class="reveal reveal-delay-1">KEUNGGULAN <span class="accent">MIKAYLA</span> GAMES</h2>
-        </div>
-        <div class="advantages-grid">
-            <div class="advantage-card reveal"><div class="advantage-icon"><iconify-icon icon="lucide:shield-check"></iconify-icon></div><h4>Aman & Terpercaya</h4><p>Proses jailbreak dengan metode teruji. Garansi 100% jika ada kendala.</p></div>
-            <div class="advantage-card reveal reveal-delay-1"><div class="advantage-icon"><iconify-icon icon="lucide:database"></iconify-icon></div><h4>Game Terlengkap</h4><p>Koleksi game terbesar di Bandung. Update rutin setiap minggu.</p></div>
-            <div class="advantage-card reveal reveal-delay-2"><div class="advantage-icon"><iconify-icon icon="lucide:truck"></iconify-icon></div><h4>Panggilan & Antar</h4><p>Tidak sempat datang? Kami jemput dan antar konsol Anda. Ongkir santai!</p></div>
-            <div class="advantage-card reveal"><div class="advantage-icon"><iconify-icon icon="lucide:headphones"></iconify-icon></div><h4>Support 24/7</h4><p>Tim support siap membantu kapan saja menyelesaikan kendala Anda.</p></div>
-            <div class="advantage-card reveal reveal-delay-1"><div class="advantage-icon"><iconify-icon icon="lucide:handshake"></iconify-icon></div><h4>Ongkir Fleksibel</h4><p>Biaya kirim disesuaikan jarak. Tidak mengeksploitasi, pasti santai.</p></div>
-            <div class="advantage-card reveal reveal-delay-2"><div class="advantage-icon"><iconify-icon icon="lucide:users"></iconify-icon></div><h4>Komunitas Kuat</h4><p>Bergabung dengan ratusan member. Sharing dan event bersama.</p></div>
-        </div>
-    </div>
-</section>
-<div class="divider-line"></div>
-
-<!-- TESTIMONIALS -->
-<section class="section section-darker" id="testimonials">
-    <div class="container">
-        <div class="section-header" style="text-align:center;">
-            <div class="section-label reveal" style="justify-content:center;">Testimoni</div>
-            <h2 class="reveal reveal-delay-1">KATA MEREKA TENTANG <span class="accent">MIKAYLA</span></h2>
-        </div>
-        <div class="testi-grid">
-            <div class="testi-card reveal"><div class="testi-stars"><iconify-icon icon="lucide:star"></iconify-icon><iconify-icon icon="lucide:star"></iconify-icon><iconify-icon icon="lucide:star"></iconify-icon><iconify-icon icon="lucide:star"></iconify-icon><iconify-icon icon="lucide:star"></iconify-icon></div><div class="testi-quote">"</div><p class="testi-text">PS4 saya dijailbreak di Mikayla Games, hasilnya memuaskan! Game lengkap, proses cepat, plus bisa panggilan. Recommended!</p><div class="testi-author"><img src="https://picsum.photos/seed/avatar1-male/100/100.jpg" class="testi-avatar" alt="Avatar"><div><div class="testi-name">Rizky Pratama</div><div class="testi-info">PS4 Slim · Bandung</div></div></div></div>
-            <div class="testi-card reveal reveal-delay-1"><div class="testi-stars"><iconify-icon icon="lucide:star"></iconify-icon><iconify-icon icon="lucide:star"></iconify-icon><iconify-icon icon="lucide:star"></iconify-icon><iconify-icon icon="lucide:star"></iconify-icon><iconify-icon icon="lucide:star"></iconify-icon></div><div class="testi-quote">"</div><p class="testi-text">Makasih Mikayla, konsolnya dijemput terus diantar lagi. Ongkirnya masuk akal, tidak mahal. Pelayanan top banget!</p><div class="testi-author"><img src="https://picsum.photos/seed/avatar2-female/100/100.jpg" class="testi-avatar" alt="Avatar"><div><div class="testi-name">Sari Dewi</div><div class="testi-info">PS3 Super Slim · Cimahi</div></div></div></div>
-            <div class="testi-card reveal reveal-delay-2"><div class="testi-stars"><iconify-icon icon="lucide:star"></iconify-icon><iconify-icon icon="lucide:star"></iconify-icon><iconify-icon icon="lucide:star"></iconify-icon><iconify-icon icon="lucide:star"></iconify-icon><iconify-icon icon="lucide:star"></iconify-icon></div><div class="testi-quote">"</div><p class="testi-text">PS5 dijailbreak di sini, game next-gen semua bisa dimainkan. Support-nya top, kalau ada error selalu dibantu cepat.</p><div class="testi-author"><img src="https://picsum.photos/seed/avatar3-guy/100/100.jpg" class="testi-avatar" alt="Avatar"><div><div class="testi-name">Andi Setiawan</div><div class="testi-info">PS5 Disc · Bandung</div></div></div></div>
-        </div>
-    </div>
-</section>
-<div class="divider-line"></div>
-
-<!-- CONTACT -->
-<section class="section contact-section" id="contact">
-    <div class="contact-bg"><img src="https://picsum.photos/seed/dark-workshop-tools/1920/1080.jpg" alt="Workshop"></div>
-    <div class="container">
-        <div class="contact-content">
-            <div class="contact-info">
-                <div class="section-label reveal">Hubungi Kami</div>
-                <h2 class="reveal reveal-delay-1">SIAP <span class="accent">GAS</span> GAME?<br>MARI KITA MULAI</h2>
-                <p class="reveal reveal-delay-2">Jangan ragu untuk menghubungi kami. Bisa datang langsung, atau manfaatkan layanan panggilan kami. Ongkir santai!</p>
-                <div class="contact-methods">
-                    <a href="https://wa.me/6285163061987?text=Halo%20Mikayla%20Games%2C%20saya%20mau%20tanya%20tentang%20jasa%20isi%20game" target="_blank" class="contact-method reveal reveal-delay-2">
-                        <div class="contact-method-icon"><iconify-icon icon="lucide:message-circle"></iconify-icon></div>
-                        <div class="contact-method-text"><div class="label">WhatsApp</div><div class="value">0851-6306-1987</div></div>
-                    </a>
-                    <a href="#" class="contact-method reveal reveal-delay-3">
-                        <div class="contact-method-icon"><iconify-icon icon="lucide:map-pin"></iconify-icon></div>
-                        <div class="contact-method-text"><div class="label">Lokasi</div><div class="value">Bandung, Jawa Barat</div></div>
-                    </a>
-                    <a href="#" class="contact-method reveal reveal-delay-4">
-                        <div class="contact-method-icon"><iconify-icon icon="lucide:clock"></iconify-icon></div>
-                        <div class="contact-method-text"><div class="label">Jam Operasional</div><div class="value">Senin - Sabtu, 10:00 - 21:00</div></div>
-                    </a>
-                </div>
-            </div>
-            <div class="contact-form-wrap reveal reveal-delay-2">
-                <h3>FORMULAR ORDER</h3>
-                <form id="contactForm">
-                    <div class="form-row">
-                        <div class="form-group"><label for="name">Nama</label><input type="text" id="name" placeholder="Nama Anda" required></div>
-                        <div class="form-group"><label for="phone">No. HP</label><input type="tel" id="phone" placeholder="08xxxxxxxxxx" required></div>
+    <!-- ============ NAVBAR ============ -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-5 md:px-8">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-2 group">
+                    <div class="w-9 h-9 bg-neon-500 rounded flex items-center justify-center group-hover:rotate-90 transition-transform duration-500">
+                        <iconify-icon icon="mdi:gamepad-variant" class="text-black text-xl"></iconify-icon>
                     </div>
-                    <div class="form-row">
-                        <div class="form-group"><label for="console">Konsol</label><select id="console" required><option value="">Pilih Konsol</option><option value="ps3">PS3 (HEN)</option><option value="ps4">PS4 (Jailbreak)</option><option value="ps5">PS5 (Jailbreak)</option><option value="other">Lainnya</option></select></div>
-                        <div class="form-group"><label for="serviceType">Tipe Layanan</label><select id="serviceType" required><option value="datang">Datang ke Workshop</option><option value="panggilan">Panggilan / Jemput</option></select></div>
+                    <div>
+                        <span class="text-lg font-extrabold tracking-tighter leading-none">MIKAYLA</span>
+                        <span class="text-lg font-extrabold tracking-tighter text-neon-400 leading-none"> GAMES</span>
                     </div>
-                    <div class="form-group form-hidden" id="addressGroup"><label for="address">Alamat Lengkap (untuk panggilan/jemput)</label><textarea id="address" placeholder="Masukkan alamat lengkap Anda di sini..."></textarea><div class="form-note">Ongkir akan disesuaikan dengan jarak. Santai aja, pasti fair!</div></div>
-                    <div class="form-group"><label for="message">Pesan Tambahan</label><textarea id="message" placeholder="Game yang mau diisi, pertanyaan, dll..." rows="3"></textarea></div>
-                    <button type="submit" class="btn-primary" style="width:100%;justify-content:center;"><iconify-icon icon="lucide:send"></iconify-icon> Kirim via WhatsApp</button>
-                </form>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-1">
+                    <a href="#about" class="px-4 py-2 text-xs font-medium uppercase tracking-widest text-zinc-400 hover:text-neon-400 transition-colors duration-200">About</a>
+                    <a href="#services" class="px-4 py-2 text-xs font-medium uppercase tracking-widest text-zinc-400 hover:text-neon-400 transition-colors duration-200">Layanan</a>
+                    <a href="#daftar-game" class="px-4 py-2 text-xs font-medium uppercase tracking-widest text-zinc-400 hover:text-neon-400 transition-colors duration-200">List Game</a>
+                    <a href="#keunggulan" class="px-4 py-2 text-xs font-medium uppercase tracking-widest text-zinc-400 hover:text-neon-400 transition-colors duration-200">Keunggulan</a>
+                    <a href="#testimoni" class="px-4 py-2 text-xs font-medium uppercase tracking-widest text-zinc-400 hover:text-neon-400 transition-colors duration-200">Testimoni</a>
+                    <a href="#kontak" class="ml-4 px-6 py-2.5 bg-neon-500 text-black text-xs font-bold uppercase tracking-widest hover:bg-neon-400 transition-all duration-200 rounded-sm">Hubungi Kami</a>
+                </div>
+
+                <!-- Mobile Toggle -->
+                <button id="menuBtn" class="md:hidden w-10 h-10 flex items-center justify-center text-zinc-400 hover:text-neon-400 transition-colors">
+                    <iconify-icon icon="mdi:menu" class="text-2xl" id="menuIcon"></iconify-icon>
+                </button>
             </div>
         </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="md:hidden hidden bg-[#0c0c0e]/95 backdrop-blur-md border-t border-zinc-800/50">
+            <div class="px-5 py-6 space-y-1">
+                <a href="#about" class="block px-4 py-3 text-sm font-medium uppercase tracking-widest text-zinc-400 hover:text-neon-400 hover:bg-zinc-800/50 transition-all">About</a>
+                <a href="#services" class="block px-4 py-3 text-sm font-medium uppercase tracking-widest text-zinc-400 hover:text-neon-400 hover:bg-zinc-800/50 transition-all">Layanan</a>
+                <a href="#daftar-game" class="block px-4 py-3 text-sm font-medium uppercase tracking-widest text-zinc-400 hover:text-neon-400 hover:bg-zinc-800/50 transition-all">List Game</a>
+                <a href="#keunggulan" class="block px-4 py-3 text-sm font-medium uppercase tracking-widest text-zinc-400 hover:text-neon-400 hover:bg-zinc-800/50 transition-all">Keunggulan</a>
+                <a href="#testimoni" class="block px-4 py-3 text-sm font-medium uppercase tracking-widest text-zinc-400 hover:text-neon-400 hover:bg-zinc-800/50 transition-all">Testimoni</a>
+                <a href="#kontak" class="block mt-4 px-6 py-3 bg-neon-500 text-black text-sm font-bold uppercase tracking-widest text-center hover:bg-neon-400 transition-all">Hubungi Kami</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============ HERO ============ -->
+    <section class="relative min-h-screen flex items-center bg-noise overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://picsum.photos/seed/psconsole2024/1920/1080.jpg" alt="" class="w-full h-full object-cover hero-img">
+            <div class="absolute inset-0 bg-gradient-to-r from-[#09090b] via-[#09090b]/85 to-[#09090b]/40"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#09090b] via-transparent to-[#09090b]/60"></div>
+        </div>
+        <div class="absolute inset-0 bg-grid opacity-30"></div>
+        <div class="absolute top-1/2 right-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-neon-500/5 rounded-full blur-[150px]"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-5 md:px-8 pt-24 pb-16 w-full">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-2 px-4 py-2 border border-neon-500/30 bg-neon-500/5 rounded-sm mb-8">
+                    <span class="w-2 h-2 bg-neon-500 rounded-full pulse-dot"></span>
+                    <span class="text-[10px] font-bold uppercase tracking-[0.15em] text-neon-400">Bandung's Trusted Game Service</span>
+                </div>
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[0.95] tracking-tighter mb-6">
+                    JASA ISI GAME<br>
+                    <span class="text-gradient">PS3 · PS4 · PS5</span>
+                </h1>
+                <p class="text-base md:text-lg font-light text-zinc-400 leading-relaxed max-w-xl mb-10">
+                    Solusi terpercaya untuk instalasi game console PlayStation Anda. PS3 HEN, PS4 Jailbreak, PS5 Jailbreak — ditangani profesional oleh tim berpengalaman di Bandung.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="https://wa.me/6285163061987?text=Halo%20Mikayla%20Games%2C%20saya%20tertarik%20dengan%20jasa%20isi%20game." target="_blank" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-neon-500 text-black text-sm font-bold uppercase tracking-widest hover:bg-neon-400 transition-all duration-200 rounded-sm group">
+                        <iconify-icon icon="mdi:whatsapp" class="text-lg"></iconify-icon>
+                        Pesan Sekarang
+                        <iconify-icon icon="mdi:arrow-right" class="text-base group-hover:translate-x-1 transition-transform"></iconify-icon>
+                    </a>
+                    <a href="#daftar-game" class="inline-flex items-center justify-center gap-2 px-8 py-4 border border-zinc-700 text-zinc-300 text-sm font-bold uppercase tracking-widest hover:border-neon-500/50 hover:text-neon-400 transition-all duration-200 rounded-sm">
+                        Lihat List Game
+                    </a>
+                </div>
+                <div class="flex flex-wrap gap-8 md:gap-14 mt-14 pt-8 border-t border-zinc-800/60">
+                    <div>
+                        <div class="text-3xl md:text-4xl font-extrabold tracking-tight counter" data-target="2500">0</div>
+                        <div class="text-[10px] font-medium uppercase tracking-[0.12em] text-zinc-500 mt-1">Game Terinstal</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl md:text-4xl font-extrabold tracking-tight counter" data-target="850">0</div>
+                        <div class="text-[10px] font-medium uppercase tracking-[0.12em] text-zinc-500 mt-1">Pelanggan Puas</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl md:text-4xl font-extrabold tracking-tight counter" data-target="7">0</div>
+                        <div class="text-[10px] font-medium uppercase tracking-[0.12em] text-zinc-500 mt-1">Tahun Pengalaman</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl md:text-4xl font-extrabold tracking-tight text-neon-400">100%</div>
+                        <div class="text-[10px] font-medium uppercase tracking-[0.12em] text-zinc-500 mt-1">Garansi Sukses</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2">
+            <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-zinc-600">Scroll</span>
+            <div class="w-px h-8 bg-gradient-to-b from-neon-500/50 to-transparent"></div>
+        </div>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="relative bg-[#0c0c0e] border-y border-zinc-800/50 py-4 overflow-hidden">
+        <div class="marquee-track whitespace-nowrap">
+            <span class="inline-flex items-center gap-8 px-4 text-xs font-bold uppercase tracking-[0.2em] text-zinc-600">
+                <span>PS3 HEN</span><span class="text-neon-500/40">◆</span>
+                <span>PS4 JAILBREAK</span><span class="text-neon-500/40">◆</span>
+                <span>PS5 JAILBREAK</span><span class="text-neon-500/40">◆</span>
+                <span>ISI GAME</span><span class="text-neon-500/40">◆</span>
+                <span>PANGGILAN KE RUMAH</span><span class="text-neon-500/40">◆</span>
+                <span>BANDUNG</span><span class="text-neon-500/40">◆</span>
+                <span>GARANSI</span><span class="text-neon-500/40">◆</span>
+                <span>LIST PDF</span><span class="text-neon-500/40">◆</span>
+            </span>
+            <span class="inline-flex items-center gap-8 px-4 text-xs font-bold uppercase tracking-[0.2em] text-zinc-600">
+                <span>PS3 HEN</span><span class="text-neon-500/40">◆</span>
+                <span>PS4 JAILBREAK</span><span class="text-neon-500/40">◆</span>
+                <span>PS5 JAILBREAK</span><span class="text-neon-500/40">◆</span>
+                <span>ISI GAME</span><span class="text-neon-500/40">◆</span>
+                <span>PANGGILAN KE RUMAH</span><span class="text-neon-500/40">◆</span>
+                <span>BANDUNG</span><span class="text-neon-500/40">◆</span>
+                <span>GARANSI</span><span class="text-neon-500/40">◆</span>
+                <span>LIST PDF</span><span class="text-neon-500/40">◆</span>
+            </span>
+        </div>
     </div>
-</section>
 
-<footer class="footer">
-    <div class="footer-inner">
-        <div class="footer-copy">© 2024 <span class="accent">MIKAYLA GAMES</span>. All rights reserved.</div>
-        <div class="footer-socials"><a href="#" class="footer-social" aria-label="Instagram"><iconify-icon icon="lucide:instagram"></iconify-icon></a><a href="https://wa.me/6285163061987" target="_blank" class="footer-social" aria-label="WhatsApp"><iconify-icon icon="lucide:message-circle"></iconify-icon></a><a href="#" class="footer-social" aria-label="YouTube"><iconify-icon icon="lucide:youtube"></iconify-icon></a></div>
-    </div>
-</footer>
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="relative py-20 md:py-28 bg-[#09090b] bg-noise">
+        <div class="relative z-10 max-w-7xl mx-auto px-5 md:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
+                <div class="scroll-reveal relative">
+                    <div class="relative overflow-hidden rounded-sm">
+                        <img src="https://picsum.photos/seed/gameroom99/700/900.jpg" alt="Mikayla Games Studio" class="w-full aspect-[3/4] object-cover hero-img">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#09090b] via-transparent to-transparent"></div>
+                    </div>
+                    <div class="absolute -bottom-4 -right-4 md:bottom-6 md:right-6 bg-neon-500 text-black px-6 py-4 rounded-sm float-anim">
+                        <div class="text-3xl font-extrabold leading-none">7+</div>
+                        <div class="text-[10px] font-bold uppercase tracking-widest">Tahun</div>
+                    </div>
+                    <div class="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-neon-500/40"></div>
+                </div>
+                <div class="scroll-reveal">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 border border-neon-500/20 bg-neon-500/5 rounded-sm mb-6">
+                        <span class="text-[10px] font-bold uppercase tracking-[0.15em] text-neon-400">Tentang Kami</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight leading-tight mb-6">
+                        Lebih Dari Sekedar<br><span class="text-gradient">Jasa Isi Game</span>
+                    </h2>
+                    <div class="space-y-4 text-sm text-zinc-400 font-light leading-relaxed">
+                        <p><span class="text-white font-medium">Mikayla Games</span> hadir sejak 2017 di Bandung sebagai solusi terpercaya untuk kebutuhan game console PlayStation Anda. Kami bukan sekedar jasa isi game — kami adalah komunitas gamer yang memahami kebutuhan Anda.</p>
+                        <p>Dengan pengalaman menangani <span class="text-white font-medium">lebih dari 850 console</span>, kami memahami setiap aspek teknis PS3 HEN, PS4 Jailbreak, hingga PS5 Jailbreak terbaru. Setiap pekerjaan ditangani dengan standar profesional dan garansi penuh.</p>
+                        <p>Kini kami hadir dengan layanan <span class="text-white font-medium">panggilan ke rumah (home service)</span> untuk kenyamanan Anda. Tidak perlu repot membawa console ke tempat kami — kami yang datang ke rumah Anda dengan ongkos yang disesuaikan dan suasana santai.</p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 mt-8">
+                        <div class="flex items-start gap-3"><iconify-icon icon="mdi:shield-check" class="text-neon-500 text-xl mt-0.5 shrink-0"></iconify-icon><div><div class="text-sm font-medium text-white">Garansi Penuh</div><div class="text-xs text-zinc-500">100% sukses install</div></div></div>
+                        <div class="flex items-start gap-3"><iconify-icon icon="mdi:clock-fast" class="text-neon-500 text-xl mt-0.5 shrink-0"></iconify-icon><div><div class="text-sm font-medium text-white">Proses Cepat</div><div class="text-xs text-zinc-500">1-3 hari selesai</div></div></div>
+                        <div class="flex items-start gap-3"><iconify-icon icon="mdi:gamepad-square" class="text-neon-500 text-xl mt-0.5 shrink-0"></iconify-icon><div><div class="text-sm font-medium text-white">Game Lengkap</div><div class="text-xs text-zinc-500">2500+ judul game</div></div></div>
+                        <div class="flex items-start gap-3"><iconify-icon icon="mdi:account-group" class="text-neon-500 text-xl mt-0.5 shrink-0"></iconify-icon><div><div class="text-sm font-medium text-white">Komunitas Solid</div><div class="text-xs text-zinc-500">Support after-service</div></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- FLOATING BUTTONS -->
-<a href="https://wa.me/6285163061987?text=Halo%20Mikayla%20Games%2C%20saya%20mau%20tanya%20tentang%20jasa%20isi%20game%20panggilan" target="_blank" class="wa-float" aria-label="Chat WhatsApp"><iconify-icon icon="lucide:message-circle"></iconify-icon></a>
-<button class="audio-float" id="audioToggle" aria-label="Toggle Music">
-    <iconify-icon icon="lucide:volume-x" id="audioIcon"></iconify-icon>
-</button>
+    <!-- ============ SERVICES ============ -->
+    <section id="services" class="relative py-20 md:py-28 bg-[#0c0c0e] bg-noise">
+        <div class="absolute inset-0 bg-grid opacity-20"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-neon-500/3 rounded-full blur-[180px]"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-5 md:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 scroll-reveal">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 border border-neon-500/20 bg-neon-500/5 rounded-sm mb-6">
+                    <span class="text-[10px] font-bold uppercase tracking-[0.15em] text-neon-400">Layanan Kami</span>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight mb-4">Solusi Lengkap <span class="text-gradient">PlayStation</span></h2>
+                <p class="text-sm text-zinc-400 font-light leading-relaxed">Dari PS3 klasik hingga PS5 terbaru — kami menyediakan layanan jailbreak dan instalasi game profesional untuk semua generasi PlayStation. Tersedia layanan <strong>panggilan ke rumah</strong> untuk kenyamanan Anda.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- PS3 -->
+                <div class="scroll-reveal card-glow border border-zinc-800/60 bg-[#09090b]/80 rounded-sm overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://picsum.photos/seed/ps3controller/600/400.jpg" alt="PS3 HEN" class="w-full aspect-[3/2] object-cover hero-img group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#09090b] via-[#09090b]/40 to-transparent"></div>
+                        <div class="absolute top-4 left-4 px-3 py-1.5 bg-black/70 border border-zinc-700/50 rounded-sm"><span class="text-[10px] font-bold uppercase tracking-[0.12em] text-neon-400">PS3</span></div>
+                    </div>
+                    <div class="p-6 md:p-7">
+                        <h3 class="text-xl font-bold tracking-tight mb-3">PS3 HEN Install</h3>
+                        <p class="text-sm text-zinc-400 font-light leading-relaxed mb-5">Instalasi HEN untuk PS3 Super Slim dan Slim. Buka potensi penuh PS3 Anda — jalankan homebrew, backup game, dan instalasi dari USB.</p>
+                        <div class="space-y-2 mb-6">
+                            <div class="flex items-center gap-2 text-xs text-zinc-400"><iconify-icon icon="mdi:check-circle" class="text-neon-500"></iconify-icon>HEN 3.0.1 terbaru</div>
+                            <div class="flex items-center gap-2 text-xs text-zinc-400"><iconify-icon icon="mdi:check-circle" class="text-neon-500"></iconify-icon>Isi game sesuai request</div>
+                            <div class="flex items-center gap-2 text-xs text-zinc-400"><iconify-icon icon="mdi:check-circle" class="text-neon-500"></iconify-icon>Semua tipe PS3 didukung</div>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-zinc-800/60">
+                            <div><span class="text-xs text-zinc-500">Mulai dari</span><div class="text-xl font-extrabold text-neon-400">Rp 150.000</div></div>
+                            <a href="https://wa.me/6285163061987?text=Halo%2C%20saya%20tertarik%20dengan%20PS3%20HEN%20Install" target="_blank" class="px-4 py-2.5 bg-neon-500/10 border border-neon-500/30 text-neon-400 text-xs font-bold uppercase tracking-widest hover:bg-neon-500 hover:text-black transition-all duration-200 rounded-sm">Pesan</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- PS4 -->
+                <div class="scroll-reveal card-glow border border-neon-500/30 bg-[#09090b]/80 rounded-sm overflow-hidden group relative">
+                    <div class="absolute top-0 right-0 z-20"><div class="bg-neon-500 text-black px-4 py-1 text-[9px] font-bold uppercase tracking-[0.15em]">Populer</div></div>
+                    <div class="relative overflow-hidden">
+                        <img src="https://picsum.photos/seed/ps4setup77/600/400.jpg" alt="PS4 Jailbreak" class="w-full aspect-[3/2] object-cover hero-img group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#09090b] via-[#09090b]/40 to-transparent"></div>
+                        <div class="absolute top-4 left-4 px-3 py-1.5 bg-black/70 border border-neon-500/30 rounded-sm"><span class="text-[10px] font-bold uppercase tracking-[0.12em] text-neon-400">PS4</span></div>
+                    </div>
+                    <div class="p-6 md:p-7">
+                        <h3 class="text-xl font-bold tracking-tight mb-3">PS4 Jailbreak + Isi Game</h3>
+                        <p class="text-sm text-zinc-400 font-light leading-relaxed mb-5">Jailbreak firmware 9.00 untuk PS4. Akses ribuan game gratis, homebrew, dan fitur custom. Pilihan paling populer di kalangan gamer Bandung.</p>
+                        <div class="space-y-2 mb-6">
+                            <div class="flex items-center gap-2 text-xs text-zinc-400"><iconify-icon icon="mdi:check-circle" class="text-neon-500"></iconify-icon>FW 9.00 Jailbreak stabil</div>
+                            <div class="flex items-center gap-2 text-xs text-zinc-400"><iconify-icon icon="mdi:check-circle" class="text-neon-500"></iconify-icon>Isi game sampai penuh HDD</div>
+                            <div class="flex items-center gap-2 text-xs text-zinc-400"><iconify-icon icon="mdi:check-circle" class="text-neon-500"></iconify-icon>Free update game 1 bulan</div>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-neon-500/20">
+                            <div><span class="text-xs text-zinc-500">Mulai dari</span><div class="text-xl font-extrabold text-neon-400">Rp 200.000</div></div>
+                            <a href="https://wa.me/6285163061987?text=Halo%2C%20saya%20tertarik%20dengan%20PS4%20Jailbreak" target="_blank" class="px-4 py-2.5 bg-neon-500 text-black text-xs font-bold uppercase tracking-widest hover:bg-neon-400 transition-all duration-200 rounded-sm">Pesan</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- PS5 -->
+                <div class="scroll-reveal card-glow border border-zinc-800/60 bg-[#09090b]/80 rounded-sm overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://picsum.photos/seed/ps5nextgen/600/400.jpg" alt="PS5 Jailbreak" class="w-full aspect-[3/2] object-cover hero-img group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#09090b] via-[#09090b]/40 to-transparent"></div>
+                        <div class="absolute top-4 left-4 px-3 py-1.5 bg-black/70 border border-zinc-700/50 rounded-sm"><span class="text-[10px] font-bold uppercase tracking-[0.12em] text-neon-400">PS5</span></div>
+                    </div>
+                    <div class="p-6 md:p-7">
+                        <h3 class="text-xl font-bold tracking-tight mb-3">PS5 Jailbreak + Isi Game</h3>
+                        <p class="text-sm text-zinc-400 font-light leading-relaxed mb-5">Layanan jailbreak PS5 firmware compatible. Buka potensi next-gen console Anda dengan akses game dan fitur yang diperluas. Ditangani dengan extra hati-hati.</p>
+                        <div class="space-y-2 mb-6">
+                            <div class="flex items-center gap-2 text-xs text-zinc-400"><iconify-icon icon="mdi:check-circle" class="text-neon-500"></iconify-icon>Jailbreak FW compatible</div>
+                            <div class="flex items-center gap-2 text-xs text-zinc-400"><iconify-icon icon="mdi:check-circle" class="text-neon-500"></iconify-icon>Isi game PS5 eksklusif</div>
+                            <div class="flex items-center gap-2 text-xs text-zinc-400"><iconify-icon icon="mdi:check-circle" class="text-neon-500"></iconify-icon>Handling oleh teknisi senior</div>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-zinc-800/60">
+                            <div><span class="text-xs text-zinc-500">Mulai dari</span><div class="text-xl font-extrabold text-neon-400">Rp 300.000</div></div>
+                            <a href="https://wa.me/6285163061987?text=Halo%2C%20saya%20tertarik%20dengan%20PS5%20Jailbreak" target="_blank" class="px-4 py-2.5 bg-neon-500/10 border border-neon-500/30 text-neon-400 text-xs font-bold uppercase tracking-widest hover:bg-neon-500 hover:text-black transition-all duration-200 rounded-sm">Pesan</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- HOME SERVICE -->
+                <div class="scroll-reveal card-glow border border-neon-500/30 bg-[#09090b]/80 rounded-sm overflow-hidden group relative">
+                    <div class="absolute top-0 right-0 z-20"><div class="badge-home px-4 py-1 text-[9px] font-bold uppercase tracking-[0.15em] flex items-center gap-1"><iconify-icon icon="mdi:home-account" class="text-xs"></iconify-icon>HOME SERVICE</div></div>
+                    <div class="relative overflow-hidden">
+                        <img src="https://picsum.photos/seed/homeservice88/600/400.jpg" alt="Panggilan Ke Rumah" class="w-full aspect-[3/2] object-cover hero-img group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#09090b] via-[#09090b]/40 to-transparent"></div>
+                        <div class="absolute top-4 left-4 px-3 py-1.5 bg-black/70 border border-neon-500/30 rounded-sm"><span class="text-[10px] font-bold uppercase tracking-[0.12em] text-neon-400">SANTAI</span></div>
+                    </div>
+                    <div class="p-6 md:p-7">
+                        <h3 class="text-xl font-bold tracking-tight mb-3">Panggilan Ke Rumah</h3>
+                        <p class="text-sm text-zinc-400 font-light leading-relaxed mb-5">Tidak sempat datang? Kami yang ke rumah Anda! Layanan home service untuk semua jenis console PS dengan ongkos yang disesuaikan dan suasana santai.</p>
+                        <div class="space-y-2 mb-6">
+                            <div class="flex items-center gap-2 text-xs text-zinc-400"><iconify-icon icon="mdi:check-circle" class="text-neon-500"></iconify-icon>Area Bandung & Cimahi</div>
+                            <div class="flex items-center gap-2 text-xs text-zinc-400"><iconify-icon icon="mdi:check-circle" class="text-neon-500"></iconify-icon>Ongkos disesuaikan jarak</div>
+                            <div class="flex items-center gap-2 text-xs text-zinc-400"><iconify-icon icon="mdi:check-circle" class="text-neon-500"></iconify-icon>Bisa negosiasi harga</div>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-neon-500/20">
+                            <div><span class="text-xs text-zinc-500">Ongkos mulai dari</span><div class="text-xl font-extrabold text-neon-400">Rp 50.000</div></div>
+                            <a href="https://wa.me/6285163061987?text=Halo%2C%20saya%20tertarik%20dengan%20layanan%20panggilan%20ke%20rumah" target="_blank" class="px-4 py-2.5 bg-neon-500 text-black text-xs font-bold uppercase tracking-widest hover:bg-neon-400 transition-all duration-200 rounded-sm">Pesan</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="toast" id="toast"><iconify-icon icon="lucide:check-circle"></iconify-icon><span id="toastMsg">Pesan terkirim!</span></div>
+    <!-- ============ DAFTAR GAME (LIST GAME PDF) ============ -->
+    <section id="daftar-game" class="relative py-20 md:py-28 bg-[#09090b] bg-noise">
+        <div class="relative z-10 max-w-7xl mx-auto px-5 md:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 scroll-reveal">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 border border-neon-500/20 bg-neon-500/5 rounded-sm mb-6">
+                    <span class="text-[10px] font-bold uppercase tracking-[0.15em] text-neon-400">Koleksi Game</span>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight mb-4">Daftar Game <span class="text-gradient">Terbaru</span></h2>
+                <p class="text-sm text-zinc-400 font-light leading-relaxed">Jelajahi ribuan judul game dari PS3, PS4, hingga PS5. Klik untuk melihat preview atau unduh daftar lengkap dalam format PDF.</p>
+            </div>
 
-<script>
-// ==========================================
-// 0. BACKGROUND AUDIO LOGIC
-// ==========================================
-const bgMusic = document.getElementById('bgMusic');
-const audioToggle = document.getElementById('audioToggle');
-const audioIcon = document.getElementById('audioIcon');
-let isPlaying = false;
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- PS3 List -->
+                <div class="scroll-reveal p-8 border border-zinc-800/50 bg-[#0c0c0e]/80 rounded-sm card-glow group relative overflow-hidden">
+                    <div class="absolute -top-10 -right-10 text-[100px] font-extrabold text-zinc-900/30 select-none pointer-events-none group-hover:text-neon-500/10 transition-colors duration-500">PS3</div>
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-14 h-14 bg-red-500/10 border border-red-500/20 rounded-lg flex items-center justify-center shrink-0">
+                                <iconify-icon icon="mdi:file-pdf-box" class="text-red-400 text-3xl"></iconify-icon>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold tracking-tight">List Game PS3</h3>
+                                <p class="text-xs text-zinc-500">Revisi 2025 · PDF Format</p>
+                            </div>
+                        </div>
+                        <div class="space-y-2 mb-8 text-sm text-zinc-400 font-light">
+                            <div class="flex items-center gap-2"><iconify-icon icon="mdi:check" class="text-red-400 text-sm"></iconify-icon>Ratusan judul PS3 klasik & modern</div>
+                            <div class="flex items-center gap-2"><iconify-icon icon="mdi:check" class="text-red-400 text-sm"></iconify-icon>Termasuk game HEN compatible</div>
+                            <div class="flex items-center gap-2"><iconify-icon icon="mdi:check" class="text-red-400 text-sm"></iconify-icon>Update daftar berkala</div>
+                        </div>
+                        <div class="flex gap-3">
+                            <!-- Ganti href dengan link Google Drive atau URL file PDF Anda -->
+                            <a href="#" target="_blank" class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 border border-zinc-700 text-zinc-300 text-xs font-bold uppercase tracking-widest hover:border-neon-500/50 hover:text-neon-400 transition-all duration-200 rounded-sm">
+                                <iconify-icon icon="mdi:eye-outline"></iconify-icon> View
+                            </a>
+                            <a href="#" download class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 bg-neon-500 text-black text-xs font-bold uppercase tracking-widest hover:bg-neon-400 transition-all duration-200 rounded-sm">
+                                <iconify-icon icon="mdi:download"></iconify-icon> Unduh
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
-// Set volume ke 30% agar tidak terlalu keras mengganggu
-bgMusic.volume = 0.3;
+                <!-- PS4 List -->
+                <div class="scroll-reveal p-8 border border-neon-500/30 bg-[#0c0c0e]/80 rounded-sm card-glow group relative overflow-hidden">
+                    <div class="absolute -top-10 -right-10 text-[100px] font-extrabold text-zinc-900/30 select-none pointer-events-none group-hover:text-neon-500/10 transition-colors duration-500">PS4</div>
+                    <div class="relative z-10">
+                        <div class="absolute top-0 right-0 badge-home px-2 py-1 text-[8px] font-bold uppercase tracking-widest flex items-center gap-1">
+                            <iconify-icon icon="mdi:star" class="text-xs"></iconify-icon> TERLengkap
+                        </div>
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-14 h-14 bg-blue-500/10 border border-blue-500/20 rounded-lg flex items-center justify-center shrink-0">
+                                <iconify-icon icon="mdi:file-pdf-box" class="text-blue-400 text-3xl"></iconify-icon>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold tracking-tight">List Game PS4</h3>
+                                <p class="text-xs text-zinc-500">Revisi 2026 · PDF Format</p>
+                            </div>
+                        </div>
+                        <div class="space-y-2 mb-8 text-sm text-zinc-400 font-light">
+                            <div class="flex items-center gap-2"><iconify-icon icon="mdi:check" class="text-blue-400 text-sm"></iconify-icon>1000+ Judul game PS4</div>
+                            <div class="flex items-center gap-2"><iconify-icon icon="mdi:check" class="text-blue-400 text-sm"></iconify-icon>Firmware 9.00 compatible</div>
+                            <div class="flex items-center gap-2"><iconify-icon icon="mdi:check" class="text-blue-400 text-sm"></iconify-icon>Include DLC & Update Patch</div>
+                        </div>
+                        <div class="flex gap-3">
+                            <!-- Ganti href dengan link Google Drive atau URL file PDF Anda -->
+                            <a href="#" target="_blank" class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 border border-zinc-700 text-zinc-300 text-xs font-bold uppercase tracking-widest hover:border-neon-500/50 hover:text-neon-400 transition-all duration-200 rounded-sm">
+                                <iconify-icon icon="mdi:eye-outline"></iconify-icon> View
+                            </a>
+                            <a href="#" download class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 bg-neon-500 text-black text-xs font-bold uppercase tracking-widest hover:bg-neon-400 transition-all duration-200 rounded-sm">
+                                <iconify-icon icon="mdi:download"></iconify-icon> Unduh
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
-audioToggle.addEventListener('click', () => {
-    if (isPlaying) {
-        bgMusic.pause();
-        audioIcon.setAttribute('icon', 'lucide:volume-x');
-        audioToggle.classList.remove('playing');
-    } else {
-        bgMusic.play().then(() => {
-            audioIcon.setAttribute('icon', 'lucide:volume-2');
-            audioToggle.classList.add('playing');
-        }).catch(error => {
-            console.log("Autoplay blocked:", error);
-            showToast('Klik tombol ini lagi untuk memutar musik');
+                <!-- PS5 List -->
+                <div class="scroll-reveal p-8 border border-zinc-800/50 bg-[#0c0c0e]/80 rounded-sm card-glow group relative overflow-hidden">
+                    <div class="absolute -top-10 -right-10 text-[100px] font-extrabold text-zinc-900/30 select-none pointer-events-none group-hover:text-neon-500/10 transition-colors duration-500">PS5</div>
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-14 h-14 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center shrink-0">
+                                <iconify-icon icon="mdi:file-pdf-box" class="text-white/80 text-3xl"></iconify-icon>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold tracking-tight">List Game PS5</h3>
+                                <p class="text-xs text-zinc-500">Revisi 2027 · PDF Format</p>
+                            </div>
+                        </div>
+                        <div class="space-y-2 mb-8 text-sm text-zinc-400 font-light">
+                            <div class="flex items-center gap-2"><iconify-icon icon="mdi:check" class="text-white/60 text-sm"></iconify-icon>Koleksi Next-Gen terlengkap</div>
+                            <div class="flex items-center gap-2"><iconify-icon icon="mdi:check" class="text-white/60 text-sm"></iconify-icon>PS5 Exclusive & Multiplatform</div>
+                            <div class="flex items-center gap-2"><iconify-icon icon="mdi:check" class="text-white/60 text-sm"></iconify-icon>High quality patch included</div>
+                        </div>
+                        <div class="flex gap-3">
+                            <!-- Ganti href dengan link Google Drive atau URL file PDF Anda -->
+                            <a href="#" target="_blank" class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 border border-zinc-700 text-zinc-300 text-xs font-bold uppercase tracking-widest hover:border-neon-500/50 hover:text-neon-400 transition-all duration-200 rounded-sm">
+                                <iconify-icon icon="mdi:eye-outline"></iconify-icon> View
+                            </a>
+                            <a href="#" download class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 bg-neon-500 text-black text-xs font-bold uppercase tracking-widest hover:bg-neon-400 transition-all duration-200 rounded-sm">
+                                <iconify-icon icon="mdi:download"></iconify-icon> Unduh
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-10 text-center scroll-reveal">
+                <p class="text-xs text-zinc-600 font-light">*Daftar game akan diupdate secara berkala. Hubungi kami jika game yang Anda cari tidak ada di list.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ KEUNGGULAN ============ -->
+    <section id="keunggulan" class="relative py-20 md:py-28 bg-[#0c0c0e] bg-noise">
+        <div class="absolute inset-0 bg-grid opacity-20"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-5 md:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 scroll-reveal">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 border border-neon-500/20 bg-neon-500/5 rounded-sm mb-6">
+                    <span class="text-[10px] font-bold uppercase tracking-[0.15em] text-neon-400">Mengapa Kami</span>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight mb-4">Keunggulan <span class="text-gradient">Mikayla Games</span></h2>
+                <p class="text-sm text-zinc-400 font-light leading-relaxed">Bukan cuma jasa — ini komitmen. Setiap detail diperhatikan agar Anda mendapatkan hasil terbaik.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="scroll-reveal p-7 border border-zinc-800/50 bg-[#0c0c0e]/80 rounded-sm card-glow">
+                    <div class="w-12 h-12 bg-neon-500/10 border border-neon-500/20 rounded-sm flex items-center justify-center mb-5"><iconify-icon icon="mdi:shield-star" class="text-neon-500 text-2xl"></iconify-icon></div>
+                    <h3 class="text-lg font-bold tracking-tight mb-2">Garansi 100% Sukses</h3>
+                    <p class="text-sm text-zinc-400 font-light leading-relaxed">Jika instalasi gagal, uang kembali tanpa potongan. Kami hanya menyerahkan hasil yang sudah teruji dan berjalan sempurna.</p>
+                </div>
+                <div class="scroll-reveal p-7 border border-zinc-800/50 bg-[#0c0c0e]/80 rounded-sm card-glow">
+                    <div class="w-12 h-12 bg-neon-500/10 border border-neon-500/20 rounded-sm flex items-center justify-center mb-5"><iconify-icon icon="mdi:chip" class="text-neon-500 text-2xl"></iconify-icon></div>
+                    <h3 class="text-lg font-bold tracking-tight mb-2">Teknisi Berpengalaman</h3>
+                    <p class="text-sm text-zinc-400 font-light leading-relaxed">Tim kami telah menangani ratusan console dengan berbagai kondisi. Setiap kasus ditangani oleh teknisi yang memahami spesifik setiap tipe dan firmware.</p>
+                </div>
+                <div class="scroll-reveal p-7 border border-zinc-800/50 bg-[#0c0c0e]/80 rounded-sm card-glow">
+                    <div class="w-12 h-12 bg-neon-500/10 border border-neon-500/20 rounded-sm flex items-center justify-center mb-5"><iconify-icon icon="mdi:database-check" class="text-neon-500 text-2xl"></iconify-icon></div>
+                    <h3 class="text-lg font-bold tracking-tight mb-2">Koleksi 2500+ Game</h3>
+                    <p class="text-sm text-zinc-400 font-light leading-relaxed">Dari judul klasik sampai release terbaru — library game kami terus diupdate. PS3, PS4, dan PS5 semua tersedia lengkap.</p>
+                </div>
+                <div class="scroll-reveal p-7 border border-zinc-800/50 bg-[#0c0c0e]/80 rounded-sm card-glow">
+                    <div class="w-12 h-12 bg-neon-500/10 border border-neon-500/20 rounded-sm flex items-center justify-center mb-5"><iconify-icon icon="mdi:handshake" class="text-neon-500 text-2xl"></iconify-icon></div>
+                    <h3 class="text-lg font-bold tracking-tight mb-2">Support After-Sale</h3>
+                    <p class="text-sm text-zinc-400 font-light leading-relaxed">Hubungi kami kapan saja setelah service. Kami siap bantu troubleshooting, update, atau pertanyaan seputar console Anda — tanpa biaya tambahan.</p>
+                </div>
+                <div class="scroll-reveal p-7 border border-neon-500/20 bg-neon-500/5 rounded-sm card-glow relative">
+                    <div class="absolute top-4 right-4 badge-home px-2 py-1 text-[8px] font-bold uppercase tracking-widest flex items-center gap-1"><iconify-icon icon="mdi:home-account" class="text-xs"></iconify-icon>BARU</div>
+                    <div class="w-12 h-12 bg-neon-500/10 border border-neon-500/20 rounded-sm flex items-center justify-center mb-5"><iconify-icon icon="mdi:truck-fast" class="text-neon-500 text-2xl"></iconify-icon></div>
+                    <h3 class="text-lg font-bold tracking-tight mb-2">Layanan Panggilan Santai</h3>
+                    <p class="text-sm text-zinc-400 font-light leading-relaxed">Tidak perlu repot ke tempat kami — kami yang datang ke rumah Anda. Ongkos disesuaikan dengan lokasi, dan suasananya santai saja.</p>
+                </div>
+                <div class="scroll-reveal p-7 border border-zinc-800/50 bg-[#0c0c0e]/80 rounded-sm card-glow">
+                    <div class="w-12 h-12 bg-neon-500/10 border border-neon-500/20 rounded-sm flex items-center justify-center mb-5"><iconify-icon icon="mdi:account-heart" class="text-neon-500 text-2xl"></iconify-icon></div>
+                    <h3 class="text-lg font-bold tracking-tight mb-2">Komunitas Terkuat</h3>
+                    <p class="text-sm text-zinc-400 font-light leading-relaxed">Bergabung dengan ratusan member Mikayla Games. Sharing tips, request game, dan info update — karena gaming lebih seru bareng komunitas.</p>
+                </div>
+            </div>
+
+            <div class="mt-20 scroll-reveal">
+                <h3 class="text-center text-xl font-bold tracking-tight mb-12">Cara Kerja Kami (Termasuk Home Service)</h3>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                    <div class="relative text-center">
+                        <div class="w-14 h-14 bg-neon-500 text-black rounded-full flex items-center justify-center text-xl font-extrabold mx-auto mb-4">1</div>
+                        <h4 class="text-sm font-bold mb-2">Konsultasi</h4>
+                        <p class="text-xs text-zinc-500 leading-relaxed">Chat via WhatsApp, jelaskan tipe console dan kebutuhan Anda. Bisa request home service.</p>
+                        <div class="hidden md:block absolute top-7 left-[calc(50%+35px)] w-[calc(100%-70px)] h-px bg-gradient-to-r from-neon-500/40 to-transparent"></div>
+                    </div>
+                    <div class="relative text-center">
+                        <div class="w-14 h-14 bg-neon-500 text-black rounded-full flex items-center justify-center text-xl font-extrabold mx-auto mb-4">2</div>
+                        <h4 class="text-sm font-bold mb-2">Estimasi Biaya</h4>
+                        <p class="text-xs text-zinc-500 leading-relaxed">Kami berikan estimasi harga dan waktu pengerjaan transparan. Ongkos home service disesuaikan.</p>
+                        <div class="hidden md:block absolute top-7 left-[calc(50%+35px)] w-[calc(100%-70px)] h-px bg-gradient-to-r from-neon-500/40 to-transparent"></div>
+                    </div>
+                    <div class="relative text-center">
+                        <div class="w-14 h-14 bg-neon-500 text-black rounded-full flex items-center justify-center text-xl font-extrabold mx-auto mb-4">3</div>
+                        <h4 class="text-sm font-bold mb-2">Proses Instalasi</h4>
+                        <p class="text-xs text-zinc-500 leading-relaxed">Console ditangani oleh teknisi profesional. Jika home service, kami datang ke rumah Anda.</p>
+                        <div class="hidden md:block absolute top-7 left-[calc(50%+35px)] w-[calc(100%-70px)] h-px bg-gradient-to-r from-neon-500/40 to-transparent"></div>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-14 h-14 bg-neon-500 text-black rounded-full flex items-center justify-center text-xl font-extrabold mx-auto mb-4">4</div>
+                        <h4 class="text-sm font-bold mb-2">Serah Terima</h4>
+                        <p class="text-xs text-zinc-500 leading-relaxed">Testing di depan Anda, pastikan semua berjalan sempurna sebelum pembayaran.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ TESTIMONI ============ -->
+    <section id="testimoni" class="relative py-20 md:py-28 bg-[#09090b] bg-noise">
+        <div class="absolute inset-0 bg-grid opacity-15"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-5 md:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 scroll-reveal">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 border border-neon-500/20 bg-neon-500/5 rounded-sm mb-6"><span class="text-[10px] font-bold uppercase tracking-[0.15em] text-neon-400">Testimoni</span></div>
+                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight mb-4">Kata <span class="text-gradient">Mereka</span></h2>
+                <p class="text-sm text-zinc-400 font-light leading-relaxed">Dengarkan langsung dari para gamer yang sudah mempercayakan console mereka kepada kami.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="scroll-reveal p-7 border border-zinc-800/50 bg-[#0c0c0e]/80 rounded-sm card-glow">
+                    <div class="flex items-center gap-1 mb-4"><iconify-icon icon="mdi:star" class="text-neon-400"></iconify-icon><iconify-icon icon="mdi:star" class="text-neon-400"></iconify-icon><iconify-icon icon="mdi:star" class="text-neon-400"></iconify-icon><iconify-icon icon="mdi:star" class="text-neon-400"></iconify-icon><iconify-icon icon="mdi:star" class="text-neon-400"></iconify-icon></div>
+                    <p class="text-sm text-zinc-300 font-light leading-relaxed mb-6 italic">"PS4 saya dijailbreak sama Mikayla Games, hasilnya memuaskan banget. Game langsung bisa dimainkan, ga ada masalah sama sekali. Harga juga masuk akal. Recommended!"</p>
+                    <div class="flex items-center gap-3 pt-4 border-t border-zinc-800/50"><div class="w-10 h-10 rounded-full bg-neon-500/20 flex items-center justify-center text-neon-400 font-bold text-sm">RA</div><div><div class="text-sm font-medium">Rizky Aditya</div><div class="text-xs text-zinc-500">PS4 Slim · Bandung</div></div></div>
+                </div>
+                <div class="scroll-reveal p-7 border border-neon-500/20 bg-neon-500/5 rounded-sm card-glow relative">
+                    <div class="absolute top-4 right-4 badge-home px-2 py-1 text-[8px] font-bold uppercase tracking-widest flex items-center gap-1"><iconify-icon icon="mdi:home-account" class="text-xs"></iconify-icon>HOME SERVICE</div>
+                    <div class="flex items-center gap-1 mb-4"><iconify-icon icon="mdi:star" class="text-neon-400"></iconify-icon><iconify-icon icon="mdi:star" class="text-neon-400"></iconify-icon><iconify-icon icon="mdi:star" class="text-neon-400"></iconify-icon><iconify-icon icon="mdi:star" class="text-neon-400"></iconify-icon><iconify-icon icon="mdi:star" class="text-neon-400"></iconify-icon></div>
+                    <p class="text-sm text-zinc-300 font-light leading-relaxed mb-6 italic">"Awalnya ragu PS5 bisa dijailbreak, tapi tim Mikayla jelasin dengan sabar dan prosesnya super profesional. Apalagi mereka mau datang ke rumah, ongkosnya juga worth it. Mantap!"</p>
+                    <div class="flex items-center gap-3 pt-4 border-t border-neon-500/20"><div class="w-10 h-10 rounded-full bg-neon-500/20 flex items-center justify-center text-neon-400 font-bold text-sm">SF</div><div><div class="text-sm font-medium">Sarah Fitri</div><div class="text-xs text-zinc-500">PS5 Disc · Cimahi</div></div></div>
+                </div>
+                <div class="scroll-reveal p-7 border border-zinc-800/50 bg-[#0c0c0e]/80 rounded-sm card-glow">
+                    <div class="flex items-center gap-1 mb-4"><iconify-icon icon="mdi:star" class="text-neon-400"></iconify-icon><iconify-icon icon="mdi:star" class="text-neon-400"></iconify-icon><iconify-icon icon="mdi:star" class="text-neon-400"></iconify-icon><iconify-icon icon="mdi:star" class="text-neon-400"></iconify-icon><iconify-icon icon="mdi:star-half-full" class="text-neon-400"></iconify-icon></div>
+                    <p class="text-sm text-zinc-300 font-light leading-relaxed mb-6 italic">"PS3 Super Slim yang konon susah di-HEN ternyata bisa ditangani dengan baik. Abangnya juga baik, diajarin cara pakai HEN-nya. Komunitasnya juga aktif, sering ada update game baru."</p>
+                    <div class="flex items-center gap-3 pt-4 border-t border-zinc-800/50"><div class="w-10 h-10 rounded-full bg-neon-500/20 flex items-center justify-center text-neon-400 font-bold text-sm">DN</div><div><div class="text-sm font-medium">Dimas Nugraha</div><div class="text-xs text-zinc-500">PS3 Super Slim · Bandung</div></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CTA BANNER ============ -->
+    <section class="relative py-20 bg-noise overflow-hidden">
+        <div class="absolute inset-0"><img src="https://picsum.photos/seed/gamingsetup88/1920/600.jpg" alt="" class="w-full h-full object-cover hero-img"><div class="absolute inset-0 bg-[#09090b]/85"></div></div>
+        <div class="absolute inset-0 bg-grid opacity-20"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-neon-500/8 rounded-full blur-[120px]"></div>
+        <div class="relative z-10 max-w-4xl mx-auto px-5 md:px-8 text-center scroll-reveal">
+            <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight mb-4">Siap Unlock <span class="text-gradient">Potensi Console</span> Anda?</h2>
+            <p class="text-base text-zinc-400 font-light leading-relaxed max-w-xl mx-auto mb-10">Jangan biarkan console Anda terbatas. Hubungi kami sekarang dan rasakan pengalaman gaming tanpa batas bersama komunitas Mikayla Games.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://wa.me/6285163061987?text=Halo%20Mikayla%20Games%2C%20saya%20ingin%20konsultasi%20tentang%20jasa%20isi%20game." target="_blank" class="inline-flex items-center justify-center gap-3 px-10 py-4 bg-neon-500 text-black text-sm font-bold uppercase tracking-widest hover:bg-neon-400 transition-all duration-200 rounded-sm group"><iconify-icon icon="mdi:whatsapp" class="text-lg"></iconify-icon>Chat WhatsApp<iconify-icon icon="mdi:arrow-right" class="text-base group-hover:translate-x-1 transition-transform"></iconify-icon></a>
+                <a href="#daftar-game" class="inline-flex items-center justify-center gap-2 px-10 py-4 border border-zinc-600 text-zinc-300 text-sm font-bold uppercase tracking-widest hover:border-neon-500/50 hover:text-neon-400 transition-all duration-200 rounded-sm">Lihat List Game</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ KONTAK ============ -->
+    <section id="kontak" class="relative py-20 md:py-28 bg-[#09090b] bg-noise">
+        <div class="relative z-10 max-w-7xl mx-auto px-5 md:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
+                <div class="scroll-reveal">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 border border-neon-500/20 bg-neon-500/5 rounded-sm mb-6"><span class="text-[10px] font-bold uppercase tracking-[0.15em] text-neon-400">Kontak</span></div>
+                    <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight leading-tight mb-4">Hubungi <span class="text-gradient">Kami</span></h2>
+                    <p class="text-sm text-zinc-400 font-light leading-relaxed mb-10">Siap melayani konsultasi dan pemesanan setiap hari. Jangan ragu untuk menghubungi kami melalui channel di bawah ini.</p>
+                    <div class="space-y-6">
+                        <a href="https://wa.me/6285163061987" target="_blank" class="flex items-start gap-4 group"><div class="w-12 h-12 bg-neon-500/10 border border-neon-500/20 rounded-sm flex items-center justify-center shrink-0 group-hover:bg-neon-500/20 transition-colors"><iconify-icon icon="mdi:whatsapp" class="text-neon-400 text-xl"></iconify-icon></div><div><div class="text-sm font-medium group-hover:text-neon-400 transition-colors">WhatsApp</div><div class="text-sm text-zinc-400 font-light">0851-6306-1987</div><div class="text-xs text-zinc-600 mt-0.5">Respon cepat 08:00 - 22:00</div></div></a>
+                        <div class="flex items-start gap-4"><div class="w-12 h-12 bg-neon-500/10 border border-neon-500/20 rounded-sm flex items-center justify-center shrink-0"><iconify-icon icon="mdi:map-marker" class="text-neon-400 text-xl"></iconify-icon></div><div><div class="text-sm font-medium">Lokasi</div><div class="text-sm text-zinc-400 font-light">Bandung, Jawa Barat</div><div class="text-xs text-zinc-600 mt-0.5">Home service area Bandung & Cimahi</div></div></div>
+                        <div class="flex items-start gap-4"><div class="w-12 h-12 bg-neon-500/10 border border-neon-500/20 rounded-sm flex items-center justify-center shrink-0"><iconify-icon icon="mdi:clock-outline" class="text-neon-400 text-xl"></iconify-icon></div><div><div class="text-sm font-medium">Jam Operasional</div><div class="text-sm text-zinc-400 font-light">Senin - Minggu, 08:00 - 22:00</div></div></div>
+                        <a href="#" class="flex items-start gap-4 group"><div class="w-12 h-12 bg-neon-500/10 border border-neon-500/20 rounded-sm flex items-center justify-center shrink-0 group-hover:bg-neon-500/20 transition-colors"><iconify-icon icon="mdi:instagram" class="text-neon-400 text-xl"></iconify-icon></div><div><div class="text-sm font-medium group-hover:text-neon-400 transition-colors">Instagram</div><div class="text-sm text-zinc-400 font-light">@mikaylagames</div></div></a>
+                    </div>
+                </div>
+                <div class="scroll-reveal">
+                    <div class="p-8 border border-zinc-800/60 bg-[#0c0c0e]/80 rounded-sm">
+                        <h3 class="text-lg font-bold tracking-tight mb-1">Kirim Pesan</h3>
+                        <p class="text-xs text-zinc-500 mb-6">Isi form di bawah, kami akan segera merespons via WhatsApp.</p>
+                        <form id="contactForm" class="space-y-5">
+                            <div><label class="block text-[10px] font-bold uppercase tracking-[0.12em] text-zinc-400 mb-2">Nama Lengkap</label><input type="text" id="formName" required placeholder="Masukkan nama Anda" class="w-full px-4 py-3 bg-[#09090b] border border-zinc-800 rounded-sm text-sm text-white placeholder:text-zinc-600 focus:border-neon-500/50 focus:outline-none focus:ring-1 focus:ring-neon-500/20 transition-colors"></div>
+                            <div><label class="block text-[10px] font-bold uppercase tracking-[0.12em] text-zinc-400 mb-2">Nomor WhatsApp</label><input type="tel" id="formPhone" required placeholder="08xx-xxxx-xxxx" class="w-full px-4 py-3 bg-[#09090b] border border-zinc-800 rounded-sm text-sm text-white placeholder:text-zinc-600 focus:border-neon-500/50 focus:outline-none focus:ring-1 focus:ring-neon-500/20 transition-colors"></div>
+                            <div><label class="block text-[10px] font-bold uppercase tracking-[0.12em] text-zinc-400 mb-2">Tipe Console</label><select id="formConsole" required class="w-full px-4 py-3 bg-[#09090b] border border-zinc-800 rounded-sm text-sm text-white focus:border-neon-500/50 focus:outline-none focus:ring-1 focus:ring-neon-500/20 transition-colors appearance-none"><option value="" class="text-zinc-600">Pilih tipe console</option><option value="PS3">PS3 (HEN)</option><option value="PS4">PS4 (Jailbreak)</option><option value="PS5">PS5 (Jailbreak)</option><option value="Lainnya">Lainnya</option></select></div>
+                            <div><label class="block text-[10px] font-bold uppercase tracking-[0.12em] text-zinc-400 mb-2">Pesan</label><textarea id="formMessage" rows="4" placeholder="Jelaskan kebutuhan Anda..." class="w-full px-4 py-3 bg-[#09090b] border border-zinc-800 rounded-sm text-sm text-white placeholder:text-zinc-600 focus:border-neon-500/50 focus:outline-none focus:ring-1 focus:ring-neon-500/20 transition-colors resize-none"></textarea></div>
+                            <button type="submit" class="w-full px-8 py-4 bg-neon-500 text-black text-sm font-bold uppercase tracking-widest hover:bg-neon-400 transition-all duration-200 rounded-sm flex items-center justify-center gap-2"><iconify-icon icon="mdi:send" class="text-base"></iconify-icon>Kirim via WhatsApp</button>
+                        </form>
+                        <div id="formSuccess" class="hidden mt-4 p-4 bg-neon-500/10 border border-neon-500/30 rounded-sm text-center"><iconify-icon icon="mdi:check-circle" class="text-neon-400 text-2xl"></iconify-icon><p class="text-sm text-neon-400 font-medium mt-1">Pesan terkirim! Kami akan segera menghubungi Anda.</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="relative bg-[#0c0c0e] border-t border-zinc-800/50 bg-noise">
+        <div class="relative z-10 max-w-7xl mx-auto px-5 md:px-8">
+            <div class="py-12 md:py-16 grid grid-cols-1 md:grid-cols-4 gap-10">
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4"><div class="w-9 h-9 bg-neon-500 rounded flex items-center justify-center"><iconify-icon icon="mdi:gamepad-variant" class="text-black text-xl"></iconify-icon></div><div><span class="text-lg font-extrabold tracking-tighter leading-none">MIKAYLA</span><span class="text-lg font-extrabold tracking-tighter text-neon-400 leading-none"> GAMES</span></div></div>
+                    <p class="text-sm text-zinc-500 font-light leading-relaxed max-w-sm mb-6">Jasa isi game console terpercaya di Bandung. PS3 HEN, PS4 Jailbreak, PS5 Jailbreak — ditangani profesional dengan garansi penuh.</p>
+                    <div class="flex items-center gap-3">
+                        <a href="https://wa.me/6285163061987" target="_blank" class="w-10 h-10 bg-zinc-800/50 border border-zinc-700/50 rounded-sm flex items-center justify-center text-zinc-400 hover:text-neon-400 hover:border-neon-500/30 transition-all"><iconify-icon icon="mdi:whatsapp" class="text-lg"></iconify-icon></a>
+                        <a href="#" class="w-10 h-10 bg-zinc-800/50 border border-zinc-700/50 rounded-sm flex items-center justify-center text-zinc-400 hover:text-neon-400 hover:border-neon-500/30 transition-all"><iconify-icon icon="mdi:instagram" class="text-lg"></iconify-icon></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-[10px] font-bold uppercase tracking-[0.15em] text-zinc-400 mb-4">Layanan</h4>
+                    <ul class="space-y-2.5">
+                        <li><a href="#services" class="text-sm text-zinc-500 font-light hover:text-neon-400 transition-colors">PS3 HEN Install</a></li>
+                        <li><a href="#services" class="text-sm text-zinc-500 font-light hover:text-neon-400 transition-colors">PS4 Jailbreak</a></li>
+                        <li><a href="#services" class="text-sm text-zinc-500 font-light hover:text-neon-400 transition-colors">PS5 Jailbreak</a></li>
+                        <li><a href="#daftar-game" class="text-sm text-zinc-500 font-light hover:text-neon-400 transition-colors">List Game PDF</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-[10px] font-bold uppercase tracking-[0.15em] text-zinc-400 mb-4">Informasi</h4>
+                    <ul class="space-y-2.5">
+                        <li><a href="#about" class="text-sm text-zinc-500 font-light hover:text-neon-400 transition-colors">Tentang Kami</a></li>
+                        <li><a href="#keunggulan" class="text-sm text-zinc-500 font-light hover:text-neon-400 transition-colors">Keunggulan</a></li>
+                        <li><a href="#testimoni" class="text-sm text-zinc-500 font-light hover:text-neon-400 transition-colors">Testimoni</a></li>
+                        <li><a href="#kontak" class="text-sm text-zinc-500 font-light hover:text-neon-400 transition-colors">Kontak</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="glow-line"></div>
+            <div class="py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-xs text-zinc-600 font-light">© 2024 Mikayla Games. All rights reserved.</p>
+                <p class="text-xs text-zinc-600 font-light">Jasa Isi Game PS3, PS4, PS5 Terpercaya di Bandung</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============ WHATSAPP FAB ============ -->
+    <a href="https://wa.me/6285163061987?text=Halo%20Mikayla%20Games%2C%20saya%20ingin%20bertanya%20tentang%20jasa%20isi%20game." target="_blank" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-neon-500 rounded-full flex items-center justify-center shadow-lg shadow-neon-500/25 hover:bg-neon-400 hover:scale-110 transition-all duration-200 group">
+        <iconify-icon icon="mdi:whatsapp" class="text-black text-2xl"></iconify-icon>
+        <span class="absolute right-full mr-3 px-3 py-1.5 bg-zinc-800 border border-zinc-700 text-xs text-white font-medium rounded-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">Chat Sekarang</span>
+        <span class="absolute inset-0 rounded-full bg-neon-500 animate-ping opacity-20"></span>
+    </a>
+
+    <!-- ============ JAVASCRIPT ============ -->
+    <script>
+        // ===== Mobile Menu Toggle =====
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+        let menuOpen = false;
+
+        menuBtn.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            mobileMenu.classList.toggle('hidden');
+            menuIcon.setAttribute('icon', menuOpen ? 'mdi:close' : 'mdi:menu');
         });
-    }
-    isPlaying = !isPlaying;
-});
 
-// ==========================================
-// 1. PDF VIEWER LOGIC
-// ==========================================
-const pdfFiles = [{ name: "LIST GAME PS3 2025.pdf" }, { name: "PS4 LISTGAME 2026.pdf" }, { name: "PLAYSTATION 5 LIST 2027.pdf" }];
-let currentPdf = pdfFiles[0].name;
-const pdfFrameWrap = document.getElementById('pdfFrameWrap');
-const pdfTitle = document.getElementById('pdfTitle');
-const pdfDownloadBtn = document.getElementById('pdfDownloadBtn');
-const pdfFullscreenBtn = document.getElementById('pdfFullscreenBtn');
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuOpen = false;
+                mobileMenu.classList.add('hidden');
+                menuIcon.setAttribute('icon', 'mdi:menu');
+            });
+        });
 
-function loadPdf(filename) { currentPdf = filename; pdfTitle.textContent = filename; pdfDownloadBtn.href = filename; pdfFrameWrap.innerHTML = `<iframe src="${filename}#toolbar=0&navpanes=0" title="${filename}" loading="lazy"></iframe>`; }
-loadPdf(pdfFiles[0].name);
+        // ===== Navbar Scroll Effect =====
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 80) {
+                navbar.style.background = 'rgba(9,9,11,0.92)';
+                navbar.style.backdropFilter = 'blur(12px)';
+                navbar.style.borderBottom = '1px solid rgba(39,39,42,0.5)';
+            } else {
+                navbar.style.background = 'transparent';
+                navbar.style.backdropFilter = 'none';
+                navbar.style.borderBottom = '1px solid transparent';
+            }
+        });
 
-document.querySelectorAll('.pdf-tab').forEach(tab => { tab.addEventListener('click', () => { document.querySelectorAll('.pdf-tab').forEach(t => t.classList.remove('active')); tab.classList.add('active'); loadPdf(tab.getAttribute('data-pdf')); }); });
-pdfFullscreenBtn.addEventListener('click', (e) => { e.preventDefault(); const iframe = pdfFrameWrap.querySelector('iframe'); if (iframe && iframe.requestFullscreen) iframe.requestFullscreen(); });
+        // ===== Scroll Reveal =====
+        const revealElements = document.querySelectorAll('.scroll-reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    const siblings = entry.target.parentElement.querySelectorAll('.scroll-reveal');
+                    let staggerIndex = 0;
+                    siblings.forEach((sib, i) => { if (sib === entry.target) staggerIndex = i; });
+                    setTimeout(() => { entry.target.classList.add('visible'); }, staggerIndex * 100);
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        revealElements.forEach(el => revealObserver.observe(el));
 
-document.querySelectorAll('.view-toggle-btn').forEach(btn => { btn.addEventListener('click', () => { document.querySelectorAll('.view-toggle-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active'); const view = btn.getAttribute('data-view'); document.getElementById('pdfPanel').classList.toggle('active', view === 'pdf'); document.getElementById('searchPanel').classList.toggle('active', view === 'search'); }); });
+        // ===== Counter Animation =====
+        const counters = document.querySelectorAll('.counter[data-target]');
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = parseInt(entry.target.dataset.target);
+                    const duration = 2000;
+                    const startTime = performance.now();
+                    function updateCounter(currentTime) {
+                        const elapsed = currentTime - startTime;
+                        const progress = Math.min(elapsed / duration, 1);
+                        const eased = 1 - Math.pow(1 - progress, 3);
+                        const current = Math.floor(eased * target);
+                        entry.target.textContent = current.toLocaleString('id-ID');
+                        if (progress < 1) { requestAnimationFrame(updateCounter); } 
+                        else { entry.target.textContent = target.toLocaleString('id-ID') + '+'; }
+                    }
+                    requestAnimationFrame(updateCounter);
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        counters.forEach(c => counterObserver.observe(c));
 
-// ==========================================
-// 2. GAME DATABASE & SEARCH
-// ==========================================
-const gameData = [ { title: "The Last of Us", console: "ps3" },{ title: "God of War III", console: "ps3" },{ title: "Grand Theft Auto V", console: "ps3" },{ title: "Uncharted 3", console: "ps3" },{ title: "Red Dead Redemption", console: "ps3" },{ title: "Persona 5", console: "ps3" },{ title: "Gran Turismo 6", console: "ps3" },{ title: "Call of Duty: Black Ops II", console: "ps3" }, { title: "God of War (2018)", console: "ps4" },{ title: "Marvel's Spider-Man", console: "ps4" },{ title: "The Witcher 3", console: "ps4" },{ title: "Bloodborne", console: "ps4" },{ title: "Horizon Zero Dawn", console: "ps4" },{ title: "Ghost of Tsushima", console: "ps4" },{ title: "The Last of Us Part II", console: "ps4" },{ title: "Uncharted 4", console: "ps4" },{ title: "Red Dead Redemption 2", console: "ps4" },{ title: "Persona 5 Royal", console: "ps4" },{ title: "Final Fantasy VII Remake", console: "ps4" },{ title: "Elden Ring", console: "ps4" }, { title: "Demon's Souls Remake", console: "ps5" },{ title: "Ratchet & Clank: Rift Apart", console: "ps5" },{ title: "Returnal", console: "ps5" },{ title: "Marvel's Spider-Man 2", console: "ps5" },{ title: "God of War Ragnarök", console: "ps5" },{ title: "Horizon Forbidden West", console: "ps5" },{ title: "Final Fantasy XVI", console: "ps5" },{ title: "Baldur's Gate 3", console: "ps5" }];
-const gameGrid = document.getElementById('gameGrid'); const gameSearch = document.getElementById('gameSearch'); const catalogTabs = document.querySelectorAll('.catalog-tab');
-let currentFilter = 'all'; let searchQuery = '';
-function renderGames() { let f = gameData.filter(g => (currentFilter === 'all' || g.console === currentFilter) && g.title.toLowerCase().includes(searchQuery.toLowerCase())); if (f.length === 0) { gameGrid.innerHTML = '<div class="no-games">Game tidak ditemukan.</div>'; return; } gameGrid.innerHTML = f.map(g => { const c = g.console.toUpperCase(); const m = encodeURIComponent(`Halo Mikayla Games, saya mau order isi game ${c}: ${g.title}`); return `<div class="game-card"><div class="game-console-tag">${c}</div><div class="game-title">${g.title}</div><a href="https://wa.me/6285163061987?text=${m}" target="_blank" class="game-order-btn"><iconify-icon icon="lucide:shopping-cart"></iconify-icon> Pesan</a></div>`; }).join(''); }
-catalogTabs.forEach(t => t.addEventListener('click', () => { catalogTabs.forEach(x => x.classList.remove('active')); t.classList.add('active'); currentFilter = t.getAttribute('data-filter'); renderGames(); }));
-gameSearch.addEventListener('input', (e) => { searchQuery = e.target.value; renderGames(); });
-renderGames();
+        // ===== Contact Form -> WhatsApp =====
+        const contactForm = document.getElementById('contactForm');
+        const formSuccess = document.getElementById('formSuccess');
 
-// ==========================================
-// 3. FORM LOGIC
-// ==========================================
-const serviceTypeSelect = document.getElementById('serviceType'); const addressGroup = document.getElementById('addressGroup');
-serviceTypeSelect.addEventListener('change', function() { if (this.value === 'panggilan') { addressGroup.classList.add('visible'); } else { addressGroup.classList.remove('visible'); } });
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('formName').value.trim();
+            const phone = document.getElementById('formPhone').value.trim();
+            const console_type = document.getElementById('formConsole').value;
+            const message = document.getElementById('formMessage').value.trim();
+            if (!name || !phone || !console_type) return;
+            let waMessage = `Halo Mikayla Games! Saya ingin konsultasi:\n\n`;
+            waMessage += `👤 Nama: ${name}\n📱 WhatsApp: ${phone}\n🎮 Console: ${console_type}\n`;
+            if (message) waMessage += `💬 Pesan: ${message}`;
+            const waURL = `https://wa.me/6285163061987?text=${encodeURIComponent(waMessage)}`;
+            formSuccess.classList.remove('hidden');
+            contactForm.reset();
+            setTimeout(() => { window.open(waURL, '_blank'); }, 500);
+            setTimeout(() => { formSuccess.classList.add('hidden'); }, 5000);
+        });
 
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault(); const name = document.getElementById('name').value; const phone = document.getElementById('phone').value; const consoleType = document.getElementById('console').value; const serviceType = document.getElementById('serviceType').value; const address = document.getElementById('address').value; const message = document.getElementById('message').value;
-    const consoleMap = { ps3: 'PS3 (HEN)', ps4: 'PS4 (Jailbreak)', ps5: 'PS5 (Jailbreak)', other: 'Lainnya' }; const serviceMap = { datang: 'Datang ke Workshop', panggilan: 'Panggilan / Jemput Konsol' };
-    let waText = `Halo Mikayla Games!%0A%0ANama: ${encodeURIComponent(name)}%0ANo. HP: ${encodeURIComponent(phone)}%0AKonsol: ${encodeURIComponent(consoleMap[consoleType] || '-')}%0ALayanan: ${encodeURIComponent(serviceMap[serviceType])}`;
-    if (serviceType === 'panggilan' && address) { waText += `%0AAlamat: ${encodeURIComponent(address)}`; }
-    if (message) { waText += `%0APesan: ${encodeURIComponent(message)}`; }
-    const waURL = `https://wa.me/6285163061987?text=${waText}`; showToast('Mengarahkan ke WhatsApp...'); setTimeout(() => { window.open(waURL, '_blank'); }, 800); this.reset(); addressGroup.classList.remove('visible');
-});
-
-// ==========================================
-// 4. GENERAL SCRIPTS
-// ==========================================
-const navbar = document.getElementById('navbar'); window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 50); });
-const menuBtn = document.getElementById('menuBtn'); const mobileMenu = document.getElementById('mobileMenu'); const menuClose = document.getElementById('menuClose');
-menuBtn.addEventListener('click', () => { mobileMenu.classList.add('active'); }); menuClose.addEventListener('click', () => { mobileMenu.classList.remove('active'); }); function closeMobile() { mobileMenu.classList.remove('active'); }
-
-const revealElements = document.querySelectorAll('.reveal'); const revealObserver = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }); revealElements.forEach(el => revealObserver.observe(el));
-
-function animateCounter(el, target, suffix = '') { let current = 0; const step = Math.ceil(target / 60); const interval = setInterval(() => { current += step; if (current >= target) { current = target; clearInterval(interval); } el.textContent = current.toLocaleString('id-ID') + suffix; }, 25); }
-const counterSection = document.getElementById('hero'); let counterStarted = false;
-const counterObserver = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting && !counterStarted) { counterStarted = true; animateCounter(document.getElementById('counterClients'), 2500, '+'); animateCounter(document.getElementById('counterGames'), gameData.length, '+'); animateCounter(document.getElementById('counterYears'), 5, '+'); } }); }, { threshold: 0.3 }); counterObserver.observe(counterSection);
-
-function showToast(msg) { const toast = document.getElementById('toast'); const toastMsg = document.getElementById('toastMsg'); toastMsg.textContent = msg; toast.classList.add('show'); setTimeout(() => { toast.classList.remove('show'); }, 3000); }
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => { anchor.addEventListener('click', function(e) { const target = document.querySelector(this.getAttribute('href')); if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); } }); });
-</script>
+        // ===== Active Nav Link Highlight =====
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('nav a[href^="#"]');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 120;
+                if (pageYOffset >= sectionTop) { current = section.getAttribute('id'); }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('text-neon-400');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.remove('text-zinc-400');
+                    link.classList.add('text-neon-400');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
