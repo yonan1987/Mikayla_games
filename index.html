@@ -4,6 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mikayla Games Bandung — Jasa Isi Game PS3, PS4, PS5</title>
+  <meta name="description" content="Mikayla Games Bandung — Jasa isi game PS3 HEN, PS4 HEN, PS5 Jailbreak terlengkap. 5000+ game, bisa panggilan kerumah. Hubungi 0851-6306-1987.">
+  <meta property="og:title" content="Mikayla Games Bandung — Jasa Isi Game PlayStation">
+  <meta property="og:description" content="Jasa isi game PS3, PS4, PS5 terlengkap di Bandung. Bisa panggilan kerumah!">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="id_ID">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Mikayla Games Bandung",
+    "description": "Jasa isi game PS3 HEN, PS4 HEN, PS5 Jailbreak terlengkap di Bandung. Bisa panggilan kerumah.",
+    "address": { "@type": "PostalAddress", "addressLocality": "Bandung", "addressRegion": "Jawa Barat", "addressCountry": "ID" },
+    "telephone": "+6285163061987",
+    "url": "https://wa.me/6285163061987",
+    "openingHours": "Mo-Sa 10:00-21:00, Su 12:00-18:00",
+    "priceRange": "Rp 75K - Rp 550K + Ongkir"
+  }
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -12,10 +30,7 @@
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: {
-            inter: ['Inter', 'sans-serif'],
-            geist: ['Geist', 'sans-serif'],
-          }
+          fontFamily: { inter: ['Inter', 'sans-serif'], geist: ['Geist', 'sans-serif'] }
         }
       }
     }
@@ -27,1307 +42,537 @@
     .font-geist { font-family: 'Geist', sans-serif; }
     .no-scrollbar::-webkit-scrollbar { display: none; }
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-
-    @keyframes reveal {
-      from { opacity: 0; transform: translateY(24px); filter: blur(8px); }
-      to { opacity: 1; transform: translateY(0); filter: blur(0); }
-    }
+    @keyframes reveal { from { opacity: 0; transform: translateY(24px); filter: blur(8px); } to { opacity: 1; transform: translateY(0); filter: blur(0); } }
     .reveal-on-scroll { opacity: 0; }
     .reveal-on-scroll.revealed { animation: reveal 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
-
     @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-12px); } }
     .float-animation { animation: float 6s ease-in-out infinite; }
-
     @keyframes pulse-ring { 0% { transform: scale(1); opacity: 0.6; } 100% { transform: scale(1.8); opacity: 0; } }
     .pulse-ring { animation: pulse-ring 2s cubic-bezier(0, 0, 0.2, 1) infinite; }
-
     @keyframes marquee-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
     .marquee-track { animation: marquee-scroll 40s linear infinite; }
     .marquee-track:hover { animation-play-state: paused; }
-
     @keyframes spin-slow { to { transform: rotate(360deg); } }
     .spin-slow { animation: spin-slow 20s linear infinite; }
-
     @keyframes dash-move { to { stroke-dashoffset: -20; } }
     .dash-animate { animation: dash-move 1s linear infinite; }
-
     @keyframes glow-pulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
     .glow-pulse { animation: glow-pulse 2s ease-in-out infinite; }
-
     .glass { background: rgba(255,255,255,0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.06); }
-
     .glow-card { position: relative; overflow: hidden; }
-    .glow-card::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-      background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(198,249,31,0.06), transparent 40%);
-      pointer-events: none; z-index: 0;
-    }
-
+    .glow-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(198,249,31,0.06), transparent 40%); pointer-events: none; z-index: 0; }
     .text-gradient { background: linear-gradient(135deg, #ffffff 0%, #c6f91f 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
     .nav-blur { backdrop-filter: blur(24px); background: rgba(5,8,10,0.8); }
     .mobile-menu { transform: translateX(100%); transition: transform 0.3s ease; }
     .mobile-menu.open { transform: translateX(0); }
-
-    .toast { transform: translateY(100px); opacity: 0; transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); }
-    .toast.show { transform: translateY(0); opacity: 1; }
-
     .console-badge { transition: all 0.3s ease; }
     .console-badge:hover { transform: translateY(-2px); }
-
-    /* PS Button colors */
-    .ps-blue { color: #0070d1; }
-    .ps-blue-bg { background: #0070d1; }
-    .ps-green { color: #00a651; }
-    .ps-red { color: #e3000b; }
-    .ps-pink { color: #ff6b9d; }
-
     .tab-btn.active { background: rgba(198,249,31,0.1); border-color: rgba(198,249,31,0.4); color: #c6f91f; }
     .tab-content { display: none; }
     .tab-content.active { display: block; }
-
     .price-card { transition: all 0.3s ease; }
     .price-card:hover { transform: translateY(-4px); }
     .price-popular { border-color: rgba(198,249,31,0.4) !important; }
-
     .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; }
     .faq-answer.open { max-height: 300px; }
-
-    .whatsapp-float {
-      position: fixed; bottom: 24px; right: 24px; z-index: 100;
-      width: 60px; height: 60px; border-radius: 50%;
-      background: #25D366; display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 4px 24px rgba(37,211,102,0.4);
-      transition: all 0.3s ease;
-    }
+    .whatsapp-float { position: fixed; bottom: 24px; right: 24px; z-index: 100; width: 60px; height: 60px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 24px rgba(37,211,102,0.4); transition: all 0.3s ease; }
     .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 6px 32px rgba(37,211,102,0.6); }
+    .zone-card { transition: all 0.3s ease; cursor: pointer; }
+    .zone-card:hover, .zone-card.selected { border-color: rgba(198,249,31,0.5) !important; }
+    .zone-card.selected { background: rgba(198,249,31,0.06) !important; }
+    .zone-card.selected .zone-check { display: flex !important; }
   </style>
 </head>
 <body class="font-inter antialiased">
 
-  <!-- ===================== NAVBAR ===================== -->
+  <!-- PDF MODAL -->
+  <div id="pdfModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.92);backdrop-filter:blur(8px);">
+    <div style="position:absolute;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:14px 20px;background:rgba(11,15,19,0.95);border-bottom:1px solid rgba(255,255,255,0.08);">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <span style="width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,#c6f91f,#8fe01f);display:flex;align-items:center;justify-content:center;font-size:14px;">📋</span>
+        <div><div id="pdfModalTitle" style="font-family:'Geist',sans-serif;font-size:14px;font-weight:600;color:#fff;"></div><div style="font-size:11px;color:rgba(255,255,255,0.4);margin-top:1px;">Katalog Game MIKAYLA GAMES</div></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <a id="pdfDownloadBtn" href="#" download style="display:inline-flex;align-items:center;gap:7px;padding:8px 16px;border-radius:100px;background:linear-gradient(135deg,#c6f91f,#8fe01f);color:#05080A;font-size:12px;font-weight:700;font-family:'Geist',sans-serif;text-decoration:none;">⬇ Download</a>
+        <button onclick="closePdfModal()" style="width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;">✕</button>
+      </div>
+    </div>
+    <div style="position:absolute;top:65px;left:0;right:0;bottom:0;"><iframe id="pdfFrame" src="" style="width:100%;height:100%;border:none;background:#1a1a2e;"></iframe></div>
+  </div>
+
+  <!-- NAVBAR -->
   <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 nav-blur border-b border-white/5 transition-all duration-300">
     <div class="max-w-screen-2xl mx-auto px-6 lg:px-10 h-16 sm:h-20 flex items-center justify-between">
       <a href="#" class="flex items-center gap-2.5 group">
-        <div class="w-9 h-9 bg-[#c6f91f] rounded-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-          <i data-lucide="gamepad-2" class="w-5 h-5 text-black"></i>
-        </div>
-        <div class="flex flex-col leading-tight">
-          <span class="font-geist font-bold text-white tracking-tight text-base">MIKAYLA</span>
-          <span class="text-[9px] font-semibold tracking-[0.25em] uppercase text-[#c6f91f]">GAMES BANDUNG</span>
-        </div>
+        <div class="w-9 h-9 bg-[#c6f91f] rounded-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110"><i data-lucide="gamepad-2" class="w-5 h-5 text-black"></i></div>
+        <div class="flex flex-col leading-tight"><span class="font-geist font-bold text-white tracking-tight text-base">MIKAYLA</span><span class="text-[9px] font-semibold tracking-[0.25em] uppercase text-[#c6f91f]">GAMES BANDUNG</span></div>
       </a>
-
       <div class="hidden lg:flex items-center gap-10">
-        <a href="#layanan" class="text-sm text-white/70 hover:text-white transition-colors duration-300">Layanan</a>
-        <a href="#harga" class="text-sm text-white/70 hover:text-white transition-colors duration-300">Harga</a>
-        <a href="#proses" class="text-sm text-white/70 hover:text-white transition-colors duration-300">Cara Order</a>
-        <a href="#katalog" class="text-sm text-white/70 hover:text-white transition-colors duration-300">Katalog Game</a>
-        <a href="#faq" class="text-sm text-white/70 hover:text-white transition-colors duration-300">FAQ</a>
-        <a href="#kontak" class="text-sm text-white/70 hover:text-white transition-colors duration-300">Kontak</a>
+        <a href="#layanan" class="text-sm text-white/70 hover:text-white transition-colors">Layanan</a>
+        <a href="#panggilan" class="text-sm text-white/70 hover:text-white transition-colors">Panggilan</a>
+        <a href="#harga" class="text-sm text-white/70 hover:text-white transition-colors">Harga</a>
+        <a href="#katalog" class="text-sm text-white/70 hover:text-white transition-colors">Katalog</a>
+        <a href="#faq" class="text-sm text-white/70 hover:text-white transition-colors">FAQ</a>
+        <a href="#kontak" class="text-sm text-white/70 hover:text-white transition-colors">Kontak</a>
       </div>
-
       <div class="flex items-center gap-4">
-        <a href="https://wa.me/6285163061987" target="_blank" class="hidden sm:inline-flex items-center gap-2 text-xs font-medium tracking-wide uppercase py-3 px-6 bg-[#c6f91f] text-black hover:bg-white transition-colors duration-300">
-          <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
-          Hubungi Kami
-        </a>
-        <button id="menu-toggle" class="lg:hidden p-2 text-white/70 hover:text-white transition-colors">
-          <i data-lucide="menu" class="w-6 h-6"></i>
-        </button>
+        <a href="https://wa.me/6285163061987" target="_blank" class="hidden sm:inline-flex items-center gap-2 text-xs font-medium tracking-wide uppercase py-3 px-6 bg-[#c6f91f] text-black hover:bg-white transition-colors"><i data-lucide="message-circle" class="w-3.5 h-3.5"></i>Hubungi Kami</a>
+        <button id="menu-toggle" class="lg:hidden p-2 text-white/70 hover:text-white"><i data-lucide="menu" class="w-6 h-6"></i></button>
       </div>
     </div>
   </nav>
 
   <!-- Mobile Menu -->
   <div id="mobile-menu" class="mobile-menu fixed inset-y-0 right-0 w-80 max-w-full z-[60] bg-[#0B0F13] border-l border-white/5 p-8 flex flex-col">
-    <div class="flex justify-end mb-10">
-      <button id="menu-close" class="p-2 text-white/70 hover:text-white transition-colors">
-        <i data-lucide="x" class="w-6 h-6"></i>
-      </button>
-    </div>
+    <div class="flex justify-end mb-10"><button id="menu-close" class="p-2 text-white/70 hover:text-white"><i data-lucide="x" class="w-6 h-6"></i></button></div>
     <div class="flex flex-col gap-6">
-      <a href="#layanan" class="mobile-link text-2xl font-light text-white/80 hover:text-[#c6f91f] transition-colors">Layanan</a>
-      <a href="#harga" class="mobile-link text-2xl font-light text-white/80 hover:text-[#c6f91f] transition-colors">Harga</a>
-      <a href="#proses" class="mobile-link text-2xl font-light text-white/80 hover:text-[#c6f91f] transition-colors">Cara Order</a>
-      <a href="#katalog" class="mobile-link text-2xl font-light text-white/80 hover:text-[#c6f91f] transition-colors">Katalog Game</a>
-      <a href="#faq" class="mobile-link text-2xl font-light text-white/80 hover:text-[#c6f91f] transition-colors">FAQ</a>
-      <a href="#kontak" class="mobile-link text-2xl font-light text-white/80 hover:text-[#c6f91f] transition-colors">Kontak</a>
+      <a href="#layanan" class="mobile-link text-2xl font-light text-white/80 hover:text-[#c6f91f]">Layanan</a>
+      <a href="#panggilan" class="mobile-link text-2xl font-light text-white/80 hover:text-[#c6f91f]">Panggilan</a>
+      <a href="#harga" class="mobile-link text-2xl font-light text-white/80 hover:text-[#c6f91f]">Harga</a>
+      <a href="#katalog" class="mobile-link text-2xl font-light text-white/80 hover:text-[#c6f91f]">Katalog</a>
+      <a href="#faq" class="mobile-link text-2xl font-light text-white/80 hover:text-[#c6f91f]">FAQ</a>
+      <a href="#kontak" class="mobile-link text-2xl font-light text-white/80 hover:text-[#c6f91f]">Kontak</a>
     </div>
-    <div class="mt-auto">
-      <a href="https://wa.me/6285163061987" target="_blank" class="mobile-link inline-flex items-center gap-2 text-xs font-medium tracking-wide uppercase py-4 px-8 bg-[#c6f91f] text-black w-full justify-center">
-        <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
-        WhatsApp
-      </a>
-    </div>
+    <div class="mt-auto"><a href="https://wa.me/6285163061987" target="_blank" class="mobile-link inline-flex items-center gap-2 text-xs font-medium tracking-wide uppercase py-4 px-8 bg-[#c6f91f] text-black w-full justify-center"><i data-lucide="message-circle" class="w-3.5 h-3.5"></i>WhatsApp</a></div>
   </div>
   <div id="menu-overlay" class="fixed inset-0 z-[55] bg-black/60 hidden"></div>
 
-  <!-- ===================== HERO ===================== -->
+  <!-- HERO -->
   <section class="relative min-h-screen flex items-center overflow-hidden">
     <div class="absolute inset-0" style="background: radial-gradient(ellipse at top left, rgba(30,41,59,0.4), #05080A 50%, #05080A)"></div>
     <div class="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] rounded-full opacity-20" style="background: radial-gradient(circle, rgba(198,249,31,0.3), transparent 70%); filter: blur(120px);"></div>
     <div class="absolute bottom-[-10%] left-[-5%] w-[400px] h-[400px] rounded-full opacity-10" style="background: radial-gradient(circle, rgba(0,112,209,0.3), transparent 70%); filter: blur(64px);"></div>
-
-    <svg class="absolute inset-0 w-full h-full opacity-[0.03]" viewBox="0 0 1440 900">
-      <line x1="0" y1="450" x2="1440" y2="450" stroke="white" stroke-width="1"/>
-      <line x1="720" y1="0" x2="720" y2="900" stroke="white" stroke-width="1"/>
-      <circle cx="720" cy="450" r="200" fill="none" stroke="#c6f91f" stroke-width="0.5" stroke-dasharray="4 4" class="dash-animate"/>
-      <circle cx="720" cy="450" r="350" fill="none" stroke="white" stroke-width="0.5" stroke-dasharray="2 6" opacity="0.5"/>
-    </svg>
-
+    <svg class="absolute inset-0 w-full h-full opacity-[0.03]" viewBox="0 0 1440 900"><line x1="0" y1="450" x2="1440" y2="450" stroke="white" stroke-width="1"/><line x1="720" y1="0" x2="720" y2="900" stroke="white" stroke-width="1"/><circle cx="720" cy="450" r="200" fill="none" stroke="#c6f91f" stroke-width="0.5" stroke-dasharray="4 4" class="dash-animate"/><circle cx="720" cy="450" r="350" fill="none" stroke="white" stroke-width="0.5" stroke-dasharray="2 6" opacity="0.5"/></svg>
     <div class="relative z-10 max-w-screen-2xl mx-auto px-6 lg:px-10 pt-32 pb-20 w-full">
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div class="reveal-on-scroll" style="animation-delay: 0.1s;">
           <div class="inline-flex items-center gap-2 mb-8 px-4 py-2 border border-[#c6f91f]/20 rounded-full">
-            <span class="relative flex h-2 w-2">
-              <span class="pulse-ring absolute inline-flex h-full w-full rounded-full bg-[#c6f91f] opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-2 w-2 bg-[#c6f91f]"></span>
-            </span>
+            <span class="relative flex h-2 w-2"><span class="pulse-ring absolute inline-flex h-full w-full rounded-full bg-[#c6f91f] opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-[#c6f91f]"></span></span>
             <span class="text-xs font-semibold tracking-widest uppercase text-[#c6f91f]">Bandung — Terpercaya Sejak 2018</span>
           </div>
-
-          <h1 class="font-geist font-light text-4xl sm:text-5xl lg:text-7xl tracking-tighter leading-[1.1] mb-8">
-            Jasa Isi Game<br>
-            <span class="text-gradient">PlayStation</span><br>
-            PS3 · PS4 · PS5
-          </h1>
-
+          <h1 class="font-geist font-light text-4xl sm:text-5xl lg:text-7xl tracking-tighter leading-[1.1] mb-8">Jasa Isi Game<br><span class="text-gradient">PlayStation</span><br>PS3 · PS4 · PS5</h1>
           <p class="text-lg lg:text-xl font-light text-white/70 leading-relaxed max-w-lg mb-6">
-            AA sareng Teteh mangga Jasa Isi gamena PS3 HEN, PS4 HEN, dan PS5 Jailbreak atos paling terlengkap di Bandung.
-            <strong class="text-white font-medium">Bisa panggilan kerumah ongkos disesuaikan santai</strong>. Ribuan game siap install langsung ke console Anda.
+            Jasa Isi Game PS3 HEN, PS4 HEN, dan PS5 Jailbreak paling terlengkap di Bandung.
+            <strong class="text-white font-medium">Bisa panggilan ke rumah, ongkos disesuaikan jaraknya — santai!</strong> Ribuan game siap install.
           </p>
-
-          <!-- Console badges -->
           <div class="flex flex-wrap gap-3 mb-10">
-            <span class="console-badge inline-flex items-center gap-2 px-4 py-2 border border-blue-500/30 rounded-lg bg-blue-500/5 text-blue-400 text-sm">
-              <i data-lucide="gamepad-2" class="w-4 h-4"></i> PS3 HEN
-            </span>
-            <span class="console-badge inline-flex items-center gap-2 px-4 py-2 border border-blue-400/30 rounded-lg bg-blue-400/5 text-blue-300 text-sm">
-              <i data-lucide="gamepad-2" class="w-4 h-4"></i> PS4 HEN
-            </span>
-            <span class="console-badge inline-flex items-center gap-2 px-4 py-2 border border-white/30 rounded-lg bg-white/5 text-white text-sm">
-              <i data-lucide="gamepad-2" class="w-4 h-4"></i> PS5 Jailbreak
-            </span>
+            <span class="console-badge inline-flex items-center gap-2 px-4 py-2 border border-blue-500/30 rounded-lg bg-blue-500/5 text-blue-400 text-sm"><i data-lucide="gamepad-2" class="w-4 h-4"></i> PS3 HEN</span>
+            <span class="console-badge inline-flex items-center gap-2 px-4 py-2 border border-blue-400/30 rounded-lg bg-blue-400/5 text-blue-300 text-sm"><i data-lucide="gamepad-2" class="w-4 h-4"></i> PS4 HEN</span>
+            <span class="console-badge inline-flex items-center gap-2 px-4 py-2 border border-white/30 rounded-lg bg-white/5 text-white text-sm"><i data-lucide="gamepad-2" class="w-4 h-4"></i> PS5 Jailbreak</span>
+            <!-- NEW: Panggilan Badge -->
+            <span class="console-badge inline-flex items-center gap-2 px-4 py-2 border border-[#c6f91f]/30 rounded-lg bg-[#c6f91f]/5 text-[#c6f91f] text-sm"><i data-lucide="home" class="w-4 h-4"></i> Panggilan Rumah</span>
           </div>
-
           <div class="flex flex-col sm:flex-row gap-4">
-            <a href="https://wa.me/6285163061987?text=Halo%20Mikayla%20Games%2C%20saya%20mau%20tanya%20jasa%20isi%20game" target="_blank" class="group inline-flex items-center justify-center gap-2 text-xs font-medium tracking-wide uppercase py-5 px-8 bg-[#c6f91f] text-black hover:bg-white transition-colors duration-300">
-              <i data-lucide="message-circle" class="w-4 h-4"></i>
-              Order via WhatsApp
-            </a>
-            <a href="#harga" class="group inline-flex items-center justify-center gap-2 text-xs font-medium tracking-wide uppercase py-5 px-8 border border-white/20 text-white hover:bg-white/5 transition-colors duration-300">
-              Lihat Harga
-              <i data-lucide="arrow-down" class="w-3.5 h-3.5"></i>
-            </a>
+            <a href="https://wa.me/6285163061987?text=Halo%20Mikayla%20Games%2C%20saya%20mau%20tanya%20jasa%20isi%20game%20panggilan%20kerumah" target="_blank" class="group inline-flex items-center justify-center gap-2 text-xs font-medium tracking-wide uppercase py-5 px-8 bg-[#c6f91f] text-black hover:bg-white transition-colors"><i data-lucide="message-circle" class="w-4 h-4"></i>Order via WhatsApp</a>
+            <a href="#panggilan" class="group inline-flex items-center justify-center gap-2 text-xs font-medium tracking-wide uppercase py-5 px-8 border border-white/20 text-white hover:bg-white/5 transition-colors"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i>Cek Ongkir Panggilan</a>
           </div>
-
-          <!-- Trust badges -->
           <div class="flex items-center gap-6 mt-12 pt-8 border-t border-white/5">
-            <div>
-              <div class="font-geist text-2xl font-light text-white">5000<span class="text-[#c6f91f]">+</span></div>
-              <div class="text-xs text-white/40 mt-1">Game Tersedia</div>
-            </div>
+            <div><div class="font-geist text-2xl font-light text-white">5000<span class="text-[#c6f91f]">+</span></div><div class="text-xs text-white/40 mt-1">Game Tersedia</div></div>
             <div class="w-px h-10 bg-white/10"></div>
-            <div>
-              <div class="font-geist text-2xl font-light text-white">2000<span class="text-[#c6f91f]">+</span></div>
-              <div class="text-xs text-white/40 mt-1">Pelanggan Puas</div>
-            </div>
+            <div><div class="font-geist text-2xl font-light text-white">2000<span class="text-[#c6f91f]">+</span></div><div class="text-xs text-white/40 mt-1">Pelanggan Puas</div></div>
             <div class="w-px h-10 bg-white/10"></div>
-            <div>
-              <div class="font-geist text-2xl font-light text-white">7<span class="text-[#c6f91f]">+</span></div>
-              <div class="text-xs text-white/40 mt-1">Tahun Pengalaman</div>
-            </div>
+            <div><div class="font-geist text-2xl font-light text-white">7<span class="text-[#c6f91f]">+</span></div><div class="text-xs text-white/40 mt-1">Tahun Pengalaman</div></div>
           </div>
         </div>
-
-        <!-- Right Visual -->
         <div class="reveal-on-scroll relative" style="animation-delay: 0.3s;">
           <div class="relative float-animation">
             <div class="relative glass rounded-2xl overflow-hidden p-1">
               <img src="https://wallpapercave.com/wp/wp15368248.jpg" alt="Gaming Setup" class="w-full h-auto object-cover rounded-xl" style="filter: brightness(0.75) contrast(1.1);">
               <div class="absolute inset-0 bg-gradient-to-t from-[#05080A] via-transparent to-transparent rounded-xl"></div>
-
               <div class="absolute bottom-6 left-6 right-6 glass rounded-xl p-5">
-                <div class="flex items-center justify-between mb-3">
-                  <div class="text-xs text-white/50 font-semibold tracking-widest uppercase">Console Status</div>
-                  <span class="flex items-center gap-1.5 text-xs text-[#c6f91f]"><span class="w-1.5 h-1.5 bg-[#c6f91f] rounded-full glow-pulse"></span> Online</span>
-                </div>
+                <div class="flex items-center justify-between mb-3"><div class="text-xs text-white/50 font-semibold tracking-widest uppercase">Console Status</div><span class="flex items-center gap-1.5 text-xs text-[#c6f91f]"><span class="w-1.5 h-1.5 bg-[#c6f91f] rounded-full glow-pulse"></span> Online</span></div>
                 <div class="grid grid-cols-3 gap-3">
-                  <div class="text-center p-2 bg-blue-500/10 rounded-lg border border-blue-500/20">
-                    <div class="text-xs text-blue-400 mb-1">PS3</div>
-                    <div class="font-geist text-sm font-medium text-white">HEN 4.93</div>
-                  </div>
-                  <div class="text-center p-2 bg-blue-400/10 rounded-lg border border-blue-400/20">
-                    <div class="text-xs text-blue-300 mb-1">PS4</div>
-                    <div class="font-geist text-sm font-medium text-white">HEN 13.00</div>
-                  </div>
-                  <div class="text-center p-2 bg-white/5 rounded-lg border border-white/20">
-                    <div class="text-xs text-white/70 mb-1">PS5</div>
-                    <div class="font-geist text-sm font-medium text-white">FW 12.00</div>
-                  </div>
+                  <div class="text-center p-2 bg-blue-500/10 rounded-lg border border-blue-500/20"><div class="text-xs text-blue-400 mb-1">PS3</div><div class="font-geist text-sm font-medium text-white">HEN 4.91</div></div>
+                  <div class="text-center p-2 bg-blue-400/10 rounded-lg border border-blue-400/20"><div class="text-xs text-blue-300 mb-1">PS4</div><div class="font-geist text-sm font-medium text-white">HEN 11.00</div></div>
+                  <div class="text-center p-2 bg-white/5 rounded-lg border border-white/20"><div class="text-xs text-white/70 mb-1">PS5</div><div class="font-geist text-sm font-medium text-white">FW ≤4.51</div></div>
                 </div>
               </div>
             </div>
-
-            <div class="absolute -top-4 -right-4 w-20 h-20 spin-slow">
-              <div class="absolute top-0 right-0 w-3 h-3 bg-[#c6f91f] rounded-full"></div>
-            </div>
+            <div class="absolute -top-4 -right-4 w-20 h-20 spin-slow"><div class="absolute top-0 right-0 w-3 h-3 bg-[#c6f91f] rounded-full"></div></div>
           </div>
         </div>
       </div>
     </div>
-
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-pulse">
-      <span class="text-[10px] tracking-widest uppercase text-white/30">Scroll</span>
-      <i data-lucide="chevron-down" class="w-4 h-4 text-white/30"></i>
-    </div>
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-pulse"><span class="text-[10px] tracking-widest uppercase text-white/30">Scroll</span><i data-lucide="chevron-down" class="w-4 h-4 text-white/30"></i></div>
   </section>
 
-  <!-- ===================== MARQUEE GAME TITLES ===================== -->
-  <section class="border-y border-white/5 py-6 overflow-hidden">
-    <div class="relative" style="mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);">
-      <div class="marquee-track flex items-center gap-12 whitespace-nowrap">
-        <span class="text-sm font-medium tracking-wide text-white/15 flex items-center gap-2"><i data-lucide="trophy" class="w-4 h-4 text-yellow-500/30"></i> God of War Ragnarök</span>
-        <span class="text-sm font-medium tracking-wide text-white/15 flex items-center gap-2"><i data-lucide="sword" class="w-4 h-4 text-red-500/30"></i> Elden Ring</span>
-        <span class="text-sm font-medium tracking-wide text-white/15 flex items-center gap-2"><i data-lucide="car" class="w-4 h-4 text-green-500/30"></i> Gran Turismo 7</span>
-        <span class="text-sm font-medium tracking-wide text-white/15 flex items-center gap-2"><i data-lucide="sword" class="w-4 h-4 text-blue-500/30"></i> Final Fantasy XVI</span>
-        <span class="text-sm font-medium tracking-wide text-white/15 flex items-center gap-2"><i data-lucide="target" class="w-4 h-4 text-purple-500/30"></i> Spider-Man 2</span>
-        <span class="text-sm font-medium tracking-wide text-white/15 flex items-center gap-2"><i data-lucide="zap" class="w-4 h-4 text-yellow-400/30"></i> Horizon Forbidden West</span>
-        <span class="text-sm font-medium tracking-wide text-white/15 flex items-center gap-2"><i data-lucide="shield" class="w-4 h-4 text-cyan-500/30"></i> The Last of Us Part I</span>
-        <span class="text-sm font-medium tracking-wide text-white/15 flex items-center gap-2"><i data-lucide="flame" class="w-4 h-4 text-orange-500/30"></i> Resident Evil 4 Remake</span>
-        <span class="text-sm font-medium tracking-wide text-white/15 flex items-center gap-2"><i data-lucide="mountain" class="w-4 h-4 text-emerald-500/30"></i> Ghost of Tsushima</span>
-        <span class="text-sm font-medium tracking-wide text-white/15 flex items-center gap-2"><i data-lucide="skull" class="w-4 h-4 text-red-400/30"></i> Bloodborne</span>
-        <!-- Duplicate -->
-        <span class="text-sm font-medium tracking-wide text-white/15 flex items-center gap-2"><i data-lucide="trophy" class="w-4 h-4 text-yellow-500/30"></i> God of War Ragnarök</span>
-        <span class="text-sm font-medium tracking-wide text-white/15 flex items-center gap-2"><i data-lucide="sword" class="w-4 h-4 text-red-500/30"></i> Elden Ring</span>
-        <span class="text-sm font-medium tracking-wide text-white/15 flex items-center gap-2"><i data-lucide="car" class="w-4 h-4 text-green-500/30"></i> Gran Turismo 7</span>
-        <span class="text-sm font-medium tracking-wide text-white/15 flex items-center gap-2"><i data-lucide="sword" class="w-4 h-4 text-blue-500/30"></i> Final Fantasy XVI</span>
-        <span class="text-sm font-medium tracking-wide text-white/15 flex items-center gap-2"><i data-lucide="target" class="w-4 h-4 text-purple-500/30"></i> Spider-Man 2</span>
-        <span class="text-sm font-medium tracking-wide text-white/15 flex items-center gap-2"><i data-lucide="zap" class="w-4 h-4 text-yellow-400/30"></i> Horizon Forbidden West</span>
-        <span class="text-sm font-medium tracking-wide text-white/15 flex items-center gap-2"><i data-lucide="shield" class="w-4 h-4 text-cyan-500/30"></i> The Last of Us Part I</span>
-        <span class="text-sm font-medium tracking-wide text-white/15 flex items-center gap-2"><i data-lucide="flame" class="w-4 h-4 text-orange-500/30"></i> Resident Evil 4 Remake</span>
-        <span class="text-sm font-medium tracking-wide text-white/15 flex items-center gap-2"><i data-lucide="mountain" class="w-4 h-4 text-emerald-500/30"></i> Ghost of Tsushima</span>
-        <span class="text-sm font-medium tracking-wide text-white/15 flex items-center gap-2"><i data-lucide="skull" class="w-4 h-4 text-red-400/30"></i> Bloodborne</span>
-      </div>
-    </div>
-  </section>
+  <!-- MARQUEE -->
+  <section class="border-y border-white/5 py-6 overflow-hidden"><div class="relative" style="mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);"><div class="marquee-track flex items-center gap-12 whitespace-nowrap"><span class="text-sm font-medium tracking-wide text-white/15 flex items-center gap-2"><i data-lucide="trophy" class="w-4 h-4 text-yellow-500/30"></i> God of War Ragnarök</span><span class="text-sm font-medium tracking-wide text-white/15 flex items-center gap-2"><i data-lucide="sword" class="w-4 h-4 text-red-500/30"></i> Elden Ring</span><span class="text-sm font-medium tracking-wide text-white/15 flex items-center gap-2"><i data-lucide="car" class="w-4 h-4 text-green-500/30"></i> Gran Turismo 7</span><span class="text-sm font-medium tracking-wide text-white/15 flex items-center gap-2"><i data-lucide="target" class="w-4 h-4 text-purple-500/30"></i> Spider-Man 2</span><span class="text-sm font-medium tracking-wide text-white/15 flex items-center gap-2"><i data-lucide="zap" class="w-4 h-4 text-yellow-400/30"></i> Horizon Forbidden West</span><span class="text-sm font-medium tracking-wide text-white/15 flex items-center gap-2"><i data-lucide="shield" class="w-4 h-4 text-cyan-500/30"></i> The Last of Us Part I</span><span class="text-sm font-medium tracking-wide text-white/15 flex items-center gap-2"><i data-lucide="flame" class="w-4 h-4 text-orange-500/30"></i> Resident Evil 4 Remake</span><span class="text-sm font-medium tracking-wide text-white/15 flex items-center gap-2"><i data-lucide="mountain" class="w-4 h-4 text-emerald-500/30"></i> Ghost of Tsushima</span><span class="text-sm font-medium tracking-wide text-white/15 flex items-center gap-2"><i data-lucide="trophy" class="w-4 h-4 text-yellow-500/30"></i> God of War Ragnarök</span><span class="text-sm font-medium tracking-wide text-white/15 flex items-center gap-2"><i data-lucide="sword" class="w-4 h-4 text-red-500/30"></i> Elden Ring</span><span class="text-sm font-medium tracking-wide text-white/15 flex items-center gap-2"><i data-lucide="car" class="w-4 h-4 text-green-500/30"></i> Gran Turismo 7</span><span class="text-sm font-medium tracking-wide text-white/15 flex items-center gap-2"><i data-lucide="target" class="w-4 h-4 text-purple-500/30"></i> Spider-Man 2</span></div></div></section>
 
-  <!-- ===================== ABOUT ===================== -->
-  <section id="tentang" class="py-24 lg:py-32 relative">
-    <div class="max-w-screen-2xl mx-auto px-6 lg:px-10">
-      <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-        <div class="reveal-on-scroll relative">
-          <div class="relative overflow-hidden rounded-2xl">
-            <img src="https://wallpapercave.com/wp/wp14761104.jpg" alt="Mikayla Games" class="w-full h-[500px] lg:h-[600px] object-cover" style="filter: brightness(0.65) contrast(1.1);">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#05080A] via-transparent to-transparent"></div>
-          </div>
-          <div class="absolute -bottom-6 -right-6 lg:right-8 glass rounded-xl p-6 border-l-2 border-[#c6f91f]">
-            <div class="font-geist text-4xl font-light text-[#c6f91f]">7+</div>
-            <div class="text-sm text-white/60 mt-1">Tahun<br>Pengalaman</div>
-          </div>
-        </div>
-
-        <div class="reveal-on-scroll" style="animation-delay: 0.2s;">
-          <span class="text-[10px] font-semibold tracking-widest uppercase text-[#c6f91f] mb-4 block">Tentang Kami</span>
-          <h2 class="font-geist font-light text-3xl sm:text-4xl lg:text-5xl tracking-tighter leading-[1.1] mb-8">
-            Spesialis Isi Game<br>
-            <span class="text-white/40">PlayStation Bandung</span>
-          </h2>
-          <p class="text-lg font-light text-white/70 leading-relaxed mb-8">
-            <strong class="text-white font-medium">Mikayla Games Bandung</strong> adalah toko jasa isi game PlayStation terpercaya sejak 2018. Kami melayani instalasi game untuk PS3 HEN, PS4 HEN, dan PS5 Jailbreak dengan koleksi game terlengkap dan update terbaru.
-          </p>
-          <p class="text-lg font-light text-white/70 leading-relaxed mb-10">
-            Bisa datang langsung ke toko atau panggilan ke rumah ongkos bisa disesuaikan santai. Proses cepat, garansi data, dan harga bersahabat!
-          </p>
-
-          <div class="space-y-5">
-            <div class="flex items-start gap-4 group">
-              <div class="w-10 h-10 border border-[#c6f91f]/30 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-[#c6f91f]/10 transition-colors duration-300">
-                <i data-lucide="hard-drive" class="w-4 h-4 text-[#c6f91f]"></i>
-              </div>
-              <div>
-                <div class="text-white font-medium mb-1">5000+ Game Tersedia</div>
-                <div class="text-sm text-white/50">Koleksi game lengkap dari yang lama sampai rilis terbaru.</div>
-              </div>
-            </div>
-            <div class="flex items-start gap-4 group">
-              <div class="w-10 h-10 border border-[#c6f91f]/30 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-[#c6f91f]/10 transition-colors duration-300">
-                <i data-lucide="truck" class="w-4 h-4 text-[#c6f91f]"></i>
-              </div>
-              <div>
-                <div class="text-white font-medium mb-1">Bisa Kirim ke Seluruh Indonesia</div>
-                <div class="text-sm text-white/50">Jasa kirim console via JNE, J&T, atau SiCepat dengan aman.</div>
-              </div>
-            </div>
-            <div class="flex items-start gap-4 group">
-              <div class="w-10 h-10 border border-[#c6f91f]/30 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-[#c6f91f]/10 transition-colors duration-300">
-                <i data-lucide="shield-check" class="w-4 h-4 text-[#c6f91f]"></i>
-              </div>
-              <div>
-                <div class="text-white font-medium mb-1">Garansi & Amanah</div>
-                <div class="text-sm text-white/50">Data aman, garansi isi ulang jika ada masalah, dan after-sales support.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== SERVICES ===================== -->
+  <!-- SERVICES -->
   <section id="layanan" class="py-24 lg:py-32 relative bg-[#0B0F13]">
     <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 24px 24px;"></div>
-
     <div class="relative z-10 max-w-screen-2xl mx-auto px-6 lg:px-10">
       <div class="max-w-2xl mb-16 lg:mb-20 reveal-on-scroll">
         <span class="text-[10px] font-semibold tracking-widest uppercase text-[#c6f91f] mb-4 block">Layanan Kami</span>
-        <h2 class="font-geist font-light text-3xl sm:text-4xl lg:text-5xl tracking-tighter leading-[1.1] mb-6">
-          Jasa Isi Game<br>
-          <span class="text-white/40">Semua Console PlayStation</span>
-        </h2>
-        <p class="text-lg font-light text-white/70 leading-relaxed">
-          Pilih console Anda dan nikmati ribuan game terbaik langsung terinstall di HDD/SSD Anda.
-        </p>
+        <h2 class="font-geist font-light text-3xl sm:text-4xl lg:text-5xl tracking-tighter leading-[1.1] mb-6">Jasa Isi Game<br><span class="text-white/40">Semua Console PlayStation</span></h2>
+        <p class="text-lg font-light text-white/70 leading-relaxed">Pilih console Anda dan nikmati ribuan game terbaik langsung terinstall di HDD/SSD Anda.</p>
       </div>
-
       <div class="grid md:grid-cols-3 gap-6">
         <!-- PS3 -->
         <div class="reveal-on-scroll glow-card group glass rounded-xl overflow-hidden hover:bg-white/[0.04] transition-colors duration-300" style="animation-delay: 0.1s;">
-          <div class="relative h-48 overflow-hidden">
-            <img src="https://wallpapercave.com/wp/wp15036443.webp" alt="PS3" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" style="filter: brightness(0.5);">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#0B0F13] via-transparent to-transparent"></div>
-            <div class="absolute top-4 left-4 px-3 py-1.5 bg-blue-600/80 text-xs font-semibold tracking-wider uppercase rounded">PS3</div>
-          </div>
+          <div class="relative h-48 overflow-hidden"><img src="https://wallpapercave.com/wp/wp15036443.webp" alt="PS3" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" style="filter: brightness(0.5);"><div class="absolute inset-0 bg-gradient-to-t from-[#0B0F13] via-transparent to-transparent"></div><div class="absolute top-4 left-4 px-3 py-1.5 bg-blue-600/80 text-xs font-semibold tracking-wider uppercase rounded">PS3</div></div>
           <div class="relative z-10 p-8">
             <h3 class="font-geist text-2xl font-medium mb-3">PS3 HEN</h3>
-            <p class="text-sm text-white/50 leading-relaxed mb-6">Install HEN firmware terbaru untuk PS3. Akses ribuan game gratis langsung dari internal/external HDD.</p>
+            <p class="text-sm text-white/50 leading-relaxed mb-6">Install HEN firmware terbaru untuk PS3. Akses ribuan game gratis langsung dari HDD.</p>
             <ul class="space-y-2 mb-6">
-              <li class="flex items-center gap-2 text-sm text-white/60"><i data-lucide="check-circle" class="w-4 h-4 text-[#c6f91f] flex-shrink-0"></i> HEN 4.90 terbaru</li>
+              <li class="flex items-center gap-2 text-sm text-white/60"><i data-lucide="check-circle" class="w-4 h-4 text-[#c6f91f] flex-shrink-0"></i> HEN 4.91 terbaru</li>
               <li class="flex items-center gap-2 text-sm text-white/60"><i data-lucide="check-circle" class="w-4 h-4 text-[#c6f91f] flex-shrink-0"></i> 1000+ game tersedia</li>
               <li class="flex items-center gap-2 text-sm text-white/60"><i data-lucide="check-circle" class="w-4 h-4 text-[#c6f91f] flex-shrink-0"></i> Support semua tipe PS3</li>
-              <li class="flex items-center gap-2 text-sm text-white/60"><i data-lucide="check-circle" class="w-4 h-4 text-[#c6f91f] flex-shrink-0"></i> Online multiplayer ready</li>
             </ul>
-            <div class="flex items-center justify-between">
-              <div>
-                <span class="text-xs text-white/40">Mulai dari</span>
-                <div class="font-geist text-xl text-[#c6f91f]">Rp 50.000</div>
-              </div>
-              <a href="https://wa.me/6285163061987?text=Halo%20Mikayla%20Games%2C%20saya%20mau%20order%20isi%20game%20PS3" target="_blank" class="inline-flex items-center gap-1 text-xs font-medium tracking-wide uppercase text-[#c6f91f] group/link">
-                Order <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform duration-300 group-hover/link:translate-x-1"></i>
-              </a>
-            </div>
+            <div class="flex items-center justify-between"><div><span class="text-xs text-white/40">Mulai dari</span><div class="font-geist text-xl text-[#c6f91f]">Rp 75.000</div></div><a href="https://wa.me/6285163061987?text=Halo%20Mikayla%20Games%2C%20saya%20mau%20order%20isi%20game%20PS3" target="_blank" class="inline-flex items-center gap-1 text-xs font-medium tracking-wide uppercase text-[#c6f91f] group/link">Order <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform duration-300 group-hover/link:translate-x-1"></i></a></div>
           </div>
         </div>
-
         <!-- PS4 -->
         <div class="reveal-on-scroll glow-card group glass rounded-xl overflow-hidden hover:bg-white/[0.04] transition-colors duration-300 relative" style="animation-delay: 0.2s;">
-          <!-- Popular badge -->
           <div class="absolute top-0 right-0 z-20 px-4 py-1.5 bg-[#c6f91f] text-black text-[10px] font-bold tracking-widest uppercase">Terlaris</div>
-          <div class="relative h-48 overflow-hidden">
-            <img src="https://wallpapercave.com/wp/wp12233590.jpg" alt="PS4" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" style="filter: brightness(0.5);">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#0B0F13] via-transparent to-transparent"></div>
-            <div class="absolute top-4 left-4 px-3 py-1.5 bg-blue-500/80 text-xs font-semibold tracking-wider uppercase rounded">PS4</div>
-          </div>
+          <div class="relative h-48 overflow-hidden"><img src="https://wallpapercave.com/wp/wp12233590.jpg" alt="PS4" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" style="filter: brightness(0.5);"><div class="absolute inset-0 bg-gradient-to-t from-[#0B0F13] via-transparent to-transparent"></div><div class="absolute top-4 left-4 px-3 py-1.5 bg-blue-500/80 text-xs font-semibold tracking-wider uppercase rounded">PS4</div></div>
           <div class="relative z-10 p-8">
             <h3 class="font-geist text-2xl font-medium mb-3">PS4 HEN</h3>
-            <p class="text-sm text-white/50 leading-relaxed mb-6">Jailbreak PS4 dengan HEN firmware terbaru. Mainkan semua game PS4 terbaru tanpa beli DVD!</p>
+            <p class="text-sm text-white/50 leading-relaxed mb-6">Jailbreak PS4 dengan HEN firmware terbaru. Mainkan semua game tanpa beli DVD!</p>
             <ul class="space-y-2 mb-6">
               <li class="flex items-center gap-2 text-sm text-white/60"><i data-lucide="check-circle" class="w-4 h-4 text-[#c6f91f] flex-shrink-0"></i> HEN 11.00 / FW 9.00</li>
               <li class="flex items-center gap-2 text-sm text-white/60"><i data-lucide="check-circle" class="w-4 h-4 text-[#c6f91f] flex-shrink-0"></i> 3000+ game tersedia</li>
-              <li class="flex items-center gap-2 text-sm text-white/60"><i data-lucide="check-circle" class="w-4 h-4 text-[#c6f91f] flex-shrink-0"></i> Game terbaru 2024-2025</li>
               <li class="flex items-center gap-2 text-sm text-white/60"><i data-lucide="check-circle" class="w-4 h-4 text-[#c6f91f] flex-shrink-0"></i> SSD upgrade support</li>
             </ul>
-            <div class="flex items-center justify-between">
-              <div>
-                <span class="text-xs text-white/40">Mulai dari</span>
-                <div class="font-geist text-xl text-[#c6f91f]">Rp 75.000</div>
-              </div>
-              <a href="https://wa.me/6285163061987?text=Halo%20Mikayla%20Games%2C%20saya%20mau%20order%20isi%20game%20PS4" target="_blank" class="inline-flex items-center gap-1 text-xs font-medium tracking-wide uppercase text-[#c6f91f] group/link">
-                Order <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform duration-300 group-hover/link:translate-x-1"></i>
-              </a>
-            </div>
+            <div class="flex items-center justify-between"><div><span class="text-xs text-white/40">Mulai dari</span><div class="font-geist text-xl text-[#c6f91f]">Rp 250.000</div></div><a href="https://wa.me/6285163061987?text=Halo%20Mikayla%20Games%2C%20saya%20mau%20order%20isi%20game%20PS4" target="_blank" class="inline-flex items-center gap-1 text-xs font-medium tracking-wide uppercase text-[#c6f91f] group/link">Order <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform duration-300 group-hover/link:translate-x-1"></i></a></div>
           </div>
         </div>
-
         <!-- PS5 -->
         <div class="reveal-on-scroll glow-card group glass rounded-xl overflow-hidden hover:bg-white/[0.04] transition-colors duration-300" style="animation-delay: 0.3s;">
-          <div class="relative h-48 overflow-hidden">
-            <img src="https://wallpapercave.com/wp/wp15378470.jpg" alt="PS5" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" style="filter: brightness(0.5);">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#0B0F13] via-transparent to-transparent"></div>
-            <div class="absolute top-4 left-4 px-3 py-1.5 bg-white/80 text-black text-xs font-semibold tracking-wider uppercase rounded">PS5</div>
-          </div>
+          <div class="relative h-48 overflow-hidden"><img src="https://wallpapercave.com/wp/wp15378470.jpg" alt="PS5" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" style="filter: brightness(0.5);"><div class="absolute inset-0 bg-gradient-to-t from-[#0B0F13] via-transparent to-transparent"></div><div class="absolute top-4 left-4 px-3 py-1.5 bg-white/80 text-black text-xs font-semibold tracking-wider uppercase rounded">PS5</div></div>
           <div class="relative z-10 p-8">
             <h3 class="font-geist text-2xl font-medium mb-3">PS5 Jailbreak</h3>
-            <p class="text-sm text-white/50 leading-relaxed mb-6">Jailbreak PS5 firmware kompatibel. Mainkan game next-gen terbaru tanpa biaya mahal!</p>
+            <p class="text-sm text-white/50 leading-relaxed mb-6">Jailbreak PS5 firmware kompatibel. Mainkan game next-gen tanpa biaya mahal!</p>
             <ul class="space-y-2 mb-6">
               <li class="flex items-center gap-2 text-sm text-white/60"><i data-lucide="check-circle" class="w-4 h-4 text-[#c6f91f] flex-shrink-0"></i> FW 4.03 - 4.51 support</li>
               <li class="flex items-center gap-2 text-sm text-white/60"><i data-lucide="check-circle" class="w-4 h-4 text-[#c6f91f] flex-shrink-0"></i> 500+ game next-gen</li>
-              <li class="flex items-center gap-2 text-sm text-white/60"><i data-lucide="check-circle" class="w-4 h-4 text-[#c6f91f] flex-shrink-0"></i> PKG install ready</li>
               <li class="flex items-center gap-2 text-sm text-white/60"><i data-lucide="check-circle" class="w-4 h-4 text-[#c6f91f] flex-shrink-0"></i> SSD NVMe support</li>
             </ul>
-            <div class="flex items-center justify-between">
+            <div class="flex items-center justify-between"><div><span class="text-xs text-white/40">Mulai dari</span><div class="font-geist text-xl text-[#c6f91f]">Rp 350.000</div></div><a href="https://wa.me/6285163061987?text=Halo%20Mikayla%20Games%2C%20saya%20mau%20order%20isi%20game%20PS5" target="_blank" class="inline-flex items-center gap-1 text-xs font-medium tracking-wide uppercase text-[#c6f91f] group/link">Order <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform duration-300 group-hover/link:translate-x-1"></i></a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- NEW: Panggilan Ke Rumah Banner -->
+      <div class="mt-10 reveal-on-scroll">
+        <a href="#panggilan" class="block glass rounded-xl p-6 border border-[#c6f91f]/15 hover:border-[#c6f91f]/40 transition-all duration-300 group">
+          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-[#c6f91f]/10 flex items-center justify-center flex-shrink-0"><i data-lucide="home" class="w-5 h-5 text-[#c6f91f]"></i></div>
               <div>
-                <span class="text-xs text-white/40">Mulai dari</span>
-                <div class="font-geist text-xl text-[#c6f91f]">Rp 150.000</div>
+                <div class="text-white font-medium mb-1 flex items-center gap-2">Panggilan ke Rumah <span class="px-2 py-0.5 bg-[#c6f91f]/15 text-[#c6f91f] text-[10px] font-bold tracking-widest uppercase rounded">NEW</span></div>
+                <div class="text-sm text-white/50">Datang langsung ke rumah Anda. Ongkos disesuaikan jarak — mulai Rp 15.000 untuk area Bandung.</div>
               </div>
-              <a href="https://wa.me/6285163061987?text=Halo%20Mikayla%20Games%2C%20saya%20mau%20order%20isi%20game%20PS5" target="_blank" class="inline-flex items-center gap-1 text-xs font-medium tracking-wide uppercase text-[#c6f91f] group/link">
-                Order <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform duration-300 group-hover/link:translate-x-1"></i>
-              </a>
             </div>
+            <div class="flex items-center gap-1 text-xs font-medium tracking-wide uppercase text-[#c6f91f] flex-shrink-0">Cek Ongkir <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1"></i></div>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== PRICING ===================== -->
-  <section id="harga" class="py-24 lg:py-32 relative">
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] opacity-[0.06]" style="background: radial-gradient(ellipse, #c6f91f, transparent 70%); filter: blur(120px);"></div>
-
-    <div class="relative z-10 max-w-screen-2xl mx-auto px-6 lg:px-10">
-      <div class="text-center max-w-2xl mx-auto mb-16 lg:mb-20 reveal-on-scroll">
-        <span class="text-[10px] font-semibold tracking-widest uppercase text-[#c6f91f] mb-4 block">Daftar Harga</span>
-        <h2 class="font-geist font-light text-3xl sm:text-4xl lg:text-5xl tracking-tighter leading-[1.1] mb-6">
-          Harga Bersahabat<br>
-          <span class="text-white/40">Game Tanpa Batas</span>
-        </h2>
-        <p class="text-lg font-light text-white/70 leading-relaxed">
-          Pilih paket sesuai kebutuhan Anda. Semua paket termasuk instalasi dan garansi.
-        </p>
-      </div>
-
-      <!-- Tab Buttons -->
-      <div class="flex justify-center gap-3 mb-12 reveal-on-scroll">
-        <button class="tab-btn active px-6 py-3 border border-white/10 rounded-lg text-sm font-medium transition-all duration-300" data-tab="ps3">PS3</button>
-        <button class="tab-btn px-6 py-3 border border-white/10 rounded-lg text-sm font-medium text-white/50 transition-all duration-300" data-tab="ps4">PS4</button>
-        <button class="tab-btn px-6 py-3 border border-white/10 rounded-lg text-sm font-medium text-white/50 transition-all duration-300" data-tab="ps5">PS5</button>
-      </div>
-
-      <!-- PS3 Pricing -->
-      <div class="tab-content active" id="tab-ps3">
-        <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          <div class="price-card glass rounded-xl p-8 text-center">
-            <div class="text-xs font-semibold tracking-widest uppercase text-white/30 mb-2">Basic</div>
-            <div class="font-geist text-4xl font-light tracking-tighter mb-1">Rp 75K</div>
-            <div class="text-xs text-white/40 mb-6">Per HDD 500GB</div>
-            <ul class="space-y-3 text-sm text-white/60 text-left mb-8">
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> 50 game pilihan</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> Install HEN + CFW</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> Garansi 1 bulan</li>
-              <li class="flex items-center gap-2"><i data-lucide="x" class="w-4 h-4 text-white/20"></i> <span class="text-white/30">Request game khusus</span></li>
-            </ul>
-            <a href="https://wa.me/6285163061987?text=Halo%20Mikayla%2C%20saya%20mau%20order%20paket%20PS3%20Basic" target="_blank" class="block w-full py-3 border border-white/20 text-sm font-medium hover:bg-white/5 transition-colors">Pilih Paket</a>
-          </div>
-          <div class="price-card price-popular glass rounded-xl p-8 text-center relative">
-            <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#c6f91f] text-black text-[10px] font-bold tracking-widest uppercase">Populer</div>
-            <div class="text-xs font-semibold tracking-widest uppercase text-[#c6f91f] mb-2">Standard</div>
-            <div class="font-geist text-4xl font-light tracking-tighter mb-1">Rp 175K</div>
-            <div class="text-xs text-white/40 mb-6">Per HDD 1TB</div>
-            <ul class="space-y-3 text-sm text-white/60 text-left mb-8">
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> 150 game pilihan</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> Install HEN + CFW</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> Garansi 3 bulan</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> Request 10 game</li>
-            </ul>
-            <a href="https://wa.me/6285163061987?text=Halo%20Mikayla%2C%20saya%20mau%20order%20paket%20PS3%20Standard" target="_blank" class="block w-full py-3 bg-[#c6f91f] text-black text-sm font-medium hover:bg-white transition-colors">Pilih Paket</a>
-          </div>
-          <div class="price-card glass rounded-xl p-8 text-center">
-            <div class="text-xs font-semibold tracking-widest uppercase text-white/30 mb-2">Premium</div>
-            <div class="font-geist text-4xl font-light tracking-tighter mb-1">Rp 275K</div>
-            <div class="text-xs text-white/40 mb-6">Per HDD 2TB</div>
-            <ul class="space-y-3 text-sm text-white/60 text-left mb-8">
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> 300+ game lengkap</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> Install HEN + CFW</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> Garansi 6 bulan</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> Request game unlimited</li>
-            </ul>
-            <a href="https://wa.me/6285163061987?text=Halo%20Mikayla%2C%20saya%20mau%20order%20paket%20PS3%20Premium" target="_blank" class="block w-full py-3 border border-white/20 text-sm font-medium hover:bg-white/5 transition-colors">Pilih Paket</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- PS4 Pricing -->
-      <div class="tab-content" id="tab-ps4">
-        <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          <div class="price-card glass rounded-xl p-8 text-center">
-            <div class="text-xs font-semibold tracking-widest uppercase text-white/30 mb-2">Basic</div>
-            <div class="font-geist text-4xl font-light tracking-tighter mb-1">Rp 250K</div>
-            <div class="text-xs text-white/40 mb-6">Per HDD 500GB</div>
-            <ul class="space-y-3 text-sm text-white/60 text-left mb-8">
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> 30 game terbaik</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> Install HEN firmware</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> Garansi 1 bulan</li>
-              <li class="flex items-center gap-2"><i data-lucide="x" class="w-4 h-4 text-white/20"></i> <span class="text-white/30">Request game khusus</span></li>
-            </ul>
-            <a href="https://wa.me/6285163061987?text=Halo%20Mikayla%2C%20saya%20mau%20order%20paket%20PS4%20Basic" target="_blank" class="block w-full py-3 border border-white/20 text-sm font-medium hover:bg-white/5 transition-colors">Pilih Paket</a>
-          </div>
-          <div class="price-card price-popular glass rounded-xl p-8 text-center relative">
-            <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#c6f91f] text-black text-[10px] font-bold tracking-widest uppercase">Populer</div>
-            <div class="text-xs font-semibold tracking-widest uppercase text-[#c6f91f] mb-2">Standard</div>
-            <div class="font-geist text-4xl font-light tracking-tighter mb-1">Rp 350K</div>
-            <div class="text-xs text-white/40 mb-6">Per HDD 1TB</div>
-            <ul class="space-y-3 text-sm text-white/60 text-left mb-8">
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> 80 game terbaik</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> Install HEN firmware</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> Garansi 3 bulan</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> Request 10 game</li>
-            </ul>
-            <a href="https://wa.me/6285163061987?text=Halo%20Mikayla%2C%20saya%20mau%20order%20paket%20PS4%20Standard" target="_blank" class="block w-full py-3 bg-[#c6f91f] text-black text-sm font-medium hover:bg-white transition-colors">Pilih Paket</a>
-          </div>
-          <div class="price-card glass rounded-xl p-8 text-center">
-            <div class="text-xs font-semibold tracking-widest uppercase text-white/30 mb-2">Premium</div>
-            <div class="font-geist text-4xl font-light tracking-tighter mb-1">Rp 450K</div>
-            <div class="text-xs text-white/40 mb-6">Per HDD 2TB / SSD 1TB</div>
-            <ul class="space-y-3 text-sm text-white/60 text-left mb-8">
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> 200+ game lengkap</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> Install HEN firmware</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> Garansi 6 bulan</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> Request game unlimited</li>
-            </ul>
-            <a href="https://wa.me/6285163061987?text=Halo%20Mikayla%2C%20saya%20mau%20order%20paket%20PS4%20Premium" target="_blank" class="block w-full py-3 border border-white/20 text-sm font-medium hover:bg-white/5 transition-colors">Pilih Paket</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- PS5 Pricing -->
-      <div class="tab-content" id="tab-ps5">
-        <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          <div class="price-card glass rounded-xl p-8 text-center">
-            <div class="text-xs font-semibold tracking-widest uppercase text-white/30 mb-2">Basic</div>
-            <div class="font-geist text-4xl font-light tracking-tighter mb-1">Rp 350K</div>
-            <div class="text-xs text-white/40 mb-6">Internal SSD</div>
-            <ul class="space-y-3 text-sm text-white/60 text-left mb-8">
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> 15 game next-gen</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> Jailbreak firmware</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> Garansi 1 bulan</li>
-              <li class="flex items-center gap-2"><i data-lucide="x" class="w-4 h-4 text-white/20"></i> <span class="text-white/30">Request game khusus</span></li>
-            </ul>
-            <a href="https://wa.me/6285163061987?text=Halo%20Mikayla%2C%20saya%20mau%20order%20paket%20PS5%20Basic" target="_blank" class="block w-full py-3 border border-white/20 text-sm font-medium hover:bg-white/5 transition-colors">Pilih Paket</a>
-          </div>
-          <div class="price-card price-popular glass rounded-xl p-8 text-center relative">
-            <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#c6f91f] text-black text-[10px] font-bold tracking-widest uppercase">Populer</div>
-            <div class="text-xs font-semibold tracking-widest uppercase text-[#c6f91f] mb-2">Standard</div>
-            <div class="font-geist text-4xl font-light tracking-tighter mb-1">Rp 450K</div>
-            <div class="text-xs text-white/40 mb-6">Internal SSD + NVMe</div>
-            <ul class="space-y-3 text-sm text-white/60 text-left mb-8">
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> 40 game next-gen</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> Jailbreak firmware</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> Garansi 3 bulan</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> Request 5 game</li>
-            </ul>
-            <a href="https://wa.me/6285163061987?text=Halo%20Mikayla%2C%20saya%20mau%20order%20paket%20PS5%20Standard" target="_blank" class="block w-full py-3 bg-[#c6f91f] text-black text-sm font-medium hover:bg-white transition-colors">Pilih Paket</a>
-          </div>
-          <div class="price-card glass rounded-xl p-8 text-center">
-            <div class="text-xs font-semibold tracking-widest uppercase text-white/30 mb-2">Premium</div>
-            <div class="font-geist text-4xl font-light tracking-tighter mb-1">Rp 550K</div>
-            <div class="text-xs text-white/40 mb-6">Full SSD 2TB Setup</div>
-            <ul class="space-y-3 text-sm text-white/60 text-left mb-8">
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> 100+ game next-gen</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> Jailbreak firmware</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> Garansi 6 bulan</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> Request game unlimited</li>
-            </ul>
-            <a href="https://wa.me/6285163061987?text=Halo%20Mikayla%2C%20saya%20mau%20order%20paket%20PS5%20Premium" target="_blank" class="block w-full py-3 border border-white/20 text-sm font-medium hover:bg-white/5 transition-colors">Pilih Paket</a>
-          </div>
-        </div>
-      </div>
-
-      <p class="text-center text-sm text-white/30 mt-10 reveal-on-scroll">* Harga dapat berubah sewaktu-waktu. Hubungi kami untuk konfirmasi harga terbaru.</p>
-    </div>
-  </section>
-
-  <!-- ===================== PROCESS ===================== -->
-  <section id="proses" class="py-24 lg:py-32 bg-[#0B0F13] relative">
-    <div class="max-w-screen-2xl mx-auto px-6 lg:px-10">
-      <div class="max-w-2xl mb-16 lg:mb-20 reveal-on-scroll">
-        <span class="text-[10px] font-semibold tracking-widest uppercase text-[#c6f91f] mb-4 block">Cara Order</span>
-        <h2 class="font-geist font-light text-3xl sm:text-4xl lg:text-5xl tracking-tighter leading-[1.1] mb-6">
-          Proses Mudah<br>
-          <span class="text-white/40">4 Langkah Saja</span>
-        </h2>
-      </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="reveal-on-scroll group" style="animation-delay: 0.1s;">
-          <div class="glass rounded-xl p-8 h-full hover:bg-white/[0.04] transition-colors duration-300 relative overflow-hidden">
-            <div class="absolute top-4 right-4 font-geist text-6xl font-light text-white/[0.03]">01</div>
-            <div class="relative z-10">
-              <div class="w-12 h-12 rounded-xl border border-[#c6f91f]/30 flex items-center justify-center mb-6 group-hover:bg-[#c6f91f]/10 transition-colors duration-300">
-                <i data-lucide="message-circle" class="w-5 h-5 text-[#c6f91f]"></i>
-              </div>
-              <h3 class="font-geist text-lg font-medium mb-3">Hubungi Kami</h3>
-              <p class="text-sm text-white/50 leading-relaxed">Chat via WhatsApp. Informasikan tipe console dan paket yang diinginkan.</p>
-            </div>
-          </div>
-        </div>
-        <div class="reveal-on-scroll group" style="animation-delay: 0.2s;">
-          <div class="glass rounded-xl p-8 h-full hover:bg-white/[0.04] transition-colors duration-300 relative overflow-hidden">
-            <div class="absolute top-4 right-4 font-geist text-6xl font-light text-white/[0.03]">02</div>
-            <div class="relative z-10">
-              <div class="w-12 h-12 rounded-xl border border-[#c6f91f]/30 flex items-center justify-center mb-6 group-hover:bg-[#c6f91f]/10 transition-colors duration-300">
-                <i data-lucide="truck" class="w-5 h-5 text-[#c6f91f]"></i>
-              </div>
-              <h3 class="font-geist text-lg font-medium mb-3">Kirim Console</h3>
-              <p class="text-sm text-white/50 leading-relaxed">Bawa ke toko langsung atau kirim via ekspedisi. Kami beri panduan packing aman.</p>
-            </div>
-          </div>
-        </div>
-        <div class="reveal-on-scroll group" style="animation-delay: 0.3s;">
-          <div class="glass rounded-xl p-8 h-full hover:bg-white/[0.04] transition-colors duration-300 relative overflow-hidden">
-            <div class="absolute top-4 right-4 font-geist text-6xl font-light text-white/[0.03]">03</div>
-            <div class="relative z-10">
-              <div class="w-12 h-12 rounded-xl border border-[#c6f91f]/30 flex items-center justify-center mb-6 group-hover:bg-[#c6f91f]/10 transition-colors duration-300">
-                <i data-lucide="hard-drive" class="w-5 h-5 text-[#c6f91f]"></i>
-              </div>
-              <h3 class="font-geist text-lg font-medium mb-3">Proses Install</h3>
-              <p class="text-sm text-white/50 leading-relaxed">Tim kami install HEN/Jailbreak + game. Estimasi 1-2 hari kerja tergantung paket.</p>
-            </div>
-          </div>
-        </div>
-        <div class="reveal-on-scroll group" style="animation-delay: 0.4s;">
-          <div class="glass rounded-xl p-8 h-full hover:bg-white/[0.04] transition-colors duration-300 relative overflow-hidden">
-            <div class="absolute top-4 right-4 font-geist text-6xl font-light text-white/[0.03]">04</div>
-            <div class="relative z-10">
-              <div class="w-12 h-12 rounded-xl border border-[#c6f91f]/30 flex items-center justify-center mb-6 group-hover:bg-[#c6f91f]/10 transition-colors duration-300">
-                <i data-lucide="gamepad-2" class="w-5 h-5 text-[#c6f91f]"></i>
-              </div>
-              <h3 class="font-geist text-lg font-medium mb-3">Mainkan!</h3>
-              <p class="text-sm text-white/50 leading-relaxed">Console dikembalikan. Langsung main! Free konsultasi jika ada kendala.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== GAME CATALOG PREVIEW ===================== -->
-  <!-- PDF VIEWER MODAL -->
-  <div id="pdfModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);">
-    <div style="position:absolute;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:14px 20px;background:rgba(11,15,19,0.95);border-bottom:1px solid rgba(255,255,255,0.08);">
-      <div style="display:flex;align-items:center;gap:12px;">
-        <span style="width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,#c6f91f,#8fe01f);display:flex;align-items:center;justify-content:center;font-size:14px;">📋</span>
-        <div>
-          <div id="pdfModalTitle" style="font-family:'Geist',sans-serif;font-size:14px;font-weight:600;color:#fff;letter-spacing:-.01em;"></div>
-          <div style="font-size:11px;color:rgba(255,255,255,0.4);margin-top:1px;">Katalog Game MIKAYLA GAMES</div>
-        </div>
-      </div>
-      <div style="display:flex;align-items:center;gap:10px;">
-        <a id="pdfDownloadBtn" href="#" download style="display:inline-flex;align-items:center;gap:7px;padding:8px 16px;border-radius:100px;background:linear-gradient(135deg,#c6f91f,#8fe01f);color:#05080A;font-size:12px;font-weight:700;font-family:'Geist',sans-serif;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;transition:all .2s;">
-          ⬇ Download PDF
         </a>
-        <button onclick="closePdfModal()" style="width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;" onmouseover="this.style.background='rgba(255,255,255,0.12)'" onmouseout="this.style.background='rgba(255,255,255,0.06)'">✕</button>
-      </div>
-    </div>
-    <div style="position:absolute;top:65px;left:0;right:0;bottom:0;overflow:hidden;">
-      <iframe id="pdfFrame" src="" style="width:100%;height:100%;border:none;background:#1a1a2e;"></iframe>
-    </div>
-  </div>
-
-  <section id="katalog" class="py-24 lg:py-32 relative">
-    <div class="max-w-screen-2xl mx-auto px-6 lg:px-10">
-      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12 lg:mb-16 reveal-on-scroll">
-        <div>
-          <span class="text-[10px] font-semibold tracking-widest uppercase text-[#c6f91f] mb-4 block">Katalog Game</span>
-          <h2 class="font-geist font-light text-3xl sm:text-4xl lg:text-5xl tracking-tighter leading-[1.1]">
-            Game Populer<br>
-            <span class="text-white/40">Pilihan Gamer</span>
-          </h2>
-        </div>
-      </div>
-
-      <!-- PDF DOWNLOAD CARDS -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-14 reveal-on-scroll">
-
-        <!-- PS3 Card -->
-        <div style="background:linear-gradient(135deg,rgba(14,165,233,0.08),rgba(14,165,233,0.02));border:1px solid rgba(14,165,233,0.2);border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:14px;transition:all .3s;" onmouseover="this.style.borderColor='rgba(14,165,233,0.5)';this.style.boxShadow='0 0 28px rgba(14,165,233,0.12)'" onmouseout="this.style.borderColor='rgba(14,165,233,0.2)';this.style.boxShadow='none'">
-          <div style="display:flex;align-items:center;gap:12px;">
-            <div style="width:48px;height:48px;border-radius:12px;background:rgba(14,165,233,0.15);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;">🎮</div>
-            <div>
-              <div style="font-family:'Geist',sans-serif;font-size:16px;font-weight:700;color:#fff;letter-spacing:-.02em;">List Game PS3</div>
-              <div style="font-size:11px;color:rgba(255,255,255,0.4);margin-top:2px;">HEN / CFW — 300+ Judul</div>
-            </div>
-          </div>
-          <p style="font-size:13px;color:rgba(255,255,255,0.5);line-height:1.6;">Koleksi lengkap game PS3 dari action, RPG, sports, hingga game anime. Diperbarui 2025.</p>
-          <div style="display:flex;gap:8px;margin-top:4px;">
-            <button onclick="openPdfModal('LIST_GAME_PS3_2025.pdf','List Game PS3 2025')" style="flex:1;padding:10px;border-radius:100px;background:rgba(14,165,233,0.12);border:1px solid rgba(14,165,233,0.3);color:#38bdf8;font-size:12px;font-weight:600;font-family:'Geist',sans-serif;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:6px;" onmouseover="this.style.background='rgba(14,165,233,0.22)'" onmouseout="this.style.background='rgba(14,165,233,0.12)'">
-              👁 Lihat
-            </button>
-            <a href="LIST_GAME_PS3_2025.pdf" download style="flex:1;padding:10px;border-radius:100px;background:linear-gradient(135deg,#0ea5e9,#0284c7);color:#fff;font-size:12px;font-weight:700;font-family:'Geist',sans-serif;text-decoration:none;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:6px;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
-              ⬇ Download
-            </a>
-          </div>
-        </div>
-
-        <!-- PS4 Card -->
-        <div style="background:linear-gradient(135deg,rgba(139,92,246,0.08),rgba(139,92,246,0.02));border:1px solid rgba(139,92,246,0.2);border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:14px;transition:all .3s;" onmouseover="this.style.borderColor='rgba(139,92,246,0.5)';this.style.boxShadow='0 0 28px rgba(139,92,246,0.12)'" onmouseout="this.style.borderColor='rgba(139,92,246,0.2)';this.style.boxShadow='none'">
-          <div style="display:flex;align-items:center;gap:12px;">
-            <div style="width:48px;height:48px;border-radius:12px;background:rgba(139,92,246,0.15);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;">🕹️</div>
-            <div>
-              <div style="font-family:'Geist',sans-serif;font-size:16px;font-weight:700;color:#fff;letter-spacing:-.02em;">List Game PS4</div>
-              <div style="font-size:11px;color:rgba(255,255,255,0.4);margin-top:2px;">Jailbreak HEN — 200+ Judul</div>
-            </div>
-          </div>
-          <p style="font-size:13px;color:rgba(255,255,255,0.5);line-height:1.6;">Ratusan game PS4 terbaru dan terlengkap. Update hingga 2026, semua genre tersedia.</p>
-          <div style="display:flex;gap:8px;margin-top:4px;">
-            <button onclick="openPdfModal('PS4_LISTGAME_2026.pdf','List Game PS4 2026')" style="flex:1;padding:10px;border-radius:100px;background:rgba(139,92,246,0.12);border:1px solid rgba(139,92,246,0.3);color:#c4b5fd;font-size:12px;font-weight:600;font-family:'Geist',sans-serif;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:6px;" onmouseover="this.style.background='rgba(139,92,246,0.22)'" onmouseout="this.style.background='rgba(139,92,246,0.12)'">
-              👁 Lihat
-            </button>
-            <a href="PS4_LISTGAME_2026.pdf" download style="flex:1;padding:10px;border-radius:100px;background:linear-gradient(135deg,#8b5cf6,#7c3aed);color:#fff;font-size:12px;font-weight:700;font-family:'Geist',sans-serif;text-decoration:none;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:6px;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
-              ⬇ Download
-            </a>
-          </div>
-        </div>
-
-        <!-- PS5 Card -->
-        <div style="background:linear-gradient(135deg,rgba(198,249,31,0.07),rgba(198,249,31,0.02));border:1px solid rgba(198,249,31,0.18);border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:14px;transition:all .3s;" onmouseover="this.style.borderColor='rgba(198,249,31,0.45)';this.style.boxShadow='0 0 28px rgba(198,249,31,0.1)'" onmouseout="this.style.borderColor='rgba(198,249,31,0.18)';this.style.boxShadow='none'">
-          <div style="display:flex;align-items:center;gap:12px;">
-            <div style="width:48px;height:48px;border-radius:12px;background:rgba(198,249,31,0.12);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;">⚡</div>
-            <div>
-              <div style="font-family:'Geist',sans-serif;font-size:16px;font-weight:700;color:#fff;letter-spacing:-.02em;">List Game PS5</div>
-              <div style="font-size:11px;color:rgba(255,255,255,0.4);margin-top:2px;">Update Terbaru — 2027</div>
-            </div>
-          </div>
-          <p style="font-size:13px;color:rgba(255,255,255,0.5);line-height:1.6;">Game PS5 terbaru termasuk judul-judul AAA terkini. Terus diperbarui mengikuti rilis terbaru.</p>
-          <div style="display:flex;gap:8px;margin-top:4px;">
-            <button onclick="openPdfModal('PLAYSTATION_5_LIST_2027.pdf','List Game PS5 2027')" style="flex:1;padding:10px;border-radius:100px;background:rgba(198,249,31,0.1);border:1px solid rgba(198,249,31,0.25);color:#c6f91f;font-size:12px;font-weight:600;font-family:'Geist',sans-serif;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:6px;" onmouseover="this.style.background='rgba(198,249,31,0.18)'" onmouseout="this.style.background='rgba(198,249,31,0.1)'">
-              👁 Lihat
-            </button>
-            <a href="PLAYSTATION_5_LIST_2027.pdf" download style="flex:1;padding:10px;border-radius:100px;background:linear-gradient(135deg,#c6f91f,#8fe01f);color:#05080A;font-size:12px;font-weight:700;font-family:'Geist',sans-serif;text-decoration:none;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:6px;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
-              ⬇ Download
-            </a>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- divider label -->
-      <div style="display:flex;align-items:center;gap:14px;margin-bottom:28px;" class="reveal-on-scroll">
-        <div style="flex:1;height:1px;background:rgba(255,255,255,0.06);"></div>
-        <span style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,0.3);">Game Populer</span>
-        <div style="flex:1;height:1px;background:rgba(255,255,255,0.06);"></div>
-      </div>
-
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-        <div class="reveal-on-scroll group" style="animation-delay: 0.05s;">
-          <div class="relative overflow-hidden rounded-xl aspect-[3/4] cursor-pointer">
-            <img src="https://wallpapercave.com/wp/wp12233599.jpg" alt="God of War Ragnarök" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" style="filter: brightness(0.6);">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#05080A] via-transparent to-transparent"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-4">
-              <div class="text-[9px] font-bold tracking-widest uppercase text-[#c6f91f] mb-1">PS4 · PS5</div>
-              <div class="text-sm font-medium leading-tight">God of War Ragnarök</div>
-            </div>
-          </div>
-        </div>
-        <div class="reveal-on-scroll group" style="animation-delay: 0.1s;">
-          <div class="relative overflow-hidden rounded-xl aspect-[3/4] cursor-pointer">
-            <img src="https://wallpapercave.com/wp/wp13860418.jpg" alt="Spider-Man 2" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" style="filter: brightness(0.6);">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#05080A] via-transparent to-transparent"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-4">
-              <div class="text-[9px] font-bold tracking-widest uppercase text-[#c6f91f] mb-1">PS5</div>
-              <div class="text-sm font-medium leading-tight">Spider-Man 2</div>
-            </div>
-          </div>
-        </div>
-        <div class="reveal-on-scroll group" style="animation-delay: 0.15s;">
-          <div class="relative overflow-hidden rounded-xl aspect-[3/4] cursor-pointer">
-            <img src="https://wallpapercave.com/wp/wp15354035.png" alt="Elden Ring" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" style="filter: brightness(0.6);">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#05080A] via-transparent to-transparent"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-4">
-              <div class="text-[9px] font-bold tracking-widest uppercase text-[#c6f91f] mb-1">PS4 · PS5</div>
-              <div class="text-sm font-medium leading-tight">Elden Ring</div>
-            </div>
-          </div>
-        </div>
-        <div class="reveal-on-scroll group" style="animation-delay: 0.2s;">
-          <div class="relative overflow-hidden rounded-xl aspect-[3/4] cursor-pointer">
-            <img src="https://wallpapercave.com/wp/wp12501890.png" alt="Final Fantasy XVI" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" style="filter: brightness(0.6);">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#05080A] via-transparent to-transparent"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-4">
-              <div class="text-[9px] font-bold tracking-widest uppercase text-[#c6f91f] mb-1">PS5</div>
-              <div class="text-sm font-medium leading-tight">Final Fantasy XVI</div>
-            </div>
-          </div>
-        </div>
-        <div class="reveal-on-scroll group" style="animation-delay: 0.25s;">
-          <div class="relative overflow-hidden rounded-xl aspect-[3/4] cursor-pointer">
-            <img src="https://wallpapercave.com/wp/wp14985671.webp" alt="Ghost of Tsushima" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" style="filter: brightness(0.6);">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#05080A] via-transparent to-transparent"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-4">
-              <div class="text-[9px] font-bold tracking-widest uppercase text-[#c6f91f] mb-1">PS4 · PS5</div>
-              <div class="text-sm font-medium leading-tight">Ghost of Tsushima</div>
-            </div>
-          </div>
-        </div>
-        <div class="reveal-on-scroll group" style="animation-delay: 0.1s;">
-          <div class="relative overflow-hidden rounded-xl aspect-[3/4] cursor-pointer">
-            <img src="https://wallpapercave.com/wp/wp13431019.jpg" alt="The Last of Us Part I" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" style="filter: brightness(0.6);">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#05080A] via-transparent to-transparent"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-4">
-              <div class="text-[9px] font-bold tracking-widest uppercase text-[#c6f91f] mb-1">PS4 · PS5</div>
-              <div class="text-sm font-medium leading-tight">The Last of Us Part I</div>
-            </div>
-          </div>
-        </div>
-        <div class="reveal-on-scroll group" style="animation-delay: 0.15s;">
-          <div class="relative overflow-hidden rounded-xl aspect-[3/4] cursor-pointer">
-            <img src="https://wallpapercave.com/wp/wp13637147.jpg" alt="Horizon Forbidden West" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" style="filter: brightness(0.6);">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#05080A] via-transparent to-transparent"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-4">
-              <div class="text-[9px] font-bold tracking-widest uppercase text-[#c6f91f] mb-1">PS4 · PS5</div>
-              <div class="text-sm font-medium leading-tight">Horizon Forbidden West</div>
-            </div>
-          </div>
-        </div>
-        <div class="reveal-on-scroll group" style="animation-delay: 0.2s;">
-          <div class="relative overflow-hidden rounded-xl aspect-[3/4] cursor-pointer">
-            <img src="https://wallpapercave.com/wp/wp12116736.jpg" alt="Resident Evil 4 Remake" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" style="filter: brightness(0.6);">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#05080A] via-transparent to-transparent"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-4">
-              <div class="text-[9px] font-bold tracking-widest uppercase text-[#c6f91f] mb-1">PS4 · PS5</div>
-              <div class="text-sm font-medium leading-tight">Resident Evil 4 Remake</div>
-            </div>
-          </div>
-        </div>
-        <div class="reveal-on-scroll group" style="animation-delay: 0.25s;">
-          <div class="relative overflow-hidden rounded-xl aspect-[3/4] cursor-pointer">
-            <img src="https://wallpapercave.com/wp/wp13688256.jpg" alt="Gran Turismo 7" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" style="filter: brightness(0.6);">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#05080A] via-transparent to-transparent"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-4">
-              <div class="text-[9px] font-bold tracking-widest uppercase text-[#c6f91f] mb-1">PS4 · PS5</div>
-              <div class="text-sm font-medium leading-tight">Gran Turismo 7</div>
-            </div>
-          </div>
-        </div>
-        <div class="reveal-on-scroll group" style="animation-delay: 0.3s;">
-          <div class="relative overflow-hidden rounded-xl aspect-[3/4] cursor-pointer">
-            <img src="https://wallpapercave.com/wp/wp14522369.jpg" alt="Bloodborne" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" style="filter: brightness(0.6);">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#05080A] via-transparent to-transparent"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-4">
-              <div class="text-[9px] font-bold tracking-widest uppercase text-[#c6f91f] mb-1">PS4</div>
-              <div class="text-sm font-medium leading-tight">Bloodborne</div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== TESTIMONIALS ===================== -->
-  <section id="testimoni" class="py-24 lg:py-32 bg-[#0B0F13] relative overflow-hidden">
-    <div class="absolute inset-0 opacity-[0.02]" style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 24px 24px;"></div>
-
+  <!-- ===================== NEW: PANGGILAN KE RUMAH ===================== -->
+  <section id="panggilan" class="py-24 lg:py-32 relative">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] opacity-[0.05]" style="background: radial-gradient(ellipse, #c6f91f, transparent 70%); filter: blur(120px);"></div>
     <div class="relative z-10 max-w-screen-2xl mx-auto px-6 lg:px-10">
-      <div class="max-w-2xl mb-16 lg:mb-20 reveal-on-scroll">
-        <span class="text-[10px] font-semibold tracking-widest uppercase text-[#c6f91f] mb-4 block">Testimoni</span>
-        <h2 class="font-geist font-light text-3xl sm:text-4xl lg:text-5xl tracking-tighter leading-[1.1] mb-6">
-          Kata Mereka<br>
-          <span class="text-white/40">Tentang Mikayla Games</span>
-        </h2>
+      <div class="text-center max-w-2xl mx-auto mb-16 reveal-on-scroll">
+        <div class="inline-flex items-center gap-2 mb-6 px-4 py-2 border border-[#c6f91f]/20 rounded-full">
+          <i data-lucide="home" class="w-4 h-4 text-[#c6f91f]"></i>
+          <span class="text-xs font-semibold tracking-widest uppercase text-[#c6f91f]">Layanan Panggilan</span>
+        </div>
+        <h2 class="font-geist font-light text-3xl sm:text-4xl lg:text-5xl tracking-tighter leading-[1.1] mb-6">Panggilan ke Rumah<br><span class="text-white/40">Ongkir Disesuaikan Jarak</span></h2>
+        <p class="text-lg font-light text-white/70 leading-relaxed">Tidak perlu repot bawa console ke toko. Kami datang langsung ke rumah Anda! Ongkos kirim disesuaikan dengan jarak lokasi.</p>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="reveal-on-scroll glass rounded-xl p-8 hover:bg-white/[0.04] transition-colors duration-300" style="animation-delay: 0.1s;">
-          <div class="flex items-center gap-1 mb-4">
-            <i data-lucide="star" class="w-4 h-4 fill-[#c6f91f] text-[#c6f91f]"></i>
-            <i data-lucide="star" class="w-4 h-4 fill-[#c6f91f] text-[#c6f91f]"></i>
-            <i data-lucide="star" class="w-4 h-4 fill-[#c6f91f] text-[#c6f91f]"></i>
-            <i data-lucide="star" class="w-4 h-4 fill-[#c6f91f] text-[#c6f91f]"></i>
-            <i data-lucide="star" class="w-4 h-4 fill-[#c6f91f] text-[#c6f91f]"></i>
-          </div>
-          <p class="text-white/70 font-light leading-relaxed mb-6">"Isi game PS4 di Mikayla lengkap banget! Dari game lama sampai yang baru rilis semua ada. Prosesnya juga cepat, 1 hari selesai. Recommended banget!"</p>
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 font-bold text-sm">R</div>
-            <div>
-              <div class="text-sm font-medium">Rizky Pratama</div>
-              <div class="text-xs text-white/40">Bandung — PS4 HEN</div>
-            </div>
-          </div>
+      <!-- Zone Cards -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12 reveal-on-scroll">
+        <div class="zone-card glass rounded-xl p-6 border border-white/10 relative" onclick="selectZone(this, 15000)">
+          <div class="zone-check hidden absolute top-4 right-4 w-6 h-6 bg-[#c6f91f] rounded-full items-center justify-center"><i data-lucide="check" class="w-3.5 h-3.5 text-black"></i></div>
+          <div class="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center mb-4"><i data-lucide="map-pin" class="w-5 h-5 text-green-400"></i></div>
+          <div class="font-geist text-lg font-medium mb-1">Zona 1</div>
+          <div class="text-xs text-white/40 mb-3">0 – 5 km dari toko</div>
+          <div class="text-xs text-white/50 mb-2">Bandung Wetan, Cihapit, Tamansari, Dago</div>
+          <div class="font-geist text-2xl font-light text-[#c6f91f]">Rp 15.000</div>
         </div>
-
-        <div class="reveal-on-scroll glass rounded-xl p-8 hover:bg-white/[0.04] transition-colors duration-300" style="animation-delay: 0.2s;">
-          <div class="flex items-center gap-1 mb-4">
-            <i data-lucide="star" class="w-4 h-4 fill-[#c6f91f] text-[#c6f91f]"></i>
-            <i data-lucide="star" class="w-4 h-4 fill-[#c6f91f] text-[#c6f91f]"></i>
-            <i data-lucide="star" class="w-4 h-4 fill-[#c6f91f] text-[#c6f91f]"></i>
-            <i data-lucide="star" class="w-4 h-4 fill-[#c6f91f] text-[#c6f91f]"></i>
-            <i data-lucide="star" class="w-4 h-4 fill-[#c6f91f] text-[#c6f91f]"></i>
-          </div>
-          <p class="text-white/70 font-light leading-relaxed mb-6">"Kirim PS5 dari Jakarta, aman dan kembali dengan 100+ game next-gen. Packing balik rapi, harga juga paling murah dibanding tempat lain. Top!"</p>
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-[#c6f91f]/20 flex items-center justify-center text-[#c6f91f] font-bold text-sm">A</div>
-            <div>
-              <div class="text-sm font-medium">Ahmad Fauzi</div>
-              <div class="text-xs text-white/40">Jakarta — PS5 Jailbreak</div>
-            </div>
-          </div>
+        <div class="zone-card glass rounded-xl p-6 border border-white/10 relative" onclick="selectZone(this, 25000)">
+          <div class="zone-check hidden absolute top-4 right-4 w-6 h-6 bg-[#c6f91f] rounded-full items-center justify-center"><i data-lucide="check" class="w-3.5 h-3.5 text-black"></i></div>
+          <div class="w-10 h-10 rounded-lg bg-yellow-500/10 flex items-center justify-center mb-4"><i data-lucide="map-pin" class="w-5 h-5 text-yellow-400"></i></div>
+          <div class="font-geist text-lg font-medium mb-1">Zona 2</div>
+          <div class="text-xs text-white/40 mb-3">5 – 10 km dari toko</div>
+          <div class="text-xs text-white/50 mb-2">Sukajadi, Setiabudi, Coblong, Sumur Bandung</div>
+          <div class="font-geist text-2xl font-light text-[#c6f91f]">Rp 25.000</div>
         </div>
+        <div class="zone-card glass rounded-xl p-6 border border-white/10 relative" onclick="selectZone(this, 40000)">
+          <div class="zone-check hidden absolute top-4 right-4 w-6 h-6 bg-[#c6f91f] rounded-full items-center justify-center"><i data-lucide="check" class="w-3.5 h-3.5 text-black"></i></div>
+          <div class="w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center mb-4"><i data-lucide="map-pin" class="w-5 h-5 text-orange-400"></i></div>
+          <div class="font-geist text-lg font-medium mb-1">Zona 3</div>
+          <div class="text-xs text-white/40 mb-3">10 – 20 km dari toko</div>
+          <div class="text-xs text-white/50 mb-2">Buahbatu, Ujungberung, Cimahi, Soreang</div>
+          <div class="font-geist text-2xl font-light text-[#c6f91f]">Rp 40.000</div>
+        </div>
+        <div class="zone-card glass rounded-xl p-6 border border-white/10 relative" onclick="selectZone(this, 60000)">
+          <div class="zone-check hidden absolute top-4 right-4 w-6 h-6 bg-[#c6f91f] rounded-full items-center justify-center"><i data-lucide="check" class="w-3.5 h-3.5 text-black"></i></div>
+          <div class="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center mb-4"><i data-lucide="map-pin" class="w-5 h-5 text-red-400"></i></div>
+          <div class="font-geist text-lg font-medium mb-1">Zona 4</div>
+          <div class="text-xs text-white/40 mb-3">20+ km dari toko</div>
+          <div class="text-xs text-white/50 mb-2">Lembang, Banjaran, Baleendah, Cililin</div>
+          <div class="font-geist text-2xl font-light text-[#c6f91f]">Rp 60.000</div>
+        </div>
+      </div>
 
-        <div class="reveal-on-scroll glass rounded-xl p-8 hover:bg-white/[0.04] transition-colors duration-300" style="animation-delay: 0.3s;">
-          <div class="flex items-center gap-1 mb-4">
-            <i data-lucide="star" class="w-4 h-4 fill-[#c6f91f] text-[#c6f91f]"></i>
-            <i data-lucide="star" class="w-4 h-4 fill-[#c6f91f] text-[#c6f91f]"></i>
-            <i data-lucide="star" class="w-4 h-4 fill-[#c6f91f] text-[#c6f91f]"></i>
-            <i data-lucide="star" class="w-4 h-4 fill-[#c6f91f] text-[#c6f91f]"></i>
-            <i data-lucide="star" class="w-4 h-4 fill-[#c6f91f] text-[#c6f91f]"></i>
-          </div>
-          <p class="text-white/70 font-light leading-relaxed mb-6">"Sudah 3x isi game di Mikayla, mulai dari PS3 sampai PS4. Selalu puas! Bossnya ramah, game-nya lengkap, dan kalau ada error langsung dibantu."</p>
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400 font-bold text-sm">D</div>
+      <!-- Calculator -->
+      <div class="max-w-2xl mx-auto reveal-on-scroll">
+        <div class="glass rounded-2xl p-8 lg:p-10 border border-[#c6f91f]/10">
+          <h3 class="font-geist text-xl font-medium mb-6 flex items-center gap-3"><i data-lucide="calculator" class="w-5 h-5 text-[#c6f91f]"></i> Kalkulator Estimasi Biaya</h3>
+          <div class="grid sm:grid-cols-2 gap-4 mb-6">
             <div>
-              <div class="text-sm font-medium">Dewi Sartika</div>
-              <div class="text-xs text-white/40">Bandung — PS3 + PS4</div>
+              <label class="text-xs font-semibold tracking-widest uppercase text-white/30 mb-2 block">Pilih Console</label>
+              <select id="calc-console" class="w-full bg-white/5 border border-white/10 rounded-lg py-3 px-4 text-sm text-white appearance-none focus:outline-none focus:border-[#c6f91f]/40" style="background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22rgba(255,255,255,0.4)%22 stroke-width=%222%22%3E%3Cpolyline points=%226 9 12 15 18 9%22/%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right 12px center;">
+                <option value="ps3">PS3 — mulai Rp 75K</option>
+                <option value="ps4" selected>PS4 — mulai Rp 250K</option>
+                <option value="ps5">PS5 — mulai Rp 350K</option>
+              </select>
+            </div>
+            <div>
+              <label class="text-xs font-semibold tracking-widest uppercase text-white/30 mb-2 block">Pilih Paket</label>
+              <select id="calc-paket" class="w-full bg-white/5 border border-white/10 rounded-lg py-3 px-4 text-sm text-white appearance-none focus:outline-none focus:border-[#c6f91f]/40" style="background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22rgba(255,255,255,0.4)%22 stroke-width=%222%22%3E%3Cpolyline points=%226 9 12 15 18 9%22/%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right 12px center;">
+                <option value="basic">Basic</option>
+                <option value="standard" selected>Standard</option>
+                <option value="premium">Premium</option>
+              </select>
             </div>
           </div>
+          <div class="mb-6">
+            <label class="text-xs font-semibold tracking-widest uppercase text-white/30 mb-3 block">Estimasi Jarak Lokasi</label>
+            <div class="flex items-center gap-4">
+              <input type="range" id="calc-distance" min="0" max="4" value="1" step="1" class="flex-1 h-1.5 bg-white/10 rounded-lg appearance-none cursor-pointer accent-[#c6f91f]" oninput="updateCalc()">
+              <div id="calc-distance-label" class="text-sm font-medium text-white min-w-[80px] text-right">5 – 10 km</div>
+            </div>
+          </div>
+          <!-- Result -->
+          <div class="border-t border-white/5 pt-6">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-sm text-white/50">Biaya Isi Game</span>
+              <span id="calc-base" class="text-sm text-white font-medium">Rp 350.000</span>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-sm text-white/50">Ongkos Panggilan</span>
+              <span id="calc-ongkir" class="text-sm text-[#c6f91f] font-medium">Rp 25.000</span>
+            </div>
+            <div class="flex items-center justify-between pt-3 border-t border-white/10">
+              <span class="text-base font-medium text-white">Total Estimasi</span>
+              <span id="calc-total" class="font-geist text-2xl font-light text-[#c6f91f]">Rp 375.000</span>
+            </div>
+          </div>
+          <a id="calc-wa" href="#" target="_blank" class="mt-6 w-full inline-flex items-center justify-center gap-2 text-xs font-medium tracking-wide uppercase py-4 px-8 bg-[#c6f91f] text-black hover:bg-white transition-colors rounded-xl">
+            <i data-lucide="message-circle" class="w-4 h-4"></i> Order Panggilan via WhatsApp
+          </a>
+          <p class="text-[11px] text-white/20 text-center mt-4">* Estimasi biaya bisa berubah. Konfirmasi saat order via WhatsApp.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== FAQ ===================== -->
+  <!-- PRICING -->
+  <section id="harga" class="py-24 lg:py-32 relative bg-[#0B0F13]">
+    <div class="relative z-10 max-w-screen-2xl mx-auto px-6 lg:px-10">
+      <div class="text-center max-w-2xl mx-auto mb-16 reveal-on-scroll">
+        <span class="text-[10px] font-semibold tracking-widest uppercase text-[#c6f91f] mb-4 block">Daftar Harga</span>
+        <h2 class="font-geist font-light text-3xl sm:text-4xl lg:text-5xl tracking-tighter leading-[1.1] mb-6">Harga Bersahabat<br><span class="text-white/40">Game Tanpa Batas</span></h2>
+        <p class="text-lg font-light text-white/70">Belum termasuk ongkos panggilan ke rumah. <a href="#panggilan" class="text-[#c6f91f] underline underline-offset-4 decoration-[#c6f91f]/30">Cek ongkir di sini</a>.</p>
+      </div>
+      <div class="flex justify-center gap-3 mb-12 reveal-on-scroll">
+        <button class="tab-btn active px-6 py-3 border border-white/10 rounded-lg text-sm font-medium" data-tab="ps3">PS3</button>
+        <button class="tab-btn px-6 py-3 border border-white/10 rounded-lg text-sm font-medium text-white/50" data-tab="ps4">PS4</button>
+        <button class="tab-btn px-6 py-3 border border-white/10 rounded-lg text-sm font-medium text-white/50" data-tab="ps5">PS5</button>
+      </div>
+      <!-- PS3 -->
+      <div class="tab-content active" id="tab-ps3"><div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto"><div class="price-card glass rounded-xl p-8 text-center"><div class="text-xs font-semibold tracking-widest uppercase text-white/30 mb-2">Basic</div><div class="font-geist text-4xl font-light tracking-tighter mb-1">Rp 75K</div><div class="text-xs text-white/40 mb-6">Per HDD 500GB</div><ul class="space-y-3 text-sm text-white/60 text-left mb-8"><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> 50 game pilihan</li><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> Install HEN + CFW</li><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> Garansi 1 bulan</li><li class="flex items-center gap-2"><i data-lucide="x" class="w-4 h-4 text-white/20"></i><span class="text-white/30">Request game khusus</span></li></ul><a href="https://wa.me/6285163061987?text=Halo%20Mikayla%2C%20saya%20mau%20order%20paket%20PS3%20Basic" target="_blank" class="block w-full py-3 border border-white/20 text-sm font-medium hover:bg-white/5">Pilih Paket</a></div><div class="price-card price-popular glass rounded-xl p-8 text-center relative"><div class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#c6f91f] text-black text-[10px] font-bold tracking-widest uppercase">Populer</div><div class="text-xs font-semibold tracking-widest uppercase text-[#c6f91f] mb-2">Standard</div><div class="font-geist text-4xl font-light tracking-tighter mb-1">Rp 175K</div><div class="text-xs text-white/40 mb-6">Per HDD 1TB</div><ul class="space-y-3 text-sm text-white/60 text-left mb-8"><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> 150 game pilihan</li><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> Install HEN + CFW</li><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> Garansi 3 bulan</li><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> Request 10 game</li></ul><a href="https://wa.me/6285163061987?text=Halo%20Mikayla%2C%20saya%20mau%20order%20paket%20PS3%20Standard" target="_blank" class="block w-full py-3 bg-[#c6f91f] text-black text-sm font-medium hover:bg-white">Pilih Paket</a></div><div class="price-card glass rounded-xl p-8 text-center"><div class="text-xs font-semibold tracking-widest uppercase text-white/30 mb-2">Premium</div><div class="font-geist text-4xl font-light tracking-tighter mb-1">Rp 275K</div><div class="text-xs text-white/40 mb-6">Per HDD 2TB</div><ul class="space-y-3 text-sm text-white/60 text-left mb-8"><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> 300+ game lengkap</li><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> Install HEN + CFW</li><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> Garansi 6 bulan</li><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> Request unlimited</li></ul><a href="https://wa.me/6285163061987?text=Halo%20Mikayla%2C%20saya%20mau%20order%20paket%20PS3%20Premium" target="_blank" class="block w-full py-3 border border-white/20 text-sm font-medium hover:bg-white/5">Pilih Paket</a></div></div></div>
+      <!-- PS4 -->
+      <div class="tab-content" id="tab-ps4"><div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto"><div class="price-card glass rounded-xl p-8 text-center"><div class="text-xs font-semibold tracking-widest uppercase text-white/30 mb-2">Basic</div><div class="font-geist text-4xl font-light tracking-tighter mb-1">Rp 250K</div><div class="text-xs text-white/40 mb-6">Per HDD 500GB</div><ul class="space-y-3 text-sm text-white/60 text-left mb-8"><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> 30 game terbaik</li><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> Install HEN firmware</li><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> Garansi 1 bulan</li><li class="flex items-center gap-2"><i data-lucide="x" class="w-4 h-4 text-white/20"></i><span class="text-white/30">Request game khusus</span></li></ul><a href="https://wa.me/6285163061987?text=Halo%20Mikayla%2C%20saya%20mau%20order%20paket%20PS4%20Basic" target="_blank" class="block w-full py-3 border border-white/20 text-sm font-medium hover:bg-white/5">Pilih Paket</a></div><div class="price-card price-popular glass rounded-xl p-8 text-center relative"><div class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#c6f91f] text-black text-[10px] font-bold tracking-widest uppercase">Populer</div><div class="text-xs font-semibold tracking-widest uppercase text-[#c6f91f] mb-2">Standard</div><div class="font-geist text-4xl font-light tracking-tighter mb-1">Rp 350K</div><div class="text-xs text-white/40 mb-6">Per HDD 1TB</div><ul class="space-y-3 text-sm text-white/60 text-left mb-8"><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> 80 game terbaik</li><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> Install HEN firmware</li><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> Garansi 3 bulan</li><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> Request 10 game</li></ul><a href="https://wa.me/6285163061987?text=Halo%20Mikayla%2C%20saya%20mau%20order%20paket%20PS4%20Standard" target="_blank" class="block w-full py-3 bg-[#c6f91f] text-black text-sm font-medium hover:bg-white">Pilih Paket</a></div><div class="price-card glass rounded-xl p-8 text-center"><div class="text-xs font-semibold tracking-widest uppercase text-white/30 mb-2">Premium</div><div class="font-geist text-4xl font-light tracking-tighter mb-1">Rp 450K</div><div class="text-xs text-white/40 mb-6">Per HDD 2TB / SSD 1TB</div><ul class="space-y-3 text-sm text-white/60 text-left mb-8"><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> 200+ game lengkap</li><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> Install HEN firmware</li><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> Garansi 6 bulan</li><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> Request unlimited</li></ul><a href="https://wa.me/6285163061987?text=Halo%20Mikayla%2C%20saya%20mau%20order%20paket%20PS4%20Premium" target="_blank" class="block w-full py-3 border border-white/20 text-sm font-medium hover:bg-white/5">Pilih Paket</a></div></div></div>
+      <!-- PS5 -->
+      <div class="tab-content" id="tab-ps5"><div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto"><div class="price-card glass rounded-xl p-8 text-center"><div class="text-xs font-semibold tracking-widest uppercase text-white/30 mb-2">Basic</div><div class="font-geist text-4xl font-light tracking-tighter mb-1">Rp 350K</div><div class="text-xs text-white/40 mb-6">Internal SSD</div><ul class="space-y-3 text-sm text-white/60 text-left mb-8"><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> 15 game next-gen</li><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> Jailbreak firmware</li><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> Garansi 1 bulan</li><li class="flex items-center gap-2"><i data-lucide="x" class="w-4 h-4 text-white/20"></i><span class="text-white/30">Request game khusus</span></li></ul><a href="https://wa.me/6285163061987?text=Halo%20Mikayla%2C%20saya%20mau%20order%20paket%20PS5%20Basic" target="_blank" class="block w-full py-3 border border-white/20 text-sm font-medium hover:bg-white/5">Pilih Paket</a></div><div class="price-card price-popular glass rounded-xl p-8 text-center relative"><div class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#c6f91f] text-black text-[10px] font-bold tracking-widest uppercase">Populer</div><div class="text-xs font-semibold tracking-widest uppercase text-[#c6f91f] mb-2">Standard</div><div class="font-geist text-4xl font-light tracking-tighter mb-1">Rp 450K</div><div class="text-xs text-white/40 mb-6">Internal SSD + NVMe</div><ul class="space-y-3 text-sm text-white/60 text-left mb-8"><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> 40 game next-gen</li><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> Jailbreak firmware</li><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> Garansi 3 bulan</li><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> Request 5 game</li></ul><a href="https://wa.me/6285163061987?text=Halo%20Mikayla%2C%20saya%20mau%20order%20paket%20PS5%20Standard" target="_blank" class="block w-full py-3 bg-[#c6f91f] text-black text-sm font-medium hover:bg-white">Pilih Paket</a></div><div class="price-card glass rounded-xl p-8 text-center"><div class="text-xs font-semibold tracking-widest uppercase text-white/30 mb-2">Premium</div><div class="font-geist text-4xl font-light tracking-tighter mb-1">Rp 550K</div><div class="text-xs text-white/40 mb-6">Full SSD 2TB Setup</div><ul class="space-y-3 text-sm text-white/60 text-left mb-8"><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> 100+ game next-gen</li><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> Jailbreak firmware</li><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> Garansi 6 bulan</li><li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c6f91f]"></i> Request unlimited</li></ul><a href="https://wa.me/6285163061987?text=Halo%20Mikayla%2C%20saya%20mau%20order%20paket%20PS5%20Premium" target="_blank" class="block w-full py-3 border border-white/20 text-sm font-medium hover:bg-white/5">Pilih Paket</a></div></div></div>
+      <!-- Ongkir note -->
+      <div class="max-w-4xl mx-auto mt-10 reveal-on-scroll">
+        <div class="glass rounded-xl p-5 flex items-start gap-4 border-l-2 border-[#c6f91f]/30">
+          <i data-lucide="info" class="w-5 h-5 text-[#c6f91f] flex-shrink-0 mt-0.5"></i>
+          <div class="text-sm text-white/50 leading-relaxed">Harga di atas <strong class="text-white/70">belum termasuk ongkos panggilan ke rumah</strong>. Untuk panggilan, ongkir mulai <strong class="text-[#c6f91f]">Rp 15.000</strong> tergantung jarak. <a href="#panggilan" class="text-[#c6f91f] underline underline-offset-4 decoration-[#c6f91f]/30">Hitung estimasi ongkir →</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS (Updated with panggilan option) -->
+  <section id="proses" class="py-24 lg:py-32 relative">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-10">
+      <div class="max-w-2xl mb-16 reveal-on-scroll"><span class="text-[10px] font-semibold tracking-widest uppercase text-[#c6f91f] mb-4 block">Cara Order</span><h2 class="font-geist font-light text-3xl sm:text-4xl lg:text-5xl tracking-tighter leading-[1.1] mb-6">Proses Mudah<br><span class="text-white/40">4 Langkah Saja</span></h2></div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="reveal-on-scroll group" style="animation-delay:0.1s"><div class="glass rounded-xl p-8 h-full hover:bg-white/[0.04] transition-colors relative overflow-hidden"><div class="absolute top-4 right-4 font-geist text-6xl font-light text-white/[0.03]">01</div><div class="relative z-10"><div class="w-12 h-12 rounded-xl border border-[#c6f91f]/30 flex items-center justify-center mb-6 group-hover:bg-[#c6f91f]/10 transition-colors"><i data-lucide="message-circle" class="w-5 h-5 text-[#c6f91f]"></i></div><h3 class="font-geist text-lg font-medium mb-3">Hubungi Kami</h3><p class="text-sm text-white/50 leading-relaxed">Chat via WhatsApp. Pilih console, paket, dan cara pengiriman (antar ke toko atau panggilan ke rumah).</p></div></div></div>
+        <div class="reveal-on-scroll group" style="animation-delay:0.2s"><div class="glass rounded-xl p-8 h-full hover:bg-white/[0.04] transition-colors relative overflow-hidden"><div class="absolute top-4 right-4 font-geist text-6xl font-light text-white/[0.03]">02</div><div class="relative z-10"><div class="w-12 h-12 rounded-xl border border-[#c6f91f]/30 flex items-center justify-center mb-6 group-hover:bg-[#c6f91f]/10 transition-colors"><i data-lucide="truck" class="w-5 h-5 text-[#c6f91f]"></i></div><h3 class="font-geist text-lg font-medium mb-3">Kirim / Panggil</h3><p class="text-sm text-white/50 leading-relaxed">Bawa console ke toko, kirim via ekspedisi, atau kami datang ke rumah Anda (ongkir sesuai jarak).</p></div></div></div>
+        <div class="reveal-on-scroll group" style="animation-delay:0.3s"><div class="glass rounded-xl p-8 h-full hover:bg-white/[0.04] transition-colors relative overflow-hidden"><div class="absolute top-4 right-4 font-geist text-6xl font-light text-white/[0.03]">03</div><div class="relative z-10"><div class="w-12 h-12 rounded-xl border border-[#c6f91f]/30 flex items-center justify-center mb-6 group-hover:bg-[#c6f91f]/10 transition-colors"><i data-lucide="hard-drive" class="w-5 h-5 text-[#c6f91f]"></i></div><h3 class="font-geist text-lg font-medium mb-3">Proses Install</h3><p class="text-sm text-white/50 leading-relaxed">Tim kami install HEN/Jailbreak + game. Proses 1-4 hari kerja tergantung paket.</p></div></div></div>
+        <div class="reveal-on-scroll group" style="animation-delay:0.4s"><div class="glass rounded-xl p-8 h-full hover:bg-white/[0.04] transition-colors relative overflow-hidden"><div class="absolute top-4 right-4 font-geist text-6xl font-light text-white/[0.03]">04</div><div class="relative z-10"><div class="w-12 h-12 rounded-xl border border-[#c6f91f]/30 flex items-center justify-center mb-6 group-hover:bg-[#c6f91f]/10 transition-colors"><i data-lucide="gamepad-2" class="w-5 h-5 text-[#c6f91f]"></i></div><h3 class="font-geist text-lg font-medium mb-3">Mainkan!</h3><p class="text-sm text-white/50 leading-relaxed">Console dikembalikan / selesai di tempat. Langsung main! Free konsultasi jika ada kendala.</p></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATALOG + PDF -->
+  <section id="katalog" class="py-24 lg:py-32 relative bg-[#0B0F13]">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-10">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12 reveal-on-scroll"><div><span class="text-[10px] font-semibold tracking-widest uppercase text-[#c6f91f] mb-4 block">Katalog Game</span><h2 class="font-geist font-light text-3xl sm:text-4xl lg:text-5xl tracking-tighter leading-[1.1]">Game Populer<br><span class="text-white/40">Pilihan Gamer</span></h2></div></div>
+      <!-- PDF Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-14 reveal-on-scroll">
+        <div style="background:linear-gradient(135deg,rgba(14,165,233,0.08),rgba(14,165,233,0.02));border:1px solid rgba(14,165,233,0.2);border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:14px;transition:all .3s;" onmouseover="this.style.borderColor='rgba(14,165,233,0.5)'" onmouseout="this.style.borderColor='rgba(14,165,233,0.2)'"><div style="display:flex;align-items:center;gap:12px;"><div style="width:48px;height:48px;border-radius:12px;background:rgba(14,165,233,0.15);display:flex;align-items:center;justify-content:center;font-size:22px;">🎮</div><div><div style="font-family:'Geist',sans-serif;font-size:16px;font-weight:700;color:#fff;">List Game PS3</div><div style="font-size:11px;color:rgba(255,255,255,0.4);margin-top:2px;">HEN — 1000+ Judul</div></div></div><p style="font-size:13px;color:rgba(255,255,255,0.5);line-height:1.6;">Koleksi lengkap game PS3, update 2025.</p><div style="display:flex;gap:8px;margin-top:4px;"><button onclick="openPdfModal('LIST_GAME_PS3_2025.pdf','List Game PS3 2025')" style="flex:1;padding:10px;border-radius:100px;background:rgba(14,165,233,0.12);border:1px solid rgba(14,165,233,0.3);color:#38bdf8;font-size:12px;font-weight:600;cursor:pointer;">👁 Lihat</button><a href="LIST_GAME_PS3_2025.pdf" download style="flex:1;padding:10px;border-radius:100px;background:linear-gradient(135deg,#0ea5e9,#0284c7);color:#fff;font-size:12px;font-weight:700;text-decoration:none;text-align:center;">⬇ Download</a></div></div>
+        <div style="background:linear-gradient(135deg,rgba(139,92,246,0.08),rgba(139,92,246,0.02));border:1px solid rgba(139,92,246,0.2);border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:14px;transition:all .3s;" onmouseover="this.style.borderColor='rgba(139,92,246,0.5)'" onmouseout="this.style.borderColor='rgba(139,92,246,0.2)'"><div style="display:flex;align-items:center;gap:12px;"><div style="width:48px;height:48px;border-radius:12px;background:rgba(139,92,246,0.15);display:flex;align-items:center;justify-content:center;font-size:22px;">🕹️</div><div><div style="font-family:'Geist',sans-serif;font-size:16px;font-weight:700;color:#fff;">List Game PS4</div><div style="font-size:11px;color:rgba(255,255,255,0.4);margin-top:2px;">HEN — 3000+ Judul</div></div></div><p style="font-size:13px;color:rgba(255,255,255,0.5);line-height:1.6;">Ratusan game PS4 terbaru, update 2026.</p><div style="display:flex;gap:8px;margin-top:4px;"><button onclick="openPdfModal('PS4_LISTGAME_2026.pdf','List Game PS4 2026')" style="flex:1;padding:10px;border-radius:100px;background:rgba(139,92,246,0.12);border:1px solid rgba(139,92,246,0.3);color:#c4b5fd;font-size:12px;font-weight:600;cursor:pointer;">👁 Lihat</button><a href="PS4_LISTGAME_2026.pdf" download style="flex:1;padding:10px;border-radius:100px;background:linear-gradient(135deg,#8b5cf6,#7c3aed);color:#fff;font-size:12px;font-weight:700;text-decoration:none;text-align:center;">⬇ Download</a></div></div>
+        <div style="background:linear-gradient(135deg,rgba(198,249,31,0.07),rgba(198,249,31,0.02));border:1px solid rgba(198,249,31,0.18);border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:14px;transition:all .3s;" onmouseover="this.style.borderColor='rgba(198,249,31,0.45)'" onmouseout="this.style.borderColor='rgba(198,249,31,0.18)'"><div style="display:flex;align-items:center;gap:12px;"><div style="width:48px;height:48px;border-radius:12px;background:rgba(198,249,31,0.12);display:flex;align-items:center;justify-content:center;font-size:22px;">⚡</div><div><div style="font-family:'Geist',sans-serif;font-size:16px;font-weight:700;color:#fff;">List Game PS5</div><div style="font-size:11px;color:rgba(255,255,255,0.4);margin-top:2px;">Jailbreak — 500+ Judul</div></div></div><p style="font-size:13px;color:rgba(255,255,255,0.5);line-height:1.6;">Game PS5 next-gen terbaru, update 2027.</p><div style="display:flex;gap:8px;margin-top:4px;"><button onclick="openPdfModal('PLAYSTATION_5_LIST_2027.pdf','List Game PS5 2027')" style="flex:1;padding:10px;border-radius:100px;background:rgba(198,249,31,0.1);border:1px solid rgba(198,249,31,0.25);color:#c6f91f;font-size:12px;font-weight:600;cursor:pointer;">👁 Lihat</button><a href="PLAYSTATION_5_LIST_2027.pdf" download style="flex:1;padding:10px;border-radius:100px;background:linear-gradient(135deg,#c6f91f,#8fe01f);color:#05080A;font-size:12px;font-weight:700;text-decoration:none;text-align:center;">⬇ Download</a></div></div>
+      </div>
+      <!-- Game Grid -->
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+        <div class="reveal-on-scroll group" style="animation-delay:0.05s"><div class="relative overflow-hidden rounded-xl aspect-[3/4] cursor-pointer"><img src="https://wallpapercave.com/wp/wp12233599.jpg" alt="God of War Ragnarök" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" style="filter:brightness(0.6)"><div class="absolute inset-0 bg-gradient-to-t from-[#05080A] via-transparent to-transparent"></div><div class="absolute bottom-0 left-0 right-0 p-4"><div class="text-[9px] font-bold tracking-widest uppercase text-[#c6f91f] mb-1">PS4 · PS5</div><div class="text-sm font-medium leading-tight">God of War Ragnarök</div></div></div></div>
+        <div class="reveal-on-scroll group" style="animation-delay:0.1s"><div class="relative overflow-hidden rounded-xl aspect-[3/4] cursor-pointer"><img src="https://wallpapercave.com/wp/wp13860418.jpg" alt="Spider-Man 2" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" style="filter:brightness(0.6)"><div class="absolute inset-0 bg-gradient-to-t from-[#05080A] via-transparent to-transparent"></div><div class="absolute bottom-0 left-0 right-0 p-4"><div class="text-[9px] font-bold tracking-widest uppercase text-[#c6f91f] mb-1">PS5</div><div class="text-sm font-medium leading-tight">Spider-Man 2</div></div></div></div>
+        <div class="reveal-on-scroll group" style="animation-delay:0.15s"><div class="relative overflow-hidden rounded-xl aspect-[3/4] cursor-pointer"><img src="https://wallpapercave.com/wp/wp15354035.png" alt="Elden Ring" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" style="filter:brightness(0.6)"><div class="absolute inset-0 bg-gradient-to-t from-[#05080A] via-transparent to-transparent"></div><div class="absolute bottom-0 left-0 right-0 p-4"><div class="text-[9px] font-bold tracking-widest uppercase text-[#c6f91f] mb-1">PS4 · PS5</div><div class="text-sm font-medium leading-tight">Elden Ring</div></div></div></div>
+        <div class="reveal-on-scroll group" style="animation-delay:0.2s"><div class="relative overflow-hidden rounded-xl aspect-[3/4] cursor-pointer"><img src="https://wallpapercave.com/wp/wp12501890.png" alt="FF XVI" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" style="filter:brightness(0.6)"><div class="absolute inset-0 bg-gradient-to-t from-[#05080A] via-transparent to-transparent"></div><div class="absolute bottom-0 left-0 right-0 p-4"><div class="text-[9px] font-bold tracking-widest uppercase text-[#c6f91f] mb-1">PS5</div><div class="text-sm font-medium leading-tight">Final Fantasy XVI</div></div></div></div>
+        <div class="reveal-on-scroll group" style="animation-delay:0.25s"><div class="relative overflow-hidden rounded-xl aspect-[3/4] cursor-pointer"><img src="https://wallpapercave.com/wp/wp14985671.webp" alt="Ghost of Tsushima" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" style="filter:brightness(0.6)"><div class="absolute inset-0 bg-gradient-to-t from-[#05080A] via-transparent to-transparent"></div><div class="absolute bottom-0 left-0 right-0 p-4"><div class="text-[9px] font-bold tracking-widest uppercase text-[#c6f91f] mb-1">PS4 · PS5</div><div class="text-sm font-medium leading-tight">Ghost of Tsushima</div></div></div></div>
+        <div class="reveal-on-scroll group" style="animation-delay:0.1s"><div class="relative overflow-hidden rounded-xl aspect-[3/4] cursor-pointer"><img src="https://wallpapercave.com/wp/wp13431019.jpg" alt="TLOU" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" style="filter:brightness(0.6)"><div class="absolute inset-0 bg-gradient-to-t from-[#05080A] via-transparent to-transparent"></div><div class="absolute bottom-0 left-0 right-0 p-4"><div class="text-[9px] font-bold tracking-widest uppercase text-[#c6f91f] mb-1">PS4 · PS5</div><div class="text-sm font-medium leading-tight">The Last of Us Part I</div></div></div></div>
+        <div class="reveal-on-scroll group" style="animation-delay:0.15s"><div class="relative overflow-hidden rounded-xl aspect-[3/4] cursor-pointer"><img src="https://wallpapercave.com/wp/wp13637147.jpg" alt="Horizon" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" style="filter:brightness(0.6)"><div class="absolute inset-0 bg-gradient-to-t from-[#05080A] via-transparent to-transparent"></div><div class="absolute bottom-0 left-0 right-0 p-4"><div class="text-[9px] font-bold tracking-widest uppercase text-[#c6f91f] mb-1">PS4 · PS5</div><div class="text-sm font-medium leading-tight">Horizon Forbidden West</div></div></div></div>
+        <div class="reveal-on-scroll group" style="animation-delay:0.2s"><div class="relative overflow-hidden rounded-xl aspect-[3/4] cursor-pointer"><img src="https://wallpapercave.com/wp/wp12116736.jpg" alt="RE4" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" style="filter:brightness(0.6)"><div class="absolute inset-0 bg-gradient-to-t from-[#05080A] via-transparent to-transparent"></div><div class="absolute bottom-0 left-0 right-0 p-4"><div class="text-[9px] font-bold tracking-widest uppercase text-[#c6f91f] mb-1">PS4 · PS5</div><div class="text-sm font-medium leading-tight">Resident Evil 4 Remake</div></div></div></div>
+        <div class="reveal-on-scroll group" style="animation-delay:0.25s"><div class="relative overflow-hidden rounded-xl aspect-[3/4] cursor-pointer"><img src="https://wallpapercave.com/wp/wp13688256.jpg" alt="GT7" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" style="filter:brightness(0.6)"><div class="absolute inset-0 bg-gradient-to-t from-[#05080A] via-transparent to-transparent"></div><div class="absolute bottom-0 left-0 right-0 p-4"><div class="text-[9px] font-bold tracking-widest uppercase text-[#c6f91f] mb-1">PS4 · PS5</div><div class="text-sm font-medium leading-tight">Gran Turismo 7</div></div></div></div>
+        <div class="reveal-on-scroll group" style="animation-delay:0.3s"><div class="relative overflow-hidden rounded-xl aspect-[3/4] cursor-pointer"><img src="https://wallpapercave.com/wp/wp14522369.jpg" alt="Bloodborne" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" style="filter:brightness(0.6)"><div class="absolute inset-0 bg-gradient-to-t from-[#05080A] via-transparent to-transparent"></div><div class="absolute bottom-0 left-0 right-0 p-4"><div class="text-[9px] font-bold tracking-widest uppercase text-[#c6f91f] mb-1">PS4</div><div class="text-sm font-medium leading-tight">Bloodborne</div></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ (updated with panggilan question) -->
   <section id="faq" class="py-24 lg:py-32 relative">
     <div class="max-w-screen-2xl mx-auto px-6 lg:px-10">
       <div class="max-w-3xl mx-auto">
-        <div class="text-center mb-16 reveal-on-scroll">
-          <span class="text-[10px] font-semibold tracking-widest uppercase text-[#c6f91f] mb-4 block">FAQ</span>
-          <h2 class="font-geist font-light text-3xl sm:text-4xl lg:text-5xl tracking-tighter leading-[1.1]">
-            Pertanyaan<br>
-            <span class="text-white/40">yang Sering Ditanyakan</span>
-          </h2>
-        </div>
-
+        <div class="text-center mb-16 reveal-on-scroll"><span class="text-[10px] font-semibold tracking-widest uppercase text-[#c6f91f] mb-4 block">FAQ</span><h2 class="font-geist font-light text-3xl sm:text-4xl lg:text-5xl tracking-tighter leading-[1.1]">Pertanyaan<br><span class="text-white/40">yang Sering Ditanyakan</span></h2></div>
         <div class="space-y-3 reveal-on-scroll">
-          <div class="faq-item glass rounded-xl overflow-hidden">
-            <button class="faq-toggle w-full flex items-center justify-between p-6 text-left hover:bg-white/[0.02] transition-colors">
-              <span class="font-medium pr-4">Apa itu PS3 HEN / PS4 HEN / PS5 Jailbreak?</span>
-              <i data-lucide="plus" class="w-5 h-5 text-[#c6f91f] flex-shrink-0 faq-icon transition-transform duration-300"></i>
-            </button>
-            <div class="faq-answer px-6">
-              <p class="text-sm text-white/60 leading-relaxed pb-6">HEN (Homebrew ENabler) dan Jailbreak adalah metode untuk membuka akses console PlayStation agar bisa menjalankan game dari HDD tanpa perlu membeli DVD/BD original. Ini memungkinkan Anda memainkan ribuan game secara gratis setelah proses instalasi selesai.</p>
-            </div>
-          </div>
-
-          <div class="faq-item glass rounded-xl overflow-hidden">
-            <button class="faq-toggle w-full flex items-center justify-between p-6 text-left hover:bg-white/[0.02] transition-colors">
-              <span class="font-medium pr-4">Apakah semua tipe PS3/PS4/PS5 bisa di-HEN/Jailbreak?</span>
-              <i data-lucide="plus" class="w-5 h-5 text-[#c6f91f] flex-shrink-0 faq-icon transition-transform duration-300"></i>
-            </button>
-            <div class="faq-answer px-6">
-              <p class="text-sm text-white/60 leading-relaxed pb-6"><strong class="text-white/80">PS3:</strong> Semua tipe bisa (Fat, Slim, Super Slim).<br><strong class="text-white/80">PS4:</strong> Tergantung firmware. Kami support FW 5.05 - 13.00.<br><strong class="text-white/80">PS5:</strong> Saat ini support FW 4.03 - 12.00. Hubungi kami untuk cek kompatibilitas console Anda.</p>
-            </div>
-          </div>
-
-          <div class="faq-item glass rounded-xl overflow-hidden">
-            <button class="faq-toggle w-full flex items-center justify-between p-6 text-left hover:bg-white/[0.02] transition-colors">
-              <span class="font-medium pr-4">Bisa kirim console dari luar Bandung?</span>
-              <i data-lucide="plus" class="w-5 h-5 text-[#c6f91f] flex-shrink-0 faq-icon transition-transform duration-300"></i>
-            </button>
-            <div class="faq-answer px-6">
-              <p class="text-sm text-white/60 leading-relaxed pb-6">Bisa! Kami melayani pengiriman dari seluruh Indonesia via JNE, J&T, atau SiCepat. Kami akan panduan cara packing yang aman. Biaya kirim ditanggung pelanggan, dan kami pastikan console dikemas balik dengan sangat aman.</p>
-            </div>
-          </div>
-
-          <div class="faq-item glass rounded-xl overflow-hidden">
-            <button class="faq-toggle w-full flex items-center justify-between p-6 text-left hover:bg-white/[0.02] transition-colors">
-              <span class="font-medium pr-4">Berapa lama proses instalasi?</span>
-              <i data-lucide="plus" class="w-5 h-5 text-[#c6f91f] flex-shrink-0 faq-icon transition-transform duration-300"></i>
-            </button>
-            <div class="faq-answer px-6">
-              <p class="text-sm text-white/60 leading-relaxed pb-6">Tergantung paket yang dipilih dan antrian. Estimasi:<br><strong class="text-white/80">PS3:</strong> 1-2 hari kerja<br><strong class="text-white/80">PS4:</strong> 1-3 hari kerja<br><strong class="text-white/80">PS5:</strong> 2-4 hari kerja<br>Untuk paket Premium bisa lebih lama karena jumlah game banyak.</p>
-            </div>
-          </div>
-
-          <div class="faq-item glass rounded-xl overflow-hidden">
-            <button class="faq-toggle w-full flex items-center justify-between p-6 text-left hover:bg-white/[0.02] transition-colors">
-              <span class="font-medium pr-4">Apakah ada garansi?</span>
-              <i data-lucide="plus" class="w-5 h-5 text-[#c6f91f] flex-shrink-0 faq-icon transition-transform duration-300"></i>
-            </button>
-            <div class="faq-answer px-6">
-              <p class="text-sm text-white/60 leading-relaxed pb-6">Ya! Setiap paket dilengkapi garansi. Jika game error atau hilang dalam masa garansi, kami akan install ulang tanpa biaya. Garansi tidak mencakup kerusakan hardware akibat kesalahan pengguna.</p>
-            </div>
-          </div>
-
-          <div class="faq-item glass rounded-xl overflow-hidden">
-            <button class="faq-toggle w-full flex items-center justify-between p-6 text-left hover:bg-white/[0.02] transition-colors">
-              <span class="font-medium pr-4">Bisa request game tertentu?</span>
-              <i data-lucide="plus" class="w-5 h-5 text-[#c6f91f] flex-shrink-0 faq-icon transition-transform duration-300"></i>
-            </button>
-            <div class="faq-answer px-6">
-              <p class="text-sm text-white/60 leading-relaxed pb-6">Bisa! Untuk paket Standard & Premium, Anda bisa request game tertentu yang mungkin belum ada di list default kami. Kami akan usahakan carikan dan installkan untuk Anda.</p>
-            </div>
-          </div>
+          <div class="faq-item glass rounded-xl overflow-hidden"><button class="faq-toggle w-full flex items-center justify-between p-6 text-left hover:bg-white/[0.02]"><span class="font-medium pr-4">Bagaimana sistem ongkir panggilan ke rumah?</span><i data-lucide="plus" class="w-5 h-5 text-[#c6f91f] flex-shrink-0 faq-icon transition-transform duration-300"></i></button><div class="faq-answer px-6"><p class="text-sm text-white/60 leading-relaxed pb-6">Ongkos panggilan disesuaikan dengan jarak lokasi Anda dari toko kami di Bandung. Zona 1 (0-5km) Rp 15.000, Zona 2 (5-10km) Rp 25.000, Zona 3 (10-20km) Rp 40.000, Zona 4 (20km+) Rp 60.000. Gunakan <a href="#panggilan" class="text-[#c6f91f] underline">kalkulator ongkir</a> untuk estimasi akurat.</p></div></div>
+          <div class="faq-item glass rounded-xl overflow-hidden"><button class="faq-toggle w-full flex items-center justify-between p-6 text-left hover:bg-white/[0.02]"><span class="font-medium pr-4">Apakah bisa panggilan ke luar Bandung?</span><i data-lucide="plus" class="w-5 h-5 text-[#c6f91f] flex-shrink-0 faq-icon transition-transform duration-300"></i></button><div class="faq-answer px-6"><p class="text-sm text-white/60 leading-relaxed pb-6">Untuk luar kota Bandung, kami sarankan kirim console via ekspedisi (JNE/J&T/SiCepat). Untuk area Cimahi dan sekitarnya masih bisa panggilan dengan ongkir Zona 3-4. Hubungi kami via WhatsApp untuk konfirmasi.</p></div></div>
+          <div class="faq-item glass rounded-xl overflow-hidden"><button class="faq-toggle w-full flex items-center justify-between p-6 text-left hover:bg-white/[0.02]"><span class="font-medium pr-4">Berapa lama proses instalasi jika panggilan?</span><i data-lucide="plus" class="w-5 h-5 text-[#c6f91f] flex-shrink-0 faq-icon transition-transform duration-300"></i></button><div class="faq-answer px-6"><p class="text-sm text-white/60 leading-relaxed pb-6">Untuk paket Basic dan Standard, proses bisa ditunggu di tempat (estimasi 2-5 jam). Untuk paket Premium yang butuh waktu lama, kami bawa console ke toko dan kembalikan setelah selesai (1-3 hari).</p></div></div>
+          <div class="faq-item glass rounded-xl overflow-hidden"><button class="faq-toggle w-full flex items-center justify-between p-6 text-left hover:bg-white/[0.02]"><span class="font-medium pr-4">Apa itu PS3 HEN / PS4 HEN / PS5 Jailbreak?</span><i data-lucide="plus" class="w-5 h-5 text-[#c6f91f] flex-shrink-0 faq-icon transition-transform duration-300"></i></button><div class="faq-answer px-6"><p class="text-sm text-white/60 leading-relaxed pb-6">HEN dan Jailbreak adalah metode membuka akses console agar bisa main game dari HDD tanpa beli DVD original.</p></div></div>
+          <div class="faq-item glass rounded-xl overflow-hidden"><button class="faq-toggle w-full flex items-center justify-between p-6 text-left hover:bg-white/[0.02]"><span class="font-medium pr-4">Apakah ada garansi?</span><i data-lucide="plus" class="w-5 h-5 text-[#c6f91f] flex-shrink-0 faq-icon transition-transform duration-300"></i></button><div class="faq-answer px-6"><p class="text-sm text-white/60 leading-relaxed pb-6">Ya! Setiap paket dilengkapi garansi. Jika game error atau hilang dalam masa garansi, kami install ulang tanpa biaya. Untuk panggilan, garansi tetap berlaku.</p></div></div>
+          <div class="faq-item glass rounded-xl overflow-hidden"><button class="faq-toggle w-full flex items-center justify-between p-6 text-left hover:bg-white/[0.02]"><span class="font-medium pr-4">Bisa request game tertentu?</span><i data-lucide="plus" class="w-5 h-5 text-[#c6f91f] flex-shrink-0 faq-icon transition-transform duration-300"></i></button><div class="faq-answer px-6"><p class="text-sm text-white/60 leading-relaxed pb-6">Bisa! Untuk paket Standard & Premium bisa request game tertentu. Chat list game yang diinginkan via WhatsApp.</p></div></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== CTA / CONTACT ===================== -->
+  <!-- CTA -->
   <section id="kontak" class="py-24 lg:py-32 relative overflow-hidden bg-[#0B0F13]">
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] opacity-[0.06]" style="background: radial-gradient(ellipse, #c6f91f, transparent 70%); filter: blur(120px);"></div>
-
     <div class="relative z-10 max-w-screen-2xl mx-auto px-6 lg:px-10">
       <div class="max-w-4xl mx-auto">
         <div class="glass rounded-2xl p-10 lg:p-16 relative overflow-hidden reveal-on-scroll">
           <div class="absolute top-0 left-0 w-24 h-24 border-l-2 border-t-2 border-[#c6f91f]/20 rounded-tl-2xl"></div>
           <div class="absolute bottom-0 right-0 w-24 h-24 border-r-2 border-b-2 border-[#c6f91f]/20 rounded-br-2xl"></div>
-
           <div class="relative z-10">
-            <div class="text-center mb-12">
-              <span class="text-[10px] font-semibold tracking-widest uppercase text-[#c6f91f] mb-6 block">Hubungi Kami</span>
-              <h2 class="font-geist font-light text-3xl sm:text-4xl lg:text-5xl tracking-tighter leading-[1.1] mb-6">
-                Siap Isi Game<br>
-                <span class="text-gradient">Console Anda?</span>
-              </h2>
-              <p class="text-lg font-light text-white/60 leading-relaxed max-w-xl mx-auto">
-                Chat langsung via WhatsApp untuk order atau tanya-tanya. Respon cepat!
-              </p>
-            </div>
-
-            <!-- Contact Methods -->
+            <div class="text-center mb-12"><span class="text-[10px] font-semibold tracking-widest uppercase text-[#c6f91f] mb-6 block">Hubungi Kami</span><h2 class="font-geist font-light text-3xl sm:text-4xl lg:text-5xl tracking-tighter leading-[1.1] mb-6">Siap Isi Game<br><span class="text-gradient">Console Anda?</span></h2><p class="text-lg font-light text-white/60 leading-relaxed max-w-xl mx-auto">Datang ke toko, kirim via ekspedisi, atau panggil ke rumah — pilih yang paling nyaman!</p></div>
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
-              <a href="https://wa.me/6285163061987" target="_blank" class="group flex items-center gap-4 p-5 glass rounded-xl hover:bg-white/[0.05] transition-colors duration-300">
-                <div class="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center flex-shrink-0">
-                  <i data-lucide="message-circle" class="w-5 h-5 text-green-400"></i>
-                </div>
-                <div>
-                  <div class="text-sm font-medium">WhatsApp</div>
-                  <div class="text-xs text-white/40">0851-6306-1987</div>
-                </div>
-              </a>
-              <a href="tel:+6285163061987" class="group flex items-center gap-4 p-5 glass rounded-xl hover:bg-white/[0.05] transition-colors duration-300">
-                <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center flex-shrink-0">
-                  <i data-lucide="phone" class="w-5 h-5 text-blue-400"></i>
-                </div>
-                <div>
-                  <div class="text-sm font-medium">Telepon</div>
-                  <div class="text-xs text-white/40">0851-6306-1987</div>
-                </div>
-              </a>
-              <a href="https://maps.google.com" target="_blank" class="group flex items-center gap-4 p-5 glass rounded-xl hover:bg-white/[0.05] transition-colors duration-300 sm:col-span-2 lg:col-span-1">
-                <div class="w-12 h-12 rounded-xl bg-red-500/10 flex items-center justify-center flex-shrink-0">
-                  <i data-lucide="map-pin" class="w-5 h-5 text-red-400"></i>
-                </div>
-                <div>
-                  <div class="text-sm font-medium">Lokasi Toko</div>
-                  <div class="text-xs text-white/40">Bandung, Jawa Barat</div>
-                </div>
-              </a>
+              <a href="https://wa.me/6285163061987" target="_blank" class="group flex items-center gap-4 p-5 glass rounded-xl hover:bg-white/[0.05] transition-colors"><div class="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center flex-shrink-0"><i data-lucide="message-circle" class="w-5 h-5 text-green-400"></i></div><div><div class="text-sm font-medium">WhatsApp</div><div class="text-xs text-white/40">0851-6306-1987</div></div></a>
+              <a href="tel:+6285163061987" class="group flex items-center gap-4 p-5 glass rounded-xl hover:bg-white/[0.05] transition-colors"><div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center flex-shrink-0"><i data-lucide="phone" class="w-5 h-5 text-blue-400"></i></div><div><div class="text-sm font-medium">Telepon</div><div class="text-xs text-white/40">0851-6306-1987</div></div></a>
+              <a href="#panggilan" class="group flex items-center gap-4 p-5 glass rounded-xl hover:bg-white/[0.05] transition-colors sm:col-span-2 lg:col-span-1"><div class="w-12 h-12 rounded-xl bg-[#c6f91f]/10 flex items-center justify-center flex-shrink-0"><i data-lucide="home" class="w-5 h-5 text-[#c6f91f]"></i></div><div><div class="text-sm font-medium">Panggilan Rumah</div><div class="text-xs text-white/40">Mulai Rp 15K ongkir</div></div></a>
             </div>
-
-            <!-- Big WhatsApp Button -->
-            <a href="https://wa.me/6285163061987?text=Halo%20Mikayla%20Games%2C%20saya%20mau%20order%20isi%20game%20PlayStation" target="_blank" class="group w-full inline-flex items-center justify-center gap-3 text-sm font-medium tracking-wide uppercase py-5 px-8 bg-[#25D366] text-white hover:bg-[#20bd5a] transition-colors duration-300 rounded-xl">
-              <i data-lucide="message-circle" class="w-5 h-5"></i>
-              Chat WhatsApp Sekarang
-              <i data-lucide="arrow-right" class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"></i>
-            </a>
-
-            <!-- Operating Hours -->
-            <div class="mt-8 pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-white/30">
-              <div class="flex items-center gap-2">
-                <i data-lucide="clock" class="w-4 h-4"></i>
-                <span>Senin - Sabtu: 10.00 - 21.00</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <i data-lucide="calendar" class="w-4 h-4"></i>
-                <span>Minggu: 12.00 - 18.00</span>
-              </div>
-            </div>
+            <a href="https://wa.me/6285163061987?text=Halo%20Mikayla%20Games%2C%20saya%20mau%20order%20isi%20game%20PlayStation%20(panggilan%20ke%20rumah)" target="_blank" class="group w-full inline-flex items-center justify-center gap-3 text-sm font-medium tracking-wide uppercase py-5 px-8 bg-[#25D366] text-white hover:bg-[#20bd5a] transition-colors rounded-xl"><i data-lucide="message-circle" class="w-5 h-5"></i> Chat WhatsApp Sekarang <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i></a>
+            <div class="mt-8 pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-white/30"><div class="flex items-center gap-2"><i data-lucide="clock" class="w-4 h-4"></i><span>Senin - Sabtu: 10.00 - 21.00</span></div><div class="flex items-center gap-2"><i data-lucide="calendar" class="w-4 h-4"></i><span>Minggu: 12.00 - 18.00</span></div></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== FOOTER ===================== -->
+  <!-- FOOTER -->
   <footer class="border-t border-white/5 bg-[#080B0E]">
     <div class="max-w-screen-2xl mx-auto px-6 lg:px-10 py-16 lg:py-20">
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
-        <div class="lg:col-span-1">
-          <a href="#" class="flex items-center gap-2.5 mb-6">
-            <div class="w-9 h-9 bg-[#c6f91f] rounded-lg flex items-center justify-center">
-              <i data-lucide="gamepad-2" class="w-5 h-5 text-black"></i>
-            </div>
-            <div class="flex flex-col leading-tight">
-              <span class="font-geist font-bold text-white tracking-tight text-base">MIKAYLA</span>
-              <span class="text-[9px] font-semibold tracking-[0.25em] uppercase text-[#c6f91f]">GAMES BANDUNG</span>
-            </div>
-          </a>
-          <p class="text-sm text-white/40 leading-relaxed mb-6">Jasa isi game PlayStation terpercaya di Bandung. PS3 HEN, PS4 HEN, PS5 Jailbreak — ribuan game terlengkap!</p>
-          <div class="flex items-center gap-3">
-            <a href="#" class="w-9 h-9 border border-white/10 rounded-lg flex items-center justify-center text-white/40 hover:text-[#c6f91f] hover:border-[#c6f91f]/30 transition-colors duration-300">
-              <i data-lucide="instagram" class="w-4 h-4"></i>
-            </a>
-            <a href="https://wa.me/6285163061987" target="_blank" class="w-9 h-9 border border-white/10 rounded-lg flex items-center justify-center text-white/40 hover:text-green-400 hover:border-green-400/30 transition-colors duration-300">
-              <i data-lucide="message-circle" class="w-4 h-4"></i>
-            </a>
-            <a href="#" class="w-9 h-9 border border-white/10 rounded-lg flex items-center justify-center text-white/40 hover:text-red-400 hover:border-red-400/30 transition-colors duration-300">
-              <i data-lucide="youtube" class="w-4 h-4"></i>
-            </a>
-          </div>
-        </div>
-
-        <div>
-          <h4 class="text-xs font-semibold tracking-widest uppercase text-white/30 mb-6">Layanan</h4>
-          <ul class="space-y-3">
-            <li><a href="#layanan" class="text-sm text-white/50 hover:text-white transition-colors">PS3 HEN</a></li>
-            <li><a href="#layanan" class="text-sm text-white/50 hover:text-white transition-colors">PS4 HEN</a></li>
-            <li><a href="#layanan" class="text-sm text-white/50 hover:text-white transition-colors">PS5 Jailbreak</a></li>
-            <li><a href="#harga" class="text-sm text-white/50 hover:text-white transition-colors">Daftar Harga</a></li>
-            <li><a href="#katalog" class="text-sm text-white/50 hover:text-white transition-colors">Katalog Game</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="text-xs font-semibold tracking-widest uppercase text-white/30 mb-6">Informasi</h4>
-          <ul class="space-y-3">
-            <li><a href="#tentang" class="text-sm text-white/50 hover:text-white transition-colors">Tentang Kami</a></li>
-            <li><a href="#proses" class="text-sm text-white/50 hover:text-white transition-colors">Cara Order</a></li>
-            <li><a href="#faq" class="text-sm text-white/50 hover:text-white transition-colors">FAQ</a></li>
-            <li><a href="#testimoni" class="text-sm text-white/50 hover:text-white transition-colors">Testimoni</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="text-xs font-semibold tracking-widest uppercase text-white/30 mb-6">Kontak</h4>
-          <ul class="space-y-3">
-            <li class="flex items-center gap-2 text-sm text-white/50"><i data-lucide="map-pin" class="w-4 h-4 text-[#c6f91f]"></i> Bandung, Jawa Barat</li>
-            <li class="flex items-center gap-2 text-sm text-white/50"><i data-lucide="phone" class="w-4 h-4 text-[#c6f91f]"></i> 0812-3456-7890</li>
-            <li class="flex items-center gap-2 text-sm text-white/50"><i data-lucide="message-circle" class="w-4 h-4 text-[#c6f91f]"></i> WhatsApp</li>
-            <li class="flex items-center gap-2 text-sm text-white/50"><i data-lucide="clock" class="w-4 h-4 text-[#c6f91f]"></i> Sen-Sab 10-21 WIB</li>
-          </ul>
-        </div>
+        <div><a href="#" class="flex items-center gap-2.5 mb-6"><div class="w-9 h-9 bg-[#c6f91f] rounded-lg flex items-center justify-center"><i data-lucide="gamepad-2" class="w-5 h-5 text-black"></i></div><div class="flex flex-col leading-tight"><span class="font-geist font-bold text-white tracking-tight text-base">MIKAYLA</span><span class="text-[9px] font-semibold tracking-[0.25em] uppercase text-[#c6f91f]">GAMES BANDUNG</span></div></a><p class="text-sm text-white/40 leading-relaxed mb-6">Jasa isi game PlayStation terpercaya. Bisa datang ke toko atau panggilan ke rumah!</p><div class="flex items-center gap-3"><a href="#" class="w-9 h-9 border border-white/10 rounded-lg flex items-center justify-center text-white/40 hover:text-[#c6f91f] transition-colors"><i data-lucide="instagram" class="w-4 h-4"></i></a><a href="https://wa.me/6285163061987" target="_blank" class="w-9 h-9 border border-white/10 rounded-lg flex items-center justify-center text-white/40 hover:text-green-400 transition-colors"><i data-lucide="message-circle" class="w-4 h-4"></i></a></div></div>
+        <div><h4 class="text-xs font-semibold tracking-widest uppercase text-white/30 mb-6">Layanan</h4><ul class="space-y-3"><li><a href="#layanan" class="text-sm text-white/50 hover:text-white transition-colors">PS3 HEN</a></li><li><a href="#layanan" class="text-sm text-white/50 hover:text-white transition-colors">PS4 HEN</a></li><li><a href="#layanan" class="text-sm text-white/50 hover:text-white transition-colors">PS5 Jailbreak</a></li><li><a href="#panggilan" class="text-sm text-white/50 hover:text-white transition-colors">🏠 Panggilan Rumah</a></li><li><a href="#harga" class="text-sm text-white/50 hover:text-white transition-colors">Daftar Harga</a></li></ul></div>
+        <div><h4 class="text-xs font-semibold tracking-widest uppercase text-white/30 mb-6">Informasi</h4><ul class="space-y-3"><li><a href="#katalog" class="text-sm text-white/50 hover:text-white transition-colors">Katalog Game</a></li><li><a href="#faq" class="text-sm text-white/50 hover:text-white transition-colors">FAQ</a></li><li><a href="#panggilan" class="text-sm text-white/50 hover:text-white transition-colors">Zona Ongkir</a></li></ul></div>
+        <div><h4 class="text-xs font-semibold tracking-widest uppercase text-white/30 mb-6">Kontak</h4><ul class="space-y-3"><li class="flex items-center gap-2 text-sm text-white/50"><i data-lucide="map-pin" class="w-4 h-4 text-[#c6f91f]"></i> Bandung, Jawa Barat</li><li class="flex items-center gap-2 text-sm text-white/50"><i data-lucide="phone" class="w-4 h-4 text-[#c6f91f]"></i> 0851-6306-1987</li><li class="flex items-center gap-2 text-sm text-white/50"><i data-lucide="home" class="w-4 h-4 text-[#c6f91f]"></i> Panggilan: mulai Rp 15K</li><li class="flex items-center gap-2 text-sm text-white/50"><i data-lucide="clock" class="w-4 h-4 text-[#c6f91f]"></i> Sen-Sab 10-21 WIB</li></ul></div>
       </div>
-
-      <div class="pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4">
-        <div class="text-xs text-white/30">© 2025 Mikayla Games Bandung. All rights reserved.</div>
-        <div class="flex items-center gap-2 text-xs text-white/30">
-          <span class="w-1.5 h-1.5 bg-[#c6f91f] rounded-full glow-pulse"></span>
-          Open for Orders
-        </div>
-      </div>
+      <div class="pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4"><div class="text-xs text-white/30">© 2025 Mikayla Games Bandung. All rights reserved.</div><div class="flex items-center gap-2 text-xs text-white/30"><span class="w-1.5 h-1.5 bg-[#c6f91f] rounded-full glow-pulse"></span> Open for Orders</div></div>
     </div>
   </footer>
 
-  <!-- ===================== WHATSAPP FLOAT ===================== -->
-  <a href="https://wa.me/6285163061987?text=Halo%20Mikayla%20Games%2C%20saya%20mau%20tanya%20jasa%20isi%20game" target="_blank" class="whatsapp-float" title="Chat WhatsApp">
-    <i data-lucide="message-circle" class="w-7 h-7 text-white"></i>
-  </a>
-
-  <!-- ===================== BACK TO TOP ===================== -->
-  <button id="back-to-top" class="fixed bottom-24 right-6 z-50 w-12 h-12 glass rounded-xl flex items-center justify-center text-white/40 hover:text-[#c6f91f] transition-all duration-300 opacity-0 translate-y-4 pointer-events-none">
-    <i data-lucide="arrow-up" class="w-5 h-5"></i>
-  </button>
+  <a href="https://wa.me/6285163061987?text=Halo%20Mikayla%20Games%2C%20saya%20mau%20tanya%20jasa%20isi%20game" target="_blank" class="whatsapp-float" title="Chat WhatsApp"><i data-lucide="message-circle" class="w-7 h-7 text-white"></i></a>
+  <button id="back-to-top" class="fixed bottom-24 right-6 z-50 w-12 h-12 glass rounded-xl flex items-center justify-center text-white/40 hover:text-[#c6f91f] transition-all duration-300 opacity-0 translate-y-4 pointer-events-none"><i data-lucide="arrow-up" class="w-5 h-5"></i></button>
 
   <script>
-    // Init Lucide
     lucide.createIcons();
 
-    // PDF Modal functions
-    function openPdfModal(filename, title) {
-      document.getElementById('pdfModalTitle').textContent = title;
-      document.getElementById('pdfFrame').src = filename;
-      document.getElementById('pdfDownloadBtn').href = filename;
-      document.getElementById('pdfDownloadBtn').download = filename;
-      document.getElementById('pdfModal').style.display = 'block';
-      document.body.style.overflow = 'hidden';
+    // ===================== PDF MODAL =====================
+    function openPdfModal(f,t){document.getElementById('pdfModalTitle').textContent=t;document.getElementById('pdfFrame').src=f;document.getElementById('pdfDownloadBtn').href=f;document.getElementById('pdfDownloadBtn').download=f;document.getElementById('pdfModal').style.display='block';document.body.style.overflow='hidden';}
+    function closePdfModal(){document.getElementById('pdfModal').style.display='none';document.getElementById('pdfFrame').src='';document.body.style.overflow='';}
+    document.getElementById('pdfModal').addEventListener('click',function(e){if(e.target===this)closePdfModal();});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closePdfModal();});
+
+    // ===================== PANGGILAN CALCULATOR =====================
+    const prices = {
+      ps3: { basic: 75000, standard: 175000, premium: 275000 },
+      ps4: { basic: 250000, standard: 350000, premium: 450000 },
+      ps5: { basic: 350000, standard: 450000, premium: 550000 }
+    };
+    const ongkir = [15000, 25000, 40000, 60000];
+    const zoneLabels = ['0 – 5 km','5 – 10 km','10 – 20 km','20+ km'];
+
+    function selectZone(el, price) {
+      document.querySelectorAll('.zone-card').forEach(c => c.classList.remove('selected'));
+      el.classList.add('selected');
+      const idx = ongkir.indexOf(price);
+      if (idx >= 0) {
+        document.getElementById('calc-distance').value = idx;
+        updateCalc();
+      }
     }
 
-    function closePdfModal() {
-      document.getElementById('pdfModal').style.display = 'none';
-      document.getElementById('pdfFrame').src = '';
-      document.body.style.overflow = '';
+    function updateCalc() {
+      const console = document.getElementById('calc-console').value;
+      const paket = document.getElementById('calc-paket').value;
+      const zone = parseInt(document.getElementById('calc-distance').value);
+      const base = prices[console]?.[paket] || 0;
+      const ship = ongkir[zone] || 0;
+      const total = base + ship;
+
+      document.getElementById('calc-distance-label').textContent = zoneLabels[zone] || '';
+      document.getElementById('calc-base').textContent = 'Rp ' + base.toLocaleString('id-ID');
+      document.getElementById('calc-ongkir').textContent = 'Rp ' + ship.toLocaleString('id-ID');
+      document.getElementById('calc-total').textContent = 'Rp ' + total.toLocaleString('id-ID');
+
+      const waText = encodeURIComponent(`Halo Mikayla Games, saya mau order isi game ${console.toUpperCase()} paket ${paket} dengan panggilan ke rumah (zona ${zone+1}, estimasi ongkir Rp ${ship.toLocaleString('id-ID')})`);
+      document.getElementById('calc-wa').href = `https://wa.me/6285163061987?text=${waText}`;
     }
 
-    // Close modal on backdrop click
-    document.getElementById('pdfModal').addEventListener('click', function(e) {
-      if (e.target === this) closePdfModal();
-    });
-
-    // Close modal on Escape key
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') closePdfModal();
-    });
-
-    window.openPdfModal = openPdfModal;
-    window.closePdfModal = closePdfModal;
+    // Init calculator
+    updateCalc();
 
     // ===================== MOBILE MENU =====================
-    const menuToggle = document.getElementById('menu-toggle');
-    const menuClose = document.getElementById('menu-close');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const menuOverlay = document.getElementById('menu-overlay');
-    const mobileLinks = document.querySelectorAll('.mobile-link');
-
-    function openMenu() { mobileMenu.classList.add('open'); menuOverlay.classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
-    function closeMenu() { mobileMenu.classList.remove('open'); menuOverlay.classList.add('hidden'); document.body.style.overflow = ''; }
-    menuToggle.addEventListener('click', openMenu);
-    menuClose.addEventListener('click', closeMenu);
-    menuOverlay.addEventListener('click', closeMenu);
-    mobileLinks.forEach(l => l.addEventListener('click', closeMenu));
+    const menuToggle=document.getElementById('menu-toggle'),menuClose=document.getElementById('menu-close'),mobileMenu=document.getElementById('mobile-menu'),menuOverlay=document.getElementById('menu-overlay'),mobileLinks=document.querySelectorAll('.mobile-link');
+    function openMenu(){mobileMenu.classList.add('open');menuOverlay.classList.remove('hidden');document.body.style.overflow='hidden';}
+    function closeMenu(){mobileMenu.classList.remove('open');menuOverlay.classList.add('hidden');document.body.style.overflow='';}
+    menuToggle.addEventListener('click',openMenu);menuClose.addEventListener('click',closeMenu);menuOverlay.addEventListener('click',closeMenu);mobileLinks.forEach(l=>l.addEventListener('click',closeMenu));
 
     // ===================== SCROLL REVEAL =====================
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('revealed'); revealObserver.unobserve(entry.target); } });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-    document.querySelectorAll('.reveal-on-scroll').forEach(el => revealObserver.observe(el));
+    const ro=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting){en.target.classList.add('revealed');ro.unobserve(en.target);}});},{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
+    document.querySelectorAll('.reveal-on-scroll').forEach(el=>ro.observe(el));
 
     // ===================== BACK TO TOP =====================
-    const backToTop = document.getElementById('back-to-top');
-    window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 600) { backToTop.classList.remove('opacity-0','translate-y-4','pointer-events-none'); backToTop.classList.add('opacity-100','translate-y-0'); }
-      else { backToTop.classList.add('opacity-0','translate-y-4','pointer-events-none'); backToTop.classList.remove('opacity-100','translate-y-0'); }
-    });
-    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    const btt=document.getElementById('back-to-top');
+    window.addEventListener('scroll',()=>{if(window.pageYOffset>600){btt.classList.remove('opacity-0','translate-y-4','pointer-events-none');btt.classList.add('opacity-100','translate-y-0');}else{btt.classList.add('opacity-0','translate-y-4','pointer-events-none');btt.classList.remove('opacity-100','translate-y-0');}});
+    btt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
 
-    // ===================== GLOW CARD MOUSE =====================
-    document.querySelectorAll('.glow-card').forEach(card => {
-      card.addEventListener('mousemove', (e) => {
-        const r = card.getBoundingClientRect();
-        card.style.setProperty('--mouse-x', ((e.clientX - r.left) / r.width * 100) + '%');
-        card.style.setProperty('--mouse-y', ((e.clientY - r.top) / r.height * 100) + '%');
-      });
-    });
+    // ===================== GLOW CARD =====================
+    document.querySelectorAll('.glow-card').forEach(c=>{c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect();c.style.setProperty('--mouse-x',((e.clientX-r.left)/r.width*100)+'%');c.style.setProperty('--mouse-y',((e.clientY-r.top)/r.height*100)+'%');});});
 
-    // ===================== PRICING TABS =====================
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    const tabContents = document.querySelectorAll('.tab-content');
-    tabBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        tabBtns.forEach(b => { b.classList.remove('active'); b.classList.add('text-white/50'); });
-        tabContents.forEach(c => c.classList.remove('active'));
-        btn.classList.add('active');
-        btn.classList.remove('text-white/50');
-        document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
-      });
-    });
+    // ===================== TABS =====================
+    const tb=document.querySelectorAll('.tab-btn'),tc=document.querySelectorAll('.tab-content');
+    tb.forEach(b=>{b.addEventListener('click',()=>{tb.forEach(x=>{x.classList.remove('active');x.classList.add('text-white/50');});tc.forEach(x=>x.classList.remove('active'));b.classList.add('active');b.classList.remove('text-white/50');document.getElementById('tab-'+b.dataset.tab).classList.add('active');});});
 
-    // ===================== FAQ ACCORDION =====================
-    document.querySelectorAll('.faq-toggle').forEach(toggle => {
-      toggle.addEventListener('click', () => {
-        const answer = toggle.nextElementSibling;
-        const icon = toggle.querySelector('.faq-icon');
-        const isOpen = answer.classList.contains('open');
-
-        // Close all
-        document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
-        document.querySelectorAll('.faq-icon').forEach(i => i.style.transform = '');
-
-        if (!isOpen) {
-          answer.classList.add('open');
-          icon.style.transform = 'rotate(45deg)';
-        }
-      });
-    });
+    // ===================== FAQ =====================
+    document.querySelectorAll('.faq-toggle').forEach(t=>{t.addEventListener('click',()=>{const a=t.nextElementSibling,i=t.querySelector('.faq-icon'),o=a.classList.contains('open');document.querySelectorAll('.faq-answer').forEach(x=>x.classList.remove('open'));document.querySelectorAll('.faq-icon').forEach(x=>x.style.transform='');if(!o){a.classList.add('open');i.style.transform='rotate(45deg)';}});});
 
     // ===================== SMOOTH SCROLL =====================
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
-        if (href === '#') return;
-        e.preventDefault();
-        const target = document.querySelector(href);
-        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
-    });
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){const h=this.getAttribute('href');if(h==='#')return;e.preventDefault();const t=document.querySelector(h);if(t)t.scrollIntoView({behavior:'smooth',block:'start'});});});
   </script>
 </body>
 </html>
