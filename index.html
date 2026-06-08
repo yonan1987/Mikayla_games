@@ -57,6 +57,7 @@
         @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 20px var(--orange-glow); } 50% { box-shadow: 0 0 40px var(--orange-glow); } }
         @keyframes scanline { 0% { transform: translateY(-100%); } 100% { transform: translateY(100vh); } }
         @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
         .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
         .reveal.visible { opacity: 1; transform: translateY(0); }
@@ -285,8 +286,16 @@
         .footer-social { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.1); color: var(--gray); transition: all 0.3s; text-decoration: none; }
         .footer-social:hover { border-color: var(--orange); color: var(--orange); }
 
+        /* FLOATING BUTTONS */
         .wa-float { position: fixed; bottom: 24px; right: 24px; z-index: 900; width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; background: #25D366; border-radius: 50%; color: #fff; font-size: 28px; text-decoration: none; box-shadow: 0 4px 20px rgba(37,211,102,0.4); transition: all 0.3s; }
         .wa-float:hover { transform: scale(1.1); }
+        
+        /* AUDIO PLAYER FLOAT */
+        .audio-float { position: fixed; bottom: 24px; left: 24px; z-index: 900; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; background: var(--dark2); border: 1px solid rgba(255,106,0,0.3); border-radius: 50%; color: var(--orange); font-size: 22px; cursor: pointer; transition: all 0.3s; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+        .audio-float:hover { background: var(--orange); color: var(--black); border-color: var(--orange); }
+        .audio-float.playing { background: var(--orange); color: var(--black); animation: pulse-glow 2s infinite; }
+        .audio-float.playing:hover { background: var(--orange-light); }
+
         .toast { position: fixed; top: 90px; right: 24px; z-index: 10000; background: var(--dark2); border: 1px solid rgba(255,106,0,0.4); padding: 16px 24px; font-size: 14px; color: var(--light); display: flex; align-items: center; gap: 10px; transform: translateX(120%); transition: transform 0.4s cubic-bezier(0.16,1,0.3,1); }
         .toast.show { transform: translateX(0); }
         .toast iconify-icon { color: var(--orange); font-size: 20px; }
@@ -297,6 +306,12 @@
     </style>
 </head>
 <body>
+
+<!-- BACKGROUND AUDIO -->
+<audio id="bgMusic" loop preload="auto">
+    <!-- GANTI SRC DI BAWAH DENGAN FILE AUDIO ANDA (misal: music.mp3) -->
+    <source src="background-music.mp3" type="audio/mpeg">
+</audio>
 
 <nav class="nav" id="navbar">
     <a href="#" class="nav-logo"><div class="nav-logo-icon"><span>M</span></div><div class="nav-logo-text">MIKAYLA<span class="accent">GAMES</span></div></a>
@@ -390,14 +405,9 @@
                 </div>
             </div>
         </div>
-
-        <!-- CALL SERVICE BANNER -->
         <div class="call-banner reveal reveal-delay-3" style="margin-top: 3rem;">
             <div class="call-banner-icon"><iconify-icon icon="lucide:truck"></iconify-icon></div>
-            <div class="call-banner-text">
-                <h3>LAYANAN PANGGILAN & JEMPUT KONSOL</h3>
-                <p>Tidak sempat datang? Kami bisa panggilan ke rumah atau jemput konsol Anda. <strong>Ongkir fleksibel dan disesuaikan jarak—santai aja!</strong></p>
-            </div>
+            <div class="call-banner-text"><h3>LAYANAN PANGGILAN & JEMPUT KONSOL</h3><p>Tidak sempat datang? Kami bisa panggilan ke rumah atau jemput konsol Anda. <strong>Ongkir fleksibel dan disesuaikan jarak—santai aja!</strong></p></div>
             <div class="call-banner-cta"><a href="#contact" class="btn-primary">Pesan Panggilan</a></div>
         </div>
     </div>
@@ -411,12 +421,10 @@
             <div class="section-label reveal" style="justify-content:center;">Katalog Game</div>
             <h2 class="reveal reveal-delay-1">DAFTAR GAME <span class="accent">TERSEDIA</span></h2>
         </div>
-
         <div class="view-toggle reveal">
             <button class="view-toggle-btn active" data-view="pdf"><iconify-icon icon="lucide:file-text"></iconify-icon> Lihat PDF</button>
             <button class="view-toggle-btn" data-view="search"><iconify-icon icon="lucide:search"></iconify-icon> Cari Game</button>
         </div>
-
         <div class="catalog-view-panel active reveal" id="pdfPanel">
             <div class="pdf-tabs">
                 <button class="pdf-tab active" data-pdf="LIST GAME PS3 2025.pdf"><iconify-icon icon="lucide:disc"></iconify-icon> PS3 List 2025</button>
@@ -426,12 +434,11 @@
             <div class="pdf-viewer-container">
                 <div class="pdf-viewer-header">
                     <div class="pdf-viewer-info"><iconify-icon icon="lucide:file-text"></iconify-icon><div><h4 id="pdfTitle">LIST GAME PS3 2025.pdf</h4><span>Scroll atau zoom untuk membaca daftar lengkap</span></div></div>
-                    <div class="pdf-viewer-actions"><a href="#" class="pdf-btn" id="pdfDownloadBtn" download><iconify-icon icon="lucide:download"></iconify-icon> Download PDF</a><a href="#" class="pdf-btn primary-sm" id="pdfFullscreenBtn"><iconify-icon icon="lucide:maximize"></iconify-icon> Layar Penuh</a></div>
+                    <div class="pdf-viewer-actions"><a href="#" class="pdf-btn" id="pdfDownloadBtn" download><iconify-icon icon="lucide:download"></iconify-icon> Download</a><a href="#" class="pdf-btn primary-sm" id="pdfFullscreenBtn"><iconify-icon icon="lucide:maximize"></iconify-icon> Fullscreen</a></div>
                 </div>
                 <div class="pdf-frame-wrap" id="pdfFrameWrap"></div>
             </div>
         </div>
-
         <div class="catalog-view-panel" id="searchPanel">
             <div class="catalog-controls">
                 <div class="catalog-tabs"><button class="catalog-tab active" data-filter="all">Semua</button><button class="catalog-tab" data-filter="ps3">PS3</button><button class="catalog-tab" data-filter="ps4">PS4</button><button class="catalog-tab" data-filter="ps5">PS5</button></div>
@@ -513,11 +520,7 @@
                         <div class="form-group"><label for="console">Konsol</label><select id="console" required><option value="">Pilih Konsol</option><option value="ps3">PS3 (HEN)</option><option value="ps4">PS4 (Jailbreak)</option><option value="ps5">PS5 (Jailbreak)</option><option value="other">Lainnya</option></select></div>
                         <div class="form-group"><label for="serviceType">Tipe Layanan</label><select id="serviceType" required><option value="datang">Datang ke Workshop</option><option value="panggilan">Panggilan / Jemput</option></select></div>
                     </div>
-                    <div class="form-group form-hidden" id="addressGroup">
-                        <label for="address">Alamat Lengkap (untuk panggilan/jemput)</label>
-                        <textarea id="address" placeholder="Masukkan alamat lengkap Anda di sini..."></textarea>
-                        <div class="form-note">Ongkir akan disesuaikan dengan jarak. Santai aja, pasti fair!</div>
-                    </div>
+                    <div class="form-group form-hidden" id="addressGroup"><label for="address">Alamat Lengkap (untuk panggilan/jemput)</label><textarea id="address" placeholder="Masukkan alamat lengkap Anda di sini..."></textarea><div class="form-note">Ongkir akan disesuaikan dengan jarak. Santai aja, pasti fair!</div></div>
                     <div class="form-group"><label for="message">Pesan Tambahan</label><textarea id="message" placeholder="Game yang mau diisi, pertanyaan, dll..." rows="3"></textarea></div>
                     <button type="submit" class="btn-primary" style="width:100%;justify-content:center;"><iconify-icon icon="lucide:send"></iconify-icon> Kirim via WhatsApp</button>
                 </form>
@@ -533,10 +536,43 @@
     </div>
 </footer>
 
+<!-- FLOATING BUTTONS -->
 <a href="https://wa.me/6285163061987?text=Halo%20Mikayla%20Games%2C%20saya%20mau%20tanya%20tentang%20jasa%20isi%20game%20panggilan" target="_blank" class="wa-float" aria-label="Chat WhatsApp"><iconify-icon icon="lucide:message-circle"></iconify-icon></a>
+<button class="audio-float" id="audioToggle" aria-label="Toggle Music">
+    <iconify-icon icon="lucide:volume-x" id="audioIcon"></iconify-icon>
+</button>
+
 <div class="toast" id="toast"><iconify-icon icon="lucide:check-circle"></iconify-icon><span id="toastMsg">Pesan terkirim!</span></div>
 
 <script>
+// ==========================================
+// 0. BACKGROUND AUDIO LOGIC
+// ==========================================
+const bgMusic = document.getElementById('bgMusic');
+const audioToggle = document.getElementById('audioToggle');
+const audioIcon = document.getElementById('audioIcon');
+let isPlaying = false;
+
+// Set volume ke 30% agar tidak terlalu keras mengganggu
+bgMusic.volume = 0.3;
+
+audioToggle.addEventListener('click', () => {
+    if (isPlaying) {
+        bgMusic.pause();
+        audioIcon.setAttribute('icon', 'lucide:volume-x');
+        audioToggle.classList.remove('playing');
+    } else {
+        bgMusic.play().then(() => {
+            audioIcon.setAttribute('icon', 'lucide:volume-2');
+            audioToggle.classList.add('playing');
+        }).catch(error => {
+            console.log("Autoplay blocked:", error);
+            showToast('Klik tombol ini lagi untuk memutar musik');
+        });
+    }
+    isPlaying = !isPlaying;
+});
+
 // ==========================================
 // 1. PDF VIEWER LOGIC
 // ==========================================
@@ -547,102 +583,52 @@ const pdfTitle = document.getElementById('pdfTitle');
 const pdfDownloadBtn = document.getElementById('pdfDownloadBtn');
 const pdfFullscreenBtn = document.getElementById('pdfFullscreenBtn');
 
-function loadPdf(filename) {
-    currentPdf = filename; pdfTitle.textContent = filename; pdfDownloadBtn.href = filename;
-    pdfFrameWrap.innerHTML = `<iframe src="${filename}#toolbar=0&navpanes=0" title="${filename}" loading="lazy"></iframe>`;
-}
+function loadPdf(filename) { currentPdf = filename; pdfTitle.textContent = filename; pdfDownloadBtn.href = filename; pdfFrameWrap.innerHTML = `<iframe src="${filename}#toolbar=0&navpanes=0" title="${filename}" loading="lazy"></iframe>`; }
 loadPdf(pdfFiles[0].name);
 
-document.querySelectorAll('.pdf-tab').forEach(tab => {
-    tab.addEventListener('click', () => { document.querySelectorAll('.pdf-tab').forEach(t => t.classList.remove('active')); tab.classList.add('active'); loadPdf(tab.getAttribute('data-pdf')); });
-});
+document.querySelectorAll('.pdf-tab').forEach(tab => { tab.addEventListener('click', () => { document.querySelectorAll('.pdf-tab').forEach(t => t.classList.remove('active')); tab.classList.add('active'); loadPdf(tab.getAttribute('data-pdf')); }); });
 pdfFullscreenBtn.addEventListener('click', (e) => { e.preventDefault(); const iframe = pdfFrameWrap.querySelector('iframe'); if (iframe && iframe.requestFullscreen) iframe.requestFullscreen(); });
 
-document.querySelectorAll('.view-toggle-btn').forEach(btn => {
-    btn.addEventListener('click', () => { document.querySelectorAll('.view-toggle-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active'); const view = btn.getAttribute('data-view'); document.getElementById('pdfPanel').classList.toggle('active', view === 'pdf'); document.getElementById('searchPanel').classList.toggle('active', view === 'search'); });
-});
+document.querySelectorAll('.view-toggle-btn').forEach(btn => { btn.addEventListener('click', () => { document.querySelectorAll('.view-toggle-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active'); const view = btn.getAttribute('data-view'); document.getElementById('pdfPanel').classList.toggle('active', view === 'pdf'); document.getElementById('searchPanel').classList.toggle('active', view === 'search'); }); });
 
 // ==========================================
 // 2. GAME DATABASE & SEARCH
 // ==========================================
-const gameData = [
-    { title: "The Last of Us", console: "ps3" },{ title: "God of War III", console: "ps3" },{ title: "Grand Theft Auto V", console: "ps3" },{ title: "Uncharted 3", console: "ps3" },{ title: "Red Dead Redemption", console: "ps3" },{ title: "Persona 5", console: "ps3" },{ title: "Gran Turismo 6", console: "ps3" },{ title: "Call of Duty: Black Ops II", console: "ps3" },
-    { title: "God of War (2018)", console: "ps4" },{ title: "Marvel's Spider-Man", console: "ps4" },{ title: "The Witcher 3", console: "ps4" },{ title: "Bloodborne", console: "ps4" },{ title: "Horizon Zero Dawn", console: "ps4" },{ title: "Ghost of Tsushima", console: "ps4" },{ title: "The Last of Us Part II", console: "ps4" },{ title: "Uncharted 4", console: "ps4" },{ title: "Red Dead Redemption 2", console: "ps4" },{ title: "Persona 5 Royal", console: "ps4" },{ title: "Final Fantasy VII Remake", console: "ps4" },{ title: "Elden Ring", console: "ps4" },
-    { title: "Demon's Souls Remake", console: "ps5" },{ title: "Ratchet & Clank: Rift Apart", console: "ps5" },{ title: "Returnal", console: "ps5" },{ title: "Marvel's Spider-Man 2", console: "ps5" },{ title: "God of War Ragnarök", console: "ps5" },{ title: "Horizon Forbidden West", console: "ps5" },{ title: "Final Fantasy XVI", console: "ps5" },{ title: "Baldur's Gate 3", console: "ps5" },
-];
+const gameData = [ { title: "The Last of Us", console: "ps3" },{ title: "God of War III", console: "ps3" },{ title: "Grand Theft Auto V", console: "ps3" },{ title: "Uncharted 3", console: "ps3" },{ title: "Red Dead Redemption", console: "ps3" },{ title: "Persona 5", console: "ps3" },{ title: "Gran Turismo 6", console: "ps3" },{ title: "Call of Duty: Black Ops II", console: "ps3" }, { title: "God of War (2018)", console: "ps4" },{ title: "Marvel's Spider-Man", console: "ps4" },{ title: "The Witcher 3", console: "ps4" },{ title: "Bloodborne", console: "ps4" },{ title: "Horizon Zero Dawn", console: "ps4" },{ title: "Ghost of Tsushima", console: "ps4" },{ title: "The Last of Us Part II", console: "ps4" },{ title: "Uncharted 4", console: "ps4" },{ title: "Red Dead Redemption 2", console: "ps4" },{ title: "Persona 5 Royal", console: "ps4" },{ title: "Final Fantasy VII Remake", console: "ps4" },{ title: "Elden Ring", console: "ps4" }, { title: "Demon's Souls Remake", console: "ps5" },{ title: "Ratchet & Clank: Rift Apart", console: "ps5" },{ title: "Returnal", console: "ps5" },{ title: "Marvel's Spider-Man 2", console: "ps5" },{ title: "God of War Ragnarök", console: "ps5" },{ title: "Horizon Forbidden West", console: "ps5" },{ title: "Final Fantasy XVI", console: "ps5" },{ title: "Baldur's Gate 3", console: "ps5" }];
 const gameGrid = document.getElementById('gameGrid'); const gameSearch = document.getElementById('gameSearch'); const catalogTabs = document.querySelectorAll('.catalog-tab');
 let currentFilter = 'all'; let searchQuery = '';
-function renderGames() {
-    let f = gameData.filter(g => (currentFilter === 'all' || g.console === currentFilter) && g.title.toLowerCase().includes(searchQuery.toLowerCase()));
-    if (f.length === 0) { gameGrid.innerHTML = '<div class="no-games">Game tidak ditemukan.</div>'; return; }
-    gameGrid.innerHTML = f.map(g => { const c = g.console.toUpperCase(); const m = encodeURIComponent(`Halo Mikayla Games, saya mau order isi game ${c}: ${g.title}`); return `<div class="game-card"><div class="game-console-tag">${c}</div><div class="game-title">${g.title}</div><a href="https://wa.me/6285163061987?text=${m}" target="_blank" class="game-order-btn"><iconify-icon icon="lucide:shopping-cart"></iconify-icon> Pesan</a></div>`; }).join('');
-}
+function renderGames() { let f = gameData.filter(g => (currentFilter === 'all' || g.console === currentFilter) && g.title.toLowerCase().includes(searchQuery.toLowerCase())); if (f.length === 0) { gameGrid.innerHTML = '<div class="no-games">Game tidak ditemukan.</div>'; return; } gameGrid.innerHTML = f.map(g => { const c = g.console.toUpperCase(); const m = encodeURIComponent(`Halo Mikayla Games, saya mau order isi game ${c}: ${g.title}`); return `<div class="game-card"><div class="game-console-tag">${c}</div><div class="game-title">${g.title}</div><a href="https://wa.me/6285163061987?text=${m}" target="_blank" class="game-order-btn"><iconify-icon icon="lucide:shopping-cart"></iconify-icon> Pesan</a></div>`; }).join(''); }
 catalogTabs.forEach(t => t.addEventListener('click', () => { catalogTabs.forEach(x => x.classList.remove('active')); t.classList.add('active'); currentFilter = t.getAttribute('data-filter'); renderGames(); }));
 gameSearch.addEventListener('input', (e) => { searchQuery = e.target.value; renderGames(); });
 renderGames();
 
 // ==========================================
-// 3. FORM LOGIC (PANGGILAN / ANTAR)
+// 3. FORM LOGIC
 // ==========================================
-const serviceTypeSelect = document.getElementById('serviceType');
-const addressGroup = document.getElementById('addressGroup');
-
-serviceTypeSelect.addEventListener('change', function() {
-    if (this.value === 'panggilan') {
-        addressGroup.classList.add('visible');
-    } else {
-        addressGroup.classList.remove('visible');
-    }
-});
+const serviceTypeSelect = document.getElementById('serviceType'); const addressGroup = document.getElementById('addressGroup');
+serviceTypeSelect.addEventListener('change', function() { if (this.value === 'panggilan') { addressGroup.classList.add('visible'); } else { addressGroup.classList.remove('visible'); } });
 
 document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const name = document.getElementById('name').value; 
-    const phone = document.getElementById('phone').value;
-    const consoleType = document.getElementById('console').value; 
-    const serviceType = document.getElementById('serviceType').value;
-    const address = document.getElementById('address').value;
-    const message = document.getElementById('message').value;
-
-    const consoleMap = { ps3: 'PS3 (HEN)', ps4: 'PS4 (Jailbreak)', ps5: 'PS5 (Jailbreak)', other: 'Lainnya' };
-    const serviceMap = { datang: 'Datang ke Workshop', panggilan: 'Panggilan / Jemput Konsol' };
-    
+    e.preventDefault(); const name = document.getElementById('name').value; const phone = document.getElementById('phone').value; const consoleType = document.getElementById('console').value; const serviceType = document.getElementById('serviceType').value; const address = document.getElementById('address').value; const message = document.getElementById('message').value;
+    const consoleMap = { ps3: 'PS3 (HEN)', ps4: 'PS4 (Jailbreak)', ps5: 'PS5 (Jailbreak)', other: 'Lainnya' }; const serviceMap = { datang: 'Datang ke Workshop', panggilan: 'Panggilan / Jemput Konsol' };
     let waText = `Halo Mikayla Games!%0A%0ANama: ${encodeURIComponent(name)}%0ANo. HP: ${encodeURIComponent(phone)}%0AKonsol: ${encodeURIComponent(consoleMap[consoleType] || '-')}%0ALayanan: ${encodeURIComponent(serviceMap[serviceType])}`;
-    
-    if (serviceType === 'panggilan' && address) {
-        waText += `%0AAlamat: ${encodeURIComponent(address)}`;
-    }
-    
-    if (message) {
-        waText += `%0APesan: ${encodeURIComponent(message)}`;
-    }
-
-    const waURL = `https://wa.me/6285163061987?text=${waText}`;
-    showToast('Mengarahkan ke WhatsApp...');
-    setTimeout(() => { window.open(waURL, '_blank'); }, 800);
-    this.reset();
-    addressGroup.classList.remove('visible');
+    if (serviceType === 'panggilan' && address) { waText += `%0AAlamat: ${encodeURIComponent(address)}`; }
+    if (message) { waText += `%0APesan: ${encodeURIComponent(message)}`; }
+    const waURL = `https://wa.me/6285163061987?text=${waText}`; showToast('Mengarahkan ke WhatsApp...'); setTimeout(() => { window.open(waURL, '_blank'); }, 800); this.reset(); addressGroup.classList.remove('visible');
 });
 
 // ==========================================
 // 4. GENERAL SCRIPTS
 // ==========================================
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 50); });
-
+const navbar = document.getElementById('navbar'); window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 50); });
 const menuBtn = document.getElementById('menuBtn'); const mobileMenu = document.getElementById('mobileMenu'); const menuClose = document.getElementById('menuClose');
-menuBtn.addEventListener('click', () => { mobileMenu.classList.add('active'); });
-menuClose.addEventListener('click', () => { mobileMenu.classList.remove('active'); });
-function closeMobile() { mobileMenu.classList.remove('active'); }
+menuBtn.addEventListener('click', () => { mobileMenu.classList.add('active'); }); menuClose.addEventListener('click', () => { mobileMenu.classList.remove('active'); }); function closeMobile() { mobileMenu.classList.remove('active'); }
 
-const revealElements = document.querySelectorAll('.reveal');
-const revealObserver = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-revealElements.forEach(el => revealObserver.observe(el));
+const revealElements = document.querySelectorAll('.reveal'); const revealObserver = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }); revealElements.forEach(el => revealObserver.observe(el));
 
 function animateCounter(el, target, suffix = '') { let current = 0; const step = Math.ceil(target / 60); const interval = setInterval(() => { current += step; if (current >= target) { current = target; clearInterval(interval); } el.textContent = current.toLocaleString('id-ID') + suffix; }, 25); }
 const counterSection = document.getElementById('hero'); let counterStarted = false;
-const counterObserver = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting && !counterStarted) { counterStarted = true; animateCounter(document.getElementById('counterClients'), 2500, '+'); animateCounter(document.getElementById('counterGames'), gameData.length, '+'); animateCounter(document.getElementById('counterYears'), 5, '+'); } }); }, { threshold: 0.3 });
-counterObserver.observe(counterSection);
+const counterObserver = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting && !counterStarted) { counterStarted = true; animateCounter(document.getElementById('counterClients'), 2500, '+'); animateCounter(document.getElementById('counterGames'), gameData.length, '+'); animateCounter(document.getElementById('counterYears'), 5, '+'); } }); }, { threshold: 0.3 }); counterObserver.observe(counterSection);
 
 function showToast(msg) { const toast = document.getElementById('toast'); const toastMsg = document.getElementById('toastMsg'); toastMsg.textContent = msg; toast.classList.add('show'); setTimeout(() => { toast.classList.remove('show'); }, 3000); }
 
