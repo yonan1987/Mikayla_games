@@ -30,82 +30,103 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        *{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-        ::selection{background:#d4af37;color:#020202}
-        .gold-gradient{background:linear-gradient(135deg,#d4af37 0%,#f0d88a 30%,#d4af37 50%,#c49a2c 70%,#d4af37 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-        .platinum-gradient{background:linear-gradient(135deg,#8e939c,#d1d3d7,#b0b4bb);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-        .emerald-gradient{background:linear-gradient(135deg,#047857,#10b981,#34d399);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-        .gold-line{background:linear-gradient(90deg,transparent,#d4af37,transparent)}
-        .emerald-line{background:linear-gradient(90deg,transparent,#10b981,transparent)}
-        .platinum-line{background:linear-gradient(90deg,transparent,#8e939c,transparent)}
-        @keyframes fadeInUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
-        @keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
-        @keyframes float{0%,100%{transform:translateY(0px)}50%{transform:translateY(-10px)}}
-        @keyframes pulseGold{0%,100%{box-shadow:0 0 0 0 rgba(212,175,55,0.4)}70%{box-shadow:0 0 0 15px rgba(212,175,55,0)}}
-        @keyframes pulseEmerald{0%,100%{box-shadow:0 0 0 0 rgba(16,185,129,0.3)}70%{box-shadow:0 0 0 12px rgba(16,185,129,0)}}
-        @keyframes rotateSlow{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-        @keyframes breathe{0%,100%{opacity:0.03}50%{opacity:0.07}}
-        @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-        @keyframes slideDown{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
-        .animate-fade-up{animation:fadeInUp 1s ease-out forwards}
-        .animate-fade-up-delay1{animation:fadeInUp 1s ease-out .2s forwards;opacity:0}
-        .animate-fade-up-delay2{animation:fadeInUp 1s ease-out .4s forwards;opacity:0}
-        .animate-fade-up-delay3{animation:fadeInUp 1s ease-out .6s forwards;opacity:0}
-        .animate-float{animation:float 6s ease-in-out infinite}
-        .animate-pulse-gold{animation:pulseGold 2.5s infinite}
-        .animate-pulse-emerald{animation:pulseEmerald 2.5s infinite}
-        .animate-rotate-slow{animation:rotateSlow 30s linear infinite}
-        .animate-breathe{animation:breathe 4s ease-in-out infinite}
-        .marquee{animation:marquee 35s linear infinite;will-change:transform}
-        .shimmer-text{background:linear-gradient(90deg,#a67d22 0%,#d4af37 15%,#f0d88a 30%,#d4af37 50%,#f0d88a 70%,#d4af37 85%,#a67d22 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 5s linear infinite}
-        .hero-overlay{background:linear-gradient(180deg,rgba(2,2,2,0.8) 0%,rgba(4,8,18,0.5) 35%,rgba(7,14,29,0.4) 55%,rgba(4,8,18,0.7) 75%,rgba(2,2,2,1) 100%)}
-        .card-obsidian{transition:all .6s cubic-bezier(.25,.46,.45,.94)}
-        .card-obsidian:hover{transform:translateY(-6px);border-color:rgba(212,175,55,0.25);box-shadow:0 20px 50px -15px rgba(0,0,0,0.5),0 0 30px -10px rgba(212,175,55,0.08)}
-        .btn-gold{position:relative;overflow:hidden;transition:all .4s ease}
-        .btn-gold::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.25),transparent);transition:left .6s ease}
-        .btn-gold:hover::before{left:100%}
-        .btn-gold:hover{transform:translateY(-2px);box-shadow:0 12px 40px -8px rgba(212,175,55,0.45)}
-        .btn-outline{transition:all .4s ease}
-        .btn-outline:hover{transform:translateY(-2px)}
-        .nav-glass{backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);background:rgba(2,2,2,0.8)}
-        .scroll-reveal{opacity:0;transform:translateY(30px);transition:all .9s cubic-bezier(.25,.46,.45,.94);transition-delay:var(--reveal-delay,0s)}
-        .scroll-reveal.visible{opacity:1;transform:translateY(0)}
-        .service-icon-wrap{transition:all .5s ease}
-        .card-obsidian:hover .service-icon-wrap{transform:scale(1.08)}
-        .diamond{width:8px;height:8px;transform:rotate(45deg)}
-        .platinum-glow{box-shadow:0 0 20px rgba(142,147,156,0.05)}
-        .emerald-dot{box-shadow:0 0 8px rgba(16,185,129,0.5)}
-        .toast{animation:slideDown .4s ease-out forwards}
-        ::-webkit-scrollbar{width:5px}
-        ::-webkit-scrollbar-track{background:#020202}
-        ::-webkit-scrollbar-thumb{background:#d4af37;border-radius:3px}
-        ::-webkit-scrollbar-thumb:hover{background:#f0d88a}
-        .modal-overlay{transition:opacity .3s ease}
-        .modal-content{transition:all .4s cubic-bezier(.25,.46,.45,.94)}
-        .modal-overlay.active{opacity:1;pointer-events:all}
-        .modal-overlay.active .modal-content{transform:scale(1) translateY(0);opacity:1}
-        .catalog-card{transition:all .6s cubic-bezier(.25,.46,.45,.94)}
-        .catalog-card:hover{transform:translateY(-8px)}
-        .catalog-card:hover .catalog-icon{transform:scale(1.1) rotate(-3deg)}
-        .catalog-icon{transition:all .5s cubic-bezier(.25,.46,.45,.94)}
-        .catalog-card:hover .catalog-glow{opacity:1}
-        .catalog-glow{transition:opacity .6s ease}
-        .zone-card{transition:all .5s cubic-bezier(.25,.46,.45,.94)}
-        .zone-card:hover{transform:translateY(-4px)}
-        .zone-card.active{border-color:rgba(212,175,55,0.4)!important;box-shadow:0 20px 60px -15px rgba(0,0,0,0.5),0 0 40px -10px rgba(212,175,55,0.1)}
-        .zone-card.active .zone-badge{opacity:1}
-        .zone-card .zone-badge{opacity:0;transition:opacity .3s ease}
-        .zone-card:hover .zone-badge{opacity:.6}
-        .zone-detail{max-height:0;overflow:hidden;opacity:0;transition:max-height .5s cubic-bezier(.25,.46,.45,.94),opacity .4s ease,padding .4s ease;padding-top:0;padding-bottom:0}
-        .zone-detail.open{max-height:400px;opacity:1;padding-top:1.25rem;padding-bottom:.25rem}
-        .zone-check{transition:all .3s ease}
-        .zone-card.active .zone-check{background:#d4af37;border-color:#d4af37}
-        .zone-card.active .zone-check svg{opacity:1}
-        .price-tag{transition:all .4s ease}
-        .zone-card.active .price-tag{color:#d4af37}
+        * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        ::selection { background: #d4af37; color: #020202; }
+
+        .gold-gradient { background: linear-gradient(135deg, #d4af37 0%, #f0d88a 30%, #d4af37 50%, #c49a2c 70%, #d4af37 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .emerald-gradient { background: linear-gradient(135deg, #047857, #10b981, #34d399); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .gold-line { background: linear-gradient(90deg, transparent, #d4af37, transparent); }
+        .emerald-line { background: linear-gradient(90deg, transparent, #10b981, transparent); }
+        .platinum-line { background: linear-gradient(90deg, transparent, #8e939c, transparent); }
+
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes shimmer { 0% { background-position: -200% center; } 100% { background-position: 200% center; } }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+        @keyframes pulseGold { 0%, 100% { box-shadow: 0 0 0 0 rgba(212,175,55,0.4); } 70% { box-shadow: 0 0 0 15px rgba(212,175,55,0); } }
+        @keyframes pulseEmerald { 0%, 100% { box-shadow: 0 0 0 0 rgba(16,185,129,0.3); } 70% { box-shadow: 0 0 0 12px rgba(16,185,129,0); } }
+        @keyframes rotateSlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        @keyframes breathe { 0%, 100% { opacity: 0.03; } 50% { opacity: 0.07; } }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes audioPulse { 0% { box-shadow: 0 0 0 0 rgba(212,175,55,0.25); } 70% { box-shadow: 0 0 0 12px rgba(212,175,55,0); } 100% { box-shadow: 0 0 0 0 rgba(212,175,55,0); } }
+        @keyframes eqBar1 { 0%, 100% { height: 4px; } 50% { height: 14px; } }
+        @keyframes eqBar2 { 0%, 100% { height: 10px; } 50% { height: 4px; } }
+        @keyframes eqBar3 { 0%, 100% { height: 6px; } 50% { height: 16px; } }
+
+        .animate-fade-up { animation: fadeInUp 1s ease-out forwards; }
+        .animate-fade-up-delay1 { animation: fadeInUp 1s ease-out 0.2s forwards; opacity: 0; }
+        .animate-fade-up-delay2 { animation: fadeInUp 1s ease-out 0.4s forwards; opacity: 0; }
+        .animate-fade-up-delay3 { animation: fadeInUp 1s ease-out 0.6s forwards; opacity: 0; }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        .animate-pulse-gold { animation: pulseGold 2.5s infinite; }
+        .animate-pulse-emerald { animation: pulseEmerald 2.5s infinite; }
+        .animate-rotate-slow { animation: rotateSlow 30s linear infinite; }
+        .animate-breathe { animation: breathe 4s ease-in-out infinite; }
+        .marquee { animation: marquee 35s linear infinite; will-change: transform; }
+        .shimmer-text { background: linear-gradient(90deg, #a67d22 0%, #d4af37 15%, #f0d88a 30%, #d4af37 50%, #f0d88a 70%, #d4af37 85%, #a67d22 100%); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: shimmer 5s linear infinite; }
+        .hero-overlay { background: linear-gradient(180deg, rgba(2,2,2,0.8) 0%, rgba(4,8,18,0.5) 35%, rgba(7,14,29,0.4) 55%, rgba(4,8,18,0.7) 75%, rgba(2,2,2,1) 100%); }
+        .card-obsidian { transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+        .card-obsidian:hover { transform: translateY(-6px); border-color: rgba(212,175,55,0.25); box-shadow: 0 20px 50px -15px rgba(0,0,0,0.5), 0 0 30px -10px rgba(212,175,55,0.08); }
+        .btn-gold { position: relative; overflow: hidden; transition: all 0.4s ease; }
+        .btn-gold::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent); transition: left 0.6s ease; }
+        .btn-gold:hover::before { left: 100%; }
+        .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 12px 40px -8px rgba(212,175,55,0.45); }
+        .btn-outline { transition: all 0.4s ease; }
+        .btn-outline:hover { transform: translateY(-2px); }
+        .nav-glass { backdrop-filter: blur(24px) saturate(180%); -webkit-backdrop-filter: blur(24px) saturate(180%); background: rgba(2,2,2,0.8); }
+        .scroll-reveal { opacity: 0; transform: translateY(30px); transition: all 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94); transition-delay: var(--reveal-delay, 0s); }
+        .scroll-reveal.visible { opacity: 1; transform: translateY(0); }
+        .service-icon-wrap { transition: all 0.5s ease; }
+        .card-obsidian:hover .service-icon-wrap { transform: scale(1.08); }
+        .diamond { width: 8px; height: 8px; transform: rotate(45deg); }
+        .platinum-glow { box-shadow: 0 0 20px rgba(142,147,156,0.05); }
+        .emerald-dot { box-shadow: 0 0 8px rgba(16,185,129,0.5); }
+        .toast { animation: slideDown 0.4s ease-out forwards; }
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: #020202; }
+        ::-webkit-scrollbar-thumb { background: #d4af37; border-radius: 3px; }
+        .modal-overlay { transition: opacity 0.3s ease; }
+        .modal-content { transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+        .modal-overlay.active { opacity: 1; pointer-events: all; }
+        .modal-overlay.active .modal-content { transform: scale(1) translateY(0); opacity: 1; }
+        .catalog-card { transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+        .catalog-card:hover { transform: translateY(-8px); }
+        .catalog-card:hover .catalog-icon { transform: scale(1.1) rotate(-3deg); }
+        .catalog-icon { transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+        .catalog-card:hover .catalog-glow { opacity: 1; }
+        .catalog-glow { transition: opacity 0.6s ease; }
+        .zone-card { transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+        .zone-card:hover { transform: translateY(-4px); }
+        .zone-card.active { border-color: rgba(212,175,55,0.4) !important; box-shadow: 0 20px 60px -15px rgba(0,0,0,0.5), 0 0 40px -10px rgba(212,175,55,0.1); }
+        .zone-card.active .zone-badge { opacity: 1; }
+        .zone-card .zone-badge { opacity: 0; transition: opacity 0.3s ease; }
+        .zone-card:hover .zone-badge { opacity: 0.6; }
+        .zone-detail { max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.5s cubic-bezier(0.25,0.46,0.45,0.94), opacity 0.4s ease, padding 0.4s ease; padding-top: 0; padding-bottom: 0; }
+        .zone-detail.open { max-height: 400px; opacity: 1; padding-top: 1.25rem; padding-bottom: 0.25rem; }
+        .zone-check { transition: all 0.3s ease; }
+        .zone-card.active .zone-check { background: #d4af37; border-color: #d4af37; }
+        .zone-card.active .zone-check svg { opacity: 1; }
+        .price-tag { transition: all 0.4s ease; }
+        .zone-card.active .price-tag { color: #d4af37; }
+        .audio-playing { animation: audioPulse 2s infinite; }
+        .eq-bar { width: 3px; border-radius: 2px; background: #d4af37; transition: height 0.2s ease; }
+        .audio-playing .eq-bar:nth-child(1) { animation: eqBar1 0.8s ease-in-out infinite; }
+        .audio-playing .eq-bar:nth-child(2) { animation: eqBar2 0.6s ease-in-out infinite 0.1s; }
+        .audio-playing .eq-bar:nth-child(3) { animation: eqBar3 0.7s ease-in-out infinite 0.2s; }
+        .audio-playing .eq-bar:nth-child(4) { animation: eqBar1 0.9s ease-in-out infinite 0.15s; }
+        .audio-paused .eq-bar { height: 3px !important; animation: none !important; }
+        .audio-volume-slider { -webkit-appearance: none; appearance: none; width: 80px; height: 3px; border-radius: 2px; background: rgba(142,147,156,0.3); outline: none; cursor: pointer; transition: opacity 0.3s ease; }
+        .audio-volume-slider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 10px; height: 10px; border-radius: 50%; background: #d4af37; cursor: pointer; transition: transform 0.2s ease; }
+        .audio-volume-slider::-webkit-slider-thumb:hover { transform: scale(1.3); }
+        .audio-volume-slider::-moz-range-thumb { width: 10px; height: 10px; border-radius: 50%; background: #d4af37; cursor: pointer; border: none; }
     </style>
 </head>
 <body class="bg-obsidian-950 text-white font-sans overflow-x-hidden">
+
+    <!-- Background Audio -->
+    <audio id="bg-audio" loop preload="auto">
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
 
     <div id="toast-container" class="fixed top-6 right-6 z-[100] flex flex-col gap-3"></div>
 
@@ -157,10 +178,7 @@
 
     <!-- HERO -->
     <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div class="absolute inset-0">
-            <img src="https://wallpapercave.com/wp/wp7974103.jpg" alt="Premium Gaming" class="w-full h-full object-cover scale-105" id="hero-img" onerror="this.style.display='none'">
-            <div class="hero-overlay absolute inset-0"></div>
-        </div>
+        <div class="absolute inset-0"><img src="https://wallpapercave.com/wp/wp7974103.jpg" alt="Premium Gaming" class="w-full h-full object-cover scale-105" id="hero-img" onerror="this.style.display='none'"><div class="hero-overlay absolute inset-0"></div></div>
         <div class="absolute top-32 left-8 lg:left-16 hidden lg:block animate-float"><div class="w-px h-40 bg-gradient-to-b from-transparent via-gold-400/30 to-transparent"></div></div>
         <div class="absolute top-48 right-12 lg:right-20 hidden lg:block animate-float" style="animation-delay:2s"><div class="w-px h-28 bg-gradient-to-b from-transparent via-emerald-400/20 to-transparent"></div></div>
         <div class="absolute bottom-1/3 left-24 hidden lg:block"><div class="diamond bg-gold-400/25 animate-pulse-gold"></div></div>
@@ -205,10 +223,9 @@
             <div class="text-center mb-24 scroll-reveal">
                 <span class="text-gold-400 text-[10px] font-semibold tracking-[0.35em] uppercase block mb-5">Layanan Kami</span>
                 <h2 class="font-serif text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-7">Konsol Terbaik<br><span class="gold-gradient">Game Tanpa Batas</span></h2>
-                <p class="text-platinum-400 text-base md:text-lg font-light max-w-lg mx-auto leading-relaxed">Layanan instalasi game terlengkap untuk semua versi PlayStation. Profesional, aman, dan bergaransi.</p>
+                <p class="text-platinum-400 text-base md:text-lg font-light max-w-lg mx-auto leading-relaxed">Layanan instalasi game terlengkap untuk semua versi PlayStation.</p>
             </div>
             <div class="grid md:grid-cols-3 gap-5 lg:gap-6">
-                <!-- PS3 -->
                 <div class="scroll-reveal card-obsidian group relative bg-navy-900/40 border border-platinum-800/10 rounded-2xl overflow-hidden">
                     <div class="absolute top-0 left-0 right-0 h-px platinum-line opacity-0 group-hover:opacity-40 transition-opacity duration-700"></div>
                     <div class="p-8 lg:p-10">
@@ -216,15 +233,10 @@
                         <span class="text-emerald-400/70 text-[9px] font-bold tracking-[0.35em] uppercase">PlayStation 3</span>
                         <h3 class="font-serif text-2xl lg:text-3xl font-bold mt-2 mb-4 tracking-tight text-white">PS3HEN</h3>
                         <p class="text-platinum-500 font-light leading-relaxed mb-8 text-sm">Instalasi HEN terbaru untuk PS3. Mainkan seluruh library game PS3 tanpa batas.</p>
-                        <ul class="space-y-3 mb-10">
-                            <li class="flex items-center gap-3 text-sm text-platinum-400"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500/70 flex-shrink-0"></i>HEN Firmware Terbaru</li>
-                            <li class="flex items-center gap-3 text-sm text-platinum-400"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500/70 flex-shrink-0"></i>Free Games Included</li>
-                            <li class="flex items-center gap-3 text-sm text-platinum-400"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500/70 flex-shrink-0"></i>Stabil & Aman</li>
-                        </ul>
+                        <ul class="space-y-3 mb-10"><li class="flex items-center gap-3 text-sm text-platinum-400"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500/70 flex-shrink-0"></i>HEN Firmware Terbaru</li><li class="flex items-center gap-3 text-sm text-platinum-400"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500/70 flex-shrink-0"></i>Free Games Included</li><li class="flex items-center gap-3 text-sm text-platinum-400"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500/70 flex-shrink-0"></i>Stabil & Aman</li></ul>
                         <a href="https://wa.me/6285163061987?text=Halo%20Mikayla%20Games,%20saya%20tertarik%20dengan%20layanan%20PS3HEN" target="_blank" class="inline-flex items-center gap-2 text-gold-400 text-xs font-semibold tracking-wider uppercase hover:gap-3 transition-all duration-300">Booking<i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
                     </div>
                 </div>
-                <!-- PS4 -->
                 <div class="scroll-reveal card-obsidian group relative bg-navy-900/40 border border-gold-400/20 rounded-2xl overflow-hidden" style="--reveal-delay:0.12s">
                     <div class="absolute top-0 left-0 right-0 h-px gold-line opacity-50"></div>
                     <div class="absolute top-5 right-5"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold-400/10 border border-gold-400/20 text-gold-400 text-[9px] font-bold tracking-[0.2em] uppercase"><span class="w-1 h-1 bg-gold-400 rounded-full"></span>Popular</span></div>
@@ -233,15 +245,10 @@
                         <span class="text-emerald-400/70 text-[9px] font-bold tracking-[0.35em] uppercase">PlayStation 4</span>
                         <h3 class="font-serif text-2xl lg:text-3xl font-bold mt-2 mb-4 tracking-tight text-white">PS4HEN</h3>
                         <p class="text-platinum-500 font-light leading-relaxed mb-8 text-sm">Jailbreak PS4 dengan HEN terbaru. Akses ribuan game PS4 secara gratis.</p>
-                        <ul class="space-y-3 mb-10">
-                            <li class="flex items-center gap-3 text-sm text-platinum-400"><i data-lucide="check-circle-2" class="w-4 h-4 text-gold-400/70 flex-shrink-0"></i>GoldHEN / HEN Terbaru</li>
-                            <li class="flex items-center gap-3 text-sm text-platinum-400"><i data-lucide="check-circle-2" class="w-4 h-4 text-gold-400/70 flex-shrink-0"></i>Puluhan Game Premium</li>
-                            <li class="flex items-center gap-3 text-sm text-platinum-400"><i data-lucide="check-circle-2" class="w-4 h-4 text-gold-400/70 flex-shrink-0"></i>Homebrew Apps</li>
-                        </ul>
+                        <ul class="space-y-3 mb-10"><li class="flex items-center gap-3 text-sm text-platinum-400"><i data-lucide="check-circle-2" class="w-4 h-4 text-gold-400/70 flex-shrink-0"></i>GoldHEN / HEN Terbaru</li><li class="flex items-center gap-3 text-sm text-platinum-400"><i data-lucide="check-circle-2" class="w-4 h-4 text-gold-400/70 flex-shrink-0"></i>Puluhan Game Premium</li><li class="flex items-center gap-3 text-sm text-platinum-400"><i data-lucide="check-circle-2" class="w-4 h-4 text-gold-400/70 flex-shrink-0"></i>Homebrew Apps</li></ul>
                         <a href="https://wa.me/6285163061987?text=Halo%20Mikayla%20Games,%20saya%20tertarik%20dengan%20layanan%20PS4HEN" target="_blank" class="inline-flex items-center gap-2 text-gold-400 text-xs font-semibold tracking-wider uppercase hover:gap-3 transition-all duration-300">Booking<i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
                     </div>
                 </div>
-                <!-- PS5 -->
                 <div class="scroll-reveal card-obsidian group relative bg-navy-900/40 border border-platinum-800/10 rounded-2xl overflow-hidden" style="--reveal-delay:0.24s">
                     <div class="absolute top-0 left-0 right-0 h-px emerald-line opacity-0 group-hover:opacity-40 transition-opacity duration-700"></div>
                     <div class="absolute top-5 right-5"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-400/10 border border-emerald-400/20 text-emerald-400 text-[9px] font-bold tracking-[0.2em] uppercase"><span class="w-1 h-1 bg-emerald-400 rounded-full"></span>Premium</span></div>
@@ -250,11 +257,7 @@
                         <span class="text-emerald-400/70 text-[9px] font-bold tracking-[0.35em] uppercase">PlayStation 5</span>
                         <h3 class="font-serif text-2xl lg:text-3xl font-bold mt-2 mb-4 tracking-tight text-white">PS5 Jailbreak</h3>
                         <p class="text-platinum-500 font-light leading-relaxed mb-8 text-sm">Layanan jailbreak PS5 untuk firmware kompatibel. Buka potensi penuh next-gen.</p>
-                        <ul class="space-y-3 mb-10">
-                            <li class="flex items-center gap-3 text-sm text-platinum-400"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500/70 flex-shrink-0"></i>Jailbreak Terkini</li>
-                            <li class="flex items-center gap-3 text-sm text-platinum-400"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500/70 flex-shrink-0"></i>Game PS5 Included</li>
-                            <li class="flex items-center gap-3 text-sm text-platinum-400"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500/70 flex-shrink-0"></i>Garansi Service</li>
-                        </ul>
+                        <ul class="space-y-3 mb-10"><li class="flex items-center gap-3 text-sm text-platinum-400"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500/70 flex-shrink-0"></i>Jailbreak Terkini</li><li class="flex items-center gap-3 text-sm text-platinum-400"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500/70 flex-shrink-0"></i>Game PS5 Included</li><li class="flex items-center gap-3 text-sm text-platinum-400"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500/70 flex-shrink-0"></i>Garansi Service</li></ul>
                         <a href="https://wa.me/6285163061987?text=Halo%20Mikayla%20Games,%20saya%20tertarik%20dengan%20layanan%20PS5%20Jailbreak" target="_blank" class="inline-flex items-center gap-2 text-gold-400 text-xs font-semibold tracking-wider uppercase hover:gap-3 transition-all duration-300">Booking<i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
                     </div>
                 </div>
@@ -267,69 +270,59 @@
         <div class="absolute inset-0 bg-gradient-to-b from-obsidian-950 via-navy-950/40 to-obsidian-950"></div>
         <div class="absolute top-0 left-0 right-0 h-px gold-line opacity-20"></div>
         <div class="absolute bottom-0 left-0 right-0 h-px emerald-line opacity-10"></div>
-        <div class="absolute top-1/4 left-0 w-[500px] h-[500px] bg-gold-400/[0.02] rounded-full blur-3xl pointer-events-none"></div>
         <div class="relative max-w-7xl mx-auto px-6">
             <div class="text-center mb-20 scroll-reveal">
                 <span class="inline-flex items-center gap-2 text-emerald-400 text-[10px] font-semibold tracking-[0.3em] uppercase mb-5"><i data-lucide="book-open" class="w-3.5 h-3.5"></i>Katalog Game</span>
                 <h2 class="font-serif text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-7">Daftar Game<br><span class="gold-gradient">Tersedia</span></h2>
-                <p class="text-platinum-400 text-base md:text-lg font-light max-w-2xl mx-auto leading-relaxed">Lihat katalog game lengkap untuk setiap platform. Buka langsung di browser atau download PDF-nya.</p>
+                <p class="text-platinum-400 text-base md:text-lg font-light max-w-2xl mx-auto leading-relaxed">Lihat katalog game lengkap untuk setiap platform.</p>
             </div>
             <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
-                <!-- PS3 Catalog -->
                 <div class="scroll-reveal catalog-card relative bg-navy-900/40 border border-platinum-800/10 rounded-2xl overflow-hidden group">
                     <div class="catalog-glow absolute -top-20 -right-20 w-40 h-40 bg-gold-400/5 rounded-full blur-3xl opacity-0 pointer-events-none"></div>
-                    <div class="absolute top-0 left-0 right-0 h-px platinum-line opacity-0 group-hover:opacity-40 transition-opacity duration-700"></div>
                     <div class="p-8 lg:p-10 text-center">
                         <div class="catalog-icon w-20 h-20 rounded-2xl bg-matte-800/60 border border-platinum-700/20 flex items-center justify-center mb-8 mx-auto relative"><i data-lucide="disc-3" class="w-9 h-9 text-platinum-300 group-hover:text-gold-400 transition-colors duration-500"></i><div class="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-platinum-800 border border-platinum-600/30 flex items-center justify-center"><i data-lucide="file-text" class="w-3 h-3 text-platinum-400"></i></div></div>
                         <span class="text-platinum-500 text-[9px] font-bold tracking-[0.35em] uppercase block mb-2">PlayStation 3</span>
                         <h3 class="font-serif text-2xl font-bold tracking-tight text-white mb-2">Game List PS3</h3>
-                        <p class="text-platinum-600 text-xs font-light mb-2">LIST_GAME_PS3_2025.pdf</p>
                         <div class="w-12 h-px bg-gradient-to-r from-transparent via-gold-400/20 to-transparent mx-auto my-6"></div>
-                        <p class="text-platinum-500 font-light text-xs leading-relaxed mb-8">Katalog lengkap game PS3 yang tersedia untuk instalasi HEN.</p>
+                        <p class="text-platinum-500 font-light text-xs leading-relaxed mb-8">Katalog lengkap game PS3 untuk instalasi HEN.</p>
                         <div class="flex flex-col gap-3">
-                            <button onclick="viewPdf('PS3 Game List','LIST_GAME_PS3_2025.pdf','#PS3_PDF_URL_HERE')" class="btn-outline w-full px-5 py-3 rounded-xl border border-platinum-600/25 text-platinum-300 text-xs font-semibold tracking-wider uppercase hover:border-gold-400/30 hover:text-gold-300 hover:bg-gold-400/[0.03] transition-all duration-500 flex items-center justify-center gap-2"><i data-lucide="eye" class="w-4 h-4"></i>Lihat Online</button>
+                            <button onclick="viewPdf('PS3')" class="btn-outline w-full px-5 py-3 rounded-xl border border-platinum-600/25 text-platinum-300 text-xs font-semibold tracking-wider uppercase hover:border-gold-400/30 hover:text-gold-300 hover:bg-gold-400/[0.03] transition-all duration-500 flex items-center justify-center gap-2"><i data-lucide="eye" class="w-4 h-4"></i>Lihat Online</button>
                             <a href="#PS3_PDF_URL_HERE" download="LIST_GAME_PS3_2025.pdf" onclick="downloadPdf(event,'PS3')" class="btn-gold w-full bg-gold-400 text-obsidian-950 px-5 py-3 rounded-xl text-xs font-bold tracking-wider uppercase hover:bg-gold-300 flex items-center justify-center gap-2"><i data-lucide="download" class="w-4 h-4"></i>Download PDF</a>
                         </div>
                     </div>
                 </div>
-                <!-- PS4 Catalog -->
                 <div class="scroll-reveal catalog-card relative bg-navy-900/40 border border-gold-400/15 rounded-2xl overflow-hidden group" style="--reveal-delay:0.12s">
-                    <div class="catalog-glow absolute -top-20 -right-20 w-40 h-40 bg-gold-400/8 rounded-full blur-3xl opacity-0 pointer-events-none"></div>
                     <div class="absolute top-0 left-0 right-0 h-px gold-line opacity-50"></div>
                     <div class="absolute top-5 right-5"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold-400/10 border border-gold-400/20 text-gold-400 text-[9px] font-bold tracking-[0.2em] uppercase"><span class="w-1 h-1 bg-gold-400 rounded-full"></span>Terlengkap</span></div>
                     <div class="p-8 lg:p-10 text-center">
                         <div class="catalog-icon w-20 h-20 rounded-2xl bg-gold-400/8 border border-gold-400/20 flex items-center justify-center mb-8 mx-auto relative"><i data-lucide="gamepad-2" class="w-9 h-9 text-gold-400"></i><div class="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-gold-400/20 border border-gold-400/30 flex items-center justify-center"><i data-lucide="file-text" class="w-3 h-3 text-gold-400"></i></div></div>
                         <span class="text-gold-400/60 text-[9px] font-bold tracking-[0.35em] uppercase block mb-2">PlayStation 4</span>
                         <h3 class="font-serif text-2xl font-bold tracking-tight text-white mb-2">Game List PS4</h3>
-                        <p class="text-platinum-600 text-xs font-light mb-2">PS4_LISTGAME_2026.pdf</p>
                         <div class="w-12 h-px bg-gradient-to-r from-transparent via-gold-400/30 to-transparent mx-auto my-6"></div>
-                        <p class="text-platinum-500 font-light text-xs leading-relaxed mb-8">Ribuan game PS4 tersedia. Dari exclusives hingga multiplatform AAA terbaru.</p>
+                        <p class="text-platinum-500 font-light text-xs leading-relaxed mb-8">Ribuan game PS4 tersedia. Dari exclusives hingga AAA terbaru.</p>
                         <div class="flex flex-col gap-3">
-                            <button onclick="viewPdf('PS4 Game List','PS4_LISTGAME_2026.pdf','#PS4_PDF_URL_HERE')" class="btn-outline w-full px-5 py-3 rounded-xl border border-gold-400/20 text-gold-400 text-xs font-semibold tracking-wider uppercase hover:bg-gold-400/[0.05] hover:border-gold-400/40 transition-all duration-500 flex items-center justify-center gap-2"><i data-lucide="eye" class="w-4 h-4"></i>Lihat Online</button>
+                            <button onclick="viewPdf('PS4')" class="btn-outline w-full px-5 py-3 rounded-xl border border-gold-400/20 text-gold-400 text-xs font-semibold tracking-wider uppercase hover:bg-gold-400/[0.05] hover:border-gold-400/40 transition-all duration-500 flex items-center justify-center gap-2"><i data-lucide="eye" class="w-4 h-4"></i>Lihat Online</button>
                             <a href="#PS4_PDF_URL_HERE" download="PS4_LISTGAME_2026.pdf" onclick="downloadPdf(event,'PS4')" class="btn-gold w-full bg-gold-400 text-obsidian-950 px-5 py-3 rounded-xl text-xs font-bold tracking-wider uppercase hover:bg-gold-300 flex items-center justify-center gap-2"><i data-lucide="download" class="w-4 h-4"></i>Download PDF</a>
                         </div>
                     </div>
                 </div>
-                <!-- PS5 Catalog -->
                 <div class="scroll-reveal catalog-card relative bg-navy-900/40 border border-platinum-800/10 rounded-2xl overflow-hidden group" style="--reveal-delay:0.24s">
-                    <div class="catalog-glow absolute -top-20 -right-20 w-40 h-40 bg-emerald-400/5 rounded-full blur-3xl opacity-0 pointer-events-none"></div>
                     <div class="absolute top-0 left-0 right-0 h-px emerald-line opacity-0 group-hover:opacity-40 transition-opacity duration-700"></div>
                     <div class="absolute top-5 right-5"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-400/10 border border-emerald-400/20 text-emerald-400 text-[9px] font-bold tracking-[0.2em] uppercase"><span class="w-1 h-1 bg-emerald-400 rounded-full"></span>Next-Gen</span></div>
                     <div class="p-8 lg:p-10 text-center">
                         <div class="catalog-icon w-20 h-20 rounded-2xl bg-matte-800/60 border border-platinum-700/20 flex items-center justify-center mb-8 mx-auto relative"><i data-lucide="crown" class="w-9 h-9 text-platinum-300 group-hover:text-emerald-400 transition-colors duration-500"></i><div class="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-emerald-400/15 border border-emerald-400/25 flex items-center justify-center"><i data-lucide="file-text" class="w-3 h-3 text-emerald-400"></i></div></div>
                         <span class="text-emerald-400/60 text-[9px] font-bold tracking-[0.35em] uppercase block mb-2">PlayStation 5</span>
                         <h3 class="font-serif text-2xl font-bold tracking-tight text-white mb-2">Game List PS5</h3>
-                        <p class="text-platinum-600 text-xs font-light mb-2">PLAYSTATION_5_LIST_2027.pdf</p>
                         <div class="w-12 h-px bg-gradient-to-r from-transparent via-emerald-400/20 to-transparent mx-auto my-6"></div>
-                        <p class="text-platinum-500 font-light text-xs leading-relaxed mb-8">Katalog game next-gen PS5. Experience visual terbaik dengan judul-judul terbaru.</p>
+                        <p class="text-platinum-500 font-light text-xs leading-relaxed mb-8">Katalog game next-gen PS5. Visual terbaik dengan judul-judul terbaru.</p>
                         <div class="flex flex-col gap-3">
-                            <button onclick="viewPdf('PS5 Game List','PLAYSTATION_5_LIST_2027.pdf','#PS5_PDF_URL_HERE')" class="btn-outline w-full px-5 py-3 rounded-xl border border-platinum-600/25 text-platinum-300 text-xs font-semibold tracking-wider uppercase hover:border-emerald-400/30 hover:text-emerald-300 hover:bg-emerald-400/[0.03] transition-all duration-500 flex items-center justify-center gap-2"><i data-lucide="eye" class="w-4 h-4"></i>Lihat Online</button>
+                            <button onclick="viewPdf('PS5')" class="btn-outline w-full px-5 py-3 rounded-xl border border-platinum-600/25 text-platinum-300 text-xs font-semibold tracking-wider uppercase hover:border-emerald-400/30 hover:text-emerald-300 hover:bg-emerald-400/[0.03] transition-all duration-500 flex items-center justify-center gap-2"><i data-lucide="eye" class="w-4 h-4"></i>Lihat Online</button>
                             <a href="#PS5_PDF_URL_HERE" download="PLAYSTATION_5_LIST_2027.pdf" onclick="downloadPdf(event,'PS5')" class="btn-gold w-full bg-gold-400 text-obsidian-950 px-5 py-3 rounded-xl text-xs font-bold tracking-wider uppercase hover:bg-gold-300 flex items-center justify-center gap-2"><i data-lucide="download" class="w-4 h-4"></i>Download PDF</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="scroll-reveal text-center mt-16" style="--reveal-delay:0.3s"><p class="text-platinum-500 text-sm font-light mb-6">Tidak menemukan game yang dicari? Tanyakan langsung ke kami.</p><a href="https://wa.me/6285163061987?text=Halo%20Mikayla%20Games,%20saya%20mau%20tanya%20game%20yang%20belum%20ada%20di%20katalog" target="_blank" class="inline-flex items-center gap-2 text-gold-400 text-xs font-semibold tracking-wider uppercase hover:gap-3 transition-all duration-300">Tanya via WhatsApp<i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a></div>
+            <div class="scroll-reveal text-center mt-16" style="--reveal-delay:0.3s"><p class="text-platinum-500 text-sm font-light mb-6">Tidak menemukan game yang dicari?</p><a href="https://wa.me/6285163061987?text=Halo%20Mikayla%20Games,%20saya%20mau%20tanya%20game%20yang%20belum%20ada%20di%20katalog" target="_blank" class="inline-flex items-center gap-2 text-gold-400 text-xs font-semibold tracking-wider uppercase hover:gap-3 transition-all duration-300">Tanya via WhatsApp<i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a></div>
         </div>
     </section>
 
@@ -338,120 +331,49 @@
         <div class="absolute inset-0 bg-gradient-to-b from-obsidian-950 via-navy-950/30 to-obsidian-950"></div>
         <div class="absolute top-0 left-0 right-0 h-px gold-line opacity-20"></div>
         <div class="absolute bottom-0 left-0 right-0 h-px emerald-line opacity-10"></div>
-        <div class="absolute top-1/3 right-0 w-[400px] h-[400px] bg-gold-400/[0.02] rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute bottom-1/4 left-0 w-[350px] h-[350px] bg-emerald-400/[0.015] rounded-full blur-3xl pointer-events-none"></div>
         <div class="relative max-w-7xl mx-auto px-6">
             <div class="text-center mb-20 scroll-reveal">
                 <span class="inline-flex items-center gap-2 text-emerald-400 text-[10px] font-semibold tracking-[0.3em] uppercase mb-5"><i data-lucide="truck" class="w-3.5 h-3.5"></i>Home Service Ongkir</span>
                 <h2 class="font-serif text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-7">Estimasi Ongkir<br><span class="gold-gradient">Bandung & Sekitarnya</span></h2>
-                <p class="text-platinum-400 text-base md:text-lg font-light max-w-2xl mx-auto leading-relaxed">Pilih zona wilayah Anda untuk melihat estimasi biaya panggilan. Ongkos fleksibel dan bisa dirundingkan.</p>
+                <p class="text-platinum-400 text-base md:text-lg font-light max-w-2xl mx-auto leading-relaxed">Pilih zona wilayah Anda. Ongkos fleksibel dan bisa dirundingkan.</p>
             </div>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5 mb-12" id="zone-grid">
-                <!-- Zona 1 -->
-                <div class="scroll-reveal zone-card relative bg-navy-900/40 border border-platinum-800/10 rounded-2xl overflow-hidden cursor-pointer" onclick="selectZone(this,'zona-1')" data-zone="zona-1">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5 mb-12">
+                <div class="scroll-reveal zone-card relative bg-navy-900/40 border border-platinum-800/10 rounded-2xl overflow-hidden cursor-pointer" onclick="selectZone(this,'zona-1')">
                     <div class="absolute top-3 right-3 zone-badge"><span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-400/10 border border-emerald-400/20 text-emerald-400 text-[8px] font-bold tracking-wider uppercase">Terdekat</span></div>
                     <div class="p-6">
-                        <div class="flex items-start gap-4 mb-4">
-                            <div class="zone-check w-5 h-5 rounded-md border-2 border-platinum-600/40 flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-3 h-3 text-obsidian-950 opacity-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div>
-                            <div><span class="text-platinum-500 text-[9px] font-bold tracking-[0.3em] uppercase block mb-1">Zona 1</span><h3 class="font-serif text-lg font-bold text-white">Bandung Kota</h3></div>
-                        </div>
-                        <div class="space-y-1.5 mb-5">
-                            <p class="text-platinum-500 text-[11px] font-light flex items-center gap-2"><span class="w-1 h-1 bg-gold-400/40 rounded-full flex-shrink-0"></span>Bandung Wetan, Citarum, Braga</p>
-                            <p class="text-platinum-500 text-[11px] font-light flex items-center gap-2"><span class="w-1 h-1 bg-gold-400/40 rounded-full flex-shrink-0"></span>Sumur Bandung, Merdeka</p>
-                            <p class="text-platinum-500 text-[11px] font-light flex items-center gap-2"><span class="w-1 h-1 bg-gold-400/40 rounded-full flex-shrink-0"></span>Gedebage, Rancasari, Kiaracondong</p>
-                            <p class="text-platinum-600 text-[10px] font-light pl-3">+ wilayah kota lainnya</p>
-                        </div>
-                        <div class="flex items-end justify-between">
-                            <div><p class="text-platinum-600 text-[9px] tracking-wider uppercase font-medium mb-1">Estimasi Ongkir</p><p class="price-tag font-serif text-2xl font-bold text-white">Rp 15K<span class="text-sm font-normal text-platinum-500"> – 25K</span></p></div>
-                            <div class="text-right"><p class="text-platinum-600 text-[9px] tracking-wider uppercase font-medium mb-1">Waktu Tempuh</p><p class="text-platinum-400 text-xs font-light">~15–30 mnt</p></div>
-                        </div>
+                        <div class="flex items-start gap-4 mb-4"><div class="zone-check w-5 h-5 rounded-md border-2 border-platinum-600/40 flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-3 h-3 text-obsidian-950 opacity-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><div><span class="text-platinum-500 text-[9px] font-bold tracking-[0.3em] uppercase block mb-1">Zona 1</span><h3 class="font-serif text-lg font-bold text-white">Bandung Kota</h3></div></div>
+                        <div class="space-y-1.5 mb-5"><p class="text-platinum-500 text-[11px] font-light">Bandung Wetan, Citarum, Braga, Gedebage, Rancasari</p><p class="text-platinum-600 text-[10px] font-light pl-3">+ wilayah kota lainnya</p></div>
+                        <div class="flex items-end justify-between"><div><p class="text-platinum-600 text-[9px] tracking-wider uppercase font-medium mb-1">Estimasi Ongkir</p><p class="price-tag font-serif text-2xl font-bold text-white">Rp 15K<span class="text-sm font-normal text-platinum-500"> – 25K</span></p></div><div class="text-right"><p class="text-platinum-600 text-[9px] tracking-wider uppercase font-medium mb-1">Waktu</p><p class="text-platinum-400 text-xs font-light">~15–30 mnt</p></div></div>
                     </div>
-                    <div class="zone-detail px-6 border-t border-platinum-800/0">
-                        <div class="flex items-center gap-2 mb-3"><i data-lucide="info" class="w-3.5 h-3.5 text-gold-400/60 flex-shrink-0"></i><p class="text-gold-400/70 text-[10px] font-light">Ongkir bisa berubah sesuai jarak & kondisi jalan</p></div>
-                        <a href="https://wa.me/6285163061987?text=Halo%20Mikayla%20Games,%20saya%20mau%20booking%20home%20service%20zona%20Bandung%20Kota" target="_blank" class="btn-gold w-full bg-gold-400 text-obsidian-950 px-4 py-2.5 rounded-xl text-[10px] font-bold tracking-wider uppercase hover:bg-gold-300 flex items-center justify-center gap-2 mb-2"><i data-lucide="message-circle" class="w-3.5 h-3.5"></i>Booking Zona Ini</a>
-                    </div>
+                    <div class="zone-detail px-6 border-t border-platinum-800/0"><div class="flex items-center gap-2 mb-3"><i data-lucide="info" class="w-3.5 h-3.5 text-gold-400/60 flex-shrink-0"></i><p class="text-gold-400/70 text-[10px] font-light">Ongkir bisa berubah sesuai jarak & kondisi jalan</p></div><a href="https://wa.me/6285163061987?text=Halo%20Mikayla%20Games,%20saya%20mau%20booking%20home%20service%20zona%20Bandung%20Kota" target="_blank" class="btn-gold w-full bg-gold-400 text-obsidian-950 px-4 py-2.5 rounded-xl text-[10px] font-bold tracking-wider uppercase hover:bg-gold-300 flex items-center justify-center gap-2 mb-2"><i data-lucide="message-circle" class="w-3.5 h-3.5"></i>Booking Zona Ini</a></div>
                 </div>
-                <!-- Zona 2 -->
-                <div class="scroll-reveal zone-card relative bg-navy-900/40 border border-platinum-800/10 rounded-2xl overflow-hidden cursor-pointer" onclick="selectZone(this,'zona-2')" data-zone="zona-2" style="--reveal-delay:0.08s">
+                <div class="scroll-reveal zone-card relative bg-navy-900/40 border border-platinum-800/10 rounded-2xl overflow-hidden cursor-pointer" onclick="selectZone(this,'zona-2')" style="--reveal-delay:0.08s">
                     <div class="p-6">
-                        <div class="flex items-start gap-4 mb-4">
-                            <div class="zone-check w-5 h-5 rounded-md border-2 border-platinum-600/40 flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-3 h-3 text-obsidian-950 opacity-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div>
-                            <div><span class="text-platinum-500 text-[9px] font-bold tracking-[0.3em] uppercase block mb-1">Zona 2</span><h3 class="font-serif text-lg font-bold text-white">Cimahi & Bandung Barat</h3></div>
-                        </div>
-                        <div class="space-y-1.5 mb-5">
-                            <p class="text-platinum-500 text-[11px] font-light flex items-center gap-2"><span class="w-1 h-1 bg-gold-400/40 rounded-full flex-shrink-0"></span>Cimahi Selatan, Tengah, Utara</p>
-                            <p class="text-platinum-500 text-[11px] font-light flex items-center gap-2"><span class="w-1 h-1 bg-gold-400/40 rounded-full flex-shrink-0"></span>Ngamprah, Padalarang, Batujajar</p>
-                            <p class="text-platinum-500 text-[11px] font-light flex items-center gap-2"><span class="w-1 h-1 bg-gold-400/40 rounded-full flex-shrink-0"></span>Cipatat, Cikalong Wetan</p>
-                            <p class="text-platinum-600 text-[10px] font-light pl-3">+ wilayah sekitarnya</p>
-                        </div>
-                        <div class="flex items-end justify-between">
-                            <div><p class="text-platinum-600 text-[9px] tracking-wider uppercase font-medium mb-1">Estimasi Ongkir</p><p class="price-tag font-serif text-2xl font-bold text-white">Rp 25K<span class="text-sm font-normal text-platinum-500"> – 40K</span></p></div>
-                            <div class="text-right"><p class="text-platinum-600 text-[9px] tracking-wider uppercase font-medium mb-1">Waktu Tempuh</p><p class="text-platinum-400 text-xs font-light">~30–50 mnt</p></div>
-                        </div>
+                        <div class="flex items-start gap-4 mb-4"><div class="zone-check w-5 h-5 rounded-md border-2 border-platinum-600/40 flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-3 h-3 text-obsidian-950 opacity-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><div><span class="text-platinum-500 text-[9px] font-bold tracking-[0.3em] uppercase block mb-1">Zona 2</span><h3 class="font-serif text-lg font-bold text-white">Cimahi & Bandung Barat</h3></div></div>
+                        <div class="space-y-1.5 mb-5"><p class="text-platinum-500 text-[11px] font-light">Cimahi Selatan/Tengah/Utara, Ngamprah, Padalarang</p><p class="text-platinum-600 text-[10px] font-light pl-3">+ wilayah sekitarnya</p></div>
+                        <div class="flex items-end justify-between"><div><p class="text-platinum-600 text-[9px] tracking-wider uppercase font-medium mb-1">Estimasi Ongkir</p><p class="price-tag font-serif text-2xl font-bold text-white">Rp 25K<span class="text-sm font-normal text-platinum-500"> – 40K</span></p></div><div class="text-right"><p class="text-platinum-600 text-[9px] tracking-wider uppercase font-medium mb-1">Waktu</p><p class="text-platinum-400 text-xs font-light">~30–50 mnt</p></div></div>
                     </div>
-                    <div class="zone-detail px-6 border-t border-platinum-800/0">
-                        <div class="flex items-center gap-2 mb-3"><i data-lucide="info" class="w-3.5 h-3.5 text-gold-400/60 flex-shrink-0"></i><p class="text-gold-400/70 text-[10px] font-light">Ongkir bisa berubah sesuai jarak & kondisi jalan</p></div>
-                        <a href="https://wa.me/6285163061987?text=Halo%20Mikayla%20Games,%20saya%20mau%20booking%20home%20service%20zona%20Cimahi%20/%20Bandung%20Barat" target="_blank" class="btn-gold w-full bg-gold-400 text-obsidian-950 px-4 py-2.5 rounded-xl text-[10px] font-bold tracking-wider uppercase hover:bg-gold-300 flex items-center justify-center gap-2 mb-2"><i data-lucide="message-circle" class="w-3.5 h-3.5"></i>Booking Zona Ini</a>
-                    </div>
+                    <div class="zone-detail px-6 border-t border-platinum-800/0"><div class="flex items-center gap-2 mb-3"><i data-lucide="info" class="w-3.5 h-3.5 text-gold-400/60 flex-shrink-0"></i><p class="text-gold-400/70 text-[10px] font-light">Ongkir bisa berubah sesuai jarak & kondisi jalan</p></div><a href="https://wa.me/6285163061987?text=Halo%20Mikayla%20Games,%20saya%20mau%20booking%20home%20service%20zona%20Cimahi" target="_blank" class="btn-gold w-full bg-gold-400 text-obsidian-950 px-4 py-2.5 rounded-xl text-[10px] font-bold tracking-wider uppercase hover:bg-gold-300 flex items-center justify-center gap-2 mb-2"><i data-lucide="message-circle" class="w-3.5 h-3.5"></i>Booking Zona Ini</a></div>
                 </div>
-                <!-- Zona 3 -->
-                <div class="scroll-reveal zone-card relative bg-navy-900/40 border border-platinum-800/10 rounded-2xl overflow-hidden cursor-pointer" onclick="selectZone(this,'zona-3')" data-zone="zona-3" style="--reveal-delay:0.16s">
+                <div class="scroll-reveal zone-card relative bg-navy-900/40 border border-platinum-800/10 rounded-2xl overflow-hidden cursor-pointer" onclick="selectZone(this,'zona-3')" style="--reveal-delay:0.16s">
                     <div class="p-6">
-                        <div class="flex items-start gap-4 mb-4">
-                            <div class="zone-check w-5 h-5 rounded-md border-2 border-platinum-600/40 flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-3 h-3 text-obsidian-950 opacity-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div>
-                            <div><span class="text-platinum-500 text-[9px] font-bold tracking-[0.3em] uppercase block mb-1">Zona 3</span><h3 class="font-serif text-lg font-bold text-white">Kab. Bandung</h3></div>
-                        </div>
-                        <div class="space-y-1.5 mb-5">
-                            <p class="text-platinum-500 text-[11px] font-light flex items-center gap-2"><span class="w-1 h-1 bg-gold-400/40 rounded-full flex-shrink-0"></span>Lembang, Parongpong, Cisarua</p>
-                            <p class="text-platinum-500 text-[11px] font-light flex items-center gap-2"><span class="w-1 h-1 bg-gold-400/40 rounded-full flex-shrink-0"></span>Soreang, Banjaran, Majalaya</p>
-                            <p class="text-platinum-500 text-[11px] font-light flex items-center gap-2"><span class="w-1 h-1 bg-gold-400/40 rounded-full flex-shrink-0"></span>Katapang, Dayeuhkolot, Bojongsoang</p>
-                            <p class="text-platinum-600 text-[10px] font-light pl-3">+ wilayah sekitarnya</p>
-                        </div>
-                        <div class="flex items-end justify-between">
-                            <div><p class="text-platinum-600 text-[9px] tracking-wider uppercase font-medium mb-1">Estimasi Ongkir</p><p class="price-tag font-serif text-2xl font-bold text-white">Rp 35K<span class="text-sm font-normal text-platinum-500"> – 55K</span></p></div>
-                            <div class="text-right"><p class="text-platinum-600 text-[9px] tracking-wider uppercase font-medium mb-1">Waktu Tempuh</p><p class="text-platinum-400 text-xs font-light">~40–70 mnt</p></div>
-                        </div>
+                        <div class="flex items-start gap-4 mb-4"><div class="zone-check w-5 h-5 rounded-md border-2 border-platinum-600/40 flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-3 h-3 text-obsidian-950 opacity-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><div><span class="text-platinum-500 text-[9px] font-bold tracking-[0.3em] uppercase block mb-1">Zona 3</span><h3 class="font-serif text-lg font-bold text-white">Kab. Bandung</h3></div></div>
+                        <div class="space-y-1.5 mb-5"><p class="text-platinum-500 text-[11px] font-light">Lembang, Soreang, Majalaya, Dayeuhkolot, Bojongsoang</p><p class="text-platinum-600 text-[10px] font-light pl-3">+ wilayah sekitarnya</p></div>
+                        <div class="flex items-end justify-between"><div><p class="text-platinum-600 text-[9px] tracking-wider uppercase font-medium mb-1">Estimasi Ongkir</p><p class="price-tag font-serif text-2xl font-bold text-white">Rp 35K<span class="text-sm font-normal text-platinum-500"> – 55K</span></p></div><div class="text-right"><p class="text-platinum-600 text-[9px] tracking-wider uppercase font-medium mb-1">Waktu</p><p class="text-platinum-400 text-xs font-light">~40–70 mnt</p></div></div>
                     </div>
-                    <div class="zone-detail px-6 border-t border-platinum-800/0">
-                        <div class="flex items-center gap-2 mb-3"><i data-lucide="info" class="w-3.5 h-3.5 text-gold-400/60 flex-shrink-0"></i><p class="text-gold-400/70 text-[10px] font-light">Ongkir bisa berubah sesuai jarak & kondisi jalan</p></div>
-                        <a href="https://wa.me/6285163061987?text=Halo%20Mikayla%20Games,%20saya%20mau%20booking%20home%20service%20zona%20Kab.%20Bandung" target="_blank" class="btn-gold w-full bg-gold-400 text-obsidian-950 px-4 py-2.5 rounded-xl text-[10px] font-bold tracking-wider uppercase hover:bg-gold-300 flex items-center justify-center gap-2 mb-2"><i data-lucide="message-circle" class="w-3.5 h-3.5"></i>Booking Zona Ini</a>
-                    </div>
+                    <div class="zone-detail px-6 border-t border-platinum-800/0"><div class="flex items-center gap-2 mb-3"><i data-lucide="info" class="w-3.5 h-3.5 text-gold-400/60 flex-shrink-0"></i><p class="text-gold-400/70 text-[10px] font-light">Ongkir bisa berubah sesuai jarak & kondisi jalan</p></div><a href="https://wa.me/6285163061987?text=Halo%20Mikayla%20Games,%20saya%20mau%20booking%20home%20service%20zona%20Kab.%20Bandung" target="_blank" class="btn-gold w-full bg-gold-400 text-obsidian-950 px-4 py-2.5 rounded-xl text-[10px] font-bold tracking-wider uppercase hover:bg-gold-300 flex items-center justify-center gap-2 mb-2"><i data-lucide="message-circle" class="w-3.5 h-3.5"></i>Booking Zona Ini</a></div>
                 </div>
-                <!-- Zona 4 -->
-                <div class="scroll-reveal zone-card relative bg-navy-900/40 border border-platinum-800/10 rounded-2xl overflow-hidden cursor-pointer" onclick="selectZone(this,'zona-4')" data-zone="zona-4" style="--reveal-delay:0.24s">
+                <div class="scroll-reveal zone-card relative bg-navy-900/40 border border-platinum-800/10 rounded-2xl overflow-hidden cursor-pointer" onclick="selectZone(this,'zona-4')" style="--reveal-delay:0.24s">
                     <div class="p-6">
-                        <div class="flex items-start gap-4 mb-4">
-                            <div class="zone-check w-5 h-5 rounded-md border-2 border-platinum-600/40 flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-3 h-3 text-obsidian-950 opacity-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div>
-                            <div><span class="text-platinum-500 text-[9px] font-bold tracking-[0.3em] uppercase block mb-1">Zona 4</span><h3 class="font-serif text-lg font-bold text-white">Timur & Sumedang</h3></div>
-                        </div>
-                        <div class="space-y-1.5 mb-5">
-                            <p class="text-platinum-500 text-[11px] font-light flex items-center gap-2"><span class="w-1 h-1 bg-gold-400/40 rounded-full flex-shrink-0"></span>Cileunyi, Rancaekek, Solokanjeruk</p>
-                            <p class="text-platinum-500 text-[11px] font-light flex items-center gap-2"><span class="w-1 h-1 bg-gold-400/40 rounded-full flex-shrink-0"></span>Cikeruh, Jatinangor, Tanjungsari</p>
-                            <p class="text-platinum-500 text-[11px] font-light flex items-center gap-2"><span class="w-1 h-1 bg-gold-400/40 rounded-full flex-shrink-0"></span>Sumedang Utara, Situraja</p>
-                            <p class="text-platinum-600 text-[10px] font-light pl-3">+ wilayah sekitarnya</p>
-                        </div>
-                        <div class="flex items-end justify-between">
-                            <div><p class="text-platinum-600 text-[9px] tracking-wider uppercase font-medium mb-1">Estimasi Ongkir</p><p class="price-tag font-serif text-2xl font-bold text-white">Rp 45K<span class="text-sm font-normal text-platinum-500"> – 70K</span></p></div>
-                            <div class="text-right"><p class="text-platinum-600 text-[9px] tracking-wider uppercase font-medium mb-1">Waktu Tempuh</p><p class="text-platinum-400 text-xs font-light">~50–90 mnt</p></div>
-                        </div>
+                        <div class="flex items-start gap-4 mb-4"><div class="zone-check w-5 h-5 rounded-md border-2 border-platinum-600/40 flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-3 h-3 text-obsidian-950 opacity-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><div><span class="text-platinum-500 text-[9px] font-bold tracking-[0.3em] uppercase block mb-1">Zona 4</span><h3 class="font-serif text-lg font-bold text-white">Timur & Sumedang</h3></div></div>
+                        <div class="space-y-1.5 mb-5"><p class="text-platinum-500 text-[11px] font-light">Cileunyi, Rancaekek, Jatinangor, Sumedang Utara</p><p class="text-platinum-600 text-[10px] font-light pl-3">+ wilayah sekitarnya</p></div>
+                        <div class="flex items-end justify-between"><div><p class="text-platinum-600 text-[9px] tracking-wider uppercase font-medium mb-1">Estimasi Ongkir</p><p class="price-tag font-serif text-2xl font-bold text-white">Rp 45K<span class="text-sm font-normal text-platinum-500"> – 70K</span></p></div><div class="text-right"><p class="text-platinum-600 text-[9px] tracking-wider uppercase font-medium mb-1">Waktu</p><p class="text-platinum-400 text-xs font-light">~50–90 mnt</p></div></div>
                     </div>
-                    <div class="zone-detail px-6 border-t border-platinum-800/0">
-                        <div class="flex items-center gap-2 mb-3"><i data-lucide="info" class="w-3.5 h-3.5 text-gold-400/60 flex-shrink-0"></i><p class="text-gold-400/70 text-[10px] font-light">Ongkir bisa berubah sesuai jarak & kondisi jalan</p></div>
-                        <a href="https://wa.me/6285163061987?text=Halo%20Mikayla%20Games,%20saya%20mau%20booking%20home%20service%20zona%20Timur%20/%20Sumedang" target="_blank" class="btn-gold w-full bg-gold-400 text-obsidian-950 px-4 py-2.5 rounded-xl text-[10px] font-bold tracking-wider uppercase hover:bg-gold-300 flex items-center justify-center gap-2 mb-2"><i data-lucide="message-circle" class="w-3.5 h-3.5"></i>Booking Zona Ini</a>
-                    </div>
+                    <div class="zone-detail px-6 border-t border-platinum-800/0"><div class="flex items-center gap-2 mb-3"><i data-lucide="info" class="w-3.5 h-3.5 text-gold-400/60 flex-shrink-0"></i><p class="text-gold-400/70 text-[10px] font-light">Ongkir bisa berubah sesuai jarak & kondisi jalan</p></div><a href="https://wa.me/6285163061987?text=Halo%20Mikayla%20Games,%20saya%20mau%20booking%20home%20service%20zona%20Timur%20Sumedang" target="_blank" class="btn-gold w-full bg-gold-400 text-obsidian-950 px-4 py-2.5 rounded-xl text-[10px] font-bold tracking-wider uppercase hover:bg-gold-300 flex items-center justify-center gap-2 mb-2"><i data-lucide="message-circle" class="w-3.5 h-3.5"></i>Booking Zona Ini</a></div>
                 </div>
             </div>
-            <!-- Info notes -->
             <div class="scroll-reveal max-w-4xl mx-auto" style="--reveal-delay:0.3s">
-                <div class="grid sm:grid-cols-3 gap-4 mb-10">
-                    <div class="flex items-start gap-3 p-5 rounded-xl bg-navy-900/20 border border-platinum-800/8"><div class="w-8 h-8 rounded-lg bg-gold-400/8 border border-gold-400/15 flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="scale" class="w-4 h-4 text-gold-400"></i></div><div><p class="text-white text-xs font-semibold mb-1">Ongkir Fleksibel</p><p class="text-platinum-500 text-[10px] font-light leading-relaxed">Harga bisa dirundingkan. Kami usahakan ongkir paling santai.</p></div></div>
-                    <div class="flex items-start gap-3 p-5 rounded-xl bg-navy-900/20 border border-platinum-800/8"><div class="w-8 h-8 rounded-lg bg-emerald-400/8 border border-emerald-400/15 flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="clock" class="w-4 h-4 text-emerald-400"></i></div><div><p class="text-white text-xs font-semibold mb-1">Waktu Fleksibel</p><p class="text-platinum-500 text-[10px] font-light leading-relaxed">Estimasi waktu bisa berbeda tergantung kondisi lalu lintas.</p></div></div>
-                    <div class="flex items-start gap-3 p-5 rounded-xl bg-navy-900/20 border border-platinum-800/8"><div class="w-8 h-8 rounded-lg bg-beige-400/8 border border-beige-400/15 flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="map-pin" class="w-4 h-4 text-beige-400"></i></div><div><p class="text-white text-xs font-semibold mb-1">Luar Zona?</p><p class="text-platinum-500 text-[10px] font-light leading-relaxed">Wilayah tidak tercakup? Chat kami, bisa dibicarakan.</p></div></div>
-                </div>
-                <div class="text-center p-6 rounded-xl border border-platinum-800/8 bg-navy-900/15">
-                    <div class="flex items-center justify-center gap-2 mb-3"><i data-lucide="alert-triangle" class="w-4 h-4 text-gold-400/50"></i><p class="text-gold-400/70 text-[10px] font-semibold tracking-[0.2em] uppercase">Catatan Penting</p></div>
-                    <p class="text-platinum-500 text-xs font-light leading-relaxed max-w-2xl mx-auto">Estimasi ongkir di atas adalah <span class="text-platinum-300">perkiraan</span> dan bisa berubah sesuai jarak pasti lokasi Anda, kondisi jalan, dan waktu kunjungan. Harga final akan dikonfirmasi saat booking via WhatsApp.</p>
-                </div>
+                <div class="text-center p-6 rounded-xl border border-platinum-800/8 bg-navy-900/15"><p class="text-platinum-500 text-xs font-light leading-relaxed max-w-2xl mx-auto">Estimasi ongkir bersifat <span class="text-platinum-300">perkiraan</span> dan bisa berubah sesuai jarak pasti lokasi, kondisi jalan, dan waktu kunjungan. Harga final dikonfirmasi saat booking via WhatsApp.</p></div>
             </div>
         </div>
     </section>
@@ -459,12 +381,12 @@
     <!-- PROCESS -->
     <section id="proses" class="relative py-32 md:py-44">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-24 scroll-reveal"><span class="text-emerald-400 text-[10px] font-semibold tracking-[0.35em] uppercase block mb-5">Cara Kerja</span><h2 class="font-serif text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-7">Semudah <span class="gold-gradient">1 — 2 — 3</span></h2><p class="text-platinum-400 text-base md:text-lg font-light max-w-lg mx-auto leading-relaxed">Proses yang simpel dan transparan. Anda tinggal duduk manis, kami yang kerja.</p></div>
+            <div class="text-center mb-24 scroll-reveal"><span class="text-emerald-400 text-[10px] font-semibold tracking-[0.35em] uppercase block mb-5">Cara Kerja</span><h2 class="font-serif text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-7">Semudah <span class="gold-gradient">1 — 2 — 3</span></h2></div>
             <div class="grid md:grid-cols-3 gap-10 lg:gap-16 relative">
                 <div class="hidden md:block absolute top-[4.5rem] left-[22%] right-[22%] h-px bg-gradient-to-r from-gold-400/20 via-emerald-400/15 to-gold-400/20"></div>
-                <div class="scroll-reveal text-center relative"><div class="relative inline-flex items-center justify-center rounded-full border border-gold-400/15 bg-navy-900/30 mb-10 mx-auto" style="width:9rem;height:9rem"><div class="absolute inset-3 rounded-full border border-platinum-800/20 bg-obsidian-950/50 flex items-center justify-center"><span class="font-serif text-5xl font-bold gold-gradient">01</span></div></div><h3 class="font-serif text-xl font-bold mb-3 text-white">Hubungi Kami</h3><p class="text-platinum-500 font-light text-sm leading-relaxed max-w-xs mx-auto">Chat via WhatsApp. Informasikan tipe konsol, firmware, dan lokasi Anda.</p></div>
-                <div class="scroll-reveal text-center relative" style="--reveal-delay:0.15s"><div class="relative inline-flex items-center justify-center rounded-full border border-emerald-400/15 bg-navy-900/30 mb-10 mx-auto" style="width:9rem;height:9rem"><div class="absolute inset-3 rounded-full border border-platinum-800/20 bg-obsidian-950/50 flex items-center justify-center"><span class="font-serif text-5xl font-bold emerald-gradient">02</span></div></div><h3 class="font-serif text-xl font-bold mb-3 text-white">Konsol Diproses</h3><p class="text-platinum-500 font-light text-sm leading-relaxed max-w-xs mx-auto">Instalasi HEN/Jailbreak + isi game. Kami datang ke lokasi Anda.</p></div>
-                <div class="scroll-reveal text-center relative" style="--reveal-delay:0.3s"><div class="relative inline-flex items-center justify-center rounded-full border border-gold-400/15 bg-navy-900/30 mb-10 mx-auto" style="width:9rem;height:9rem"><div class="absolute inset-3 rounded-full border border-platinum-800/20 bg-obsidian-950/50 flex items-center justify-center"><span class="font-serif text-5xl font-bold gold-gradient">03</span></div></div><h3 class="font-serif text-xl font-bold mb-3 text-white">Main Sekarang</h3><p class="text-platinum-500 font-light text-sm leading-relaxed max-w-xs mx-auto">Konsol siap! Langsung mainkan game favorit Anda tanpa batas. Garansi berlaku.</p></div>
+                <div class="scroll-reveal text-center"><div class="relative inline-flex items-center justify-center rounded-full border border-gold-400/15 bg-navy-900/30 mb-10 mx-auto" style="width:9rem;height:9rem"><div class="absolute inset-3 rounded-full border border-platinum-800/20 bg-obsidian-950/50 flex items-center justify-center"><span class="font-serif text-5xl font-bold gold-gradient">01</span></div></div><h3 class="font-serif text-xl font-bold mb-3 text-white">Hubungi Kami</h3><p class="text-platinum-500 font-light text-sm leading-relaxed max-w-xs mx-auto">Chat via WhatsApp. Informasikan tipe konsol dan lokasi Anda.</p></div>
+                <div class="scroll-reveal text-center" style="--reveal-delay:0.15s"><div class="relative inline-flex items-center justify-center rounded-full border border-emerald-400/15 bg-navy-900/30 mb-10 mx-auto" style="width:9rem;height:9rem"><div class="absolute inset-3 rounded-full border border-platinum-800/20 bg-obsidian-950/50 flex items-center justify-center"><span class="font-serif text-5xl font-bold emerald-gradient">02</span></div></div><h3 class="font-serif text-xl font-bold mb-3 text-white">Konsol Diproses</h3><p class="text-platinum-500 font-light text-sm leading-relaxed max-w-xs mx-auto">Instalasi HEN/Jailbreak + isi game. Kami datang ke lokasi Anda.</p></div>
+                <div class="scroll-reveal text-center" style="--reveal-delay:0.3s"><div class="relative inline-flex items-center justify-center rounded-full border border-gold-400/15 bg-navy-900/30 mb-10 mx-auto" style="width:9rem;height:9rem"><div class="absolute inset-3 rounded-full border border-platinum-800/20 bg-obsidian-950/50 flex items-center justify-center"><span class="font-serif text-5xl font-bold gold-gradient">03</span></div></div><h3 class="font-serif text-xl font-bold mb-3 text-white">Main Sekarang</h3><p class="text-platinum-500 font-light text-sm leading-relaxed max-w-xs mx-auto">Konsol siap! Langsung mainkan game favorit Anda. Garansi berlaku.</p></div>
             </div>
         </div>
     </section>
@@ -472,24 +394,22 @@
     <!-- WHY CHOOSE US -->
     <section id="keunggulan" class="relative py-32 md:py-44 overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-b from-obsidian-950 via-navy-950/20 to-obsidian-950"></div>
-        <div class="absolute top-0 left-0 right-0 h-px platinum-line opacity-10"></div>
-        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-beige-400/[0.015] rounded-full blur-3xl pointer-events-none"></div>
         <div class="relative max-w-7xl mx-auto px-6">
             <div class="flex flex-col lg:flex-row gap-16 lg:gap-24">
                 <div class="lg:w-5/12 scroll-reveal">
                     <span class="text-emerald-400 text-[10px] font-semibold tracking-[0.35em] uppercase block mb-5">Mengapa Mikayla?</span>
                     <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-7">Bukan Sekadar<br><span class="gold-gradient">Isi Game</span></h2>
-                    <p class="text-platinum-400 font-light leading-relaxed text-lg mb-10">Setiap konsol yang kami tangani diperlakukan dengan standar premium — presisi, keamanan, dan hasil terbaik.</p>
-                    <div class="relative rounded-2xl overflow-hidden aspect-[4/3]"><img src="https://wallpapercave.com/wp/wp12141999.jpg" alt="Premium Service" class="w-full h-full object-cover" onerror="this.style.display='none'"><div class="absolute inset-0 bg-gradient-to-t from-obsidian-950/40 to-transparent"></div><div class="absolute inset-0 border border-gold-400/8 rounded-2xl"></div></div>
+                    <p class="text-platinum-400 font-light leading-relaxed text-lg mb-10">Setiap konsol ditangani dengan standar premium — presisi, keamanan, dan hasil terbaik.</p>
+                    <div class="relative rounded-2xl overflow-hidden aspect-[4/3]"><img src="https://wallpapercave.com/wp/wp12141999.jpg" alt="Premium Service" class="w-full h-full object-cover" onerror="this.style.display='none'"><div class="absolute inset-0 bg-gradient-to-t from-obsidian-950/40 to-transparent"></div></div>
                 </div>
                 <div class="lg:w-7/12">
                     <div class="grid sm:grid-cols-2 gap-5">
-                        <div class="scroll-reveal card-obsidian p-7 rounded-2xl bg-navy-900/25 border border-platinum-800/10"><div class="w-10 h-10 rounded-lg bg-gold-400/8 border border-gold-400/15 flex items-center justify-center mb-5"><i data-lucide="shield-check" class="w-5 h-5 text-gold-400"></i></div><h3 class="font-serif text-base font-bold mb-2 text-white">Aman & Terpercaya</h3><p class="text-platinum-500 font-light text-xs leading-relaxed">Proses jailbreak dengan metode terbaru dan teruji. Konsol Anda aman di tangan kami.</p></div>
-                        <div class="scroll-reveal card-obsidian p-7 rounded-2xl bg-navy-900/25 border border-platinum-800/10" style="--reveal-delay:0.08s"><div class="w-10 h-10 rounded-lg bg-emerald-400/8 border border-emerald-400/15 flex items-center justify-center mb-5"><i data-lucide="home" class="w-5 h-5 text-emerald-400"></i></div><h3 class="font-serif text-base font-bold mb-2 text-white">Panggilan ke Rumah</h3><p class="text-platinum-500 font-light text-xs leading-relaxed">Kami datang langsung. Ongkos fleksibel, bisa disesuaikan — santai.</p></div>
-                        <div class="scroll-reveal card-obsidian p-7 rounded-2xl bg-navy-900/25 border border-platinum-800/10" style="--reveal-delay:0.16s"><div class="w-10 h-10 rounded-lg bg-beige-400/8 border border-beige-400/15 flex items-center justify-center mb-5"><i data-lucide="package" class="w-5 h-5 text-beige-400"></i></div><h3 class="font-serif text-base font-bold mb-2 text-white">Game Lengkap</h3><p class="text-platinum-500 font-light text-xs leading-relaxed">Library game sangat lengkap. Dari AAA terbaru hingga classic, semua tersedia.</p></div>
-                        <div class="scroll-reveal card-obsidian p-7 rounded-2xl bg-navy-900/25 border border-platinum-800/10" style="--reveal-delay:0.24s"><div class="w-10 h-10 rounded-lg bg-gold-400/8 border border-gold-400/15 flex items-center justify-center mb-5"><i data-lucide="headphones" class="w-5 h-5 text-gold-400"></i></div><h3 class="font-serif text-base font-bold mb-2 text-white">Support 24/7</h3><p class="text-platinum-500 font-light text-xs leading-relaxed">Ada masalah setelah service? Hubungi kami kapan saja. Siap bantu sampai tuntas.</p></div>
-                        <div class="scroll-reveal card-obsidian p-7 rounded-2xl bg-navy-900/25 border border-platinum-800/10" style="--reveal-delay:0.32s"><div class="w-10 h-10 rounded-lg bg-emerald-400/8 border border-emerald-400/15 flex items-center justify-center mb-5"><i data-lucide="zap" class="w-5 h-5 text-emerald-400"></i></div><h3 class="font-serif text-base font-bold mb-2 text-white">Proses Cepat</h3><p class="text-platinum-500 font-light text-xs leading-relaxed">Tidak perlu menunggu berhari-hari. Instalasi diselesaikan dengan efisien dan tepat.</p></div>
-                        <div class="scroll-reveal card-obsidian p-7 rounded-2xl bg-navy-900/25 border border-platinum-800/10" style="--reveal-delay:0.4s"><div class="w-10 h-10 rounded-lg bg-platinum-400/8 border border-platinum-400/15 flex items-center justify-center mb-5"><i data-lucide="award" class="w-5 h-5 text-platinum-300"></i></div><h3 class="font-serif text-base font-bold mb-2 text-white">Bergaransi</h3><p class="text-platinum-500 font-light text-xs leading-relaxed">Setiap service kami berikan garansi. Ada masalah, perbaiki tanpa biaya tambahan.</p></div>
+                        <div class="scroll-reveal card-obsidian p-7 rounded-2xl bg-navy-900/25 border border-platinum-800/10"><div class="w-10 h-10 rounded-lg bg-gold-400/8 border border-gold-400/15 flex items-center justify-center mb-5"><i data-lucide="shield-check" class="w-5 h-5 text-gold-400"></i></div><h3 class="font-serif text-base font-bold mb-2 text-white">Aman & Terpercaya</h3><p class="text-platinum-500 font-light text-xs leading-relaxed">Metode terbaru dan teruji. Konsol Anda aman.</p></div>
+                        <div class="scroll-reveal card-obsidian p-7 rounded-2xl bg-navy-900/25 border border-platinum-800/10" style="--reveal-delay:0.08s"><div class="w-10 h-10 rounded-lg bg-emerald-400/8 border border-emerald-400/15 flex items-center justify-center mb-5"><i data-lucide="home" class="w-5 h-5 text-emerald-400"></i></div><h3 class="font-serif text-base font-bold mb-2 text-white">Panggilan ke Rumah</h3><p class="text-platinum-500 font-light text-xs leading-relaxed">Kami datang langsung. Ongkos fleksibel — santai.</p></div>
+                        <div class="scroll-reveal card-obsidian p-7 rounded-2xl bg-navy-900/25 border border-platinum-800/10" style="--reveal-delay:0.16s"><div class="w-10 h-10 rounded-lg bg-beige-400/8 border border-beige-400/15 flex items-center justify-center mb-5"><i data-lucide="package" class="w-5 h-5 text-beige-400"></i></div><h3 class="font-serif text-base font-bold mb-2 text-white">Game Lengkap</h3><p class="text-platinum-500 font-light text-xs leading-relaxed">Library sangat lengkap. AAA hingga classic.</p></div>
+                        <div class="scroll-reveal card-obsidian p-7 rounded-2xl bg-navy-900/25 border border-platinum-800/10" style="--reveal-delay:0.24s"><div class="w-10 h-10 rounded-lg bg-gold-400/8 border border-gold-400/15 flex items-center justify-center mb-5"><i data-lucide="headphones" class="w-5 h-5 text-gold-400"></i></div><h3 class="font-serif text-base font-bold mb-2 text-white">Support 24/7</h3><p class="text-platinum-500 font-light text-xs leading-relaxed">Hubungi kami kapan saja. Siap bantu sampai tuntas.</p></div>
+                        <div class="scroll-reveal card-obsidian p-7 rounded-2xl bg-navy-900/25 border border-platinum-800/10" style="--reveal-delay:0.32s"><div class="w-10 h-10 rounded-lg bg-emerald-400/8 border border-emerald-400/15 flex items-center justify-center mb-5"><i data-lucide="zap" class="w-5 h-5 text-emerald-400"></i></div><h3 class="font-serif text-base font-bold mb-2 text-white">Proses Cepat</h3><p class="text-platinum-500 font-light text-xs leading-relaxed">Instalasi diselesaikan efisien dan tepat.</p></div>
+                        <div class="scroll-reveal card-obsidian p-7 rounded-2xl bg-navy-900/25 border border-platinum-800/10" style="--reveal-delay:0.4s"><div class="w-10 h-10 rounded-lg bg-platinum-400/8 border border-platinum-400/15 flex items-center justify-center mb-5"><i data-lucide="award" class="w-5 h-5 text-platinum-300"></i></div><h3 class="font-serif text-base font-bold mb-2 text-white">Bergaransi</h3><p class="text-platinum-500 font-light text-xs leading-relaxed">Ada masalah, perbaiki tanpa biaya tambahan.</p></div>
                     </div>
                 </div>
             </div>
@@ -500,7 +420,7 @@
     <section class="relative py-28 md:py-36">
         <div class="absolute inset-0 bg-gradient-to-b from-obsidian-950 via-midnight-950/40 to-obsidian-950"></div>
         <div class="relative max-w-7xl mx-auto px-6">
-            <div class="scroll-reveal text-center mb-16"><span class="text-beige-400 text-[10px] font-semibold tracking-[0.35em] uppercase block mb-5">Dipercaya Banyak Client</span><h2 class="font-serif text-4xl md:text-6xl font-bold tracking-tight">Angka <span class="gold-gradient">Berbicara</span></h2></div>
+            <div class="scroll-reveal text-center mb-16"><h2 class="font-serif text-4xl md:text-6xl font-bold tracking-tight">Angka <span class="gold-gradient">Berbicara</span></h2></div>
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-5">
                 <div class="scroll-reveal text-center p-8 md:p-10 rounded-2xl border border-platinum-800/10 bg-navy-900/20 platinum-glow"><span class="font-serif text-4xl md:text-5xl font-bold gold-gradient block mb-2">500+</span><span class="text-platinum-500 text-xs font-light tracking-wider">Konsol Terisi</span></div>
                 <div class="scroll-reveal text-center p-8 md:p-10 rounded-2xl border border-platinum-800/10 bg-navy-900/20 platinum-glow" style="--reveal-delay:0.1s"><span class="font-serif text-4xl md:text-5xl font-bold emerald-gradient block mb-2">100%</span><span class="text-platinum-500 text-xs font-light tracking-wider">Client Puas</span></div>
@@ -513,13 +433,10 @@
     <!-- CTA -->
     <section id="kontak" class="relative py-32 md:py-44 overflow-hidden">
         <div class="absolute inset-0"><img src="https://wallpapercave.com/wp/wp15138998.webp" alt="Background" class="w-full h-full object-cover" onerror="this.style.display='none'"><div class="absolute inset-0 bg-obsidian-950/88"></div><div class="absolute inset-0 bg-gradient-to-b from-obsidian-950 via-transparent to-obsidian-950"></div></div>
-        <div class="absolute top-0 left-0 right-0 h-px gold-line opacity-15"></div>
-        <div class="absolute bottom-0 left-0 right-0 h-px emerald-line opacity-10"></div>
         <div class="relative max-w-4xl mx-auto px-6 text-center">
             <div class="scroll-reveal">
-                <span class="inline-flex items-center gap-2 text-gold-400 text-[10px] font-semibold tracking-[0.35em] uppercase mb-8"><span class="w-1.5 h-1.5 bg-emerald-400 rounded-full emerald-dot animate-pulse"></span>Siap Main?</span>
                 <h2 class="font-serif text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8">Konsol Anda<br><span class="shimmer-text">Menunggu</span></h2>
-                <p class="text-platinum-400 text-base md:text-lg font-light max-w-xl mx-auto mb-14 leading-relaxed">Jangan biarkan konsol Anda kosong. Hubungi kami sekarang dan nikmati ribuan game tanpa batas.</p>
+                <p class="text-platinum-400 text-base md:text-lg font-light max-w-xl mx-auto mb-14 leading-relaxed">Hubungi kami sekarang dan nikmati ribuan game tanpa batas.</p>
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
                     <a href="https://wa.me/6285163061987" target="_blank" class="btn-gold bg-gold-400 text-obsidian-950 px-10 py-5 rounded-full text-sm font-bold tracking-wider uppercase hover:bg-gold-300 flex items-center gap-3"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>WhatsApp Sekarang</a>
                     <a href="tel:+6285163061987" class="btn-outline px-10 py-5 rounded-full border border-gold-400/25 text-gold-400 text-sm font-semibold tracking-wider uppercase hover:bg-gold-400/[0.05] hover:border-gold-400/40 transition-all duration-500 flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4"></i>0851-6306-1987</a>
@@ -542,12 +459,9 @@
         <div class="max-w-3xl mx-auto px-6">
             <div class="text-center mb-16 scroll-reveal"><span class="text-gold-400 text-[10px] font-semibold tracking-[0.35em] uppercase block mb-5">FAQ</span><h2 class="font-serif text-3xl md:text-5xl font-bold tracking-tight">Pertanyaan <span class="gold-gradient">Umum</span></h2></div>
             <div class="space-y-3 scroll-reveal">
-                <div class="faq-item border border-platinum-800/10 rounded-xl overflow-hidden bg-navy-900/20 hover:border-gold-400/15 transition-colors duration-300"><button class="faq-btn w-full flex items-center justify-between p-6 text-left" onclick="toggleFaq(this)"><span class="font-serif font-semibold text-sm text-white pr-4">Apakah jailbreak/HEN aman untuk konsol saya?</span><i data-lucide="plus" class="w-4 h-4 text-gold-400/60 flex-shrink-0 faq-icon transition-transform duration-300"></i></button><div class="faq-content hidden px-6 pb-6"><p class="text-platinum-500 font-light text-xs leading-relaxed">Ya, sepenuhnya aman. Kami menggunakan metode terbaru yang sudah teruji dan tidak akan merusak konsol Anda.</p></div></div>
-                <div class="faq-item border border-platinum-800/10 rounded-xl overflow-hidden bg-navy-900/20 hover:border-gold-400/15 transition-colors duration-300"><button class="faq-btn w-full flex items-center justify-between p-6 text-left" onclick="toggleFaq(this)"><span class="font-serif font-semibold text-sm text-white pr-4">Berapa lama proses instalasi?</span><i data-lucide="plus" class="w-4 h-4 text-gold-400/60 flex-shrink-0 faq-icon transition-transform duration-300"></i></button><div class="faq-content hidden px-6 pb-6"><p class="text-platinum-500 font-light text-xs leading-relaxed">Tergantung jumlah game yang diminta, biasanya 1-3 jam. Untuk home service, kami akan informasikan estimasi waktu saat booking.</p></div></div>
-                <div class="faq-item border border-platinum-800/10 rounded-xl overflow-hidden bg-navy-900/20 hover:border-gold-400/15 transition-colors duration-300"><button class="faq-btn w-full flex items-center justify-between p-6 text-left" onclick="toggleFaq(this)"><span class="font-serif font-semibold text-sm text-white pr-4">Firmware PS4/PS5 saya bisa di-jailbreak?</span><i data-lucide="plus" class="w-4 h-4 text-gold-400/60 flex-shrink-0 faq-icon transition-transform duration-300"></i></button><div class="faq-content hidden px-6 pb-6"><p class="text-platinum-500 font-light text-xs leading-relaxed">Tidak semua firmware bisa di-jailbreak. Hubungi kami via WhatsApp, sebutkan firmware Anda, dan kami akan cek kompatibilitasnya gratis.</p></div></div>
-                <div class="faq-item border border-platinum-800/10 rounded-xl overflow-hidden bg-navy-900/20 hover:border-gold-400/15 transition-colors duration-300"><button class="faq-btn w-full flex items-center justify-between p-6 text-left" onclick="toggleFaq(this)"><span class="font-serif font-semibold text-sm text-white pr-4">Ongkir home service berapa?</span><i data-lucide="plus" class="w-4 h-4 text-gold-400/60 flex-shrink-0 faq-icon transition-transform duration-300"></i></button><div class="faq-content hidden px-6 pb-6"><p class="text-platinum-500 font-light text-xs leading-relaxed">Ongkir tergantung zona wilayah Anda. Bandung Kota mulai Rp 15K, Cimahi & Bandung Barat Rp 25K–40K, Kab. Bandung Rp 35K–55K, dan Timur/Sumedang Rp 45K–70K. Cek detailnya di section <a href="#ongkir" class="text-gold-400 hover:underline">Estimasi Ongkir</a>.</p></div></div>
-                <div class="faq-item border border-platinum-800/10 rounded-xl overflow-hidden bg-navy-900/20 hover:border-gold-400/15 transition-colors duration-300"><button class="faq-btn w-full flex items-center justify-between p-6 text-left" onclick="toggleFaq(this)"><span class="font-serif font-semibold text-sm text-white pr-4">Ada garansi setelah service?</span><i data-lucide="plus" class="w-4 h-4 text-gold-400/60 flex-shrink-0 faq-icon transition-transform duration-300"></i></button><div class="faq-content hidden px-6 pb-6"><p class="text-platinum-500 font-light text-xs leading-relaxed">Tentu! Setiap service kami berikan garansi. Jika ada masalah terkait instalasi, kami perbaiki tanpa biaya tambahan.</p></div></div>
-                <div class="faq-item border border-platinum-800/10 rounded-xl overflow-hidden bg-navy-900/20 hover:border-gold-400/15 transition-colors duration-300"><button class="faq-btn w-full flex items-center justify-between p-6 text-left" onclick="toggleFaq(this)"><span class="font-serif font-semibold text-sm text-white pr-4">Bisa request game yang tidak ada di katalog?</span><i data-lucide="plus" class="w-4 h-4 text-gold-400/60 flex-shrink-0 faq-icon transition-transform duration-300"></i></button><div class="faq-content hidden px-6 pb-6"><p class="text-platinum-500 font-light text-xs leading-relaxed">Bisa! Jika game yang Anda cari belum ada di daftar, hubungi kami via WhatsApp. Kami akan mencarikannya untuk Anda.</p></div></div>
+                <div class="faq-item border border-platinum-800/10 rounded-xl overflow-hidden bg-navy-900/20"><button class="faq-btn w-full flex items-center justify-between p-6 text-left" onclick="toggleFaq(this)"><span class="font-serif font-semibold text-sm text-white pr-4">Apakah jailbreak/HEN aman?</span><i data-lucide="plus" class="w-4 h-4 text-gold-400/60 flex-shrink-0 faq-icon transition-transform duration-300"></i></button><div class="faq-content hidden px-6 pb-6"><p class="text-platinum-500 font-light text-xs leading-relaxed">Ya, sepenuhnya aman. Kami menggunakan metode terbaru yang sudah teruji.</p></div></div>
+                <div class="faq-item border border-platinum-800/10 rounded-xl overflow-hidden bg-navy-900/20"><button class="faq-btn w-full flex items-center justify-between p-6 text-left" onclick="toggleFaq(this)"><span class="font-serif font-semibold text-sm text-white pr-4">Ongkir home service berapa?</span><i data-lucide="plus" class="w-4 h-4 text-gold-400/60 flex-shrink-0 faq-icon transition-transform duration-300"></i></button><div class="faq-content hidden px-6 pb-6"><p class="text-platinum-500 font-light text-xs leading-relaxed">Bandung Kota mulai Rp 15K, Cimahi Rp 25K–40K, Kab. Bandung Rp 35K–55K, Timur/Sumedang Rp 45K–70K.</p></div></div>
+                <div class="faq-item border border-platinum-800/10 rounded-xl overflow-hidden bg-navy-900/20"><button class="faq-btn w-full flex items-center justify-between p-6 text-left" onclick="toggleFaq(this)"><span class="font-serif font-semibold text-sm text-white pr-4">Ada garansi setelah service?</span><i data-lucide="plus" class="w-4 h-4 text-gold-400/60 flex-shrink-0 faq-icon transition-transform duration-300"></i></button><div class="faq-content hidden px-6 pb-6"><p class="text-platinum-500 font-light text-xs leading-relaxed">Tentu! Jika ada masalah terkait instalasi, kami perbaiki tanpa biaya tambahan.</p></div></div>
             </div>
         </div>
     </section>
@@ -556,13 +470,12 @@
     <footer class="relative border-t border-platinum-800/10 bg-obsidian-950">
         <div class="max-w-7xl mx-auto px-6 py-16 md:py-20">
             <div class="flex flex-col md:flex-row items-center justify-between gap-8 mb-12">
-                <a href="#hero" class="flex items-center gap-3 group"><div class="w-9 h-9 rounded-lg bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center"><i data-lucide="gamepad-2" class="w-4 h-4 text-obsidian-950"></i></div><div class="flex items-baseline gap-1"><span class="font-serif text-lg font-bold tracking-wide text-white">Mikayla</span><span class="font-serif text-lg font-bold tracking-wide gold-gradient">Games</span></div></a>
+                <a href="#hero" class="flex items-center gap-3"><div class="w-9 h-9 rounded-lg bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center"><i data-lucide="gamepad-2" class="w-4 h-4 text-obsidian-950"></i></div><div class="flex items-baseline gap-1"><span class="font-serif text-lg font-bold tracking-wide text-white">Mikayla</span><span class="font-serif text-lg font-bold tracking-wide gold-gradient">Games</span></div></a>
                 <div class="flex flex-wrap items-center justify-center gap-6 md:gap-8">
-                    <a href="#layanan" class="text-[10px] text-platinum-500 hover:text-gold-400 transition-colors duration-300 tracking-[0.2em] uppercase font-medium">Layanan</a>
-                    <a href="#katalog-game" class="text-[10px] text-platinum-500 hover:text-gold-400 transition-colors duration-300 tracking-[0.2em] uppercase font-medium">Katalog</a>
-                    <a href="#ongkir" class="text-[10px] text-platinum-500 hover:text-gold-400 transition-colors duration-300 tracking-[0.2em] uppercase font-medium">Ongkir</a>
-                    <a href="#keunggulan" class="text-[10px] text-platinum-500 hover:text-gold-400 transition-colors duration-300 tracking-[0.2em] uppercase font-medium">Keunggulan</a>
-                    <a href="#kontak" class="text-[10px] text-platinum-500 hover:text-gold-400 transition-colors duration-300 tracking-[0.2em] uppercase font-medium">Kontak</a>
+                    <a href="#layanan" class="text-[10px] text-platinum-500 hover:text-gold-400 transition-colors tracking-[0.2em] uppercase font-medium">Layanan</a>
+                    <a href="#katalog-game" class="text-[10px] text-platinum-500 hover:text-gold-400 transition-colors tracking-[0.2em] uppercase font-medium">Katalog</a>
+                    <a href="#ongkir" class="text-[10px] text-platinum-500 hover:text-gold-400 transition-colors tracking-[0.2em] uppercase font-medium">Ongkir</a>
+                    <a href="#kontak" class="text-[10px] text-platinum-500 hover:text-gold-400 transition-colors tracking-[0.2em] uppercase font-medium">Kontak</a>
                 </div>
             </div>
             <div class="h-px bg-gradient-to-r from-transparent via-platinum-800/15 to-transparent mb-10"></div>
@@ -570,27 +483,51 @@
                 <p class="text-platinum-600 text-xs font-light tracking-wide">© 2025 Mikayla Games. Premium Console Service.</p>
                 <div class="flex items-center gap-5">
                     <a href="https://wa.me/6285163061987" target="_blank" class="w-9 h-9 rounded-full border border-platinum-800/15 flex items-center justify-center text-platinum-500 hover:text-gold-400 hover:border-gold-400/20 transition-all duration-300"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
-                    <a href="tel:+6285163061987" class="w-9 h-9 rounded-full border border-platinum-800/15 flex items-center justify-center text-platinum-500 hover:text-emerald-400 hover:border-emerald-400/20 transition-all duration-300"><i data-lucide="phone" class="w-4 h-4"></i></a>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- FLOATING AUDIO PLAYER -->
+    <div id="audio-player" class="fixed bottom-6 left-6 z-50 flex items-center gap-3">
+        <div id="audio-panel" class="flex items-center gap-3 px-4 py-3 rounded-2xl bg-obsidian-950/80 border border-platinum-700/20 backdrop-blur-xl opacity-0 pointer-events-none transition-all duration-300 -translate-x-3" style="min-width:160px">
+            <div class="flex items-end gap-[3px] h-5 audio-paused" id="eq-bars">
+                <div class="eq-bar" style="height:4px"></div>
+                <div class="eq-bar" style="height:8px"></div>
+                <div class="eq-bar" style="height:6px"></div>
+                <div class="eq-bar" style="height:10px"></div>
+            </div>
+            <input type="range" id="audio-volume" class="audio-volume-slider flex-1" min="0" max="100" value="30">
+            <span id="audio-vol-label" class="text-[10px] text-platinum-500 font-mono w-7 text-right">30%</span>
+        </div>
+        <button id="audio-toggle" class="relative w-14 h-14 bg-obsidian-950/80 border border-platinum-700/20 rounded-full flex items-center justify-center backdrop-blur-xl hover:border-gold-400/40 transition-all duration-300 group" aria-label="Toggle Music">
+            <i data-lucide="music" class="w-5 h-5 text-platinum-400 group-hover:text-gold-400 transition-colors duration-300" id="audio-icon-off"></i>
+            <i data-lucide="pause" class="w-5 h-5 text-gold-400 transition-colors duration-300 hidden" id="audio-icon-on"></i>
+        </button>
+    </div>
+
     <!-- FLOATING WHATSAPP -->
-    <a href="https://wa.me/6285163061987" target="_blank" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-emerald-500 hover:bg-emerald-400 rounded-full flex items-center justify-center shadow-lg shadow-emerald-500/20 hover:scale-110 hover:shadow-emerald-400/30 transition-all duration-300" aria-label="WhatsApp"><svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+    <a href="https://wa.me/6285163061987" target="_blank" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-emerald-500 hover:bg-emerald-400 rounded-full flex items-center justify-center shadow-lg shadow-emerald-500/20 hover:scale-110 transition-all duration-300" aria-label="WhatsApp"><svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
 
     <script>
-        // ══════════════════════════════════════
-        // INITIALIZE LUCIDE ICONS
-        // ══════════════════════════════════════
+    // ══════════════════════════════════════
+    // INIT LUCIDE
+    // ══════════════════════════════════════
+    try {
         lucide.createIcons();
+    } catch(e) {
+        console.error('Lucide init error:', e);
+    }
 
-        // ══════════════════════════════════════
-        // MOBILE MENU
-        // ══════════════════════════════════════
+    // ══════════════════════════════════════
+    // MOBILE MENU
+    // ══════════════════════════════════════
+    (function() {
         var mobileMenuBtn = document.getElementById('mobile-menu-btn');
         var mobileMenu = document.getElementById('mobile-menu');
         var menuOpen = false;
+
+        if (!mobileMenuBtn || !mobileMenu) return;
 
         mobileMenuBtn.addEventListener('click', function() {
             menuOpen = !menuOpen;
@@ -602,8 +539,9 @@
             }
         });
 
-        document.querySelectorAll('.mobile-link').forEach(function(link) {
-            link.addEventListener('click', function() {
+        var mobileLinks = document.querySelectorAll('.mobile-link');
+        for (var i = 0; i < mobileLinks.length; i++) {
+            mobileLinks[i].addEventListener('click', function() {
                 mobileMenu.classList.add('hidden');
                 menuOpen = false;
                 var iconEl = mobileMenuBtn.querySelector('[data-lucide]');
@@ -612,12 +550,16 @@
                     lucide.createIcons();
                 }
             });
-        });
+        }
+    })();
 
-        // ══════════════════════════════════════
-        // NAVBAR SCROLL EFFECT
-        // ══════════════════════════════════════
+    // ══════════════════════════════════════
+    // NAVBAR SCROLL
+    // ══════════════════════════════════════
+    (function() {
         var navbar = document.getElementById('navbar');
+        if (!navbar) return;
+
         window.addEventListener('scroll', function() {
             var s = window.pageYOffset;
             if (s > 80) {
@@ -628,68 +570,78 @@
                 navbar.style.background = 'rgba(2,2,2,0.8)';
             }
         });
+    })();
 
-        // ══════════════════════════════════════
-        // SCROLL REVEAL
-        // ══════════════════════════════════════
+    // ══════════════════════════════════════
+    // SCROLL REVEAL
+    // ══════════════════════════════════════
+    (function() {
         var scrollObserver = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+            for (var i = 0; i < entries.length; i++) {
+                if (entries[i].isIntersecting) {
+                    entries[i].target.classList.add('visible');
                 }
-            });
+            }
         }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
-        document.querySelectorAll('.scroll-reveal').forEach(function(el) {
-            scrollObserver.observe(el);
-        });
+        var revealEls = document.querySelectorAll('.scroll-reveal');
+        for (var i = 0; i < revealEls.length; i++) {
+            scrollObserver.observe(revealEls[i]);
+        }
+    })();
 
-        // ══════════════════════════════════════
-        // FAQ TOGGLE
-        // ══════════════════════════════════════
-        function toggleFaq(btn) {
-            var item = btn.closest('.faq-item');
-            var content = item.querySelector('.faq-content');
-            var icon = item.querySelector('.faq-icon');
+    // ══════════════════════════════════════
+    // FAQ TOGGLE
+    // ══════════════════════════════════════
+    function toggleFaq(btn) {
+        var item = btn.closest('.faq-item');
+        var content = item.querySelector('.faq-content');
+        var icon = item.querySelector('.faq-icon');
 
-            document.querySelectorAll('.faq-item').forEach(function(otherItem) {
-                if (otherItem !== item) {
-                    otherItem.querySelector('.faq-content').classList.add('hidden');
-                    otherItem.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
-                    otherItem.classList.remove('border-gold-400/15');
-                    otherItem.classList.add('border-platinum-800/10');
-                }
-            });
-
-            var isHidden = content.classList.contains('hidden');
-            content.classList.toggle('hidden');
-            icon.style.transform = isHidden ? 'rotate(45deg)' : 'rotate(0deg)';
-
-            if (isHidden) {
-                item.classList.remove('border-platinum-800/10');
-                item.classList.add('border-gold-400/15');
-            } else {
-                item.classList.remove('border-gold-400/15');
-                item.classList.add('border-platinum-800/10');
+        var allFaq = document.querySelectorAll('.faq-item');
+        for (var i = 0; i < allFaq.length; i++) {
+            if (allFaq[i] !== item) {
+                allFaq[i].querySelector('.faq-content').classList.add('hidden');
+                allFaq[i].querySelector('.faq-icon').style.transform = 'rotate(0deg)';
+                allFaq[i].classList.remove('border-gold-400/15');
+                allFaq[i].classList.add('border-platinum-800/10');
             }
         }
 
-        // ══════════════════════════════════════
-        // SMOOTH SCROLL
-        // ══════════════════════════════════════
-        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-            anchor.addEventListener('click', function(e) {
+        var isHidden = content.classList.contains('hidden');
+        content.classList.toggle('hidden');
+        icon.style.transform = isHidden ? 'rotate(45deg)' : 'rotate(0deg)';
+
+        if (isHidden) {
+            item.classList.remove('border-platinum-800/10');
+            item.classList.add('border-gold-400/15');
+        } else {
+            item.classList.remove('border-gold-400/15');
+            item.classList.add('border-platinum-800/10');
+        }
+    }
+
+    // ══════════════════════════════════════
+    // SMOOTH SCROLL
+    // ══════════════════════════════════════
+    (function() {
+        var anchors = document.querySelectorAll('a[href^="#"]');
+        for (var i = 0; i < anchors.length; i++) {
+            anchors[i].addEventListener('click', function(e) {
                 e.preventDefault();
-                var target = document.querySelector(this.getAttribute('href'));
+                var href = this.getAttribute('href');
+                var target = document.querySelector(href);
                 if (target) {
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
-        });
+        }
+    })();
 
-        // ══════════════════════════════════════
-        // PARALLAX HERO — FIXED!
-        // ══════════════════════════════════════
+    // ══════════════════════════════════════
+    // PARALLAX HERO
+    // ══════════════════════════════════════
+    (function() {
         var ticking = false;
         window.addEventListener('scroll', function() {
             if (!ticking) {
@@ -706,120 +658,233 @@
                 ticking = true;
             }
         });
+    })();
 
-        // ══════════════════════════════════════
-        // PDF MODAL
-        // ══════════════════════════════════════
+    // ══════════════════════════════════════
+    // PDF MODAL
+    // ══════════════════════════════════════
+    var PDF_URLS = {
+        PS3: { view: '#PS3_PDF_URL_HERE', download: '#PS3_PDF_URL_HERE', title: 'PS3 Game List', filename: 'LIST_GAME_PS3_2025.pdf' },
+        PS4: { view: '#PS4_PDF_URL_HERE', download: '#PS4_PDF_URL_HERE', title: 'PS4 Game List', filename: 'PS4_LISTGAME_2026.pdf' },
+        PS5: { view: '#PS5_PDF_URL_HERE', download: '#PS5_PDF_URL_HERE', title: 'PS5 Game List', filename: 'PLAYSTATION_5_LIST_2027.pdf' }
+    };
+
+    function viewPdf(platform) {
+        var d = PDF_URLS[platform];
+        if (!d) return;
+
+        if (d.view.indexOf('#') !== -1) {
+            showToast('PDF belum tersedia. Hubungi kami via WhatsApp.', 'warning');
+            return;
+        }
+
         var pdfModal = document.getElementById('pdf-modal');
         var pdfIframe = document.getElementById('pdf-iframe');
         var modalTitle = document.getElementById('modal-title');
         var modalSubtitle = document.getElementById('modal-subtitle');
         var modalDownloadBtn = document.getElementById('modal-download-btn');
 
-        var PDF_URLS = {
-            PS3: { view: '#PS3_PDF_URL_HERE', download: '#PS3_PDF_URL_HERE', title: 'PS3 Game List', filename: 'LIST_GAME_PS3_2025.pdf' },
-            PS4: { view: '#PS4_PDF_URL_HERE', download: '#PS4_PDF_URL_HERE', title: 'PS4 Game List', filename: 'PS4_LISTGAME_2026.pdf' },
-            PS5: { view: '#PS5_PDF_URL_HERE', download: '#PS5_PDF_URL_HERE', title: 'PS5 Game List', filename: 'PLAYSTATION_5_LIST_2027.pdf' }
-        };
+        if (!pdfModal || !pdfIframe) return;
 
-        function viewPdf(title, filename, fallbackUrl) {
-            var platform = filename.includes('PS3') ? 'PS3' : filename.includes('PS4') ? 'PS4' : 'PS5';
-            var d = PDF_URLS[platform];
-            if (d.view.indexOf('#') !== -1) {
-                showToast('PDF belum tersedia. Hubungi kami via WhatsApp untuk mendapatkan list game.', 'warning');
-                return;
-            }
-            modalTitle.textContent = d.title;
-            modalSubtitle.textContent = filename;
-            pdfIframe.src = d.view;
-            modalDownloadBtn.href = d.download;
-            modalDownloadBtn.setAttribute('download', d.filename);
-            pdfModal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-            lucide.createIcons();
-        }
+        modalTitle.textContent = d.title;
+        modalSubtitle.textContent = d.filename;
+        pdfIframe.src = d.view;
+        modalDownloadBtn.href = d.download;
+        modalDownloadBtn.setAttribute('download', d.filename);
+        pdfModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        lucide.createIcons();
+    }
 
-        function closePdfModal() {
-            pdfModal.classList.remove('active');
-            document.body.style.overflow = '';
+    function closePdfModal() {
+        var pdfModal = document.getElementById('pdf-modal');
+        var pdfIframe = document.getElementById('pdf-iframe');
+        if (!pdfModal) return;
+        pdfModal.classList.remove('active');
+        document.body.style.overflow = '';
+        if (pdfIframe) {
             setTimeout(function() { pdfIframe.src = ''; }, 400);
         }
+    }
 
+    function downloadPdf(event, platform) {
+        var d = PDF_URLS[platform];
+        if (!d) return;
+        if (d.download.indexOf('#') !== -1) {
+            event.preventDefault();
+            showToast('Download belum tersedia.', 'warning');
+        }
+    }
+
+    // PDF modal close events
+    (function() {
+        var pdfModal = document.getElementById('pdf-modal');
+        if (!pdfModal) return;
         pdfModal.addEventListener('click', function(e) {
             if (e.target === pdfModal) closePdfModal();
         });
-
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape' && pdfModal.classList.contains('active')) {
                 closePdfModal();
             }
         });
+    })();
 
-        function downloadPdf(event, platform) {
-            if (PDF_URLS[platform].download.indexOf('#') !== -1) {
-                event.preventDefault();
-                showToast('Download belum tersedia. Hubungi kami via WhatsApp.', 'warning');
-            }
+    // ══════════════════════════════════════
+    // ZONE SELECTION
+    // ══════════════════════════════════════
+    var selectedZone = null;
+
+    function selectZone(cardEl, zoneId) {
+        var allCards = document.querySelectorAll('.zone-card');
+        var allDetails = document.querySelectorAll('.zone-detail');
+
+        if (selectedZone === zoneId) {
+            cardEl.classList.remove('active');
+            var detail = cardEl.querySelector('.zone-detail');
+            if (detail) detail.classList.remove('open');
+            selectedZone = null;
+            return;
         }
 
-        // ══════════════════════════════════════
-        // ZONE SELECTION
-        // ══════════════════════════════════════
-        var selectedZone = null;
-
-        function selectZone(cardEl, zoneId) {
-            var allCards = document.querySelectorAll('.zone-card');
-            var allDetails = document.querySelectorAll('.zone-detail');
-
-            if (selectedZone === zoneId) {
-                cardEl.classList.remove('active');
-                cardEl.querySelector('.zone-detail').classList.remove('open');
-                selectedZone = null;
-                return;
-            }
-
-            allCards.forEach(function(c) { c.classList.remove('active'); });
-            allDetails.forEach(function(d) { d.classList.remove('open'); });
-
-            cardEl.classList.add('active');
-            cardEl.querySelector('.zone-detail').classList.add('open');
-            selectedZone = zoneId;
-
-            lucide.createIcons();
-
-            var zoneNames = {
-                'zona-1': 'Bandung Kota',
-                'zona-2': 'Cimahi & Bandung Barat',
-                'zona-3': 'Kab. Bandung',
-                'zona-4': 'Timur & Sumedang'
-            };
-            showToast('Zona ' + zoneNames[zoneId] + ' dipilih — ongkir bisa dirundingkan!', 'success');
+        for (var i = 0; i < allCards.length; i++) {
+            allCards[i].classList.remove('active');
+        }
+        for (var j = 0; j < allDetails.length; j++) {
+            allDetails[j].classList.remove('open');
         }
 
-        // ══════════════════════════════════════
-        // TOAST NOTIFICATION
-        // ══════════════════════════════════════
-        function showToast(message, type) {
-            type = type || 'info';
-            var container = document.getElementById('toast-container');
-            var toast = document.createElement('div');
-            var bgColor = type === 'warning' ? 'bg-gold-400/10 border-gold-400/25' : 'bg-emerald-400/10 border-emerald-400/25';
-            var textColor = type === 'warning' ? 'text-gold-400' : 'text-emerald-400';
-            var iconName = type === 'warning' ? 'alert-circle' : 'check-circle-2';
+        cardEl.classList.add('active');
+        var cardDetail = cardEl.querySelector('.zone-detail');
+        if (cardDetail) cardDetail.classList.add('open');
+        selectedZone = zoneId;
 
-            toast.className = 'toast flex items-start gap-3 p-4 rounded-xl ' + bgColor + ' border backdrop-blur-xl max-w-sm';
-            toast.innerHTML = '<i data-lucide="' + iconName + '" class="w-4 h-4 ' + textColor + ' flex-shrink-0 mt-0.5"></i><p class="text-platinum-300 text-xs font-light leading-relaxed">' + message + '</p>';
+        lucide.createIcons();
 
-            container.appendChild(toast);
-            lucide.createIcons();
+        var zoneNames = {
+            'zona-1': 'Bandung Kota',
+            'zona-2': 'Cimahi & Bandung Barat',
+            'zona-3': 'Kab. Bandung',
+            'zona-4': 'Timur & Sumedang'
+        };
+        showToast('Zona ' + zoneNames[zoneId] + ' dipilih!', 'success');
+    }
 
+    // ══════════════════════════════════════
+    // TOAST
+    // ══════════════════════════════════════
+    function showToast(message, type) {
+        type = type || 'info';
+        var container = document.getElementById('toast-container');
+        if (!container) return;
+
+        var toast = document.createElement('div');
+        var bgColor = type === 'warning' ? 'bg-gold-400/10 border-gold-400/25' : 'bg-emerald-400/10 border-emerald-400/25';
+        var textColor = type === 'warning' ? 'text-gold-400' : 'text-emerald-400';
+        var iconName = type === 'warning' ? 'alert-circle' : 'check-circle-2';
+
+        toast.className = 'toast flex items-start gap-3 p-4 rounded-xl ' + bgColor + ' border backdrop-blur-xl max-w-sm';
+        toast.innerHTML = '<i data-lucide="' + iconName + '" class="w-4 h-4 ' + textColor + ' flex-shrink-0 mt-0.5"></i><p class="text-platinum-300 text-xs font-light leading-relaxed">' + message + '</p>';
+
+        container.appendChild(toast);
+        lucide.createIcons();
+
+        setTimeout(function() {
+            toast.style.opacity = '0';
+            toast.style.transform = 'translateY(-10px) translateX(20px)';
+            toast.style.transition = 'all 0.3s ease';
             setTimeout(function() {
-                toast.style.opacity = '0';
-                toast.style.transform = 'translateY(-10px) translateX(20px)';
-                toast.style.transition = 'all 0.3s ease';
-                setTimeout(function() { toast.remove(); }, 300);
-            }, 4000);
+                if (toast.parentNode) toast.remove();
+            }, 300);
+        }, 4000);
+    }
+
+    // ══════════════════════════════════════
+    // AUDIO PLAYER
+    // ══════════════════════════════════════
+    (function() {
+        var bgAudio = document.getElementById('bg-audio');
+        var audioToggle = document.getElementById('audio-toggle');
+        var audioPanel = document.getElementById('audio-panel');
+        var audioIconOff = document.getElementById('audio-icon-off');
+        var audioIconOn = document.getElementById('audio-icon-on');
+        var audioVolume = document.getElementById('audio-volume');
+        var audioVolLabel = document.getElementById('audio-vol-label');
+        var eqBars = document.getElementById('eq-bars');
+
+        if (!bgAudio || !audioToggle) return;
+
+        var isAudioPlaying = false;
+        var audioPanelOpen = false;
+
+        bgAudio.volume = 0.3;
+
+        audioToggle.addEventListener('click', function() {
+            if (isAudioPlaying) {
+                bgAudio.pause();
+                if (audioIconOff) audioIconOff.classList.remove('hidden');
+                if (audioIconOn) audioIconOn.classList.add('hidden');
+                audioToggle.classList.remove('audio-playing');
+                if (eqBars) {
+                    eqBars.classList.remove('audio-playing');
+                    eqBars.classList.add('audio-paused');
+                }
+                isAudioPlaying = false;
+                closeAudioPanel();
+            } else {
+                var playPromise = bgAudio.play();
+                if (playPromise !== undefined) {
+                    playPromise.then(function() {
+                        if (audioIconOff) audioIconOff.classList.add('hidden');
+                        if (audioIconOn) audioIconOn.classList.remove('hidden');
+                        audioToggle.classList.add('audio-playing');
+                        if (eqBars) {
+                            eqBars.classList.remove('audio-paused');
+                            eqBars.classList.add('audio-playing');
+                        }
+                        isAudioPlaying = true;
+                        openAudioPanel();
+                    }).catch(function() {
+                        showToast('Klik lagi untuk memutar musik', 'warning');
+                    });
+                }
+            }
+        });
+
+        if (audioVolume) {
+            audioVolume.addEventListener('input', function() {
+                var vol = parseInt(this.value);
+                bgAudio.volume = vol / 100;
+                if (audioVolLabel) audioVolLabel.textContent = vol + '%';
+            });
         }
+
+        function openAudioPanel() {
+            if (!audioPanel) return;
+            audioPanelOpen = true;
+            audioPanel.classList.remove('opacity-0', 'pointer-events-none', '-translate-x-3');
+            audioPanel.classList.add('opacity-100', 'translate-x-0');
+        }
+
+        function closeAudioPanel() {
+            if (!audioPanel) return;
+            audioPanelOpen = false;
+            audioPanel.classList.add('opacity-0', 'pointer-events-none', '-translate-x-3');
+            audioPanel.classList.remove('opacity-100', 'translate-x-0');
+        }
+
+        document.addEventListener('click', function(e) {
+            var player = document.getElementById('audio-player');
+            if (audioPanelOpen && player && !player.contains(e.target)) {
+                closeAudioPanel();
+            }
+        });
+
+        audioToggle.addEventListener('mouseenter', function() {
+            if (isAudioPlaying) openAudioPanel();
+        });
+    })();
+
     </script>
 </body>
 </html>
