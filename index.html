@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mikayla Games — Premium Console Service</title>
+    <title>Mikayla Games — Jasa Isi Game PS3/PS4/PS5 Home Service Bandung</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -12,231 +12,116 @@
                     colors: {
                         obsidian:{50:'#f5f5f5',100:'#d4d4d4',200:'#a3a3a3',300:'#737373',400:'#404040',500:'#1a1a1a',600:'#141414',700:'#0e0e0e',800:'#090909',900:'#050505',950:'#020202'},
                         navy:{50:'#eef1f6',100:'#d0d8e8',200:'#a8b6d2',300:'#7a93b8',400:'#556fa0',500:'#1b2a4a',600:'#162240',700:'#111b35',800:'#0c1529',900:'#070e1d',950:'#040812'},
-                        midnight:{50:'#e8eaf0',100:'#c5c9d9',200:'#9ea5c0',300:'#7781a6',400:'#3d4b80',500:'#2a3460',600:'#222b52',700:'#1a2242',800:'#131832',900:'#0b0f20',950:'#060914'},
                         gold:{50:'#fdf8ed',100:'#f9edcc',200:'#f0d88a',300:'#e6c24e',400:'#d4af37',500:'#c49a2c',600:'#a67d22',700:'#85611b',800:'#6b4d16',900:'#503a11'},
                         platinum:{50:'#f7f7f8',100:'#e8e9eb',200:'#d1d3d7',300:'#b0b4bb',400:'#8e939c',500:'#6d7380',600:'#575c68',700:'#444850',800:'#33363c',900:'#222428'},
                         emerald:{50:'#ecfdf5',100:'#d1fae5',200:'#a7f3d0',300:'#6ee7b7',400:'#34d399',500:'#10b981',600:'#059669',700:'#047857',800:'#065f46',900:'#064e3b'},
-                        beige:{50:'#faf8f5',100:'#f3efe8',200:'#e8e0d4',300:'#d4c8b6',400:'#bfb098',500:'#a89880',600:'#8d7d65',700:'#726350',800:'#5c4f40',900:'#463c31'},
-                        matte:{50:'#f4f4f3',100:'#e2e2df',200:'#c6c6c0',300:'#a5a59d',400:'#84847a',500:'#676760',600:'#52524c',700:'#3f3f3a',800:'#2d2d29',900:'#1c1c19'}
+                        matte:{50:'#f4f4f3',100:'#e2e2df',200:'#c6c6c0',300:'#a5a59d',400:'#84847a',500:'#676760',600:'#52524c',700:'#3f3f3a',800:'#2d2d29',900:'#1c1c19'},
+                        midnight:{950:'#0a0f1e'}
                     },
                     fontFamily:{serif:['Playfair Display','Georgia','serif'],sans:['Inter','system-ui','sans-serif']}
                 }
             }
         }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         *{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
         ::selection{background:#d4af37;color:#020202}
         .gold-gradient{background:linear-gradient(135deg,#d4af37 0%,#f0d88a 30%,#d4af37 50%,#c49a2c 70%,#d4af37 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-        .emerald-gradient{background:linear-gradient(135deg,#047857,#10b981,#34d399);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
         .gold-line{background:linear-gradient(90deg,transparent,#d4af37,transparent)}
         @keyframes fadeInUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
         @keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
-        @keyframes float{0%,100%{transform:translateY(0px)}50%{transform:translateY(-10px)}}
-        @keyframes pulseGold{0%,100%{box-shadow:0 0 0 0 rgba(212,175,55,.4)}70%{box-shadow:0 0 0 15px rgba(212,175,55,0)}}
-        @keyframes pulseEmerald{0%,100%{box-shadow:0 0 0 0 rgba(16,185,129,.3)}70%{box-shadow:0 0 0 12px rgba(16,185,129,0)}}
         @keyframes rotateSlow{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
         @keyframes breathe{0%,100%{opacity:.03}50%{opacity:.07}}
-        @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-        @keyframes slideDown{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
-        @keyframes audioPulse{0%{box-shadow:0 0 0 0 rgba(212,175,55,.25)}70%{box-shadow:0 0 0 12px rgba(212,175,55,0)}100%{box-shadow:0 0 0 0 rgba(212,175,55,0)}}
-        @keyframes eqBar1{0%,100%{height:4px}50%{height:14px}}
-        @keyframes eqBar2{0%,100%{height:10px}50%{height:4px}}
-        @keyframes eqBar3{0%,100%{height:6px}50%{height:16px}}
+        @keyframes countPop{0%{transform:scale(1)}50%{transform:scale(1.2)}100%{transform:scale(1)}}
+        @keyframes resultReveal{from{opacity:0;transform:translateY(24px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+        @keyframes priceShine{0%{background-position:-200% center}100%{background-position:200% center}}
         @keyframes livePulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.8)}}
-        @keyframes countPop{0%{transform:scale(1)}50%{transform:scale(1.12)}100%{transform:scale(1)}}
-        @keyframes spinLoader{to{transform:rotate(360deg)}}
-        @keyframes badgeBounce{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
-        @keyframes slideUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-        @keyframes clockBlink{0%,100%{opacity:1}50%{opacity:.25}}
+        @keyframes slideDown{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
+        @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+        @keyframes badgePulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+        @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
         .animate-fade-up{animation:fadeInUp 1s ease-out forwards}
         .animate-fade-up-delay1{animation:fadeInUp 1s ease-out .2s forwards;opacity:0}
         .animate-fade-up-delay2{animation:fadeInUp 1s ease-out .4s forwards;opacity:0}
         .animate-fade-up-delay3{animation:fadeInUp 1s ease-out .6s forwards;opacity:0}
         .animate-rotate-slow{animation:rotateSlow 30s linear infinite}
         .animate-breathe{animation:breathe 4s ease-in-out infinite}
-        .marquee{animation:marquee 35s linear infinite;will-change:transform}
         .shimmer-text{background:linear-gradient(90deg,#a67d22 0%,#d4af37 15%,#f0d88a 30%,#d4af37 50%,#f0d88a 70%,#d4af37 85%,#a67d22 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 5s linear infinite}
-        .hero-overlay{background:linear-gradient(180deg,rgba(2,2,2,.8) 0%,rgba(4,8,18,.5) 35%,rgba(7,14,29,.4) 55%,rgba(4,8,18,.7) 75%,rgba(2,2,2,1) 100%)}
-        .card-obsidian{transition:all .6s cubic-bezier(.25,.46,.45,.94)}
-        .card-obsidian:hover{transform:translateY(-6px);border-color:rgba(212,175,55,.25);box-shadow:0 20px 50px -15px rgba(0,0,0,.5),0 0 30px -10px rgba(212,175,55,.08)}
+        .hero-overlay{background:linear-gradient(180deg,rgba(2,2,2,.88) 0%,rgba(4,8,18,.5) 30%,rgba(7,14,29,.35) 55%,rgba(4,8,18,.65) 75%,rgba(2,2,2,1) 100%)}
+        .nav-glass{backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);background:rgba(2,2,2,.8)}
         .btn-gold{position:relative;overflow:hidden;transition:all .4s ease}
         .btn-gold::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);transition:left .6s ease}
         .btn-gold:hover::before{left:100%}
         .btn-gold:hover{transform:translateY(-2px);box-shadow:0 12px 40px -8px rgba(212,175,55,.45)}
-        .btn-outline{transition:all .4s ease}.btn-outline:hover{transform:translateY(-2px)}
-        .nav-glass{backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);background:rgba(2,2,2,.8)}
         .scroll-reveal{opacity:0;transform:translateY(30px);transition:all .9s cubic-bezier(.25,.46,.45,.94);transition-delay:var(--reveal-delay,0s)}
         .scroll-reveal.visible{opacity:1;transform:translateY(0)}
-        .service-icon-wrap{transition:all .5s ease}.card-obsidian:hover .service-icon-wrap{transform:scale(1.08)}
-        .emerald-dot{box-shadow:0 0 8px rgba(16,185,129,.5)}
-        .toast{animation:slideDown .4s ease-out forwards}
+        .card-obsidian{transition:all .6s cubic-bezier(.25,.46,.45,.94)}
+        .card-obsidian:hover{transform:translateY(-6px);border-color:rgba(212,175,55,.25);box-shadow:0 20px 50px -15px rgba(0,0,0,.5),0 0 30px -10px rgba(212,175,55,.08)}
         ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:#020202}::-webkit-scrollbar-thumb{background:#d4af37;border-radius:3px}
-        .modal-overlay{transition:opacity .3s ease}
-        .modal-content{transition:all .4s cubic-bezier(.25,.46,.45,.94)}
-        .modal-overlay.active{opacity:1;pointer-events:all}
-        .modal-overlay.active .modal-content{transform:scale(1) translateY(0);opacity:1}
-        .catalog-card{transition:all .6s cubic-bezier(.25,.46,.45,.94)}
-        .catalog-card:hover{transform:translateY(-8px)}
-        .catalog-card:hover .catalog-icon{transform:scale(1.1) rotate(-3deg)}
-        .catalog-icon{transition:all .5s cubic-bezier(.25,.46,.45,.94)}
-        .zone-card{transition:all .5s cubic-bezier(.25,.46,.45,.94)}
-        .zone-card:hover{transform:translateY(-4px)}
-        .zone-card.active{border-color:rgba(212,175,55,.4)!important;box-shadow:0 20px 60px -15px rgba(0,0,0,.5),0 0 40px -10px rgba(212,175,55,.1)}
-        .zone-detail{max-height:0;overflow:hidden;opacity:0;transition:max-height .5s cubic-bezier(.25,.46,.45,.94),opacity .4s ease,padding .4s ease;padding-top:0;padding-bottom:0}
-        .zone-detail.open{max-height:400px;opacity:1;padding-top:1.25rem;padding-bottom:.25rem}
-        .zone-check{transition:all .3s ease}.zone-card.active .zone-check{background:#d4af37;border-color:#d4af37}.zone-card.active .zone-check svg{opacity:1}
-        .price-tag{transition:all .4s ease}.zone-card.active .price-tag{color:#d4af37}
-        .audio-playing{animation:audioPulse 2s infinite}
-        .eq-bar{width:3px;border-radius:2px;background:#d4af37;transition:height .2s ease}
-        .audio-playing .eq-bar:nth-child(1){animation:eqBar1 .8s ease-in-out infinite}
-        .audio-playing .eq-bar:nth-child(2){animation:eqBar2 .6s ease-in-out infinite .1s}
-        .audio-playing .eq-bar:nth-child(3){animation:eqBar3 .7s ease-in-out infinite .2s}
-        .audio-playing .eq-bar:nth-child(4){animation:eqBar1 .9s ease-in-out infinite .15s}
-        .audio-paused .eq-bar{height:3px!important;animation:none!important}
-        .audio-volume-slider{-webkit-appearance:none;appearance:none;width:80px;height:3px;border-radius:2px;background:rgba(142,147,156,.3);outline:none;cursor:pointer}
-        .audio-volume-slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:10px;height:10px;border-radius:50%;background:#d4af37;cursor:pointer}
-        .audio-volume-slider::-moz-range-thumb{width:10px;height:10px;border-radius:50%;background:#d4af37;cursor:pointer;border:none}
+        .price-shine{background:linear-gradient(90deg,#d4af37,#f0d88a,#d4af37,#f0d88a,#d4af37);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:priceShine 3s linear infinite}
         .live-dot{animation:livePulse 2s ease-in-out infinite}
-        .count-pop{animation:countPop .35s cubic-bezier(.25,.46,.45,.94)}
-        .pdf-loader{width:28px;height:28px;border:3px solid rgba(212,175,55,.2);border-top-color:#d4af37;border-radius:50%;animation:spinLoader .8s linear infinite}
-        .wa-badge-bounce{animation:badgeBounce .4s ease}
-        .wa-tooltip{animation:slideUp .5s ease forwards}
-        .clock-colon{animation:clockBlink 1s step-end infinite}
-        .match-card{transition:all .5s cubic-bezier(.25,.46,.45,.94)}
-        .match-card:hover{transform:translateY(-4px);border-color:rgba(16,185,129,.2)}
-        .wc-tab{transition:all .3s ease}
-        .wc-tab.active{background:rgba(16,185,129,.1);border-color:rgba(16,185,129,.3);color:#34d399}
-        .wc-tab:hover:not(.active){border-color:rgba(212,175,55,.2);color:#d4af37}
+        .custom-select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23d4af37' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;background-size:16px}
+        .custom-select:focus{border-color:rgba(212,175,55,.5);box-shadow:0 0 0 3px rgba(212,175,55,.1)}
+        .calc-input{transition:all .3s ease}.calc-input:focus{border-color:rgba(212,175,55,.4);box-shadow:0 0 0 3px rgba(212,175,55,.08)}
+        .chip{transition:all .3s ease;cursor:pointer;user-select:none}.chip:hover{border-color:rgba(212,175,55,.3)}
+        .chip.selected{border-color:rgba(212,175,55,.5)!important;background:rgba(212,175,55,.08)!important}
+        .chip.selected .chip-icon{color:#d4af37!important}.chip.selected .chip-label{color:#d4af37!important}.chip.selected .chip-price{color:rgba(212,175,55,.6)!important}
+        .toast{animation:slideDown .4s ease-out forwards}
+        .faq-answer{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.25,.46,.45,.94)}
+        .origin-badge{background:linear-gradient(135deg,rgba(212,175,55,.08),rgba(212,175,55,.03));border:1px solid rgba(212,175,55,.15)}
+        .marquee{animation:marquee 35s linear infinite;will-change:transform}
+        .santai-badge{animation:badgePulse 3s ease-in-out infinite}
+        .tabular-nums{font-variant-numeric:tabular-nums}
+        .float-anim{animation:float 4s ease-in-out infinite}
+        .count-pop{animation:countPop 0.4s cubic-bezier(.25,.46,.45,.94)}
+        @media(max-width:640px){.result-price-big{font-size:1.75rem!important}}
     </style>
 </head>
 <body class="bg-obsidian-950 text-white font-sans overflow-x-hidden">
 
-    <audio id="bg-audio" loop preload="auto">
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-    </audio>
-
     <div id="toast-container" class="fixed top-6 right-6 z-[100] flex flex-col gap-3"></div>
 
-    <!-- PDF Modal -->
-    <div id="pdf-modal" class="modal-overlay fixed inset-0 z-[90] bg-obsidian-950/90 backdrop-blur-xl flex items-center justify-center p-4 opacity-0 pointer-events-none">
-        <div class="modal-content bg-navy-900/95 border border-gold-400/15 rounded-2xl w-full max-w-5xl h-[85vh] flex flex-col transform scale-95 -translate-y-4 opacity-0">
-            <div class="flex items-center justify-between p-5 border-b border-platinum-800/15">
-                <div class="flex items-center gap-3">
-                    <div class="w-8 h-8 rounded-lg bg-gold-400/10 border border-gold-400/20 flex items-center justify-center"><i data-lucide="file-text" class="w-4 h-4 text-gold-400"></i></div>
-                    <div><h3 id="modal-title" class="font-serif font-bold text-white text-sm">Daftar Game</h3><p id="modal-subtitle" class="text-platinum-500 text-[10px] font-light tracking-wide">Google Drive Viewer</p></div>
-                </div>
-                <div class="flex items-center gap-3">
-                    <a id="modal-download-btn" href="#" target="_blank" class="btn-gold bg-gold-400 text-obsidian-950 px-4 py-2 rounded-full text-[10px] font-bold tracking-wider uppercase hover:bg-gold-300 flex items-center gap-2"><i data-lucide="download" class="w-3.5 h-3.5"></i>Download</a>
-                    <button onclick="closePdfModal()" class="w-8 h-8 rounded-full border border-platinum-700/30 flex items-center justify-center text-platinum-400 hover:text-white hover:border-platinum-500/50 transition-all"><i data-lucide="x" class="w-4 h-4"></i></button>
-                </div>
-            </div>
-            <div class="flex-1 overflow-hidden rounded-b-2xl relative bg-obsidian-950">
-                <div id="pdf-loading" class="absolute inset-0 flex flex-col items-center justify-center gap-4 z-10"><div class="pdf-loader"></div><p class="text-platinum-400 text-xs font-light">Loading PDF...</p></div>
-                <iframe id="pdf-iframe" src="" class="w-full h-full border-0 relative z-0" title="PDF Viewer" allow="autoplay"></iframe>
-            </div>
-        </div>
-    </div>
-
     <!-- NAV -->
-    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 nav-glass border-b border-platinum-800/20 transition-all duration-500">
+    <nav class="fixed top-0 left-0 right-0 z-50 nav-glass border-b border-platinum-800/20 transition-all duration-500">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="#hero" class="flex items-center gap-3 group">
+            <a href="#" class="flex items-center gap-3 group">
                 <div class="relative w-10 h-10 rounded-lg bg-gradient-to-br from-gold-400 via-gold-300 to-gold-600 flex items-center justify-center transition-all duration-500 group-hover:rounded-xl group-hover:shadow-lg group-hover:shadow-gold-400/20"><i data-lucide="gamepad-2" class="w-5 h-5 text-obsidian-950"></i></div>
                 <div class="flex items-baseline gap-1"><span class="font-serif text-xl font-bold tracking-wide text-white">Mikayla</span><span class="font-serif text-xl font-bold tracking-wide gold-gradient">Games</span></div>
             </a>
-            <div class="hidden lg:flex items-center gap-8">
-                <a href="#layanan" class="text-[11px] text-platinum-400 hover:text-gold-400 transition-colors tracking-[.25em] uppercase font-medium">Layanan</a>
-                <a href="#katalog-game" class="text-[11px] text-platinum-400 hover:text-gold-400 transition-colors tracking-[.25em] uppercase font-medium flex items-center gap-1.5">Katalog Game<span class="w-1.5 h-1.5 bg-emerald-400 rounded-full emerald-dot animate-pulse"></span></a>
-                <a href="#jadwal-piala-dunia" class="text-[11px] text-platinum-400 hover:text-emerald-400 transition-colors tracking-[.25em] uppercase font-medium flex items-center gap-1.5"><i data-lucide="trophy" class="w-3 h-3"></i>Piala Dunia</a>
-                <a href="#ongkir" class="text-[11px] text-platinum-400 hover:text-gold-400 transition-colors tracking-[.25em] uppercase font-medium">Ongkir</a>
+            <div class="hidden md:flex items-center gap-6">
+                <a href="#jasa" class="text-[11px] text-platinum-400 hover:text-gold-400 transition-colors tracking-[.25em] uppercase font-medium">Jasa</a>
+                <a href="#katalog" class="text-[11px] text-platinum-400 hover:text-gold-400 transition-colors tracking-[.25em] uppercase font-medium">List Game</a>
+                <a href="#kalkulator" class="text-[11px] text-platinum-400 hover:text-gold-400 transition-colors tracking-[.25em] uppercase font-medium">Kalkulator</a>
+                <a href="#zona" class="text-[11px] text-platinum-400 hover:text-gold-400 transition-colors tracking-[.25em] uppercase font-medium">Zona</a>
                 <a href="#kontak" class="text-[11px] text-platinum-400 hover:text-gold-400 transition-colors tracking-[.25em] uppercase font-medium">Kontak</a>
             </div>
             <div class="flex items-center gap-3">
-                <div class="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full border border-gold-400/10 bg-gold-400/[.03]">
-                    <i data-lucide="clock" class="w-3 h-3 text-gold-400/60"></i>
-                    <span id="nav-date" class="text-platinum-500 text-[10px] font-light tracking-wide"></span>
-                    <span class="text-platinum-700 text-[8px]">|</span>
-                    <span id="nav-time" class="text-gold-400/80 text-[10px] font-medium tabular-nums tracking-wider"></span>
-                    <span class="text-emerald-400/50 text-[8px] font-bold tracking-widest">WIB</span>
-                </div>
-                <div class="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full border border-emerald-400/15 bg-emerald-400/[.04]">
-                    <span class="relative flex h-2 w-2"><span class="live-dot absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span></span>
-                    <span class="text-emerald-400 text-[10px] font-semibold tracking-wide"><span id="nav-live-count">0</span> online</span>
-                </div>
-                <a href="https://wa.me/6285163061987" target="_blank" class="btn-gold hidden sm:flex items-center gap-2 bg-gold-400 text-obsidian-950 px-5 py-2.5 rounded-full text-xs font-bold tracking-wider uppercase hover:bg-gold-300"><i data-lucide="message-circle" class="w-3.5 h-3.5"></i><span class="hidden xl:inline">WhatsApp</span></a>
-                <button id="mobile-menu-btn" class="lg:hidden text-platinum-300 p-2 hover:text-gold-400 transition-colors"><i data-lucide="menu" class="w-6 h-6"></i></button>
-            </div>
-        </div>
-        <div id="mobile-menu" class="hidden lg:hidden border-t border-platinum-800/20 bg-obsidian-950/95 backdrop-blur-2xl">
-            <div class="px-6 py-6 flex flex-col gap-4">
-                <div class="flex items-center gap-2 px-3 py-2.5 rounded-xl border border-gold-400/10 bg-gold-400/[.03]">
-                    <i data-lucide="clock" class="w-3.5 h-3.5 text-gold-400/60"></i>
-                    <span id="mobile-date" class="text-platinum-400 text-[11px] font-light"></span>
-                    <span class="text-platinum-700 text-[8px]">|</span>
-                    <span id="mobile-time" class="text-gold-400/80 text-[11px] font-medium tabular-nums tracking-wider"></span>
-                    <span class="text-emerald-400/50 text-[8px] font-bold tracking-widest">WIB</span>
-                </div>
-                <a href="#layanan" class="mobile-link text-[11px] text-platinum-400 hover:text-gold-400 tracking-[.25em] uppercase font-medium">Layanan</a>
-                <a href="#katalog-game" class="mobile-link text-[11px] text-platinum-400 hover:text-gold-400 tracking-[.25em] uppercase font-medium">Katalog Game</a>
-                <a href="#jadwal-piala-dunia" class="mobile-link text-[11px] text-emerald-400/70 hover:text-emerald-400 tracking-[.25em] uppercase font-medium flex items-center gap-2"><i data-lucide="trophy" class="w-3.5 h-3.5"></i>Piala Dunia 2026</a>
-                <a href="#ongkir" class="mobile-link text-[11px] text-platinum-400 hover:text-gold-400 tracking-[.25em] uppercase font-medium">Ongkir</a>
-                <a href="#kontak" class="mobile-link text-[11px] text-platinum-400 hover:text-gold-400 tracking-[.25em] uppercase font-medium">Kontak</a>
-                <div class="pt-4 border-t border-platinum-800/20">
-                    <a href="https://wa.me/6285163061987" target="_blank" class="btn-gold inline-flex items-center gap-2 bg-gold-400 text-obsidian-950 px-6 py-3 rounded-full text-xs font-bold tracking-wider uppercase"><i data-lucide="message-circle" class="w-4 h-4"></i>WhatsApp</a>
-                </div>
+                <div class="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full border border-gold-400/15 bg-gold-400/[.04]"><i data-lucide="users" class="w-3 h-3 text-gold-400/60"></i><span class="text-gold-400/80 text-[10px] font-medium tabular-nums tracking-wider"><span id="nav-total-count">0</span></span></div>
+                <a href="https://wa.me/6285163061987" target="_blank" class="btn-gold hidden sm:flex items-center gap-2 bg-gold-400 text-obsidian-950 px-5 py-2.5 rounded-full text-xs font-bold tracking-wider uppercase hover:bg-gold-300"><i data-lucide="message-circle" class="w-3.5 h-3.5"></i><span class="hidden xl:inline">0851-6306-1987</span></a>
             </div>
         </div>
     </nav>
 
     <!-- HERO -->
-    <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section class="relative min-h-[75vh] flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0">
-            <img src="https://wallpapercave.com/wp/wp7974103.jpg" alt="Gaming" class="w-full h-full object-cover scale-105" id="hero-img" onerror="this.style.display='none'">
+            <img src="https://wallpapercave.com/wp/wp7974103.jpg" alt="Gaming" class="w-full h-full object-cover scale-105" onerror="this.style.display='none'">
             <div class="hero-overlay absolute inset-0"></div>
         </div>
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] lg:w-[900px] lg:h-[900px] border border-platinum-800/5 rounded-full animate-rotate-slow pointer-events-none"></div>
-        <div class="relative z-10 max-w-7xl mx-auto px-6 text-center pt-32 pb-20 md:pt-44 md:pb-32">
-            <div class="animate-fade-up">
-                <span class="inline-flex items-center gap-2.5 px-5 py-2 rounded-full border border-gold-400/20 bg-gold-400/[.04] mb-10">
-                    <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full emerald-dot animate-pulse"></span>
-                    <span class="text-gold-300 text-[10px] font-semibold tracking-[.3em] uppercase">Premium Console Service</span>
-                </span>
+        <div class="relative z-10 max-w-7xl mx-auto px-6 text-center pt-32 pb-16 md:pt-40 md:pb-24">
+            <div class="animate-fade-up"><span class="inline-flex items-center gap-2.5 px-5 py-2 rounded-full border border-gold-400/20 bg-gold-400/[.04] mb-8"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-gold-400"></i><span class="text-gold-300 text-[10px] font-semibold tracking-[.2em] uppercase">PREMIUM CONSOLE SERVICE</span></span></div>
+            <h1 class="font-serif text-5xl md:text-7xl lg:text-[6.5rem] font-bold tracking-tight leading-[1.02] mb-6 animate-fade-up-delay1"><span class="block text-white">Mikayla</span><span class="shimmer-text">Games</span></h1>
+            <p class="text-base md:text-lg text-platinum-400 font-light max-w-xl mx-auto mb-6 leading-relaxed animate-fade-up-delay2">Jasa isi game PS3HEN, PS4HEN, PS5HEN panggilan ke rumah. Ongkir disesuaikan — lebih santai!</p>
+            <div class="animate-fade-up-delay2 mb-6"><div class="origin-badge inline-flex items-center gap-3 px-5 py-3 rounded-2xl"><i data-lucide="home" class="w-4 h-4 text-gold-400 flex-shrink-0"></i><div class="text-left"><span class="text-gold-400 text-[10px] font-bold tracking-[.2em] uppercase block mb-0.5">Lokasi Toko</span><span class="text-platinum-300 text-xs font-light">Jl. Jatimulya V No.17, RT.06/RW.07, Kel. Gumuruh, Kec. Batununggal, Kota Bandung 40275</span></div></div></div>
+            <div class="animate-fade-up-delay2 mb-6"><div class="santai-badge inline-flex items-center gap-3 px-6 py-3 rounded-2xl bg-emerald-400/[.06] border border-emerald-400/20"><i data-lucide="sparkles" class="w-5 h-5 text-emerald-400"></i><div class="text-left"><span class="text-emerald-400 text-xs font-bold tracking-wide block">Pesan Jasa Isi Game = Ongkir Lebih Santai</span><span class="text-emerald-400/50 text-[10px] font-light">Diskon 30% ongkir untuk setiap jasa isi game</span></div></div></div>
+            <div class="animate-fade-up-delay2 mb-10"><div class="inline-flex items-center gap-4 px-5 py-2.5 rounded-full border border-platinum-700/15 bg-obsidian-950/50 backdrop-blur-xl"><div class="flex items-center gap-2"><span class="relative flex h-2.5 w-2.5"><span class="live-dot absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400"></span></span><span class="text-platinum-300 text-xs font-light"><span class="text-emerald-400 font-semibold" id="hero-live-count">3</span> orang sedang melihat</span></div><span class="w-px h-3 bg-platinum-700/30"></span><div class="flex items-center gap-2"><i data-lucide="users" class="w-3 h-3 text-gold-400/60"></i><span class="text-platinum-300 text-xs font-light"><span class="text-gold-400 font-semibold tabular-nums" id="hero-total-count">0</span> total pengunjung</span></div></div></div>
+            <div class="animate-fade-up-delay3 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="https://wa.me/6285163061987" target="_blank" class="btn-gold inline-flex items-center gap-3 bg-gold-400 text-obsidian-950 px-10 py-4 rounded-full text-sm font-bold tracking-wider uppercase hover:bg-gold-300"><i data-lucide="message-circle" class="w-4 h-4"></i>WhatsApp: 0851-6306-1987</a>
+                <a href="tel:+6285163061987" class="inline-flex items-center gap-3 px-10 py-4 rounded-full border border-platinum-600/30 text-platinum-300 text-sm font-medium tracking-wider uppercase hover:border-gold-400/30 hover:text-gold-300 hover:bg-gold-400/[.03] transition-all"><i data-lucide="phone" class="w-4 h-4"></i>Telepon Langsung</a>
             </div>
-            <h1 class="font-serif text-5xl md:text-7xl lg:text-[8.5rem] font-bold tracking-tight leading-[1.02] mb-8 animate-fade-up-delay1">
-                <span class="block text-white">Mikayla</span>
-                <span class="shimmer-text">Games</span>
-            </h1>
-            <p class="text-base md:text-lg text-platinum-400 font-light max-w-xl mx-auto mb-3 leading-relaxed animate-fade-up-delay2">Jasa instalasi game premium untuk konsol Anda</p>
-            <p class="text-sm tracking-[.2em] text-gold-400/60 uppercase font-medium mb-6 animate-fade-up-delay2">PS3HEN · PS4HEN · PS5 Jailbreak</p>
-            <div class="animate-fade-up-delay2 mb-8">
-                <div class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-gold-400/10 bg-obsidian-950/40 backdrop-blur-xl">
-                    <i data-lucide="calendar" class="w-3.5 h-3.5 text-gold-400/50"></i>
-                    <span id="hero-date" class="text-platinum-400 text-[11px] font-light tracking-wide"></span>
-                    <span class="w-px h-3 bg-platinum-700/30"></span>
-                    <i data-lucide="clock" class="w-3.5 h-3.5 text-emerald-400/50"></i>
-                    <span id="hero-time" class="text-gold-300 text-[11px] font-semibold tabular-nums tracking-widest"></span>
-                    <span class="text-emerald-400/60 text-[9px] font-bold tracking-[.2em]">WIB</span>
-                </div>
-            </div>
-            <div class="animate-fade-up-delay2 mb-14">
-                <div class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-platinum-700/15 bg-obsidian-950/50 backdrop-blur-xl">
-                    <span class="relative flex h-2.5 w-2.5"><span class="live-dot absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400"></span></span>
-                    <span class="text-platinum-300 text-xs font-light"><span class="text-emerald-400 font-semibold" id="hero-live-count">0</span> orang sedang melihat</span>
-                    <span class="text-platinum-600 text-[10px]">·</span>
-                    <span class="text-platinum-400 text-xs font-light"><span class="text-gold-400 font-semibold" id="hero-total-count">0</span> total pengunjung</span>
-                </div>
-            </div>
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up-delay3">
-                <a href="https://wa.me/6285163061987" target="_blank" class="btn-gold bg-gold-400 text-obsidian-950 px-10 py-4 rounded-full text-sm font-bold tracking-wider uppercase hover:bg-gold-300 flex items-center gap-3"><i data-lucide="phone" class="w-4 h-4"></i>Booking Sekarang</a>
-                <a href="#jadwal-piala-dunia" class="btn-outline px-10 py-4 rounded-full border border-emerald-400/25 text-emerald-400 text-sm font-medium tracking-wider uppercase hover:border-emerald-400/40 hover:text-emerald-300 hover:bg-emerald-400/[.03] transition-all flex items-center gap-2"><i data-lucide="trophy" class="w-4 h-4"></i>Jadwal Piala Dunia</a>
-            </div>
-        </div>
-        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 animate-fade-up-delay3">
-            <span class="text-[9px] text-platinum-600 tracking-[.4em] uppercase">Scroll</span>
-            <div class="w-px h-10 bg-gradient-to-b from-gold-400/50 to-transparent"></div>
         </div>
     </section>
 
@@ -245,420 +130,176 @@
         <div class="marquee flex items-center gap-10 whitespace-nowrap">
             <span class="text-[10px] tracking-[.35em] text-gold-400/40 uppercase font-semibold">PS3HEN</span><span class="text-gold-400/15">◆</span>
             <span class="text-[10px] tracking-[.35em] text-platinum-500/40 uppercase font-semibold">PS4HEN</span><span class="text-emerald-400/15">◆</span>
-            <span class="text-[10px] tracking-[.35em] text-gold-400/40 uppercase font-semibold">PS5 Jailbreak</span><span class="text-gold-400/15">◆</span>
-            <span class="text-[10px] tracking-[.35em] text-emerald-400/40 uppercase font-semibold">Piala Dunia 2026</span><span class="text-emerald-400/15">◆</span>
-            <span class="text-[10px] tracking-[.35em] text-platinum-500/40 uppercase font-semibold">Home Service</span><span class="text-gold-400/15">◆</span>
+            <span class="text-[10px] tracking-[.35em] text-gold-400/40 uppercase font-semibold">PS5HEN</span><span class="text-gold-400/15">◆</span>
+            <span class="text-[10px] tracking-[.35em] text-emerald-400/40 uppercase font-semibold">Ongkir Santai</span><span class="text-gold-400/15">◆</span>
+            <span class="text-[10px] tracking-[.35em] text-gold-400/40 uppercase font-semibold">Mikayla Games</span><span class="text-emerald-400/15">◆</span>
+            <span class="text-[10px] tracking-[.35em] text-platinum-500/40 uppercase font-semibold">0851-6306-1987</span><span class="text-gold-400/15">◆</span>
+            <span class="text-[10px] tracking-[.35em] text-emerald-400/40 uppercase font-semibold">Jatimulya V No.17</span><span class="text-gold-400/15">◆</span>
             <span class="text-[10px] tracking-[.35em] text-gold-400/40 uppercase font-semibold">PS3HEN</span><span class="text-gold-400/15">◆</span>
             <span class="text-[10px] tracking-[.35em] text-platinum-500/40 uppercase font-semibold">PS4HEN</span><span class="text-emerald-400/15">◆</span>
-            <span class="text-[10px] tracking-[.35em] text-gold-400/40 uppercase font-semibold">PS5 Jailbreak</span><span class="text-gold-400/15">◆</span>
-            <span class="text-[10px] tracking-[.35em] text-emerald-400/40 uppercase font-semibold">Piala Dunia 2026</span><span class="text-emerald-400/15">◆</span>
-            <span class="text-[10px] tracking-[.35em] text-platinum-500/40 uppercase font-semibold">Home Service</span><span class="text-gold-400/15">◆</span>
+            <span class="text-[10px] tracking-[.35em] text-gold-400/40 uppercase font-semibold">PS5HEN</span><span class="text-gold-400/15">◆</span>
+            <span class="text-[10px] tracking-[.35em] text-emerald-400/40 uppercase font-semibold">Ongkir Santai</span><span class="text-gold-400/15">◆</span>
+            <span class="text-[10px] tracking-[.35em] text-gold-400/40 uppercase font-semibold">Mikayla Games</span><span class="text-emerald-400/15">◆</span>
+            <span class="text-[10px] tracking-[.35em] text-platinum-500/40 uppercase font-semibold">0851-6306-1987</span><span class="text-gold-400/15">◆</span>
+            <span class="text-[10px] tracking-[.35em] text-emerald-400/40 uppercase font-semibold">Jatimulya V No.17</span><span class="text-gold-400/15">◆</span>
         </div>
     </div>
 
-    <!-- SERVICES -->
-    <section id="layanan" class="relative py-32 md:py-44">
-        <div class="absolute inset-0 bg-gradient-to-b from-obsidian-950 via-midnight-950/30 to-obsidian-950 animate-breathe"></div>
-        <div class="relative max-w-7xl mx-auto px-6">
-            <div class="text-center mb-24 scroll-reveal">
-                <span class="text-gold-400 text-[10px] font-semibold tracking-[.35em] uppercase block mb-5">Layanan Kami</span>
-                <h2 class="font-serif text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-7">Konsol Terbaik<br><span class="gold-gradient">Game Tanpa Batas</span></h2>
-                <p class="text-platinum-400 text-base md:text-lg font-light max-w-lg mx-auto leading-relaxed">Layanan instalasi game terlengkap untuk semua versi PlayStation.</p>
-            </div>
-            <div class="grid md:grid-cols-3 gap-5 lg:gap-6">
-                <div class="scroll-reveal card-obsidian group relative bg-navy-900/40 border border-platinum-800/10 rounded-2xl overflow-hidden">
-                    <div class="p-8 lg:p-10">
-                        <div class="service-icon-wrap w-14 h-14 rounded-xl bg-matte-800/60 border border-platinum-700/20 flex items-center justify-center mb-8"><i data-lucide="disc-3" class="w-6 h-6 text-platinum-300 group-hover:text-gold-400 transition-colors duration-500"></i></div>
-                        <span class="text-emerald-400/70 text-[9px] font-bold tracking-[.35em] uppercase">PlayStation 3</span>
-                        <h3 class="font-serif text-2xl lg:text-3xl font-bold mt-2 mb-4 tracking-tight text-white">PS3HEN</h3>
-                        <p class="text-platinum-500 font-light leading-relaxed mb-8 text-sm">Instalasi HEN terbaru untuk PS3. Mainkan seluruh library game PS3 tanpa batas.</p>
-                        <ul class="space-y-3 mb-10">
-                            <li class="flex items-center gap-3 text-sm text-platinum-400"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500/70 flex-shrink-0"></i>HEN Firmware Terbaru</li>
-                            <li class="flex items-center gap-3 text-sm text-platinum-400"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500/70 flex-shrink-0"></i>Free Games Included</li>
-                            <li class="flex items-center gap-3 text-sm text-platinum-400"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500/70 flex-shrink-0"></i>Stabil & Aman</li>
-                        </ul>
-                        <a href="https://wa.me/6285163061987?text=Halo%20Mikayla%20Games,%20saya%20tertarik%20isi%20game%20PS3HEN" target="_blank" class="inline-flex items-center gap-2 text-gold-400 text-xs font-semibold tracking-wider uppercase hover:gap-3 transition-all">Booking<i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
-                    </div>
-                </div>
-                <div class="scroll-reveal card-obsidian group relative bg-navy-900/40 border border-gold-400/20 rounded-2xl overflow-hidden" style="--reveal-delay:.12s">
-                    <div class="absolute top-0 left-0 right-0 h-px gold-line opacity-50"></div>
-                    <div class="absolute top-5 right-5"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold-400/10 border border-gold-400/20 text-gold-400 text-[9px] font-bold tracking-[.2em] uppercase"><span class="w-1 h-1 bg-gold-400 rounded-full"></span>Popular</span></div>
-                    <div class="p-8 lg:p-10">
-                        <div class="service-icon-wrap w-14 h-14 rounded-xl bg-gold-400/10 border border-gold-400/20 flex items-center justify-center mb-8"><i data-lucide="gamepad-2" class="w-6 h-6 text-gold-400"></i></div>
-                        <span class="text-emerald-400/70 text-[9px] font-bold tracking-[.35em] uppercase">PlayStation 4</span>
-                        <h3 class="font-serif text-2xl lg:text-3xl font-bold mt-2 mb-4 tracking-tight text-white">PS4HEN</h3>
-                        <p class="text-platinum-500 font-light leading-relaxed mb-8 text-sm">Jailbreak PS4 dengan HEN terbaru. Akses ribuan game PS4 secara gratis.</p>
-                        <ul class="space-y-3 mb-10">
-                            <li class="flex items-center gap-3 text-sm text-platinum-400"><i data-lucide="check-circle-2" class="w-4 h-4 text-gold-400/70 flex-shrink-0"></i>GoldHEN Terbaru</li>
-                            <li class="flex items-center gap-3 text-sm text-platinum-400"><i data-lucide="check-circle-2" class="w-4 h-4 text-gold-400/70 flex-shrink-0"></i>Puluhan Game Premium</li>
-                            <li class="flex items-center gap-3 text-sm text-platinum-400"><i data-lucide="check-circle-2" class="w-4 h-4 text-gold-400/70 flex-shrink-0"></i>Homebrew Apps</li>
-                        </ul>
-                        <a href="https://wa.me/6285163061987?text=Halo%20Mikayla%20Games,%20saya%20tertarik%20isi%20game%20PS4HEN" target="_blank" class="inline-flex items-center gap-2 text-gold-400 text-xs font-semibold tracking-wider uppercase hover:gap-3 transition-all">Booking<i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
-                    </div>
-                </div>
-                <div class="scroll-reveal card-obsidian group relative bg-navy-900/40 border border-platinum-800/10 rounded-2xl overflow-hidden" style="--reveal-delay:.24s">
-                    <div class="absolute top-5 right-5"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-400/10 border border-emerald-400/20 text-emerald-400 text-[9px] font-bold tracking-[.2em] uppercase"><span class="w-1 h-1 bg-emerald-400 rounded-full"></span>Premium</span></div>
-                    <div class="p-8 lg:p-10">
-                        <div class="service-icon-wrap w-14 h-14 rounded-xl bg-matte-800/60 border border-platinum-700/20 flex items-center justify-center mb-8"><i data-lucide="crown" class="w-6 h-6 text-platinum-300 group-hover:text-emerald-400 transition-colors duration-500"></i></div>
-                        <span class="text-emerald-400/70 text-[9px] font-bold tracking-[.35em] uppercase">PlayStation 5</span>
-                        <h3 class="font-serif text-2xl lg:text-3xl font-bold mt-2 mb-4 tracking-tight text-white">PS5 Jailbreak</h3>
-                        <p class="text-platinum-500 font-light leading-relaxed mb-8 text-sm">Layanan jailbreak PS5 untuk firmware kompatibel.</p>
-                        <ul class="space-y-3 mb-10">
-                            <li class="flex items-center gap-3 text-sm text-platinum-400"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500/70 flex-shrink-0"></i>Jailbreak Terkini</li>
-                            <li class="flex items-center gap-3 text-sm text-platinum-400"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500/70 flex-shrink-0"></i>Game PS5 Included</li>
-                            <li class="flex items-center gap-3 text-sm text-platinum-400"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500/70 flex-shrink-0"></i>Garansi Service</li>
-                        </ul>
-                        <a href="https://wa.me/6285163061987?text=Halo%20Mikayla%20Games,%20saya%20tertarik%20isi%20game%20PS5%20yang%20sudah%20diJailbreak" target="_blank" class="inline-flex items-center gap-2 text-gold-400 text-xs font-semibold tracking-wider uppercase hover:gap-3 transition-all">Booking<i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- GAME CATALOG -->
-    <section id="katalog-game" class="relative py-32 md:py-44 overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-b from-obsidian-950 via-navy-950/40 to-obsidian-950"></div>
-        <div class="absolute top-0 left-0 right-0 h-px gold-line opacity-20"></div>
-        <div class="relative max-w-7xl mx-auto px-6">
-            <div class="text-center mb-20 scroll-reveal">
-                <span class="inline-flex items-center gap-2 text-emerald-400 text-[10px] font-semibold tracking-[.3em] uppercase mb-5"><i data-lucide="book-open" class="w-3.5 h-3.5"></i>Katalog Game</span>
-                <h2 class="font-serif text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-7">Daftar Game<br><span class="gold-gradient">Tersedia</span></h2>
-                <p class="text-platinum-400 text-base md:text-lg font-light max-w-2xl mx-auto leading-relaxed">Lihat katalog game lengkap untuk setiap platform.</p>
-            </div>
-            <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
-                <div class="scroll-reveal catalog-card relative bg-navy-900/40 border border-platinum-800/10 rounded-2xl overflow-hidden group">
-                    <div class="p-8 lg:p-10 text-center">
-                        <div class="catalog-icon w-20 h-20 rounded-2xl bg-matte-800/60 border border-platinum-700/20 flex items-center justify-center mb-8 mx-auto"><i data-lucide="disc-3" class="w-9 h-9 text-platinum-300 group-hover:text-gold-400 transition-colors duration-500"></i></div>
-                        <span class="text-platinum-500 text-[9px] font-bold tracking-[.35em] uppercase block mb-2">PlayStation 3</span>
-                        <h3 class="font-serif text-2xl font-bold tracking-tight text-white mb-2">Game List PS3</h3>
-                        <div class="w-12 h-px bg-gradient-to-r from-transparent via-gold-400/20 to-transparent mx-auto my-6"></div>
-                        <p class="text-platinum-500 font-light text-xs leading-relaxed mb-8">Katalog lengkap game PS3 untuk instalasi HEN.</p>
-                        <div class="flex flex-col gap-3">
-                            <button onclick="viewPdf('PS3')" class="btn-outline w-full px-5 py-3 rounded-xl border border-platinum-600/25 text-platinum-300 text-xs font-semibold tracking-wider uppercase hover:border-gold-400/30 hover:text-gold-300 hover:bg-gold-400/[.03] transition-all flex items-center justify-center gap-2"><i data-lucide="eye" class="w-4 h-4"></i>Lihat Online</button>
-                            <button onclick="downloadPdf('PS3')" class="btn-gold w-full bg-gold-400 text-obsidian-950 px-5 py-3 rounded-xl text-xs font-bold tracking-wider uppercase hover:bg-gold-300 flex items-center justify-center gap-2"><i data-lucide="download" class="w-4 h-4"></i>Download PDF</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="scroll-reveal catalog-card relative bg-navy-900/40 border border-gold-400/15 rounded-2xl overflow-hidden group" style="--reveal-delay:.12s">
-                    <div class="absolute top-0 left-0 right-0 h-px gold-line opacity-50"></div>
-                    <div class="absolute top-5 right-5"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold-400/10 border border-gold-400/20 text-gold-400 text-[9px] font-bold tracking-[.2em] uppercase"><span class="w-1 h-1 bg-gold-400 rounded-full"></span>Terlengkap</span></div>
-                    <div class="p-8 lg:p-10 text-center">
-                        <div class="catalog-icon w-20 h-20 rounded-2xl bg-gold-400/8 border border-gold-400/20 flex items-center justify-center mb-8 mx-auto"><i data-lucide="gamepad-2" class="w-9 h-9 text-gold-400"></i></div>
-                        <span class="text-gold-400/60 text-[9px] font-bold tracking-[.35em] uppercase block mb-2">PlayStation 4</span>
-                        <h3 class="font-serif text-2xl font-bold tracking-tight text-white mb-2">Game List PS4</h3>
-                        <div class="w-12 h-px bg-gradient-to-r from-transparent via-gold-400/30 to-transparent mx-auto my-6"></div>
-                        <p class="text-platinum-500 font-light text-xs leading-relaxed mb-8">Ribuan game PS4 tersedia.</p>
-                        <div class="flex flex-col gap-3">
-                            <button onclick="viewPdf('PS4')" class="btn-outline w-full px-5 py-3 rounded-xl border border-gold-400/20 text-gold-400 text-xs font-semibold tracking-wider uppercase hover:bg-gold-400/[.05] hover:border-gold-400/40 transition-all flex items-center justify-center gap-2"><i data-lucide="eye" class="w-4 h-4"></i>Lihat Online</button>
-                            <button onclick="downloadPdf('PS4')" class="btn-gold w-full bg-gold-400 text-obsidian-950 px-5 py-3 rounded-xl text-xs font-bold tracking-wider uppercase hover:bg-gold-300 flex items-center justify-center gap-2"><i data-lucide="download" class="w-4 h-4"></i>Download PDF</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="scroll-reveal catalog-card relative bg-navy-900/40 border border-platinum-800/10 rounded-2xl overflow-hidden group" style="--reveal-delay:.24s">
-                    <div class="absolute top-5 right-5"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-400/10 border border-emerald-400/20 text-emerald-400 text-[9px] font-bold tracking-[.2em] uppercase"><span class="w-1 h-1 bg-emerald-400 rounded-full"></span>Next-Gen</span></div>
-                    <div class="p-8 lg:p-10 text-center">
-                        <div class="catalog-icon w-20 h-20 rounded-2xl bg-matte-800/60 border border-platinum-700/20 flex items-center justify-center mb-8 mx-auto"><i data-lucide="crown" class="w-9 h-9 text-platinum-300 group-hover:text-emerald-400 transition-colors duration-500"></i></div>
-                        <span class="text-emerald-400/60 text-[9px] font-bold tracking-[.35em] uppercase block mb-2">PlayStation 5</span>
-                        <h3 class="font-serif text-2xl font-bold tracking-tight text-white mb-2">Game List PS5</h3>
-                        <div class="w-12 h-px bg-gradient-to-r from-transparent via-emerald-400/20 to-transparent mx-auto my-6"></div>
-                        <p class="text-platinum-500 font-light text-xs leading-relaxed mb-8">Katalog game next-gen PS5.</p>
-                        <div class="flex flex-col gap-3">
-                            <button onclick="viewPdf('PS5')" class="btn-outline w-full px-5 py-3 rounded-xl border border-platinum-600/25 text-platinum-300 text-xs font-semibold tracking-wider uppercase hover:border-emerald-400/30 hover:text-emerald-300 hover:bg-emerald-400/[.03] transition-all flex items-center justify-center gap-2"><i data-lucide="eye" class="w-4 h-4"></i>Lihat Online</button>
-                            <button onclick="downloadPdf('PS5')" class="btn-gold w-full bg-gold-400 text-obsidian-950 px-5 py-3 rounded-xl text-xs font-bold tracking-wider uppercase hover:bg-gold-300 flex items-center justify-center gap-2"><i data-lucide="download" class="w-4 h-4"></i>Download PDF</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ★ JADWAL PIALA DUNIA 2026 -->
-    <section id="jadwal-piala-dunia" class="relative py-32 md:py-44 overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-b from-obsidian-950 via-emerald-950/10 to-obsidian-950"></div>
-        <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-400/30 to-transparent"></div>
-        <div class="relative max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16 scroll-reveal">
-                <span class="inline-flex items-center gap-2 text-emerald-400 text-[10px] font-semibold tracking-[.3em] uppercase mb-5">
-                    <i data-lucide="trophy" class="w-3.5 h-3.5"></i>FIFA World Cup 2026
-                </span>
-                <h2 class="font-serif text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-7">Jadwal Piala<br><span class="emerald-gradient">Dunia 2026</span></h2>
-                <p class="text-platinum-400 text-base md:text-lg font-light max-w-2xl mx-auto leading-relaxed">Saksikan pertandingan seru bareng konsol PlayStation. Nonton bareng & mainkan game favoritmu!</p>
-            </div>
-
-            <!-- Group Filter Tabs -->
-            <div class="flex flex-wrap items-center justify-center gap-2 mb-12 scroll-reveal" style="--reveal-delay:.1s">
-                <button class="wc-tab active px-4 py-2 rounded-full border border-platinum-800/15 text-platinum-400 text-[10px] font-semibold tracking-[.2em] uppercase" onclick="filterWC('all', this)">Semua</button>
-                <button class="wc-tab px-4 py-2 rounded-full border border-platinum-800/15 text-platinum-400 text-[10px] font-semibold tracking-[.2em] uppercase" onclick="filterWC('group-a', this)">Grup A</button>
-                <button class="wc-tab px-4 py-2 rounded-full border border-platinum-800/15 text-platinum-400 text-[10px] font-semibold tracking-[.2em] uppercase" onclick="filterWC('group-b', this)">Grup B</button>
-                <button class="wc-tab px-4 py-2 rounded-full border border-platinum-800/15 text-platinum-400 text-[10px] font-semibold tracking-[.2em] uppercase" onclick="filterWC('group-c', this)">Grup C</button>
-                <button class="wc-tab px-4 py-2 rounded-full border border-platinum-800/15 text-platinum-400 text-[10px] font-semibold tracking-[.2em] uppercase" onclick="filterWC('group-d', this)">Grup D</button>
-            </div>
-
-            <!-- Match Cards Grid -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5" id="wc-matches">
-
-                <!-- Match 1 -->
-                <div class="match-card scroll-reveal card-obsidian p-6 rounded-2xl bg-navy-900/40 border border-platinum-800/10" data-group="group-a">
-                    <div class="flex items-center justify-between mb-5">
-                        <span class="text-[10px] tracking-[.2em] uppercase text-platinum-500 font-medium flex items-center gap-1.5"><i data-lucide="calendar" class="w-3 h-3"></i>11 Jun 2026</span>
-                        <span class="text-[9px] px-2.5 py-1 rounded-full bg-emerald-400/10 border border-emerald-400/15 text-emerald-400 font-bold tracking-wider uppercase">Grup A</span>
-                    </div>
-                    <div class="flex items-center justify-between mb-5">
-                        <div class="flex items-center gap-3 flex-1">
-                            <span class="text-2xl">🇲🇽</span>
-                            <span class="font-medium text-sm text-white">Meksiko</span>
-                        </div>
-                        <span class="text-gold-400 font-bold text-xs tracking-widest px-3">VS</span>
-                        <div class="flex items-center gap-3 flex-1 justify-end">
-                            <span class="font-medium text-sm text-white">Kanada</span>
-                            <span class="text-2xl">🇨🇦</span>
-                        </div>
-                    </div>
-                    <div class="flex items-center justify-between text-[11px] text-platinum-500">
-                        <span class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3 h-3 text-platinum-600"></i>Estadio Azteca</span>
-                        <span class="flex items-center gap-1.5 text-gold-400/80 font-medium"><i data-lucide="clock" class="w-3 h-3"></i>22:00 WIB</span>
-                    </div>
-                </div>
-
-                <!-- Match 2 -->
-                <div class="match-card scroll-reveal card-obsidian p-6 rounded-2xl bg-navy-900/40 border border-platinum-800/10" data-group="group-a" style="--reveal-delay:.06s">
-                    <div class="flex items-center justify-between mb-5">
-                        <span class="text-[10px] tracking-[.2em] uppercase text-platinum-500 font-medium flex items-center gap-1.5"><i data-lucide="calendar" class="w-3 h-3"></i>12 Jun 2026</span>
-                        <span class="text-[9px] px-2.5 py-1 rounded-full bg-emerald-400/10 border border-emerald-400/15 text-emerald-400 font-bold tracking-wider uppercase">Grup A</span>
-                    </div>
-                    <div class="flex items-center justify-between mb-5">
-                        <div class="flex items-center gap-3 flex-1">
-                            <span class="text-2xl">🇺🇸</span>
-                            <span class="font-medium text-sm text-white">USA</span>
-                        </div>
-                        <span class="text-gold-400 font-bold text-xs tracking-widest px-3">VS</span>
-                        <div class="flex items-center gap-3 flex-1 justify-end">
-                            <span class="font-medium text-sm text-white">Meksiko</span>
-                            <span class="text-2xl">🇲🇽</span>
-                        </div>
-                    </div>
-                    <div class="flex items-center justify-between text-[11px] text-platinum-500">
-                        <span class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3 h-3 text-platinum-600"></i>SoFi Stadium</span>
-                        <span class="flex items-center gap-1.5 text-gold-400/80 font-medium"><i data-lucide="clock" class="w-3 h-3"></i>03:00 WIB</span>
-                    </div>
-                </div>
-
-                <!-- Match 3 -->
-                <div class="match-card scroll-reveal card-obsidian p-6 rounded-2xl bg-navy-900/40 border border-gold-400/15" data-group="group-b" style="--reveal-delay:.12s">
-                    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-400/30 to-transparent"></div>
-                    <div class="flex items-center justify-between mb-5">
-                        <span class="text-[10px] tracking-[.2em] uppercase text-platinum-500 font-medium flex items-center gap-1.5"><i data-lucide="calendar" class="w-3 h-3"></i>12 Jun 2026</span>
-                        <span class="text-[9px] px-2.5 py-1 rounded-full bg-gold-400/10 border border-gold-400/15 text-gold-400 font-bold tracking-wider uppercase">Grup B</span>
-                    </div>
-                    <div class="flex items-center justify-between mb-5">
-                        <div class="flex items-center gap-3 flex-1">
-                            <span class="text-2xl">🇧🇷</span>
-                            <span class="font-medium text-sm text-white">Brasil</span>
-                        </div>
-                        <span class="text-gold-400 font-bold text-xs tracking-widest px-3">VS</span>
-                        <div class="flex items-center gap-3 flex-1 justify-end">
-                            <span class="font-medium text-sm text-white">Kroasia</span>
-                            <span class="text-2xl">🇭🇷</span>
-                        </div>
-                    </div>
-                    <div class="flex items-center justify-between text-[11px] text-platinum-500">
-                        <span class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3 h-3 text-platinum-600"></i>MetLife Stadium</span>
-                        <span class="flex items-center gap-1.5 text-gold-400/80 font-medium"><i data-lucide="clock" class="w-3 h-3"></i>21:00 WIB</span>
-                    </div>
-                </div>
-
-                <!-- Match 4 -->
-                <div class="match-card scroll-reveal card-obsidian p-6 rounded-2xl bg-navy-900/40 border border-platinum-800/10" data-group="group-b" style="--reveal-delay:.18s">
-                    <div class="flex items-center justify-between mb-5">
-                        <span class="text-[10px] tracking-[.2em] uppercase text-platinum-500 font-medium flex items-center gap-1.5"><i data-lucide="calendar" class="w-3 h-3"></i>13 Jun 2026</span>
-                        <span class="text-[9px] px-2.5 py-1 rounded-full bg-gold-400/10 border border-gold-400/15 text-gold-400 font-bold tracking-wider uppercase">Grup B</span>
-                    </div>
-                    <div class="flex items-center justify-between mb-5">
-                        <div class="flex items-center gap-3 flex-1">
-                            <span class="text-2xl">🇩🇪</span>
-                            <span class="font-medium text-sm text-white">Jerman</span>
-                        </div>
-                        <span class="text-gold-400 font-bold text-xs tracking-widest px-3">VS</span>
-                        <div class="flex items-center gap-3 flex-1 justify-end">
-                            <span class="font-medium text-sm text-white">Brasil</span>
-                            <span class="text-2xl">🇧🇷</span>
-                        </div>
-                    </div>
-                    <div class="flex items-center justify-between text-[11px] text-platinum-500">
-                        <span class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3 h-3 text-platinum-600"></i>AT&T Stadium</span>
-                        <span class="flex items-center gap-1.5 text-gold-400/80 font-medium"><i data-lucide="clock" class="w-3 h-3"></i>02:00 WIB</span>
-                    </div>
-                </div>
-
-                <!-- Match 5 -->
-                <div class="match-card scroll-reveal card-obsidian p-6 rounded-2xl bg-navy-900/40 border border-emerald-400/15" data-group="group-c" style="--reveal-delay:.24s">
-                    <div class="flex items-center justify-between mb-5">
-                        <span class="text-[10px] tracking-[.2em] uppercase text-platinum-500 font-medium flex items-center gap-1.5"><i data-lucide="calendar" class="w-3 h-3"></i>14 Jun 2026</span>
-                        <span class="text-[9px] px-2.5 py-1 rounded-full bg-emerald-400/10 border border-emerald-400/15 text-emerald-400 font-bold tracking-wider uppercase">Grup C</span>
-                    </div>
-                    <div class="flex items-center justify-between mb-5">
-                        <div class="flex items-center gap-3 flex-1">
-                            <span class="text-2xl">🇦🇷</span>
-                            <span class="font-medium text-sm text-white">Argentina</span>
-                        </div>
-                        <span class="text-gold-400 font-bold text-xs tracking-widest px-3">VS</span>
-                        <div class="flex items-center gap-3 flex-1 justify-end">
-                            <span class="font-medium text-sm text-white">Prancis</span>
-                            <span class="text-2xl">🇫🇷</span>
-                        </div>
-                    </div>
-                    <div class="flex items-center justify-between text-[11px] text-platinum-500">
-                        <span class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3 h-3 text-platinum-600"></i>Hard Rock Stadium</span>
-                        <span class="flex items-center gap-1.5 text-gold-400/80 font-medium"><i data-lucide="clock" class="w-3 h-3"></i>02:00 WIB</span>
-                    </div>
-                </div>
-
-                <!-- Match 6 -->
-                <div class="match-card scroll-reveal card-obsidian p-6 rounded-2xl bg-navy-900/40 border border-platinum-800/10" data-group="group-d" style="--reveal-delay:.3s">
-                    <div class="flex items-center justify-between mb-5">
-                        <span class="text-[10px] tracking-[.2em] uppercase text-platinum-500 font-medium flex items-center gap-1.5"><i data-lucide="calendar" class="w-3 h-3"></i>14 Jun 2026</span>
-                        <span class="text-[9px] px-2.5 py-1 rounded-full bg-platinum-400/10 border border-platinum-400/15 text-platinum-300 font-bold tracking-wider uppercase">Grup D</span>
-                    </div>
-                    <div class="flex items-center justify-between mb-5">
-                        <div class="flex items-center gap-3 flex-1">
-                            <span class="text-2xl">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
-                            <span class="font-medium text-sm text-white">Inggris</span>
-                        </div>
-                        <span class="text-gold-400 font-bold text-xs tracking-widest px-3">VS</span>
-                        <div class="flex items-center gap-3 flex-1 justify-end">
-                            <span class="font-medium text-sm text-white">Spanyol</span>
-                            <span class="text-2xl">🇪🇸</span>
-                        </div>
-                    </div>
-                    <div class="flex items-center justify-between text-[11px] text-platinum-500">
-                        <span class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3 h-3 text-platinum-600"></i>Lumen Field</span>
-                        <span class="flex items-center gap-1.5 text-gold-400/80 font-medium"><i data-lucide="clock" class="w-3 h-3"></i>21:00 WIB</span>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- CTA Nonton Bareng -->
-            <div class="scroll-reveal text-center mt-16" style="--reveal-delay:.2s">
-                <div class="inline-flex flex-col sm:flex-row items-center gap-4 p-6 md:p-8 rounded-2xl border border-emerald-400/15 bg-navy-900/30 backdrop-blur-xl">
-                    <div class="w-14 h-14 rounded-2xl bg-emerald-400/10 border border-emerald-400/20 flex items-center justify-center flex-shrink-0">
-                        <i data-lucide="tv" class="w-6 h-6 text-emerald-400"></i>
-                    </div>
-                    <div class="text-center sm:text-left">
-                        <h3 class="font-serif text-lg font-bold text-white mb-1">Nonton Bareng Piala Dunia?</h3>
-                        <p class="text-platinum-500 text-xs font-light mb-3">Sewa PS untuk nonton bareng + main game bersama teman!</p>
-                    </div>
-                    <a href="https://wa.me/6285163061987?text=Halo%20Mikayla%20Games,%20saya%20tertarik%20sewa%20PS%20untuk%20nonton%20Piala%20Dunia%202026%20bareng!" target="_blank" class="btn-gold bg-gold-400 text-obsidian-950 px-6 py-3 rounded-full text-[10px] font-bold tracking-wider uppercase hover:bg-gold-300 flex items-center gap-2 flex-shrink-0">
-                        <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>Booking Sekarang
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ONGKIR -->
-    <section id="ongkir" class="relative py-32 md:py-44 overflow-hidden">
+    <!-- JASA ISI GAME -->
+    <section id="jasa" class="relative py-24 md:py-36 overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-b from-obsidian-950 via-navy-950/30 to-obsidian-950"></div>
         <div class="relative max-w-7xl mx-auto px-6">
-            <div class="text-center mb-20 scroll-reveal">
-                <span class="inline-flex items-center gap-2 text-emerald-400 text-[10px] font-semibold tracking-[.3em] uppercase mb-5"><i data-lucide="truck" class="w-3.5 h-3.5"></i>Home Service</span>
-                <h2 class="font-serif text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-7">Estimasi Ongkir<br><span class="gold-gradient">Bandung Area</span></h2>
-            </div>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5 mb-12">
-                <div class="scroll-reveal zone-card relative bg-navy-900/40 border border-platinum-800/10 rounded-2xl overflow-hidden cursor-pointer" onclick="selectZone(this,'zona-1')">
-                    <div class="p-6"><div class="flex items-start gap-4 mb-4"><div class="zone-check w-5 h-5 rounded-md border-2 border-platinum-600/40 flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-3 h-3 text-obsidian-950 opacity-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><div><span class="text-platinum-500 text-[9px] font-bold tracking-[.3em] uppercase block mb-1">Zona 1</span><h3 class="font-serif text-lg font-bold text-white">Bandung Kota</h3></div></div><p class="text-platinum-500 text-[11px] font-light mb-5">Braga, Gedebage, Rancasari, dll</p><p class="price-tag font-serif text-2xl font-bold text-white">Rp 15K<span class="text-sm font-normal text-platinum-500"> – 25K</span></p></div>
-                    <div class="zone-detail px-6"><a href="https://wa.me/6285163061987?text=Halo%20Mikayla%20Games%20lokasi%20Saya%20terMasuk%20di%20zona%20Bandung%20Kota" target="_blank" class="btn-gold w-full bg-gold-400 text-obsidian-950 px-4 py-2.5 rounded-xl text-[10px] font-bold tracking-wider uppercase hover:bg-gold-300 flex items-center justify-center gap-2 mb-2">Booking</a></div>
-                </div>
-                <div class="scroll-reveal zone-card relative bg-navy-900/40 border border-platinum-800/10 rounded-2xl overflow-hidden cursor-pointer" onclick="selectZone(this,'zona-2')" style="--reveal-delay:.08s">
-                    <div class="p-6"><div class="flex items-start gap-4 mb-4"><div class="zone-check w-5 h-5 rounded-md border-2 border-platinum-600/40 flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-3 h-3 text-obsidian-950 opacity-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><div><span class="text-platinum-500 text-[9px] font-bold tracking-[.3em] uppercase block mb-1">Zona 2</span><h3 class="font-serif text-lg font-bold text-white">Cimahi</h3></div></div><p class="text-platinum-500 text-[11px] font-light mb-5">Cimahi Selatan/Tengah/Utara</p><p class="price-tag font-serif text-2xl font-bold text-white">Rp 25K<span class="text-sm font-normal text-platinum-500"> – 40K</span></p></div>
-                    <div class="zone-detail px-6"><a href="https://wa.me/6285163061987?text=Halo%20Mikayla%20Games%20lokasi%20Saya%20terMasuk%20di%20zona%20Cimahi" target="_blank" class="btn-gold w-full bg-gold-400 text-obsidian-950 px-4 py-2.5 rounded-xl text-[10px] font-bold tracking-wider uppercase hover:bg-gold-300 flex items-center justify-center gap-2 mb-2">Booking</a></div>
-                </div>
-                <div class="scroll-reveal zone-card relative bg-navy-900/40 border border-platinum-800/10 rounded-2xl overflow-hidden cursor-pointer" onclick="selectZone(this,'zona-3')" style="--reveal-delay:.16s">
-                    <div class="p-6"><div class="flex items-start gap-4 mb-4"><div class="zone-check w-5 h-5 rounded-md border-2 border-platinum-600/40 flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-3 h-3 text-obsidian-950 opacity-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><div><span class="text-platinum-500 text-[9px] font-bold tracking-[.3em] uppercase block mb-1">Zona 3</span><h3 class="font-serif text-lg font-bold text-white">Kab. Bandung</h3></div></div><p class="text-platinum-500 text-[11px] font-light mb-5">Lembang, Soreang, Majalaya</p><p class="price-tag font-serif text-2xl font-bold text-white">Rp 35K<span class="text-sm font-normal text-platinum-500"> – 55K</span></p></div>
-                    <div class="zone-detail px-6"><a href="https://wa.me/6285163061987?text=Halo%20Mikayla%20Games%20lokasi%20Saya%20terMasuk%20di%20zona%20Kab.%20Bandung" target="_blank" class="btn-gold w-full bg-gold-400 text-obsidian-950 px-4 py-2.5 rounded-xl text-[10px] font-bold tracking-wider uppercase hover:bg-gold-300 flex items-center justify-center gap-2 mb-2">Booking</a></div>
-                </div>
-                <div class="scroll-reveal zone-card relative bg-navy-900/40 border border-platinum-800/10 rounded-2xl overflow-hidden cursor-pointer" onclick="selectZone(this,'zona-4')" style="--reveal-delay:.24s">
-                    <div class="p-6"><div class="flex items-start gap-4 mb-4"><div class="zone-check w-5 h-5 rounded-md border-2 border-platinum-600/40 flex items-center justify-center flex-shrink-0 mt-0.5"><svg class="w-3 h-3 text-obsidian-950 opacity-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><div><span class="text-platinum-500 text-[9px] font-bold tracking-[.3em] uppercase block mb-1">Zona 4</span><h3 class="font-serif text-lg font-bold text-white">Timur & Sumedang</h3></div></div><p class="text-platinum-500 text-[11px] font-light mb-5">Cileunyi, Rancaekek, Jatinangor</p><p class="price-tag font-serif text-2xl font-bold text-white">Rp 45K<span class="text-sm font-normal text-platinum-500"> – 70K</span></p></div>
-                    <div class="zone-detail px-6"><a href="https://wa.me/6285163061987?text=Halo%20Mikayla%20Games%20saya%20termasuk%20di%20zona%20Timur" target="_blank" class="btn-gold w-full bg-gold-400 text-obsidian-950 px-4 py-2.5 rounded-xl text-[10px] font-bold tracking-wider uppercase hover:bg-gold-300 flex items-center justify-center gap-2 mb-2">Booking</a></div>
-                </div>
+            <div class="text-center mb-16 scroll-reveal"><span class="text-emerald-400 text-[10px] font-semibold tracking-[.3em] uppercase block mb-5">Layanan Kami</span><h2 class="font-serif text-4xl md:text-6xl font-bold tracking-tight mb-7">Jasa Isi Game <span class="gold-gradient">Panggilan</span></h2><p class="text-platinum-400 text-base font-light max-w-lg mx-auto leading-relaxed">Teknisi datang ke rumah Anda. Tinggal duduk santai, konsol langsung penuh game!</p></div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="scroll-reveal card-obsidian relative bg-navy-900/40 border border-platinum-800/10 rounded-2xl overflow-hidden group"><div class="p-8 lg:p-10"><div class="w-14 h-14 rounded-xl bg-matte-800/60 border border-platinum-700/20 flex items-center justify-center mb-6"><i data-lucide="disc-3" class="w-6 h-6 text-platinum-300 group-hover:text-gold-400 transition-colors duration-500"></i></div><span class="text-emerald-400/70 text-[9px] font-bold tracking-[.35em] uppercase">PlayStation 3</span><h3 class="font-serif text-2xl lg:text-3xl font-bold mt-2 mb-3 tracking-tight text-white">PS3HEN</h3><p class="text-platinum-500 font-light leading-relaxed mb-6 text-sm">Instalasi HEN terbaru + puluhan game PS3 premium langsung di rumah Anda.</p><ul class="space-y-2.5 mb-8"><li class="flex items-center gap-2.5 text-sm text-platinum-400"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500/70 flex-shrink-0"></i>HEN Firmware Terbaru</li><li class="flex items-center gap-2.5 text-sm text-platinum-400"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500/70 flex-shrink-0"></i>Free Games Included</li><li class="flex items-center gap-2.5 text-sm text-platinum-400"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500/70 flex-shrink-0"></i>Stabil & Aman</li></ul><div class="flex items-baseline gap-1 mb-4"><span class="font-serif text-3xl font-bold text-white">Rp 100K</span><span class="text-platinum-600 text-sm font-light">/ konsol</span></div><div class="p-3 rounded-lg bg-emerald-400/[.06] border border-emerald-400/15 flex items-center gap-2"><i data-lucide="truck" class="w-3.5 h-3.5 text-emerald-400 flex-shrink-0"></i><span class="text-emerald-400 text-[10px] font-medium">+ Ongkir santai (diskon 30%)</span></div></div></div>
+                <div class="scroll-reveal card-obsidian relative bg-navy-900/40 border border-gold-400/20 rounded-2xl overflow-hidden group" style="--reveal-delay:.1s"><div class="absolute top-0 left-0 right-0 h-px gold-line opacity-50"></div><div class="absolute top-5 right-5"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold-400/10 border border-gold-400/20 text-gold-400 text-[9px] font-bold tracking-[.2em] uppercase"><span class="w-1 h-1 bg-gold-400 rounded-full"></span>Popular</span></div><div class="p-8 lg:p-10"><div class="w-14 h-14 rounded-xl bg-gold-400/10 border border-gold-400/20 flex items-center justify-center mb-6"><i data-lucide="gamepad-2" class="w-6 h-6 text-gold-400"></i></div><span class="text-gold-400/70 text-[9px] font-bold tracking-[.35em] uppercase">PlayStation 4</span><h3 class="font-serif text-2xl lg:text-3xl font-bold mt-2 mb-3 tracking-tight text-white">PS4HEN</h3><p class="text-platinum-500 font-light leading-relaxed mb-6 text-sm">Jailbreak GoldHEN terbaru + puluhan game PS4 premium. Home service lengkap.</p><ul class="space-y-2.5 mb-8"><li class="flex items-center gap-2.5 text-sm text-platinum-400"><i data-lucide="check-circle-2" class="w-4 h-4 text-gold-400/70 flex-shrink-0"></i>GoldHEN Terbaru</li><li class="flex items-center gap-2.5 text-sm text-platinum-400"><i data-lucide="check-circle-2" class="w-4 h-4 text-gold-400/70 flex-shrink-0"></i>Puluhan Game Premium</li><li class="flex items-center gap-2.5 text-sm text-platinum-400"><i data-lucide="check-circle-2" class="w-4 h-4 text-gold-400/70 flex-shrink-0"></i>Homebrew Apps</li></ul><div class="flex items-baseline gap-1 mb-4"><span class="font-serif text-3xl font-bold text-white">Rp 150K</span><span class="text-platinum-600 text-sm font-light">/ konsol</span></div><div class="p-3 rounded-lg bg-emerald-400/[.06] border border-emerald-400/15 flex items-center gap-2"><i data-lucide="truck" class="w-3.5 h-3.5 text-emerald-400 flex-shrink-0"></i><span class="text-emerald-400 text-[10px] font-medium">+ Ongkir santai (diskon 30%)</span></div></div></div>
+                <div class="scroll-reveal card-obsidian relative bg-navy-900/40 border border-platinum-800/10 rounded-2xl overflow-hidden group" style="--reveal-delay:.2s"><div class="absolute top-5 right-5"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-400/10 border border-emerald-400/20 text-emerald-400 text-[9px] font-bold tracking-[.2em] uppercase"><span class="w-1 h-1 bg-emerald-400 rounded-full"></span>Next-Gen</span></div><div class="p-8 lg:p-10"><div class="w-14 h-14 rounded-xl bg-matte-800/60 border border-platinum-700/20 flex items-center justify-center mb-6"><i data-lucide="crown" class="w-6 h-6 text-platinum-300 group-hover:text-emerald-400 transition-colors duration-500"></i></div><span class="text-emerald-400/70 text-[9px] font-bold tracking-[.35em] uppercase">PlayStation 5</span><h3 class="font-serif text-2xl lg:text-3xl font-bold mt-2 mb-3 tracking-tight text-white">PS5HEN</h3><p class="text-platinum-500 font-light leading-relaxed mb-6 text-sm">Jailbreak PS5 untuk firmware kompatibel + game next-gen included.</p><ul class="space-y-2.5 mb-8"><li class="flex items-center gap-2.5 text-sm text-platinum-400"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500/70 flex-shrink-0"></i>Jailbreak Terkini</li><li class="flex items-center gap-2.5 text-sm text-platinum-400"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500/70 flex-shrink-0"></i>Game PS5 Included</li><li class="flex items-center gap-2.5 text-sm text-platinum-400"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500/70 flex-shrink-0"></i>Garansi Service</li></ul><div class="flex items-baseline gap-1 mb-4"><span class="font-serif text-3xl font-bold text-white">Rp 300K</span><span class="text-platinum-600 text-sm font-light">/ konsol</span></div><div class="p-3 rounded-lg bg-emerald-400/[.06] border border-emerald-400/15 flex items-center gap-2"><i data-lucide="truck" class="w-3.5 h-3.5 text-emerald-400 flex-shrink-0"></i><span class="text-emerald-400 text-[10px] font-medium">+ Ongkir santai (diskon 30%)</span></div></div></div>
             </div>
         </div>
     </section>
 
-    <!-- KEUNGGULAN -->
-    <section id="keunggulan" class="relative py-32 md:py-44 overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-b from-obsidian-950 via-navy-950/20 to-obsidian-950"></div>
+    <!-- KATALOG GAME PDF (FITUR BARU) -->
+    <section id="katalog" class="relative py-24 md:py-36 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-obsidian-950 via-navy-950/30 to-obsidian-950"></div>
+        <div class="absolute top-0 left-0 right-0 h-px gold-line opacity-20"></div>
         <div class="relative max-w-7xl mx-auto px-6">
-            <div class="flex flex-col lg:flex-row gap-16 lg:gap-24">
-                <div class="lg:w-5/12 scroll-reveal">
-                    <span class="text-emerald-400 text-[10px] font-semibold tracking-[.35em] uppercase block mb-5">Mengapa memilih Mikayla Games?</span>
-                    <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-7">Bukan Sekadar<br><span class="gold-gradient">Isi Game</span></h2>
-                    <p class="text-platinum-400 font-light leading-relaxed text-lg mb-10">Setiap konsol ditangani dengan standar premium.</p>
-                    <div class="relative rounded-2xl overflow-hidden aspect-[4/3]">
-                        <img src="https://wallpapercave.com/wp/wp12141999.jpg" alt="Service" class="w-full h-full object-cover" onerror="this.style.display='none'">
-                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950/40 to-transparent"></div>
+            <div class="text-center mb-16 scroll-reveal">
+                <span class="text-emerald-400 text-[10px] font-semibold tracking-[.3em] uppercase block mb-5">Daftar Game</span>
+                <h2 class="font-serif text-4xl md:text-6xl font-bold tracking-tight mb-7">Katalog Game <span class="gold-gradient">Terbaru</span></h2>
+                <p class="text-platinum-400 text-base font-light max-w-lg mx-auto leading-relaxed">Lihat atau unduh daftar game terlengkap yang tersedia untuk setiap konsol.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- PS3 List -->
+                <div class="scroll-reveal card-obsidian relative bg-navy-900/40 border border-platinum-800/10 rounded-2xl overflow-hidden group">
+                    <div class="p-8 text-center">
+                        <div class="w-14 h-14 rounded-xl bg-matte-800/60 border border-platinum-700/20 flex items-center justify-center mb-6 mx-auto">
+                            <i data-lucide="disc-3" class="w-6 h-6 text-platinum-300 group-hover:text-gold-400 transition-colors duration-500"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold tracking-tight text-white mb-2">List Game PS3</h3>
+                        <p class="text-platinum-500 text-xs mb-6">Update 2025</p>
+                        <div class="flex flex-col gap-3">
+                            <!-- GANTI_ID_FILE_PS3 diganti dengan ID Google Drive Anda -->
+                            <a href="https://drive.google.com/file/d/GANTI_ID_FILE_PS3/view" target="_blank" class="btn-gold inline-flex items-center justify-center gap-2 bg-gold-400 text-obsidian-950 px-5 py-3 rounded-xl text-xs font-bold tracking-wider uppercase hover:bg-gold-300 w-full">
+                                <i data-lucide="eye" class="w-4 h-4"></i> View PDF
+                            </a>
+                            <a href="https://drive.google.com/uc?export=download&id=GANTI_ID_FILE_PS3" class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-platinum-600/30 text-platinum-300 text-xs font-medium tracking-wider uppercase hover:border-gold-400/30 hover:text-gold-300 transition-all w-full">
+                                <i data-lucide="download" class="w-4 h-4"></i> Download PDF
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="lg:w-7/12">
-                    <div class="grid sm:grid-cols-2 gap-5">
-                        <div class="scroll-reveal card-obsidian p-7 rounded-2xl bg-navy-900/25 border border-platinum-800/10"><div class="w-10 h-10 rounded-lg bg-gold-400/8 border border-gold-400/15 flex items-center justify-center mb-5"><i data-lucide="shield-check" class="w-5 h-5 text-gold-400"></i></div><h3 class="font-serif text-base font-bold mb-2 text-white">Aman & Terpercaya</h3><p class="text-platinum-500 font-light text-xs">Metode terbaru dan teruji.</p></div>
-                        <div class="scroll-reveal card-obsidian p-7 rounded-2xl bg-navy-900/25 border border-platinum-800/10" style="--reveal-delay:.08s"><div class="w-10 h-10 rounded-lg bg-emerald-400/8 border border-emerald-400/15 flex items-center justify-center mb-5"><i data-lucide="home" class="w-5 h-5 text-emerald-400"></i></div><h3 class="font-serif text-base font-bold mb-2 text-white">Panggilan ke Rumah</h3><p class="text-platinum-500 font-light text-xs">Kami datang langsung.</p></div>
-                        <div class="scroll-reveal card-obsidian p-7 rounded-2xl bg-navy-900/25 border border-platinum-800/10" style="--reveal-delay:.16s"><div class="w-10 h-10 rounded-lg bg-beige-400/8 border border-beige-400/15 flex items-center justify-center mb-5"><i data-lucide="package" class="w-5 h-5 text-beige-400"></i></div><h3 class="font-serif text-base font-bold mb-2 text-white">Game Lengkap</h3><p class="text-platinum-500 font-light text-xs">Library sangat lengkap.</p></div>
-                        <div class="scroll-reveal card-obsidian p-7 rounded-2xl bg-navy-900/25 border border-platinum-800/10" style="--reveal-delay:.24s"><div class="w-10 h-10 rounded-lg bg-gold-400/8 border border-gold-400/15 flex items-center justify-center mb-5"><i data-lucide="headphones" class="w-5 h-5 text-gold-400"></i></div><h3 class="font-serif text-base font-bold mb-2 text-white">Support 24/7</h3><p class="text-platinum-500 font-light text-xs">Hubungi kami kapan saja.</p></div>
-                        <div class="scroll-reveal card-obsidian p-7 rounded-2xl bg-navy-900/25 border border-platinum-800/10" style="--reveal-delay:.32s"><div class="w-10 h-10 rounded-lg bg-emerald-400/8 border border-emerald-400/15 flex items-center justify-center mb-5"><i data-lucide="zap" class="w-5 h-5 text-emerald-400"></i></div><h3 class="font-serif text-base font-bold mb-2 text-white">Proses Cepat</h3><p class="text-platinum-500 font-light text-xs">Instalasi efisien dan tepat.</p></div>
-                        <div class="scroll-reveal card-obsidian p-7 rounded-2xl bg-navy-900/25 border border-platinum-800/10" style="--reveal-delay:.4s"><div class="w-10 h-10 rounded-lg bg-platinum-400/8 border border-platinum-400/15 flex items-center justify-center mb-5"><i data-lucide="award" class="w-5 h-5 text-platinum-300"></i></div><h3 class="font-serif text-base font-bold mb-2 text-white">Bergaransi</h3><p class="text-platinum-500 font-light text-xs">Perbaikan tanpa biaya.</p></div>
+                <!-- PS4 List -->
+                <div class="scroll-reveal card-obsidian relative bg-navy-900/40 border border-gold-400/20 rounded-2xl overflow-hidden group" style="--reveal-delay:.1s">
+                    <div class="absolute top-0 left-0 right-0 h-px gold-line opacity-50"></div>
+                    <div class="p-8 text-center">
+                        <div class="w-14 h-14 rounded-xl bg-gold-400/10 border border-gold-400/20 flex items-center justify-center mb-6 mx-auto">
+                            <i data-lucide="gamepad-2" class="w-6 h-6 text-gold-400"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold tracking-tight text-white mb-2">List Game PS4</h3>
+                        <p class="text-platinum-500 text-xs mb-6">Update 2026</p>
+                        <div class="flex flex-col gap-3">
+                            <!-- GANTI_ID_FILE_PS4 diganti dengan ID Google Drive Anda -->
+                            <a href="https://drive.google.com/file/d/GANTI_ID_FILE_PS4/view" target="_blank" class="btn-gold inline-flex items-center justify-center gap-2 bg-gold-400 text-obsidian-950 px-5 py-3 rounded-xl text-xs font-bold tracking-wider uppercase hover:bg-gold-300 w-full">
+                                <i data-lucide="eye" class="w-4 h-4"></i> View PDF
+                            </a>
+                            <a href="https://drive.google.com/uc?export=download&id=GANTI_ID_FILE_PS4" class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-platinum-600/30 text-platinum-300 text-xs font-medium tracking-wider uppercase hover:border-gold-400/30 hover:text-gold-300 transition-all w-full">
+                                <i data-lucide="download" class="w-4 h-4"></i> Download PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- PS5 List -->
+                <div class="scroll-reveal card-obsidian relative bg-navy-900/40 border border-platinum-800/10 rounded-2xl overflow-hidden group" style="--reveal-delay:.2s">
+                    <div class="p-8 text-center">
+                        <div class="w-14 h-14 rounded-xl bg-matte-800/60 border border-platinum-700/20 flex items-center justify-center mb-6 mx-auto">
+                            <i data-lucide="crown" class="w-6 h-6 text-platinum-300 group-hover:text-emerald-400 transition-colors duration-500"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold tracking-tight text-white mb-2">List Game PS5</h3>
+                        <p class="text-platinum-500 text-xs mb-6">Update 2027</p>
+                        <div class="flex flex-col gap-3">
+                            <!-- GANTI_ID_FILE_PS5 diganti dengan ID Google Drive Anda -->
+                            <a href="https://drive.google.com/file/d/GANTI_ID_FILE_PS5/view" target="_blank" class="btn-gold inline-flex items-center justify-center gap-2 bg-gold-400 text-obsidian-950 px-5 py-3 rounded-xl text-xs font-bold tracking-wider uppercase hover:bg-gold-300 w-full">
+                                <i data-lucide="eye" class="w-4 h-4"></i> View PDF
+                            </a>
+                            <a href="https://drive.google.com/uc?export=download&id=GANTI_ID_FILE_PS5" class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-platinum-600/30 text-platinum-300 text-xs font-medium tracking-wider uppercase hover:border-gold-400/30 hover:text-gold-300 transition-all w-full">
+                                <i data-lucide="download" class="w-4 h-4"></i> Download PDF
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- STATS -->
-    <section class="relative py-28 md:py-36">
-        <div class="absolute inset-0 bg-gradient-to-b from-obsidian-950 via-midnight-950/40 to-obsidian-950"></div>
+    <!-- CALCULATOR -->
+    <section id="kalkulator" class="relative py-24 md:py-36">
+        <div class="absolute inset-0 bg-gradient-to-b from-obsidian-950 via-navy-950/30 to-obsidian-950 animate-breathe"></div>
         <div class="relative max-w-7xl mx-auto px-6">
-            <div class="scroll-reveal text-center mb-16"><h2 class="font-serif text-4xl md:text-6xl font-bold tracking-tight">Angka <span class="gold-gradient">Berbicara</span></h2></div>
-            <div class="grid grid-cols-2 lg:grid-cols-5 gap-5">
-                <div class="scroll-reveal text-center p-8 md:p-10 rounded-2xl border border-platinum-800/10 bg-navy-900/20"><span class="font-serif text-4xl md:text-5xl font-bold gold-gradient block mb-2">500+</span><span class="text-platinum-500 text-xs font-light">Konsol Terisi</span></div>
-                <div class="scroll-reveal text-center p-8 md:p-10 rounded-2xl border border-platinum-800/10 bg-navy-900/20" style="--reveal-delay:.08s"><span class="font-serif text-4xl md:text-5xl font-bold emerald-gradient block mb-2">100%</span><span class="text-platinum-500 text-xs font-light">Client Puas</span></div>
-                <div class="scroll-reveal text-center p-8 md:p-10 rounded-2xl border border-gold-400/15 bg-navy-900/20 relative" style="--reveal-delay:.16s"><span class="relative flex h-2 w-2 absolute top-3 right-3"><span class="live-dot absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span></span><span class="font-serif text-4xl md:text-5xl font-bold gold-gradient block mb-2" id="stat-total-visitors">0</span><span class="text-platinum-500 text-xs font-light">Total Pengunjung</span></div>
-                <div class="scroll-reveal text-center p-8 md:p-10 rounded-2xl border border-emerald-400/15 bg-navy-900/20 relative" style="--reveal-delay:.24s"><span class="relative flex h-2 w-2 absolute top-3 right-3"><span class="live-dot absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span></span><span class="font-serif text-4xl md:text-5xl font-bold emerald-gradient block mb-2" id="stat-live-visitors">0</span><span class="text-platinum-500 text-xs font-light">Sedang Online</span></div>
-                <div class="scroll-reveal text-center p-8 md:p-10 rounded-2xl border border-platinum-800/10 bg-navy-900/20" style="--reveal-delay:.32s"><span class="font-serif text-4xl md:text-5xl font-bold gold-gradient block mb-2">24/7</span><span class="text-platinum-500 text-xs font-light">Selalu Ready</span></div>
+            <div class="text-center mb-16 scroll-reveal"><span class="text-gold-400 text-[10px] font-semibold tracking-[.35em] uppercase block mb-5">Kalkulator Estimasi</span><h2 class="font-serif text-4xl md:text-6xl font-bold tracking-tight mb-7">Hitung <span class="gold-gradient">Total Biaya</span></h2></div>
+            <div class="grid lg:grid-cols-5 gap-8 lg:gap-10">
+                <div class="lg:col-span-3 scroll-reveal">
+                    <div class="bg-navy-900/40 border border-platinum-800/10 rounded-2xl p-8 lg:p-10">
+                        <div class="mb-7"><label class="flex items-center gap-2 text-gold-400 text-[10px] font-bold tracking-[.3em] uppercase mb-3"><span class="w-5 h-5 rounded-full bg-gold-400/10 border border-gold-400/20 flex items-center justify-center text-gold-400 text-[9px] font-bold">1</span>Pilih Zona Tujuan</label><select id="zona-select" class="custom-select w-full bg-navy-800/60 border border-platinum-700/20 rounded-xl px-4 py-3.5 text-white text-sm font-light tracking-wide focus:outline-none calc-input cursor-pointer" onchange="onZonaChange()"><option value="">— Pilih zona tujuan —</option><option value="1">Zona 1 — Bandung Kota (0–8 km)</option><option value="2">Zona 2 — Cimahi (8–18 km)</option><option value="3">Zona 3 — Kab. Bandung (10–25 km)</option><option value="4">Zona 4 — Timur & Sumedang (15–40 km)</option></select></div>
+                        <div class="mb-7"><label class="flex items-center gap-2 text-gold-400 text-[10px] font-bold tracking-[.3em] uppercase mb-3"><span class="w-5 h-5 rounded-full bg-gold-400/10 border border-gold-400/20 flex items-center justify-center text-gold-400 text-[9px] font-bold">2</span>Jasa Isi Game</label><div class="grid grid-cols-2 sm:grid-cols-4 gap-3" id="game-chips"><div class="chip rounded-xl border border-platinum-700/20 px-3 py-3 text-center" data-game="none" onclick="selectGame('none')"><i data-lucide="x-circle" class="w-5 h-5 mx-auto mb-1.5 chip-icon text-platinum-500"></i><span class="text-[10px] font-semibold tracking-wide block chip-label text-platinum-400">Tanpa Jasa</span><span class="text-[9px] text-platinum-600 font-light block mt-0.5 chip-price">Ongkir normal</span></div><div class="chip selected rounded-xl border border-gold-400/30 bg-gold-400/[.08] px-3 py-3 text-center" data-game="ps3hen" onclick="selectGame('ps3hen')"><i data-lucide="disc-3" class="w-5 h-5 mx-auto mb-1.5 chip-icon text-gold-400"></i><span class="text-[10px] font-semibold tracking-wide block chip-label text-gold-400">PS3HEN</span><span class="text-[9px] text-gold-400/60 font-light block mt-0.5 chip-price">Rp 100K</span></div><div class="chip rounded-xl border border-platinum-700/20 px-3 py-3 text-center" data-game="ps4hen" onclick="selectGame('ps4hen')"><i data-lucide="gamepad-2" class="w-5 h-5 mx-auto mb-1.5 chip-icon text-platinum-400"></i><span class="text-[10px] font-semibold tracking-wide block chip-label text-platinum-300">PS4HEN</span><span class="text-[9px] text-platinum-600 font-light block mt-0.5 chip-price">Rp 150K</span></div><div class="chip rounded-xl border border-platinum-700/20 px-3 py-3 text-center" data-game="ps5hen" onclick="selectGame('ps5hen')"><i data-lucide="crown" class="w-5 h-5 mx-auto mb-1.5 chip-icon text-platinum-400"></i><span class="text-[10px] font-semibold tracking-wide block chip-label text-platinum-300">PS5HEN</span><span class="text-[9px] text-platinum-600 font-light block mt-0.5 chip-price">Rp 300K</span></div></div><div id="santai-notice" class="mt-3 p-3 rounded-lg bg-emerald-400/[.06] border border-emerald-400/15 flex items-center gap-2"><i data-lucide="sparkles" class="w-3.5 h-3.5 text-emerald-400 flex-shrink-0"></i><span class="text-emerald-400 text-[10px] font-medium">Ongkir diskon 30% — lebih santai pakai jasa isi game!</span></div></div>
+                        <div class="mb-7"><label class="flex items-center gap-2 text-gold-400 text-[10px] font-bold tracking-[.3em] uppercase mb-3"><span class="w-5 h-5 rounded-full bg-gold-400/10 border border-gold-400/20 flex items-center justify-center text-gold-400 text-[9px] font-bold">3</span>Jenis Layanan</label><div class="grid grid-cols-2 gap-3" id="service-chips"><div class="chip selected rounded-xl border border-gold-400/30 bg-gold-400/[.08] px-4 py-3 text-center" data-service="regular" onclick="selectService('regular')"><i data-lucide="truck" class="w-5 h-5 mx-auto mb-1.5 chip-icon text-gold-400"></i><span class="text-xs font-semibold tracking-wide block chip-label text-gold-400">Regular</span><span class="text-[10px] text-platinum-500 font-light">Same/Next Day</span></div><div class="chip rounded-xl border border-platinum-700/20 px-4 py-3 text-center" data-service="express" onclick="selectService('express')"><i data-lucide="zap" class="w-5 h-5 mx-auto mb-1.5 chip-icon text-platinum-400"></i><span class="text-xs font-semibold tracking-wide block chip-label text-platinum-300">Express</span><span class="text-[10px] text-platinum-500 font-light">Prioritas Hari Ini</span></div></div></div>
+                        <div class="mb-7"><label class="flex items-center gap-2 text-gold-400 text-[10px] font-bold tracking-[.3em] uppercase mb-3"><span class="w-5 h-5 rounded-full bg-gold-400/10 border border-gold-400/20 flex items-center justify-center text-gold-400 text-[9px] font-bold">4</span>Jumlah Konsol</label><div class="flex items-center gap-5"><button onclick="adjustQty(-1)" class="w-10 h-10 rounded-xl border border-platinum-700/20 flex items-center justify-center text-platinum-400 hover:text-gold-400 hover:border-gold-400/30 transition-all active:scale-95"><i data-lucide="minus" class="w-4 h-4"></i></button><span id="qty-display" class="font-serif text-3xl font-bold text-white w-10 text-center tabular-nums">1</span><button onclick="adjustQty(1)" class="w-10 h-10 rounded-xl border border-platinum-700/20 flex items-center justify-center text-platinum-400 hover:text-gold-400 hover:border-gold-400/30 transition-all active:scale-95"><i data-lucide="plus" class="w-4 h-4"></i></button></div></div>
+                        <div class="mb-10"><label class="flex items-center gap-2 text-gold-400 text-[10px] font-bold tracking-[.3em] uppercase mb-3"><span class="w-5 h-5 rounded-full bg-gold-400/10 border border-gold-400/20 flex items-center justify-center text-gold-400 text-[9px] font-bold">5</span>Alamat Tujuan (Opsional)</label><textarea id="alamat-input" rows="2" placeholder="Masukkan alamat lengkap tujuan..." class="w-full bg-navy-800/60 border border-platinum-700/20 rounded-xl px-4 py-3 text-white text-sm font-light tracking-wide focus:outline-none calc-input resize-none placeholder:text-platinum-700"></textarea></div>
+                        <button onclick="hitungOngkir()" class="btn-gold w-full bg-gold-400 text-obsidian-950 py-4 rounded-xl text-sm font-bold tracking-wider uppercase hover:bg-gold-300 flex items-center justify-center gap-3 active:scale-[.98] transition-transform"><i data-lucide="calculator" class="w-4 h-4"></i>Hitung Total Estimasi</button>
+                    </div>
+                </div>
+                <div class="lg:col-span-2 scroll-reveal" style="--reveal-delay:.15s">
+                    <div id="result-panel" class="sticky top-28">
+                        <div id="result-empty" class="bg-navy-900/40 border border-platinum-800/10 rounded-2xl p-8 text-center"><div class="w-16 h-16 rounded-2xl bg-gold-400/5 border border-gold-400/10 flex items-center justify-center mx-auto mb-6"><i data-lucide="route" class="w-7 h-7 text-gold-400/30"></i></div><h3 class="font-serif text-xl font-bold text-white mb-3">Estimasi Belum Dihitung</h3><p class="text-platinum-500 text-sm font-light leading-relaxed mb-6">Isi form dan klik "Hitung" untuk melihat estimasi total biaya jasa + ongkir.</p><div class="origin-badge inline-flex items-start gap-2.5 px-4 py-3 rounded-xl text-left"><i data-lucide="navigation" class="w-3.5 h-3.5 text-gold-400 flex-shrink-0 mt-0.5"></i><div><span class="text-platinum-400 text-[10px] font-light block">Dari: Mikayla Games</span><span class="text-platinum-500 text-[10px] font-light">Jl. Jatimulya V No.17, Kel. Gumuruh, Kec. Batununggal, Bandung 40275</span></div></div></div>
+                        <div id="result-filled" style="display:none"><div class="bg-navy-900/40 border border-gold-400/20 rounded-2xl overflow-hidden"><div class="h-px gold-line opacity-50"></div><div class="p-8"><div class="flex items-center gap-2 mb-5"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i><span class="text-emerald-400 text-[10px] font-bold tracking-[.3em] uppercase">Estimasi Dihitung</span></div><div class="flex items-center gap-3 mb-5 p-4 rounded-xl bg-obsidian-950/50"><div class="flex flex-col items-center gap-0.5"><div class="w-3 h-3 rounded-full bg-gold-400"></div><div class="w-px h-6" style="background:repeating-linear-gradient(to bottom,#d4af37 0 2px,transparent 2px 5px)"></div><div class="w-3 h-3 rounded-full bg-emerald-400"></div></div><div class="flex-1"><p class="text-white text-xs font-medium">Mikayla Games · Gumuruh</p><p class="text-platinum-600 text-[10px] mt-2 mb-1" id="result-route-dist">~5 km</p><p class="text-gold-400 text-xs font-medium" id="result-route-dest">Tujuan</p></div></div><div id="result-game-badge" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gold-400/10 border border-gold-400/20 mb-3"><i data-lucide="gamepad-2" class="w-3 h-3 text-gold-400"></i><span id="result-game-text" class="text-gold-400 text-[10px] font-bold tracking-wide">PS4HEN</span></div><div id="result-zone-badge" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-navy-800/60 border border-platinum-700/15 mb-5 ml-2"><i data-lucide="map-pin" class="w-3 h-3 text-platinum-500"></i><span id="result-zone-text" class="text-platinum-400 text-[10px] font-bold tracking-wide">Zona 1</span></div><div class="bg-obsidian-950/50 rounded-xl p-5 mb-4 space-y-2.5"><div id="result-game-row" class="flex justify-between items-center"><span class="text-platinum-500 text-xs font-light">Jasa Isi Game</span><span id="result-game-price" class="text-white text-xs font-medium tabular-nums">Rp 150.000</span></div><div class="flex justify-between items-center"><span class="text-platinum-500 text-xs font-light">Ongkir Dasar</span><span id="result-base" class="text-white text-xs font-medium tabular-nums">Rp 15.000</span></div><div id="result-santai-row" class="flex justify-between items-center" style="display:none"><span class="text-emerald-400 text-xs font-medium flex items-center gap-1"><i data-lucide="sparkles" class="w-3 h-3"></i>Diskon Santai</span><span id="result-santai" class="text-emerald-400 text-xs font-medium tabular-nums">- Rp 4.500</span></div><div class="flex justify-between items-center" id="result-express-row" style="display:none"><span class="text-platinum-500 text-xs font-light">Biaya Express</span><span id="result-express" class="text-white text-xs font-medium tabular-nums">+ Rp 10.000</span></div><div class="flex justify-between items-center" id="result-extra-row" style="display:none"><span class="text-platinum-500 text-xs font-light">Konsol Tambahan</span><span id="result-extra" class="text-white text-xs font-medium tabular-nums">+ Rp 5.000</span></div><div class="h-px bg-platinum-800/20 !my-3"></div><div class="flex justify-between items-center"><span class="text-gold-400 text-xs font-semibold">Total Estimasi</span><span id="result-total" class="price-shine font-serif text-2xl font-bold result-price-big">Rp 165.000</span></div></div><div class="flex items-start gap-2 mb-6 px-1"><i data-lucide="info" class="w-3 h-3 text-platinum-600 flex-shrink-0 mt-0.5"></i><span id="result-range" class="text-platinum-500 text-[10px] font-light leading-relaxed">Estimasi bisa berbeda ±Rp 5K tergantung kondisi jalan</span></div><a id="result-wa-btn" href="#" target="_blank" class="btn-gold w-full bg-gold-400 text-obsidian-950 py-3.5 rounded-xl text-xs font-bold tracking-wider uppercase hover:bg-gold-300 flex items-center justify-center gap-2 mb-3"><i data-lucide="message-circle" class="w-4 h-4"></i>Booking via WhatsApp</a><button onclick="resetForm()" class="w-full py-3 rounded-xl border border-platinum-700/20 text-platinum-400 text-[10px] font-medium tracking-wider uppercase hover:border-platinum-600/30 hover:text-platinum-300 transition-all flex items-center justify-center gap-2"><i data-lucide="rotate-ccw" class="w-3 h-3"></i>Hitung Ulang</button></div></div></div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA -->
-    <section id="kontak" class="relative py-32 md:py-44 overflow-hidden">
-        <div class="absolute inset-0">
-            <img src="https://wallpapercave.com/wp/wp15138998.webp" alt="BG" class="w-full h-full object-cover" onerror="this.style.display='none'">
-            <div class="absolute inset-0 bg-obsidian-950/88"></div>
+    <!-- ZONA -->
+    <section id="zona" class="relative py-24 md:py-36 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-obsidian-950 via-midnight-950/20 to-obsidian-950"></div>
+        <div class="relative max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 scroll-reveal"><span class="text-emerald-400 text-[10px] font-semibold tracking-[.3em] uppercase block mb-5">Detail Zona</span><h2 class="font-serif text-4xl md:text-6xl font-bold tracking-tight mb-7">4 Zona <span class="gold-gradient">Tujuan</span></h2><p class="text-platinum-400 text-base font-light max-w-lg mx-auto leading-relaxed">Tarif ongkir dari Mikayla Games. <span class="text-emerald-400">Diskon 30% jika pakai jasa!</span></p></div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+                <div class="scroll-reveal card-obsidian relative bg-navy-900/40 border border-platinum-800/10 rounded-2xl overflow-hidden"><div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 via-emerald-400 to-emerald-500"></div><div class="p-7"><div class="flex items-center justify-between mb-4"><span class="w-9 h-9 rounded-lg bg-emerald-400/10 border border-emerald-400/20 flex items-center justify-center font-serif font-bold text-emerald-400 text-sm">1</span><span class="text-emerald-400/50 text-[9px] font-bold tracking-[.3em] uppercase">0–8 km</span></div><h3 class="font-serif text-xl font-bold text-white mb-2">Bandung Kota</h3><div class="space-y-1.5"><div class="flex justify-between"><span class="text-platinum-500 text-xs font-light">Normal</span><span class="text-white text-xs font-medium">Rp 15K – 25K</span></div><div class="flex justify-between"><span class="text-emerald-400 text-xs font-medium">Santai ✨</span><span class="text-emerald-400 text-xs font-bold">Rp 10.5K – 17.5K</span></div></div></div></div>
+                <div class="scroll-reveal card-obsidian relative bg-navy-900/40 border border-platinum-800/10 rounded-2xl overflow-hidden" style="--reveal-delay:.1s"><div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-blue-400 to-blue-500"></div><div class="p-7"><div class="flex items-center justify-between mb-4"><span class="w-9 h-9 rounded-lg bg-blue-400/10 border border-blue-400/20 flex items-center justify-center font-serif font-bold text-blue-400 text-sm">2</span><span class="text-blue-400/50 text-[9px] font-bold tracking-[.3em] uppercase">8–18 km</span></div><h3 class="font-serif text-xl font-bold text-white mb-2">Cimahi</h3><div class="space-y-1.5"><div class="flex justify-between"><span class="text-platinum-500 text-xs font-light">Normal</span><span class="text-white text-xs font-medium">Rp 25K – 40K</span></div><div class="flex justify-between"><span class="text-emerald-400 text-xs font-medium">Santai ✨</span><span class="text-emerald-400 text-xs font-bold">Rp 17.5K – 28K</span></div></div></div></div>
+                <div class="scroll-reveal card-obsidian relative bg-navy-900/40 border border-platinum-800/10 rounded-2xl overflow-hidden" style="--reveal-delay:.2s"><div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold-500 via-gold-400 to-gold-500"></div><div class="p-7"><div class="flex items-center justify-between mb-4"><span class="w-9 h-9 rounded-lg bg-gold-400/10 border border-gold-400/20 flex items-center justify-center font-serif font-bold text-gold-400 text-sm">3</span><span class="text-gold-400/50 text-[9px] font-bold tracking-[.3em] uppercase">10–25 km</span></div><h3 class="font-serif text-xl font-bold text-white mb-2">Kab. Bandung</h3><div class="space-y-1.5"><div class="flex justify-between"><span class="text-platinum-500 text-xs font-light">Normal</span><span class="text-white text-xs font-medium">Rp 35K – 55K</span></div><div class="flex justify-between"><span class="text-emerald-400 text-xs font-medium">Santai ✨</span><span class="text-emerald-400 text-xs font-bold">Rp 24.5K – 38.5K</span></div></div></div></div>
+                <div class="scroll-reveal card-obsidian relative bg-navy-900/40 border border-platinum-800/10 rounded-2xl overflow-hidden" style="--reveal-delay:.3s"><div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-rose-500 via-rose-400 to-rose-500"></div><div class="p-7"><div class="flex items-center justify-between mb-4"><span class="w-9 h-9 rounded-lg bg-rose-400/10 border border-rose-400/20 flex items-center justify-center font-serif font-bold text-rose-400 text-sm">4</span><span class="text-rose-400/50 text-[9px] font-bold tracking-[.3em] uppercase">15–40 km</span></div><h3 class="font-serif text-xl font-bold text-white mb-2">Timur & Sumedang</h3><div class="space-y-1.5"><div class="flex justify-between"><span class="text-platinum-500 text-xs font-light">Normal</span><span class="text-white text-xs font-medium">Rp 45K – 70K</span></div><div class="flex justify-between"><span class="text-emerald-400 text-xs font-medium">Santai ✨</span><span class="text-emerald-400 text-xs font-bold">Rp 31.5K – 49K</span></div></div></div></div>
+            </div>
         </div>
+    </section>
+
+    <!-- KONTAK / CTA -->
+    <section id="kontak" class="relative py-24 md:py-36 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-obsidian-950 via-navy-950/40 to-obsidian-950"></div>
         <div class="relative max-w-4xl mx-auto px-6 text-center">
             <div class="scroll-reveal">
-                <h2 class="font-serif text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8">Konsol Anda<br><span class="shimmer-text">Menunggu</span></h2>
-                <p class="text-platinum-400 text-base md:text-lg font-light max-w-xl mx-auto mb-14 leading-relaxed">Hubungi kami sekarang dan nikmati ribuan game tanpa batas.</p>
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-                    <a href="https://wa.me/6285163061987" target="_blank" class="btn-gold bg-gold-400 text-obsidian-950 px-10 py-5 rounded-full text-sm font-bold tracking-wider uppercase hover:bg-gold-300 flex items-center gap-3"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>WhatsApp Sekarang</a>
-                    <a href="tel:+6285163061987" class="btn-outline px-10 py-5 rounded-full border border-gold-400/25 text-gold-400 text-sm font-semibold tracking-wider uppercase hover:bg-gold-400/[.05] transition-all flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4"></i>0851-6306-1987</a>
-                </div>
-                <div class="mb-12 inline-flex items-center gap-3 px-5 py-3 rounded-2xl border border-platinum-800/15 bg-obsidian-950/50 backdrop-blur-xl">
-                    <i data-lucide="calendar" class="w-4 h-4 text-gold-400/40"></i>
-                    <span id="cta-date" class="text-platinum-400 text-xs font-light"></span>
-                    <span class="w-px h-4 bg-platinum-800/30"></span>
-                    <i data-lucide="clock" class="w-4 h-4 text-emerald-400/40"></i>
-                    <span id="cta-time" class="text-gold-300 text-xs font-semibold tabular-nums tracking-widest"></span>
-                    <span class="text-emerald-400/50 text-[9px] font-bold tracking-[.2em]">WIB</span>
-                </div>
-                <div class="max-w-lg mx-auto p-8 rounded-2xl border border-gold-400/10 bg-navy-900/40 backdrop-blur-xl">
-                    <div class="flex items-center gap-4 mb-7">
-                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-gold-400/15 to-emerald-400/10 border border-gold-400/15 flex items-center justify-center"><i data-lucide="user" class="w-5 h-5 text-gold-400"></i></div>
-                        <div class="text-left"><p class="font-serif font-bold text-lg text-white">Mikayla Games</p><p class="text-beige-400/50 text-xs font-light">Premium Console Service</p></div>
-                    </div>
-                    <div class="space-y-4 text-left">
-                        <div class="flex items-center gap-3 text-sm text-platinum-400"><i data-lucide="phone" class="w-4 h-4 text-gold-400/50 flex-shrink-0"></i><span class="font-light">+62 851-6306-1987</span></div>
-                        <div class="flex items-center gap-3 text-sm text-platinum-400"><i data-lucide="clock" class="w-4 h-4 text-emerald-400/50 flex-shrink-0"></i><span class="font-light">Senin — Minggu, 09:00 — 22:00</span></div>
-                        <div class="flex items-center gap-3 text-sm text-platinum-400"><i data-lucide="map-pin" class="w-4 h-4 text-beige-400/50 flex-shrink-0"></i><span class="font-light">Home service — Bandung area</span></div>
+                <div class="bg-navy-900/40 border border-gold-400/15 rounded-3xl p-10 md:p-16 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 right-0 h-px gold-line opacity-50"></div>
+                    <div class="absolute -top-20 -right-20 w-60 h-60 bg-gold-400/[.03] rounded-full blur-3xl"></div>
+                    <div class="relative">
+                        <div class="float-anim inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-gold-400 via-gold-300 to-gold-600 mb-8 shadow-lg shadow-gold-400/20">
+                            <i data-lucide="gamepad-2" class="w-9 h-9 text-obsidian-950"></i>
+                        </div>
+                        <h2 class="font-serif text-4xl md:text-5xl font-bold tracking-tight mb-4">Mikayla <span class="gold-gradient">Games</span></h2>
+                        <p class="text-platinum-400 text-lg font-light mb-2">Premium Console Service</p>
+                        <div class="origin-badge inline-flex items-start gap-3 px-5 py-3 rounded-2xl mb-6 text-left">
+                            <i data-lucide="map-pin" class="w-4 h-4 text-gold-400 flex-shrink-0 mt-0.5"></i>
+                            <div>
+                                <span class="text-platinum-400 text-xs font-light block">Lokasi Toko</span>
+                                <span class="text-platinum-300 text-sm font-light">Jl. Jatimulya V No.17, Gumuruh, Batununggal, Bandung</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+                            <a href="https://wa.me/6285163061987" target="_blank" class="btn-gold inline-flex items-center gap-3 bg-gold-400 text-obsidian-950 px-8 py-4 rounded-full text-sm font-bold tracking-wider uppercase hover:bg-gold-300">
+                                <i data-lucide="message-circle" class="w-4 h-4"></i>Chat WhatsApp
+                            </a>
+                            <a href="tel:+6285163061987" class="inline-flex items-center gap-3 px-8 py-4 rounded-full border border-platinum-600/30 text-platinum-300 text-sm font-medium tracking-wider uppercase hover:border-gold-400/30 hover:text-gold-300 transition-all">
+                                <i data-lucide="phone" class="w-4 h-4"></i>0851-6306-1987
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -666,245 +307,190 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="relative border-t border-platinum-800/10 bg-obsidian-950">
-        <div class="max-w-7xl mx-auto px-6 py-16 md:py-20">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-8 mb-12">
-                <a href="#hero" class="flex items-center gap-3">
-                    <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center"><i data-lucide="gamepad-2" class="w-4 h-4 text-obsidian-950"></i></div>
-                    <div class="flex items-baseline gap-1"><span class="font-serif text-lg font-bold text-white">Mikayla</span><span class="font-serif text-lg font-bold gold-gradient">Games</span></div>
-                </a>
-                <div class="flex flex-wrap items-center justify-center gap-6">
-                    <a href="#layanan" class="text-[10px] text-platinum-500 hover:text-gold-400 tracking-[.2em] uppercase font-medium">Layanan</a>
-                    <a href="#katalog-game" class="text-[10px] text-platinum-500 hover:text-gold-400 tracking-[.2em] uppercase font-medium">Katalog</a>
-                    <a href="#jadwal-piala-dunia" class="text-[10px] text-platinum-500 hover:text-emerald-400 tracking-[.2em] uppercase font-medium">Piala Dunia</a>
-                    <a href="#ongkir" class="text-[10px] text-platinum-500 hover:text-gold-400 tracking-[.2em] uppercase font-medium">Ongkir</a>
-                    <a href="#kontak" class="text-[10px] text-platinum-500 hover:text-gold-400 tracking-[.2em] uppercase font-medium">Kontak</a>
-                </div>
-                <div class="flex items-center gap-2 px-3.5 py-2 rounded-full border border-platinum-800/15 bg-obsidian-900/50">
-                    <i data-lucide="clock" class="w-3 h-3 text-gold-400/40"></i>
-                    <span id="footer-date" class="text-platinum-500 text-[10px] font-light"></span>
-                    <span class="text-platinum-700 text-[8px]">|</span>
-                    <span id="footer-time" class="text-gold-400/70 text-[10px] font-medium tabular-nums tracking-wider"></span>
-                    <span class="text-emerald-400/40 text-[8px] font-bold tracking-widest">WIB</span>
-                </div>
+    <footer class="relative border-t border-platinum-800/15 bg-obsidian-950 py-12">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-gold-400 via-gold-300 to-gold-600 flex items-center justify-center"><i data-lucide="gamepad-2" class="w-4 h-4 text-obsidian-950"></i></div>
+                <span class="font-serif text-lg font-bold tracking-wide text-white">Mikayla <span class="gold-gradient">Games</span></span>
             </div>
-            <div class="h-px bg-gradient-to-r from-transparent via-platinum-800/15 to-transparent mb-10"></div>
-            <p class="text-center text-platinum-600 text-xs font-light">&copy; 2025 Mikayla Games. Premium Console Service.</p>
+            <p class="text-platinum-600 text-xs font-light tracking-wide text-center">&copy; 2024 Mikayla Games. Premium Console Service Bandung.</p>
+            <div class="flex items-center gap-4">
+                <a href="https://wa.me/6285163061987" class="text-platinum-500 hover:text-gold-400 transition-colors"><i data-lucide="message-circle" class="w-5 h-5"></i></a>
+                <a href="tel:+6285163061987" class="text-platinum-500 hover:text-gold-400 transition-colors"><i data-lucide="phone" class="w-5 h-5"></i></a>
+            </div>
         </div>
     </footer>
 
-    <!-- FLOATING AUDIO -->
-    <div id="audio-player" class="fixed bottom-6 left-6 z-50 flex items-center gap-3">
-        <div id="audio-panel" class="flex items-center gap-3 px-4 py-3 rounded-2xl bg-obsidian-950/80 border border-platinum-700/20 backdrop-blur-xl opacity-0 pointer-events-none transition-all duration-300 -translate-x-3" style="min-width:160px">
-            <div class="flex items-end gap-[3px] h-5 audio-paused" id="eq-bars"><div class="eq-bar" style="height:4px"></div><div class="eq-bar" style="height:8px"></div><div class="eq-bar" style="height:6px"></div><div class="eq-bar" style="height:10px"></div></div>
-            <input type="range" id="audio-volume" class="audio-volume-slider flex-1" min="0" max="100" value="30">
-            <span id="audio-vol-label" class="text-[10px] text-platinum-500 font-mono w-7 text-right">30%</span>
-        </div>
-        <button id="audio-toggle" class="relative w-14 h-14 bg-obsidian-950/80 border border-platinum-700/20 rounded-full flex items-center justify-center backdrop-blur-xl hover:border-gold-400/40 transition-all duration-300 group">
-            <i data-lucide="music" class="w-5 h-5 text-platinum-400 group-hover:text-gold-400 transition-colors" id="audio-icon-off"></i>
-            <i data-lucide="pause" class="w-5 h-5 text-gold-400 hidden" id="audio-icon-on"></i>
-        </button>
-    </div>
+    <script>
+        // Init Lucide Icons
+        lucide.createIcons();
 
-    <!-- FLOATING WHATSAPP -->
-    <div id="wa-float" class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2">
-        <div id="wa-tooltip" class="wa-tooltip opacity-0 pointer-events-none transition-all duration-500 transform translate-y-2 flex items-center gap-2 px-3.5 py-2 rounded-xl bg-obsidian-950/90 border border-emerald-400/15 backdrop-blur-xl shadow-lg shadow-emerald-500/5">
-            <span class="relative flex h-2 w-2"><span class="live-dot absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span></span>
-            <span class="text-[11px] text-platinum-300 font-light whitespace-nowrap"><span class="text-emerald-400 font-semibold" id="wa-live-count">0</span> orang sedang melihat</span>
-        </div>
-        <div class="relative">
-            <a href="https://wa.me/6285163061987" target="_blank" class="relative w-14 h-14 bg-emerald-500 hover:bg-emerald-400 rounded-full flex items-center justify-center shadow-lg shadow-emerald-500/20 hover:scale-110 transition-all duration-300 z-10">
-                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            </a>
-            <div id="wa-badge" class="absolute -top-1.5 -left-1.5 z-20 min-w-[22px] h-[22px] px-1.5 rounded-full bg-emerald-500 border-2 border-obsidian-950 flex items-center justify-center shadow-lg shadow-emerald-500/30 transition-all duration-300 opacity-0 scale-75">
-                <span class="text-[9px] font-bold text-white leading-none" id="wa-badge-count">0</span>
-            </div>
-            <div class="absolute inset-0 rounded-full bg-emerald-500/20 animate-ping" style="animation-duration:3s"></div>
-        </div>
-    </div>
+        // Scroll Reveal
+        const reveals = document.querySelectorAll('.scroll-reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        reveals.forEach(el => revealObserver.observe(el));
 
-<script>
-try { lucide.createIcons(); } catch(e) {}
+        // Fake Visitor Counter
+        let currentCount = Math.floor(Math.random() * 50) + 120;
+        document.getElementById('nav-total-count').textContent = currentCount;
+        document.getElementById('hero-total-count').textContent = currentCount;
+        setInterval(() => {
+            currentCount += Math.floor(Math.random() * 2);
+            document.getElementById('nav-total-count').textContent = currentCount;
+            document.getElementById('hero-total-count').textContent = currentCount;
+        }, 5000);
 
-// ═══════════════════════════════════════
-// DATE & TIME WIB
-// ═══════════════════════════════════════
-var HARI = ['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'];
-var BULAN = ['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
-var BULAN_SHORT = ['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Agu','Sep','Okt','Nov','Des'];
+        // Calculator Logic
+        const zonaData = {
+            1: { name: 'Zona 1 — Bandung Kota', ongkir: [15000, 25000] },
+            2: { name: 'Zona 2 — Cimahi', ongkir: [25000, 40000] },
+            3: { name: 'Zona 3 — Kab. Bandung', ongkir: [35000, 55000] },
+            4: { name: 'Zona 4 — Timur & Sumedang', ongkir: [45000, 70000] }
+        };
+        const gameData = {
+            none: { name: 'Tanpa Jasa Isi', price: 0 },
+            ps3hen: { name: 'PS3HEN', price: 100000 },
+            ps4hen: { name: 'PS4HEN', price: 150000 },
+            ps5hen: { name: 'PS5HEN', price: 300000 }
+        };
 
-function getWIB() { var now = new Date(); var utc = now.getTime() + (now.getTimezoneOffset() * 60000); return new Date(utc + (7 * 3600000)); }
-function pad2(n) { return n < 10 ? '0' + n : '' + n; }
-function formatTimeHTML(d) { return pad2(d.getHours()) + '<span class="clock-colon">:</span>' + pad2(d.getMinutes()) + '<span class="clock-colon">:</span>' + pad2(d.getSeconds()); }
-function formatDateFull(d) { return HARI[d.getDay()] + ', ' + d.getDate() + ' ' + BULAN[d.getMonth()] + ' ' + d.getFullYear(); }
-function formatDateShort(d) { return d.getDate() + ' ' + BULAN_SHORT[d.getMonth()] + ' ' + d.getFullYear(); }
+        let selectedZona = '';
+        let selectedGame = 'ps3hen';
+        let selectedService = 'regular';
+        let qty = 1;
 
-function updateClock() {
-    try {
-        var wib = getWIB(); var timeH = formatTimeHTML(wib); var dateF = formatDateFull(wib); var dateS = formatDateShort(wib); var el;
-        el = document.getElementById('nav-date'); if (el) el.textContent = dateS;
-        el = document.getElementById('nav-time'); if (el) el.innerHTML = timeH;
-        el = document.getElementById('mobile-date'); if (el) el.textContent = dateS;
-        el = document.getElementById('mobile-time'); if (el) el.innerHTML = timeH;
-        el = document.getElementById('hero-date'); if (el) el.textContent = dateF;
-        el = document.getElementById('hero-time'); if (el) el.innerHTML = timeH;
-        el = document.getElementById('cta-date'); if (el) el.textContent = dateF;
-        el = document.getElementById('cta-time'); if (el) el.innerHTML = timeH;
-        el = document.getElementById('footer-date'); if (el) el.textContent = dateS;
-        el = document.getElementById('footer-time'); if (el) el.innerHTML = timeH;
-    } catch(e) {}
-}
-updateClock(); setInterval(updateClock, 1000);
+        function formatRp(num) { return 'Rp ' + num.toFixed(0).replace(/\d(?=(\d{3})+$)/g, '$&.'); }
 
-// ═══════════════════════════════════════
-// WORLD CUP FILTER
-// ═══════════════════════════════════════
-function filterWC(group, btn) {
-    var cards = document.querySelectorAll('#wc-matches .match-card');
-    var tabs = document.querySelectorAll('.wc-tab');
-    
-    for (var i = 0; i < tabs.length; i++) tabs[i].classList.remove('active');
-    btn.classList.add('active');
-
-    for (var j = 0; j < cards.length; j++) {
-        if (group === 'all') {
-            cards[j].style.display = '';
-            cards[j].style.opacity = '1';
-            cards[j].style.transform = '';
-        } else {
-            if (cards[j].getAttribute('data-group') === group) {
-                cards[j].style.display = '';
-                cards[j].style.opacity = '1';
-                cards[j].style.transform = '';
-            } else {
-                cards[j].style.display = 'none';
-            }
+        function selectGame(type) {
+            selectedGame = type;
+            document.querySelectorAll('#game-chips .chip').forEach(c => {
+                c.classList.remove('selected');
+                c.style.borderColor = '';
+                c.style.background = '';
+            });
+            const el = document.querySelector(`#game-chips .chip[data-game="${type}"]`);
+            el.classList.add('selected');
+            
+            document.getElementById('santai-notice').style.display = type === 'none' ? 'none' : 'flex';
         }
-    }
-}
 
-// ═══════════════════════════════════════
-// PDF CONFIG
-// ═══════════════════════════════════════
-var PDF_CONFIG = {
-    PS3: { fileId:'1RRpxgZfF-WI0nnFFxP4wDg4aIWEKq2l_', title:'LIST GAME PS3 2025', filename:'LIST_GAME_PS3_2025.pdf' },
-    PS4: { fileId:'1rgvG9qV-J-f1le_r4Reqaa_Np1ZeFWiu', title:'PS4 LISTGAME 2026', filename:'PS4_LISTGAME_2026.pdf' },
-    PS5: { fileId:'1jC1CJvbzgubjC_4W5MknavuVHhUhQvbZ', title:'PLAYSTATION 5 LIST 2027', filename:'PLAYSTATION_5_LIST_2027.pdf' }
-};
-function gdPreview(id) { return 'https://drive.google.com/file/d/' + id + '/preview'; }
-function gdDownload(id) { return 'https://drive.google.com/uc?export=download&id=' + id; }
+        function selectService(type) {
+            selectedService = type;
+            document.querySelectorAll('#service-chips .chip').forEach(c => {
+                c.classList.remove('selected');
+                c.style.borderColor = '';
+                c.style.background = '';
+            });
+            const el = document.querySelector(`#service-chips .chip[data-service="${type}"]`);
+            el.classList.add('selected');
+        }
 
-function viewPdf(p) {
-    var c = PDF_CONFIG[p]; if (!c) return;
-    if (!c.fileId || c.fileId.length < 10) { showToast('Link PDF belum dikonfigurasi.','warning'); return; }
-    var m = document.getElementById('pdf-modal'); var f = document.getElementById('pdf-iframe'); var ld = document.getElementById('pdf-loading');
-    document.getElementById('modal-title').textContent = c.title; document.getElementById('modal-subtitle').textContent = c.filename;
-    document.getElementById('modal-download-btn').href = gdDownload(c.fileId); document.getElementById('modal-download-btn').target = '_blank';
-    f.src = ''; ld.style.display = 'flex'; m.classList.add('active'); document.body.style.overflow = 'hidden';
-    try { lucide.createIcons(); } catch(e) {}
-    setTimeout(function() { f.src = gdPreview(c.fileId); f.onload = function() { ld.style.display = 'none'; }; setTimeout(function() { ld.style.display = 'none'; }, 5000); }, 200);
-}
-function downloadPdf(p) {
-    var c = PDF_CONFIG[p]; if (!c) return;
-    if (!c.fileId || c.fileId.length < 10) { showToast('Link PDF belum dikonfigurasi.','warning'); return; }
-    showToast('Membuka download ' + c.filename + '...','success'); window.open(gdDownload(c.fileId), '_blank');
-}
-function closePdfModal() { var m = document.getElementById('pdf-modal'); var f = document.getElementById('pdf-iframe'); m.classList.remove('active'); document.body.style.overflow = ''; if (f) setTimeout(function() { f.src = ''; }, 400); }
-document.getElementById('pdf-modal').addEventListener('click', function(e) { if (e.target === this) closePdfModal(); });
-document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closePdfModal(); });
+        function adjustQty(val) {
+            qty = Math.max(1, Math.min(10, qty + val));
+            const display = document.getElementById('qty-display');
+            display.textContent = qty;
+            display.classList.remove('count-pop');
+            void display.offsetWidth; 
+            display.classList.add('count-pop');
+        }
 
-// ═══════════════════════════════════════
-// VISITOR COUNTER
-// ═══════════════════════════════════════
-var liveVisitors = 0;
-(function() {
-    var BT = 14847, BL = 23, LM = 14, LX = 47, tv = BT, lv = BL; liveVisitors = lv;
-    function ri(a, b) { return Math.floor(Math.random() * (b - a + 1)) + a; }
-    function fn(n) { return n.toLocaleString('id-ID'); }
-    function ac(el, t) { if (!el) return; el.textContent = t; el.classList.remove('count-pop'); void el.offsetWidth; el.classList.add('count-pop'); }
-    function upd() {
-        var ts = fn(tv), ls = fn(lv); liveVisitors = lv;
-        ac(document.getElementById('stat-total-visitors'), ts); ac(document.getElementById('stat-live-visitors'), ls);
-        ac(document.getElementById('hero-live-count'), ls); ac(document.getElementById('hero-total-count'), ts);
-        var nl = document.getElementById('nav-live-count'); if (nl) nl.textContent = ls;
-        var bc = document.getElementById('wa-badge-count'); if (bc) bc.textContent = ls;
-        var wlc = document.getElementById('wa-live-count'); if (wlc) wlc.textContent = ls;
-        var badge = document.getElementById('wa-badge'); if (badge) { badge.classList.remove('wa-badge-bounce'); void badge.offsetWidth; badge.classList.add('wa-badge-bounce'); }
-    }
-    function schedInc() { setTimeout(function() { tv += ri(1,4); upd(); schedInc(); }, ri(3000,8000)); }
-    function fluct() { setInterval(function() { lv += ri(-3,4); if (lv < LM) lv = LM + ri(0,3); if (lv > LX) lv = LX - ri(0,3); upd(); }, 5000); }
-    var stv = tv - ri(300,600), slv = lv - ri(8,15), dur = 2500, stm = null;
-    function step(ts) {
-        if (!stm) stm = ts; var pg = Math.min((ts - stm) / dur, 1); var ea = 1 - Math.pow(1 - pg, 3);
-        var ct = Math.floor(stv + (tv - stv) * ea), cl = Math.floor(slv + (lv - slv) * ea);
-        document.getElementById('stat-total-visitors').textContent = fn(ct); document.getElementById('stat-live-visitors').textContent = fn(cl);
-        document.getElementById('hero-live-count').textContent = fn(cl); document.getElementById('hero-total-count').textContent = fn(ct);
-        var nl = document.getElementById('nav-live-count'); if (nl) nl.textContent = fn(cl);
-        var bc = document.getElementById('wa-badge-count'); if (bc) bc.textContent = fn(cl);
-        var wlc = document.getElementById('wa-live-count'); if (wlc) wlc.textContent = fn(cl);
-        if (pg < 1) requestAnimationFrame(step); else upd();
-    }
-    requestAnimationFrame(step); schedInc(); fluct();
-})();
+        function onZonaChange() {
+            selectedZona = document.getElementById('zona-select').value;
+        }
 
-// WA TOOLTIP
-(function() { var tooltip = document.getElementById('wa-tooltip'); var badge = document.getElementById('wa-badge'); if (!tooltip || !badge) return;
-    var showDelay = 4000, showDur = 8000, cycleGap = 35000;
-    function showT() { tooltip.classList.remove('opacity-0','pointer-events-none','translate-y-2'); tooltip.classList.add('opacity-100','translate-y-0'); badge.classList.remove('opacity-0','scale-75'); badge.classList.add('opacity-100','scale-100'); }
-    function hideT() { tooltip.classList.add('opacity-0','pointer-events-none','translate-y-2'); tooltip.classList.remove('opacity-100','translate-y-0'); }
-    setTimeout(function() { showT(); setTimeout(hideT, showDur); setInterval(function() { showT(); setTimeout(hideT, showDur); }, cycleGap); }, showDelay);
-})();
+        function hitungOngkir() {
+            if (!selectedZona) {
+                showToast('Pilih zona tujuan terlebih dahulu!', 'error');
+                return;
+            }
 
-// MOBILE MENU
-(function() { var btn = document.getElementById('mobile-menu-btn'); var menu = document.getElementById('mobile-menu'); var open = false;
-    btn.addEventListener('click', function() { open = !open; menu.classList.toggle('hidden'); var ic = btn.querySelector('[data-lucide]'); if (ic) { ic.setAttribute('data-lucide', open ? 'x' : 'menu'); try { lucide.createIcons(); } catch(e) {} } });
-    var links = document.querySelectorAll('.mobile-link'); for (var i = 0; i < links.length; i++) { links[i].addEventListener('click', function() { menu.classList.add('hidden'); open = false; var ic = btn.querySelector('[data-lucide]'); if (ic) { ic.setAttribute('data-lucide', 'menu'); try { lucide.createIcons(); } catch(e) {} } }); }
-})();
+            const zone = zonaData[selectedZona];
+            const game = gameData[selectedGame];
+            const baseOngkir = zone.ongkir[0]; // Ambil tarif terendah untuk estimasi
+            
+            let ongkirTotal = baseOngkir;
+            let diskonSantai = 0;
+            
+            if (selectedGame !== 'none') {
+                diskonSantai = Math.round(ongkirTotal * 0.3);
+                ongkirTotal -= diskonSantai;
+            }
 
-// NAVBAR SCROLL
-(function() { var n = document.getElementById('navbar'); window.addEventListener('scroll', function() { var s = window.pageYOffset; n.style.borderBottomColor = s > 80 ? 'rgba(212,175,55,.08)' : 'rgba(142,147,156,.1)'; n.style.background = s > 80 ? 'rgba(2,2,2,.92)' : 'rgba(2,2,2,.8)'; }); })();
+            let biayaExpress = 0;
+            if (selectedService === 'express') biayaExpress = 10000;
+            
+            let biayaTambahan = 0;
+            if (qty > 1) biayaTambahan = (qty - 1) * 5000;
 
-// SCROLL REVEAL
-(function() { var obs = new IntersectionObserver(function(entries) { for (var i = 0; i < entries.length; i++) { if (entries[i].isIntersecting) entries[i].target.classList.add('visible'); } }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }); var els = document.querySelectorAll('.scroll-reveal'); for (var i = 0; i < els.length; i++) obs.observe(els[i]); })();
+            const totalGame = game.price * qty;
+            const totalEstimasi = totalGame + ongkirTotal + biayaExpress + biayaTambahan;
 
-// SMOOTH SCROLL
-(function() { var anchors = document.querySelectorAll('a[href^="#"]'); for (var i = 0; i < anchors.length; i++) { anchors[i].addEventListener('click', function(e) { e.preventDefault(); var t = document.querySelector(this.getAttribute('href')); if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }); } })();
+            // Update UI
+            document.getElementById('result-empty').style.display = 'none';
+            const filled = document.getElementById('result-filled');
+            filled.style.display = 'block';
+            filled.style.animation = 'resultReveal .6s cubic-bezier(.25,.46,.45,.94) forwards';
 
-// PARALLAX
-(function() { var ticking = false; window.addEventListener('scroll', function() { if (!ticking) { requestAnimationFrame(function() { var h = document.getElementById('hero-img'); if (h) { var s = window.pageYOffset; if (s < window.innerHeight) h.style.transform = 'translateY(' + s * 0.25 + 'px) scale(1.05)'; } ticking = false; }); ticking = true; } }); })();
+            document.getElementById('result-route-dist').textContent = `~${zone.ongkir[0] === 15000 ? '5' : zone.ongkir[0] === 25000 ? '12' : zone.ongkir[0] === 35000 ? '18' : '28'} km`;
+            document.getElementById('result-route-dest').textContent = zone.name.split('—')[1].trim();
+            document.getElementById('result-game-text').textContent = game.name;
+            document.getElementById('result-zone-text').textContent = zone.name.split('—')[0].trim();
+            
+            document.getElementById('result-game-row').style.display = game.price > 0 ? 'flex' : 'none';
+            document.getElementById('result-game-price').textContent = formatRp(totalGame);
+            document.getElementById('result-base').textContent = formatRp(baseOngkir);
+            
+            document.getElementById('result-santai-row').style.display = diskonSantai > 0 ? 'flex' : 'none';
+            document.getElementById('result-santai').textContent = `- ${formatRp(diskonSantai)}`;
+            
+            document.getElementById('result-express-row').style.display = biayaExpress > 0 ? 'flex' : 'none';
+            document.getElementById('result-express').textContent = `+ ${formatRp(biayaExpress)}`;
+            
+            document.getElementById('result-extra-row').style.display = biayaTambahan > 0 ? 'flex' : 'none';
+            document.getElementById('result-extra').textContent = `+ ${formatRp(biayaTambahan)}`;
+            
+            document.getElementById('result-total').textContent = formatRp(totalEstimasi);
+            document.getElementById('result-range').textContent = `Estimasi bisa berbeda ±Rp 5K tergantung kondisi jalan. Range ongkir ${formatRp(zone.ongkir[0] - diskonSantai)} - ${formatRp(zone.ongkir[1] - diskonSantai)}`;
 
-// ZONE SELECTOR
-var selZone = null;
-function selectZone(el, zid) { var allCards = document.querySelectorAll('.zone-card'); var allDetails = document.querySelectorAll('.zone-detail');
-    if (selZone === zid) { el.classList.remove('active'); var dt = el.querySelector('.zone-detail'); if (dt) dt.classList.remove('open'); selZone = null; return; }
-    for (var i = 0; i < allCards.length; i++) allCards[i].classList.remove('active');
-    for (var j = 0; j < allDetails.length; j++) allDetails[j].classList.remove('open');
-    el.classList.add('active'); var cd = el.querySelector('.zone-detail'); if (cd) cd.classList.add('open'); selZone = zid;
-    try { lucide.createIcons(); } catch(e) {}
-    var zn = { 'zona-1':'Bandung Kota', 'zona-2':'Cimahi', 'zona-3':'Kab. Bandung', 'zona-4':'Timur & Sumedang' };
-    showToast('Zona ' + zn[zid] + ' dipilih!', 'success');
-}
+            // WhatsApp Link
+            const alamat = document.getElementById('alamat-input').value;
+            let waText = `Halo Mikayla Games! Saya ingin booking jasa:\n\n- Jasa: ${game.name}\n- Jumlah Konsol: ${qty}\n- Layanan: ${selectedService === 'regular' ? 'Regular' : 'Express'}\n- Zona: ${zone.name}${alamat ? '\n- Alamat: ' + alamat : ''}\n\nEstimasi Total: ${formatRp(totalEstimasi)}`;
+            document.getElementById('result-wa-btn').href = `https://wa.me/6285163061987?text=${encodeURIComponent(waText)}`;
+        }
 
-// TOAST
-function showToast(msg, type) { type = type || 'info'; var c = document.getElementById('toast-container'); if (!c) return;
-    var t = document.createElement('div'); var bg = type === 'warning' ? 'bg-gold-400/10 border-gold-400/25' : 'bg-emerald-400/10 border-emerald-400/25';
-    var tc = type === 'warning' ? 'text-gold-400' : 'text-emerald-400'; var ic = type === 'warning' ? 'alert-circle' : 'check-circle-2';
-    t.className = 'toast flex items-start gap-3 p-4 rounded-xl ' + bg + ' border backdrop-blur-xl max-w-sm';
-    t.innerHTML = '<i data-lucide="' + ic + '" class="w-4 h-4 ' + tc + ' flex-shrink-0 mt-0.5"></i><p class="text-platinum-300 text-xs font-light leading-relaxed">' + msg + '</p>';
-    c.appendChild(t); try { lucide.createIcons(); } catch(e) {}
-    setTimeout(function() { t.style.opacity = '0'; t.style.transform = 'translateY(-10px) translateX(20px)'; t.style.transition = 'all .3s ease'; setTimeout(function() { if (t.parentNode) t.remove(); }, 300); }, 4000);
-}
+        function resetForm() {
+            document.getElementById('result-empty').style.display = 'block';
+            document.getElementById('result-filled').style.display = 'none';
+            document.getElementById('zona-select').value = '';
+            document.getElementById('alamat-input').value = '';
+            selectedZona = '';
+            selectGame('ps3hen');
+            selectService('regular');
+            qty = 1;
+            document.getElementById('qty-display').textContent = '1';
+        }
 
-// AUDIO PLAYER
-(function() { var a = document.getElementById('bg-audio'); var tg = document.getElementById('audio-toggle'); var pn = document.getElementById('audio-panel'); var io = document.getElementById('audio-icon-off'); var iOn = document.getElementById('audio-icon-on'); var vl = document.getElementById('audio-volume'); var lb = document.getElementById('audio-vol-label'); var eq = document.getElementById('eq-bars'); if (!a || !tg) return;
-    var playing = false, panelOpen = false; a.volume = 0.3;
-    tg.addEventListener('click', function() { if (playing) { a.pause(); io.classList.remove('hidden'); iOn.classList.add('hidden'); tg.classList.remove('audio-playing'); if (eq) { eq.classList.remove('audio-playing'); eq.classList.add('audio-paused'); } playing = false; closePanel(); } else { var p = a.play(); if (p !== undefined) { p.then(function() { io.classList.add('hidden'); iOn.classList.remove('hidden'); tg.classList.add('audio-playing'); if (eq) { eq.classList.remove('audio-paused'); eq.classList.add('audio-playing'); } playing = true; openPanel(); }).catch(function() { showToast('Klik lagi untuk memutar', 'warning'); }); } } });
-    if (vl) vl.addEventListener('input', function() { var v = parseInt(this.value); a.volume = v / 100; if (lb) lb.textContent = v + '%'; });
-    function openPanel() { if (!pn) return; panelOpen = true; pn.classList.remove('opacity-0','pointer-events-none','-translate-x-3'); pn.classList.add('opacity-100','translate-x-0'); }
-    function closePanel() { if (!pn) return; panelOpen = false; pn.classList.add('opacity-0','pointer-events-none','-translate-x-3'); pn.classList.remove('opacity-100','translate-x-0'); }
-    document.addEventListener('click', function(e) { var pl = document.getElementById('audio-player'); if (panelOpen && pl && !pl.contains(e.target)) closePanel(); });
-    tg.addEventListener('mouseenter', function() { if (playing) openPanel(); });
-})();
-</script>
+        // Toast Notification
+        function showToast(message, type = 'info') {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = `toast flex items-center gap-3 px-5 py-3.5 rounded-xl border ${type === 'error' ? 'bg-red-900/60 border-red-500/30 text-red-200' : 'bg-navy-800/90 border-gold-400/30 text-gold-200'} backdrop-blur-xl shadow-2xl`;
+            toast.innerHTML = `<i data-lucide="${type === 'error' ? 'alert-circle' : 'info'}" class="w-4 h-4 flex-shrink-0"></i><span class="text-xs font-medium">${message}</span>`;
+            container.appendChild(toast);
+            lucide.createIcons();
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateY(-10px) scale(0.95)';
+                toast.style.transition = 'all 0.3s ease';
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+    </script>
 </body>
 </html>
